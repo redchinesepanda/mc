@@ -31,7 +31,12 @@ class ReviewListHowTo
 
 	public static function get_node_classess( $node )
 	{
-		return explode( ' ', $node->getAttribute( 'class' ) );
+		if ( $node->hasAttribute( 'class' ) )
+		{
+			return explode( ' ', $node->getAttribute( 'class' ) );
+		}
+
+		return [];
 	}
 
 	public static function get_permission_title( $node )
