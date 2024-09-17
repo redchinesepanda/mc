@@ -7,3 +7,4 @@ LegalDebug::debug( [
 ] );
 
 ?>
+<span>test</span>
