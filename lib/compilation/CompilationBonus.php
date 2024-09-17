@@ -83,6 +83,8 @@ class CompilationBonus
 
                 'description-full' => $bonus[ 'description-full' ],
 
+                'button-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+
                 'review' => [
                     'href' => $logo[ 'review' ][ 'href' ],
 

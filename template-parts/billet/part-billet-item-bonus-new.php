@@ -24,6 +24,6 @@
 		<p class="footer-tnc-info" data-text="<?php echo $args[ 'description-full' ]; ?>">
 			tnc text
 		</p>
-		<span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ][ 'button' ]; ?>">Read more</span>
+		<span class="billet-footer-control" data-default="<?php echo $args[ 'button-tnc' ]; ?>">Read more</span>
 	</div>
 <?php endif; ?>
