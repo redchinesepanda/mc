@@ -223,7 +223,8 @@
 .compilation-bonus-main .legal-compilation-peculiarity-text,
 .compilation-bonus-main .legal-compilation-button,
 .legal-compilation-bonus .footer-tnc-info,
-.legal-compilation-bonus .footer-tnc-link {
+.legal-compilation-bonus .footer-tnc-link,
+.legal-compilation-bonus .compilation-footer-control {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -283,8 +284,27 @@
 	color: var( --Base-base-05 );
 }
 
+.legal-compilation-bonus .footer-tnc-info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 .legal-compilation-bonus .footer-tnc-info::after {
 	content: attr( data-text );
+}
+
+.legal-compilation-bonus .compilation-footer-control {
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+	white-space: nowrap;
+	cursor: pointer;
+	color: var( --Base-base-08 );
+}
+
+.legal-compilation-bonus .compilation-footer-control:hover {
+	text-shadow: 0 0 0.35px var( --Base-base-09 );
 }
 
 .legal-compilation-bonus .compilation-bonus-footer:not(.legal-short-tnc):not(.legal-active) .compilation-footer-control::before {
