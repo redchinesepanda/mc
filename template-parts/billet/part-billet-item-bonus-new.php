@@ -6,8 +6,8 @@
 			</a>
 		</div>
 		<div class="legal-compilation-peculiarity">
-			<div class="legal-compilation-peculiarity-bonys">
-				<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?> class="peculiarity-bonys-link"><?php echo $args[ 'title' ][ 'label' ]; ?></a>
+			<div class="legal-compilation-peculiarity-bonus">
+				<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?> class="peculiarity-bonus-link"><?php echo $args[ 'title' ][ 'label' ]; ?></a>
 			</div>
 			<?php if ( !empty( $args[ 'description' ] ) ) : ?>
 				<div class="legal-compilation-peculiarity-text"><?php echo $args[ 'description' ]; ?></div>

@@ -106,7 +106,7 @@
 	display: block;
 } */
 
-.compilation-bonus-main .peculiarity-bonys-link[ href='' ],
+.compilation-bonus-main .peculiarity-bonus-link[ href='' ],
 .compilation-bonus-main .legal-compilation-button[ href='' ] {
 	pointer-events: none;
 }
@@ -130,7 +130,7 @@
   	height: auto;
 }
 
-.compilation-bonus-main .legal-compilation-peculiarity-bonys,
+.compilation-bonus-main .legal-compilation-peculiarity-bonus,
 .compilation-bonus-main .legal-compilation-peculiarity-text {
 	width: 100%;
 }
@@ -191,8 +191,8 @@
 /* Typography */
 
 /* .compilation-bonus-main .compilation-review-link, */
-.compilation-bonus-main .legal-compilation-peculiarity-bonys,
-.compilation-bonus-main .peculiarity-bonys-link,
+.compilation-bonus-main .legal-compilation-peculiarity-bonus,
+.compilation-bonus-main .peculiarity-bonus-link,
 .compilation-bonus-main .legal-compilation-peculiarity-text,
 .compilation-bonus-main .legal-compilation-button {
 	font-family: var( --legal-font-primary );
@@ -200,14 +200,14 @@
 }
 
 /* .compilation-bonus-main .compilation-review-link, */
-.compilation-bonus-main .peculiarity-bonys-link,
+.compilation-bonus-main .peculiarity-bonus-link,
 .compilation-bonus-main .legal-compilation-button {
 	text-decoration: none;
 }
 
 /* .compilation-bonus-main .compilation-review-link */
-.compilation-bonus-main .legal-compilation-peculiarity-bonys,
-.compilation-bonus-main .peculiarity-bonys-link,
+.compilation-bonus-main .legal-compilation-peculiarity-bonus,
+.compilation-bonus-main .peculiarity-bonus-link,
 .compilation-bonus-main .legal-compilation-peculiarity-text {
 	color: var(--Base-base-09);
 }
@@ -223,11 +223,13 @@
 	text-shadow: 0 0 0.6px #000;
 } */
 
-.compilation-bonus-main .legal-compilation-peculiarity-bonys,
-.compilation-bonus-main .peculiarity-bonys-link {
-	font-size: 16px;
+.compilation-bonus-main .legal-compilation-peculiarity-bonus,
+.compilation-bonus-main .peculiarity-bonus-link {
+	/* font-size: 16px; */
+	font-size: 1.25rem;
 	font-weight: 600;
-	line-height: 26px;
+	line-height: 1.625rem;
+	/* line-height: 26px; */
 }
 
 .compilation-bonus-main .legal-compilation-peculiarity-text {
