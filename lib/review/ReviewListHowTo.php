@@ -59,6 +59,12 @@ class ReviewListHowTo
 	{
 		$nextSibling = $node->nextSibling;
 
+		LegalDebug::debug( [
+            'ReviewListHowTo' => 'get_permission_last-1',
+
+			'nextSibling' => $nextSibling,
+		] );
+
 		if ( ! empty( $nextSibling ) )
 		{
 			return in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) );
