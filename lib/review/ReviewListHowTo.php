@@ -33,6 +33,12 @@ class ReviewListHowTo
 	{
 		if ( property_exists( $node, 'class' ) )
 		{
+			LegalDebug::debug( [
+				'ReviewHowTo' => 'get_node_classess',
+
+				'class' => $node->getAttribute( 'class' ),
+			] );
+
 			return explode( ' ', $node->getAttribute( 'class' ) );
 		}
 
