@@ -95,10 +95,10 @@ class ReviewListHowTo
 
 		if ( ! empty( $nextSibling ) )
 		{
-			return ! in_array( self::CLASSES[ 'title' ], self::get_node_classess( $nextSibling ) );
+			return in_array( self::CLASSES[ 'title' ], self::get_node_classess( $nextSibling ) );
 		}
 
-		return true;
+		return false;
 	}
 
 	public static function get_howto_items( $dom, $nodes )
