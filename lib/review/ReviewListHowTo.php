@@ -70,7 +70,7 @@ class ReviewListHowTo
 		if ( ! empty( $nextSibling ) )
 		{
 			LegalDebug::debug( [
-				'ReviewListHowTo' => 'get_permission_last-1',
+				'ReviewListHowTo' => 'get_permission_last-2',
 
 				'CLASSES' => self::CLASSES[ 'default' ],
 
