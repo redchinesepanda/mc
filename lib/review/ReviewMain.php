@@ -296,6 +296,8 @@ class ReviewMain
         ReviewRestricted::register();
 
         ReviewSchema::register();
+        
+        ReviewListHowTo::register();
     }
 
     public static function encoding( $content )
