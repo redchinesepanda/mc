@@ -111,6 +111,11 @@
 	pointer-events: none;
 }
 
+.legal-compilation-bonus .compilation-bonus-footer {
+	display: flex;
+  	flex-direction: column;
+}
+
 /* Width and Height */
 
 .compilation-bonus-main .legal-compilation-logo {
@@ -140,11 +145,21 @@
 	height: fit-content;
 }
 
+.legal-compilation-bonus .compilation-bonus-footer {
+	width: 100%;
+  	box-sizing: border-box;
+}
+
 /* Position */
 
+.legal-compilation-bonus {
+	margin-top: var( --Spacing-07 );
+	margin-bottom: var( --Spacing-07 );
+}
+
 .compilation-bonus-main {
-	padding: 24px;
-	margin-bottom: 18px;
+	padding: var( --Spacing-07 );
+	/* margin-bottom: 18px; */
 }
 
 .compilation-bonus-main .legal-compilation-review {
@@ -155,6 +170,18 @@
 .compilation-bonus-main .legal-compilation-button {
 	/* padding: 9px 17px; */
 	padding: 0.625rem 1.125rem;
+}
+
+.legal-compilation-bonus .compilation-bonus-footer {
+	padding-top: 0.5rem;
+	padding-right: var( --Spacing-07 );
+	padding-bottom: var( --Spacing-04 );
+	padding-left: var( --Spacing-07 );
+}
+
+.legal-compilation-bonus .footer-tnc-info {
+	margin-top: 0px;
+  	margin-bottom: 0px;
 }
 
 /* Background */
@@ -243,6 +270,15 @@
 	font-weight: 500;
 	line-height: 1.25rem;
 	text-align: center;
+}
+
+.legal-compilation-bonus .footer-tnc-info,
+.legal-compilation-bonus .footer-tnc-link {
+	font-style: normal;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+	color: var( --Base-base-05 );
 }
 
 .legal-compilation-bonus .footer-tnc-info::after {
