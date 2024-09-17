@@ -57,14 +57,18 @@
 
 	.compilation-bonus-main .legal-compilation-logo {
 		/* padding-right: 14px; */
-		padding-right: var( --Spacing-05 );
+		margin-right: var( --Spacing-05 );
 	}
 
 	.compilation-bonus-main .legal-compilation-peculiarity {
+		margin-right: var( --Spacing-06 );
 		padding-top: 0.5rem;
-		padding-right: var( --Spacing-06 );
 		padding-bottom: 0.5rem;
-		margin-right: auto;
+		/* margin-right: auto; */
+	}
+
+	.compilation-bonus-main .legal-compilation-button {
+		margin-left: auto;
 	}
 }
 
