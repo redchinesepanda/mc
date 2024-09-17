@@ -38,6 +38,11 @@ class CompilationBonus
                 $bonus[ 'description' ] = '';
             }
 
+            if ( empty( $bonus[ 'description-full' ] ) )
+            {
+                $bonus[ 'description-full' ] = '';
+            }
+
             $play = BilletRight::get( $args );
 
             $title_label = $title[ 'label' ];
@@ -75,6 +80,8 @@ class CompilationBonus
                 ],
 
                 'description' => $bonus[ 'description' ],
+
+                'description-full' => $bonus[ 'description-full' ],
 
                 'review' => [
                     'href' => $logo[ 'review' ][ 'href' ],
