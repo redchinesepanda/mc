@@ -68,7 +68,9 @@
 	}
 
 	.compilation-bonus-main .legal-compilation-button {
+		margin-top: auto;
 		margin-left: auto;
+		margin-bottom: auto;
 	}
 }
 
