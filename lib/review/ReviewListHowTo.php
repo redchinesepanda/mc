@@ -75,6 +75,12 @@ class ReviewListHowTo
 
 		foreach ( $nodes as $id => $node )
 		{
+			LegalDebug::debug( [
+				'ReviewListHowTo' => 'get_howto_items-1',
+
+				'node' => substr( $node->textContent, 0, 30 ),
+			] );
+
 			if ( self::get_permission_title( $node ) )
 			{
 				// $howto_item[ 'title' ] = ToolEncode::encode( $node->textContent );
@@ -146,15 +152,13 @@ class ReviewListHowTo
             return [];
         }
 
-		// $dom = LegalDOM::get_dom( $post->post_content );
-
         $nodes = self::get_nodes_howto( $dom );
 
-		LegalDebug::debug( [
-			'ReviewListHowTo' => 'set_howto-1',
+		// LegalDebug::debug( [
+		// 	'ReviewListHowTo' => 'set_howto-1',
 
-			'nodes' => $nodes,
-		] );
+		// 	'nodes' => $nodes,
+		// ] );
 
 		if ( $nodes->length == 0 )
 		{
