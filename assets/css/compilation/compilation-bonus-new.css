@@ -42,9 +42,9 @@
 
 	/* Display */
 
-	/* .compilation-bonus-main {
-		justify-content: space-between;
-	} */
+	.compilation-bonus-main {
+		align-items: center;
+	}
 
 	/* Width and Height */
 
@@ -68,9 +68,7 @@
 	}
 
 	.compilation-bonus-main .legal-compilation-button {
-		margin-top: auto;
 		margin-left: auto;
-		margin-bottom: auto;
 	}
 }
 
