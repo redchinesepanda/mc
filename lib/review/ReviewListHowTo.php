@@ -22,9 +22,7 @@ class ReviewListHowTo
 
 	public static function register_style( $styles = [] )
     {
-        if ( self::check() ) {
-            ToolEnqueue::register_style( $styles );
-        }
+        ToolEnqueue::register_style( $styles );
     }
 
 	public static function check_contains_list_howto()
