@@ -121,6 +121,15 @@ class LegalDOM
 		}
 	}
 
+	public static function insertBeforeHTML( $dom, $html, $node )
+	{
+		$template = new DOMDocument;
+		
+		$template->loadHtml( $html );
+		
+		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
+	}
+
 	public static function clean( &$node )
     {
         if ( $node->hasChildNodes() )
