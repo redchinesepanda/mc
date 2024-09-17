@@ -45,17 +45,17 @@ class ReviewListHowTo
 		return [];
 	}
 
-	public static function get_permission_title( $node )
+	public static function check_title( $node )
 	{
 		return in_array( self::CLASSES[ 'title' ], self::get_node_classess( $node ) );
 	}
 
-	public static function get_permission_content( $node )
+	public static function check_content( $node )
 	{
 		return in_array( self::CLASSES[ 'content' ], self::get_node_classess( $node ) );
 	}
 
-	public static function get_permission_last( $dom, $node )
+	public static function check_item_complete( $dom, $node )
 	{
 		// $nextSibling = $node->nextSibling;
 		
@@ -89,6 +89,18 @@ class ReviewListHowTo
 		return true;
 	}
 
+	public static function check_question_complete( $dom, $node )
+	{
+		$nextSibling = LegalDOM::get_next_element( $dom, $node );
+
+		if ( ! empty( $nextSibling ) )
+		{
+			return ! in_array( self::CLASSES[ 'title' ], self::get_node_classess( $nextSibling ) );
+		}
+
+		return true;
+	}
+
 	public static function get_howto_items( $dom, $nodes )
 	{
 		$howto_items = [];
@@ -106,14 +118,16 @@ class ReviewListHowTo
 
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
-				'get_permission_title' => self::get_permission_title( $node ),
+				'check_title' => self::check_title( $node ),
 
-				'get_permission_content' => self::get_permission_content( $node ),
+				'check_content' => self::check_content( $node ),
 
-				'get_permission_last' => self::get_permission_last( $dom, $node ),
+				'check_item_complete' => self::check_item_complete( $dom, $node ),
+
+				'check_question_complete' => self::check_question_complete( $dom, $node ),
 			] );
 
-			if ( self::get_permission_title( $node ) )
+			if ( self::check_title( $node ) )
 			{
 				// $howto_item[ 'title' ] = ToolEncode::encode( $node->textContent );
 
@@ -131,7 +145,7 @@ class ReviewListHowTo
 				'howto_item_question' => $howto_item_question,
 			] );
 
-			if ( self::get_permission_content( $node ) )
+			if ( self::check_content( $node ) )
 			{
                 // $howto_item[ 'content' ] = ToolEncode::encode( $node->textContent );
                 
@@ -144,7 +158,12 @@ class ReviewListHowTo
 				'howto_item_question' => $howto_item_question,
 			] );
 
-			if ( self::get_permission_last( $dom, $node ) )
+			if ( self::check_question_complete( $dom, $node ) )
+			{
+				$howto_item[ 'questions' ][] = $howto_item_question;
+			}
+
+			if ( self::check_item_complete( $dom, $node ) )
 			{
 				// $howto_item[ 'questions' ][] = $howto_item_question;
 
