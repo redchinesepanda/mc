@@ -186,7 +186,7 @@ class ReviewListHowTo
 
 				$html = self::render_list_howto( $howto_item );
 
-				self::insertBeforeHTML( $dom, $html, $node );
+				self::insertBeforeHTML( $dom, $html, $node ); 
 
 				$howto_item = [];
 
