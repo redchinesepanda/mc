@@ -112,6 +112,13 @@ class ReviewListHowTo
 		$template = new DOMDocument;
 		
 		$template->loadHtml( $html );
+
+		LegalDebug::debug( [
+			'ReviewListHowTo' => 'insertBeforeHTML-1',
+			
+			'saveHTML' => $template->saveHTML( $dom ),
+		] );
+
 		
 		$node->insertBefore( $dom->importNode( $template->documentElement, true ) );
 	}
