@@ -86,6 +86,7 @@ class CompilationBonus
                 'bonus-href' => $bonus[ 'href' ],
 
                 'button-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+                
 
                 'link-tnc' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
 
