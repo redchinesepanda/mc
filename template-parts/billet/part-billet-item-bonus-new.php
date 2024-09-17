@@ -23,7 +23,7 @@
 	<div class="legal-compilation-footer">
 		<p class="footer-tnc-info" data-text="<?php echo $args[ 'description-full' ]; ?>">
 			<?php if ( ! in_array( $args[ 'bonus-href' ], [ '#', '' ] ) ) : ?>
-				<a href="<?php echo $args[ 'bonus-href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'bonus' ][ 'nofollow' ] ); ?>><?php echo $args[ 'link-tnc' ]; ?></a>
+				<a href="<?php echo $args[ 'bonus-href' ]; ?>" class="footer-tnc-link" rel="nofollow"><?php echo $args[ 'link-tnc' ]; ?></a>
 			<?php endif; ?>
 		</p>
 		<span class="compilation-footer-control" data-default="<?php echo $args[ 'button-tnc' ]; ?>"></span>
