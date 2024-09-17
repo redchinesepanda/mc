@@ -45,6 +45,11 @@ class ReviewListHowTo
 		return [];
 	}
 
+	public static function check_unordered( $node )
+	{
+		return in_array( self::CLASSES[ 'unordered' ], self::get_node_classess( $node ) );
+	}
+
 	public static function check_title( $node )
 	{
 		return in_array( self::CLASSES[ 'title' ], self::get_node_classess( $node ) );
@@ -146,6 +151,8 @@ class ReviewListHowTo
 				// }
 				
 				$howto_item_question[ 'title' ] = ToolEncode::encode( $node->textContent );
+
+				$howto_item[ 'tag' ] = self::check_unordered( $node ) ? 'ul' : 'ol';
 			}
 
 			// LegalDebug::debug( [
