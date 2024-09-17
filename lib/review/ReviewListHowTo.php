@@ -158,7 +158,11 @@ class ReviewListHowTo
 			// 	'howto_item_question' => $howto_item_question,
 			// ] );
 
-			if ( self::check_question_complete( $dom, $node ) )
+			if (
+				self::check_question_complete( $dom, $node )
+
+				|| self::check_item_complete( $dom, $node )
+			)
 			{
 				$howto_item[ 'questions' ][] = $howto_item_question;
 			}
