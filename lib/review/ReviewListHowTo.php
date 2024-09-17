@@ -145,7 +145,7 @@ class ReviewListHowTo
 
 			try
 			{
-				$node->parentNode->removeChild( $node );
+				// $node->parentNode->removeChild( $node );
 			}
 			catch ( DOMException $e )
 			{
