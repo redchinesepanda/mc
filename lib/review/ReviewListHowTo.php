@@ -186,11 +186,11 @@ class ReviewListHowTo
 
 				$html = self::render_list_howto( $howto_item );
 
-				LegalDebug::debug( [
-					'ReviewListHowTo' => 'get_howto_items-4',
+				// LegalDebug::debug( [
+				// 	'ReviewListHowTo' => 'get_howto_items-4',
 
-					'html' => $html,
-				] );
+				// 	'html' => $html,
+				// ] );
 
 				self::insertBeforeHTML( $dom, $html, $node ); 
 
@@ -221,15 +221,17 @@ class ReviewListHowTo
 			}
 		}
 
-		// LegalDebug::debug( [
-		// 	'ReviewListHowTo' => 'get_howto_items-2',
+		LegalDebug::debug( [
+			'ReviewListHowTo' => 'get_howto_items-2',
 
-		// 	'howto_items-count' => count( $howto_items ),
+			// 'howto_items-count' => count( $howto_items ),
 
-		// 	'howto_items' => $howto_items,
-		// ] );
+			// 'howto_items' => $howto_items,
 
-		return $howto_items;
+			'saveHTML' => $dom->saveHTML( $dom ),
+		] );
+
+		// return $howto_items;
 	}
 
 	public static function get_nodes_howto( $dom )
