@@ -31,7 +31,7 @@ class ReviewListHowTo
 
 	public static function get_node_classess( $node )
 	{
-		if ( $node->hasAttribute( 'class' ) )
+		if ( property_exists( $node, 'class' ) )
 		{
 			return explode( ' ', $node->getAttribute( 'class' ) );
 		}
