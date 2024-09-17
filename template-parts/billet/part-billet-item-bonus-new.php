@@ -21,11 +21,8 @@
 </div>
 <?php if ( !empty( $args[ 'description-full' ] ) ) : ?>
 	<div class="billet-footer">
-		<p class="footer-tnc-info" data-text="<?php echo $args[ 'bonus' ][ 'description-full' ]; ?>">
+		<p class="footer-tnc-info" data-text="<?php echo $args[ 'description-full' ]; ?>">
 			tnc text
-			<?php if ( ! in_array( $args[ 'bonus' ][ 'href' ], [ '#', '' ] ) ) : ?>
-				<a href="<?php echo $args[ 'bonus' ][ 'href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'bonus' ][ 'nofollow' ] ); ?>><?php echo $args[ 'footer-tnc' ][ 'link' ]; ?> </a>
-			<?php endif; ?>
 		</p>
 		<span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ][ 'button' ]; ?>">Read more</span>
 	</div>
