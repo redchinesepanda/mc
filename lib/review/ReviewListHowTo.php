@@ -96,7 +96,7 @@ class ReviewListHowTo
 			// 	];
 			// }
 
-			if ( self::get_permission_title() )
+			if ( self::get_permission_title( $node ) )
 			{
 				// $howto_item[ 'title' ] = ToolEncode::encode( $node->textContent );
 
@@ -107,7 +107,7 @@ class ReviewListHowTo
 				$howto_item_question[ 'title' ] = ToolEncode::encode( $node->textContent );
 			}
 
-			if ( self::get_permission_content() )
+			if ( self::get_permission_content( $node ) )
 			{
                 // $howto_item[ 'content' ] = ToolEncode::encode( $node->textContent );
                 
@@ -124,7 +124,7 @@ class ReviewListHowTo
 				// $item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
 			}
 
-			if ( self::get_permission_last() )
+			if ( self::get_permission_last( $node ) )
 			{
 				$howto_items[] = $howto_item;
 
