@@ -57,17 +57,19 @@ class ReviewListHowTo
 
 	public static function get_permission_last( $dom, $node )
 	{
-		$nextSibling = $node->nextSibling;
+		// $nextSibling = $node->nextSibling;
+		
+		$nextSibling = LegalDOM::get_next_element( $dom, $node );
 
-		LegalDebug::debug( [
-            'ReviewListHowTo' => 'get_permission_last-1',
+		// LegalDebug::debug( [
+        //     'ReviewListHowTo' => 'get_permission_last-1',
 
-			'nextSibling' => $nextSibling,
+		// 	'nextSibling' => $nextSibling,
 
-			'get_next_element' => LegalDOM::get_next_element( $dom, $node ),
+		// 	'get_next_element' => LegalDOM::get_next_element( $dom, $node ),
 
-			'textContent' => substr( $nextSibling->textContent, 0, 30 ),
-		] );
+		// 	'textContent' => substr( $nextSibling->textContent, 0, 30 ),
+		// ] );
 
 		if ( ! empty( $nextSibling ) )
 		{
@@ -136,7 +138,7 @@ class ReviewListHowTo
 				$howto_item_question[ 'content' ] = ToolEncode::encode( $node->textContent );
 			}
 
-			if ( self::get_permission_last( $node ) )
+			if ( self::get_permission_last( $dom, $node ) )
 			{
 				$howto_items[] = $howto_item;
 
