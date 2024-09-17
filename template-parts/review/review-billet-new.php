@@ -3,11 +3,11 @@
 		<div class="review-image">
 			<img src="<?php echo $args[ 'image' ][ 'src' ]; ?>" alt="<?php echo $args[ 'image' ][ 'alt' ]; ?>" width="48" height="48" loading="lazy">
 		</div>
-		<div class="review-data">
-			<?php if( !empty( $args[ 'name' ] ) ) : ?>
+		<?php if( !empty( $args[ 'name' ] ) ) : ?>
+			<div class="review-data">
 				<span class="billet-name"><?php echo $args[ 'name' ]; ?></span>
-			<?php endif; ?>
-		</div>
+			</div>
+		<?php endif; ?>
 		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="billet-title">
 			<?php echo $args[ 'title' ][ 'text' ]; ?>
 		</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
