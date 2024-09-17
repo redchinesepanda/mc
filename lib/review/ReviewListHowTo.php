@@ -111,21 +111,21 @@ class ReviewListHowTo
 
 		foreach ( $nodes as $id => $node )
 		{
-			LegalDebug::debug( [
-				'ReviewListHowTo' => 'get_howto_items-1',
+			// LegalDebug::debug( [
+			// 	'ReviewListHowTo' => 'get_howto_items-1',
 
-				// 'node' => $node,
+			// 	// 'node' => $node,
 
-				'textContent' => substr( $node->textContent, 0, 30 ),
+			// 	'textContent' => substr( $node->textContent, 0, 30 ),
 
-				'check_title' => self::check_title( $node ),
+			// 	'check_title' => self::check_title( $node ),
 
-				'check_content' => self::check_content( $node ),
+			// 	'check_content' => self::check_content( $node ),
 
-				'check_question_complete' => self::check_question_complete( $dom, $node ),
+			// 	'check_question_complete' => self::check_question_complete( $dom, $node ),
 
-				'check_item_complete' => self::check_item_complete( $dom, $node ),
-			] );
+			// 	'check_item_complete' => self::check_item_complete( $dom, $node ),
+			// ] );
 
 			if ( self::check_title( $node ) )
 			{
@@ -188,7 +188,7 @@ class ReviewListHowTo
 
 			try
 			{
-				// $node->parentNode->removeChild( $node );
+				$node->parentNode->removeChild( $node );
 			}
 			catch ( DOMException $e )
 			{
@@ -202,13 +202,13 @@ class ReviewListHowTo
 			}
 		}
 
-		LegalDebug::debug( [
-			'ReviewListHowTo' => 'get_howto_items-2',
+		// LegalDebug::debug( [
+		// 	'ReviewListHowTo' => 'get_howto_items-2',
 
-			'howto_items-count' => count( $howto_items ),
+		// 	'howto_items-count' => count( $howto_items ),
 
-			'howto_items' => $howto_items,
-		] );
+		// 	'howto_items' => $howto_items,
+		// ] );
 
 		return $howto_items;
 	}
