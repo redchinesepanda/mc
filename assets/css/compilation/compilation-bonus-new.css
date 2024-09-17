@@ -95,9 +95,9 @@
 	row-gap: 8px;
 }
 
-.compilation-bonus-main .compilation-review-link {
+/* .compilation-bonus-main .compilation-review-link {
 	display: block;
-}
+} */
 
 .compilation-bonus-main .peculiarity-bonys-link[ href='' ],
 .compilation-bonus-main .legal-compilation-button[ href='' ] {
@@ -112,8 +112,10 @@
 
 .compilation-bonus-main .legal-logo-link,
 .compilation-bonus-main .legal-logo-linklegal-disabled {
-	width: 46px;
-    height: 46px;
+	/* width: 46px;
+    height: 46px; */
+	width: var( --Spacing-12 );
+  	height: var( --Spacing-12 );
 }
 
 .compilation-bonus-main .legal-compilation-logo .legal-logo-picture {
@@ -126,7 +128,7 @@
 	width: 100%;
 }
 
-.compilation-bonus-main .compilation-review-link,
+/* .compilation-bonus-main .compilation-review-link, */
 .compilation-bonus-main .legal-compilation-button {
 	height: fit-content;
 }
@@ -142,7 +144,7 @@
 	margin-right: 8px;
 }
 
-.compilation-bonus-main .compilation-review-link,
+/* .compilation-bonus-main .compilation-review-link, */
 .compilation-bonus-main .legal-compilation-button {
 	padding: 9px 17px;
 }
@@ -150,9 +152,9 @@
 /* Background */
 
 .compilation-bonus-main {
-	background-color: var(--Base-base-01);
-	border: 1px solid var(--Base-base-09);
-	border-radius: 18px;
+	border: 1px solid var( --Base-base-09 );
+  	border-radius: var( --Spacing-06 );
+  	background-color: var( --Primitives-purple-20 );
 }
 
 .compilation-bonus-main .legal-logo-link,
@@ -163,47 +165,46 @@
 	background-color: var(--Logo-background);
 }
 
-.compilation-bonus-main .compilation-review-link {
+/* .compilation-bonus-main .compilation-review-link {
 	border-radius: 60px;
 	border: 1px solid var(--Base-base-09);
 	background: var(--Base-base-01);
-}
+} */
 
 .compilation-bonus-main .legal-compilation-button {
-	background-color: var(--Base-base-09);
-	border-radius: 20px;
-	border: 1px solid var(--Base-base-09);
+	background-color: var( --Base-purple_button );
+	border-radius: 60px;
 }
 
 .compilation-bonus-main .legal-compilation-button:hover {
-	background-color: var(--Base-base-07);
+	background-color: var( --Base-purple_button_hover );
 }
 
 /* Typography */
 
+/* .compilation-bonus-main .compilation-review-link, */
 .compilation-bonus-main .legal-compilation-peculiarity-bonys,
 .compilation-bonus-main .peculiarity-bonys-link,
 .compilation-bonus-main .legal-compilation-peculiarity-text,
-.compilation-bonus-main .compilation-review-link,
 .compilation-bonus-main .legal-compilation-button {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
 
+/* .compilation-bonus-main .compilation-review-link, */
 .compilation-bonus-main .peculiarity-bonys-link,
-.compilation-bonus-main .compilation-review-link,
 .compilation-bonus-main .legal-compilation-button {
 	text-decoration: none;
 }
 
+/* .compilation-bonus-main .compilation-review-link */
 .compilation-bonus-main .legal-compilation-peculiarity-bonys,
 .compilation-bonus-main .peculiarity-bonys-link,
-.compilation-bonus-main .legal-compilation-peculiarity-text,
-.compilation-bonus-main .compilation-review-link {
+.compilation-bonus-main .legal-compilation-peculiarity-text {
 	color: var(--Base-base-09);
 }
 
-.compilation-bonus-main .compilation-review-link {
+/* .compilation-bonus-main .compilation-review-link {
 	font-size: 14px;
 	line-height: 20px;
 	text-align: center;
@@ -212,7 +213,7 @@
 
 .compilation-bonus-main .compilation-review-link:hover {
 	text-shadow: 0 0 0.6px #000;
-}
+} */
 
 .compilation-bonus-main .legal-compilation-peculiarity-bonys,
 .compilation-bonus-main .peculiarity-bonys-link {
