@@ -7,8 +7,6 @@
 // ] );
 
 ?>
-<span>test</span>
-
 <?php if ( ! empty( $args[ 'questions' ] ) ) : ?>
 	<ol>
 		<?php foreach ( $args[ 'questions' ] as $question ) : ?>
