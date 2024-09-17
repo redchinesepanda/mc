@@ -113,14 +113,13 @@ class ReviewListHowTo
 		
 		$template->loadHtml( $html );
 
-		LegalDebug::debug( [
-			'ReviewListHowTo' => 'insertBeforeHTML-1',
+		// LegalDebug::debug( [
+		// 	'ReviewListHowTo' => 'insertBeforeHTML-1',
 			
-			'saveHTML' => $template->saveHTML(),
-		] );
-
+		// 	'saveHTML' => $template->saveHTML(),
+		// ] );
 		
-		$node->insertBefore( $dom->importNode( $template->documentElement, true ) );
+		$node->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
 	public static function get_howto_items( $dom, $nodes )
