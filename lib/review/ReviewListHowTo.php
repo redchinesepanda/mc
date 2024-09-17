@@ -12,12 +12,22 @@ class ReviewListHowTo
         'content' => 'mc-list-howto-content',
 	];
 
-	public static function register_functions()
-	{
-		$handler = new self();
+	public static function check_contains_list_howto()
+    {
+        return LegalComponents::check_contains( self::CLASSES[ 'default' ] );
+    }
 
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_howto' ] );
-	}
+    public static function register()
+    {
+		if ( self::check_contains_list_howto() )
+		{
+			$handler = new self();
+	
+			add_filter( 'the_content', [ $handler, 'modify_content' ] );
+	
+			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+		}
+    }
 
 	public static function get_node_classess( $node )
 	{
@@ -189,13 +199,8 @@ class ReviewListHowTo
 		return LegalDOM::get_nodes( $dom, '//*[contains(@class, \'' . self::CLASSES[ 'default' ] . '\')]' );
 	}
 
-	public static function get_howto()
+	public static function set_howto( $dom )
 	{
-        if ( ! ReviewMain::check() )
-		{
-			return [];
-		}
-
         $post = get_post();
 
         if ( empty( $post ) )
@@ -203,7 +208,7 @@ class ReviewListHowTo
             return [];
         }
 
-		$dom = LegalDOM::get_dom( $post->post_content );
+		// $dom = LegalDOM::get_dom( $post->post_content );
 
         $nodes = self::get_nodes_howto( $dom );
 
@@ -212,7 +217,28 @@ class ReviewListHowTo
 			return [];
 		}
 
-		return self::get_howto_items( $nodes );
+		self::get_howto_items( $nodes );
+	}
+
+	public static function modify_content( $content )
+	{
+		if ( ! ReviewMain::check() )
+		{
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+		self::set_howto( $dom );
+
+		return $dom->saveHTML( $dom );
+	}
+
+	public static function register_functions()
+	{
+		$handler = new self();
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_howto' ] );
 	}
 
 	public static function style_formats_howto( $settings )
