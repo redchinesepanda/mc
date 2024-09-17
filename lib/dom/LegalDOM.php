@@ -145,6 +145,20 @@ class LegalDOM
 		return $nodes;
 	}
 
+	public static function get_next_element( $dom, $node )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( 'following-sibling::*[1]', $node );
+
+		if ( $nodes->length )
+		{
+			return $nodes->item( 0 );
+		}
+
+		return null;
+	}
+
 	public static function remove_child( $dom, $node )
 	{
 		try
