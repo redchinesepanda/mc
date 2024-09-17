@@ -12,6 +12,21 @@ class ReviewListHowTo
         'content' => 'mc-list-howto-content',
 	];
 
+	const CSS = [
+        'mc-list-howto' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-howto.css',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+	public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            ToolEnqueue::register_style( $styles );
+        }
+    }
+
 	public static function check_contains_list_howto()
     {
         return LegalComponents::check_contains( self::CLASSES[ 'default' ] );
@@ -25,7 +40,7 @@ class ReviewListHowTo
 	
 			add_filter( 'the_content', [ $handler, 'modify_content' ] );
 	
-			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 		}
     }
 
