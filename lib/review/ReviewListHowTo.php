@@ -136,7 +136,7 @@ class ReviewListHowTo
 
 				$howto_item = [];
 
-				LegalDOM::appendHTML( $node, self::render( $howto_item ) );
+				// LegalDOM::appendHTML( $node, self::render( $howto_item ) );
 			}
 
 			try
