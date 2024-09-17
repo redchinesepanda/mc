@@ -219,11 +219,11 @@ class ReviewListHowTo
 	{
 		return ToolTinyMCE::style_formats_check( $settings, [
 			[
-				'title' => 'HowTo',
+				'title' => 'Список HowTo',
 
 				'items' => [
 					[
-						'title' => 'Список HowTo Заголовок Нумерованый',
+						'title' => 'Заголовок Нумерованый',
 						
 						'selector' => 'p',
 
@@ -235,7 +235,7 @@ class ReviewListHowTo
 					],
 
 					[
-						'title' => 'Список HowTo Заголовок Маркированный',
+						'title' => 'Заголовок Маркированный',
 						
 						'selector' => 'p',
 
@@ -249,7 +249,7 @@ class ReviewListHowTo
 					],
 
 					[
-						'title' => 'Список HowTo Содержимое',
+						'title' => 'Содержимое',
 						
 						'selector' => 'p',
 
