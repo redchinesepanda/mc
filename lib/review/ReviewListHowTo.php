@@ -186,6 +186,12 @@ class ReviewListHowTo
 
 				$html = self::render_list_howto( $howto_item );
 
+				LegalDebug::debug( [
+					'ReviewListHowTo' => 'get_howto_items-4',
+
+					'html' => $html,
+				] );
+
 				self::insertBeforeHTML( $dom, $html, $node ); 
 
 				$howto_item = [];
