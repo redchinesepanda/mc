@@ -106,7 +106,7 @@ class ReviewListHowTo
 			LegalDebug::debug( [
 				'ReviewListHowTo' => 'get_howto_items-1',
 
-				'node' => $node,
+				// 'node' => $node,
 
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
