@@ -31,16 +31,16 @@ class ReviewListHowTo
 
 	public static function get_node_classess( $node )
 	{
-		// if ( property_exists( $node, 'class' ) )
-		// {
-			// LegalDebug::debug( [
-			// 	'ReviewHowTo' => 'get_node_classess',
+		if ( $node->hasAttributes() )
+		{
+			LegalDebug::debug( [
+				'ReviewHowTo' => 'get_node_classess',
 
-			// 	'class' => $node->getAttribute( 'class' ),
-			// ] );
+				'class' => $node->getAttribute( 'class' ),
+			] );
 
-			// return explode( ' ', $node->getAttribute( 'class' ) );
-		// }
+			return explode( ' ', $node->getAttribute( 'class' ) );
+		}
 
 		return [];
 	}
