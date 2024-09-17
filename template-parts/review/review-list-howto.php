@@ -10,7 +10,7 @@
 <?php if ( ! empty( $args[ 'questions' ] ) ) : ?>
 	<<?php echo $args[ 'tag' ]; ?> class="<?php echo $args[ 'class' ]; ?>">
 		<?php foreach ( $args[ 'questions' ] as $question ) : ?>
-			<li>
+			<li class="list-howto-question">
 				<span class="question-title"><?php echo $question[ 'title' ]; ?></span>
 				<br>
 				<span class="question-content"><?php echo $question[ 'content' ]; ?></span>
