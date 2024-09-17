@@ -119,11 +119,17 @@ class ReviewListHowTo
 
 				// if ( ! empty( $howto_item_question ) )
 				// {
-					$howto_item[ 'questions' ][] = $howto_item_question;
+					// $howto_item[ 'questions' ][] = $howto_item_question;
 				// }
 				
 				$howto_item_question[ 'title' ] = ToolEncode::encode( $node->textContent );
 			}
+
+			LegalDebug::debug( [
+				'ReviewListHowTo' => 'get_howto_items-2',
+
+				'howto_item_question' => $howto_item_question,
+			] );
 
 			if ( self::get_permission_content( $node ) )
 			{
@@ -131,6 +137,12 @@ class ReviewListHowTo
                 
 				$howto_item_question[ 'content' ] = ToolEncode::encode( $node->textContent );
 			}
+
+			LegalDebug::debug( [
+				'ReviewListHowTo' => 'get_howto_items-3',
+
+				'howto_item_question' => $howto_item_question,
+			] );
 
 			if ( self::get_permission_last( $dom, $node ) )
 			{
@@ -145,6 +157,12 @@ class ReviewListHowTo
 				// LegalDOM::appendHTML( $node, self::render( $howto_item ) );
 			}
 
+			LegalDebug::debug( [
+				'ReviewListHowTo' => 'get_howto_items-4',
+
+				'howto_item_question' => $howto_item_question,
+			] );
+
 			try
 			{
 				// $node->parentNode->removeChild( $node );
@@ -152,7 +170,7 @@ class ReviewListHowTo
 			catch ( DOMException $e )
 			{
 				LegalDebug::debug( [
-					'ReviewListHowTo' => 'get_howto_items-1',
+					'ReviewListHowTo' => 'get_howto_items-5',
 
 					'node' => substr( $node->textContent, 0, 30 ),
 
