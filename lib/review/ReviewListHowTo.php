@@ -69,13 +69,13 @@ class ReviewListHowTo
 
 		if ( ! empty( $nextSibling ) )
 		{
-			LegalDebug::debug( [
-				'ReviewListHowTo' => 'get_permission_last-1',
+			// LegalDebug::debug( [
+			// 	'ReviewListHowTo' => 'get_permission_last-1',
 	
-				'in_array' => in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) ),
-			] );
+			// 	'in_array' => ( ! in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) ) ),
+			// ] );
 
-			return in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) );
+			return ! in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) );
 		}
 
 		return true;
