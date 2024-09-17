@@ -59,13 +59,13 @@ class ReviewListHowTo
 	{
 		$nextSibling = $node->nextSibling;
 
-		LegalDebug::debug( [
-            'ReviewListHowTo' => 'get_permission_last-1',
+		// LegalDebug::debug( [
+        //     'ReviewListHowTo' => 'get_permission_last-1',
 
-			'nextSibling' => $nextSibling,
+		// 	'nextSibling' => $nextSibling,
 
-			'textContent' => substr( $nextSibling->textContent, 0, 30 ),
-		] );
+		// 	'textContent' => substr( $nextSibling->textContent, 0, 30 ),
+		// ] );
 
 		if ( ! empty( $nextSibling ) )
 		{
