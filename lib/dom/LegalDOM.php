@@ -141,7 +141,21 @@ class LegalDOM
 			$innerHTML[] = $node->ownerDocument->saveHTML( $child_node );
 		}
 
-		return implode( '', $innerHTML ); 
+		return implode( '', $innerHTML );
+	}
+
+	public static function copyInnerHTML( $node, $origin )
+	{
+		// $innerHTML = [];
+
+		$child_nodes = $origin->childNodes;
+
+		foreach ( $child_nodes as $child_node )
+		{ 
+			$node->appendChild( $child_node );
+		}
+
+		// return implode( '', $innerHTML );
 	}
 
 	public static function clean( &$node )
