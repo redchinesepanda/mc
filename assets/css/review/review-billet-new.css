@@ -86,7 +86,7 @@
 .legal-billet .billet-review {
 	display: flex;
 	flex-wrap: wrap;
-	/* align-items: center; */
+	align-items: center;
 	/* column-gap: 16px; */
 	column-gap: var( --Spacing-05 );
 	/* row-gap: 18px; */
