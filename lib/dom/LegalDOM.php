@@ -141,7 +141,7 @@ class LegalDOM
 			$innerHTML[] = $node->ownerDocument->saveHTML( $child_node );
 		}
 
-		return $innerHTML; 
+		return implode( '', $innerHTML ); 
 	}
 
 	public static function clean( &$node )
