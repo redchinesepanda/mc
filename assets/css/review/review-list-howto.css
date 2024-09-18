@@ -28,7 +28,8 @@
   .mc-list-howto {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    margin-bottom: 18px;
+    margin-top: var( --Spacing-06 );
+	margin-bottom: var( --Spacing-06 );
   }
   
   /* Review Width and Height */
