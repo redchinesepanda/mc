@@ -126,7 +126,7 @@
 .tcb-post-content ul:not(.legal-sitemap):not( .mc-list-howto ),
 .tcb-post-content ol:not( .mc-list-howto ) {
   margin-top: 0px;
-  /* margin-bottom: 0px; */
+  margin-bottom: 0px;
 }
 
 .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
@@ -244,7 +244,7 @@
 
 /* Review Width and Height */
 
-.tcb-post-content ol>li::before {
+.tcb-post-content ol:not( .mc-list-howto )>li::before {
   width: 24px;
   height: 24px;
 }

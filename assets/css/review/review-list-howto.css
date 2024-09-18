@@ -33,9 +33,17 @@
   }
   
   /* Review Width and Height */
-  
+
+  .mc-list-howto > li::before {
+    width: calc( var( --Spacing-09 ) - 0.25rem );
+    height: calc( var( --Spacing-09 ) - 0.25rem );
+  }
   
   /* Review Background */
-  
+
+  .mc-list-howto > li::before {
+    border: 0.125rem solid var( --Base-base-09 );
+    border-radius: 50%;
+  }
   
   /* Typography */
