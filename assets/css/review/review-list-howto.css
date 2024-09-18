@@ -35,8 +35,11 @@
   /* Review Width and Height */
 
   .mc-list-howto > li::before {
-    width: calc( var( --Spacing-09 ) - 0.25rem );
-    height: calc( var( --Spacing-09 ) - 0.25rem );
+    /* width: calc( var( --Spacing-09 ) - 0.25rem );
+    height: calc( var( --Spacing-09 ) - 0.25rem ); */
+    width: var( --Spacing-09 );
+    height: var( --Spacing-09 );
+    box-sizing: border-box;
   }
   
   /* Review Background */
@@ -49,7 +52,5 @@
   /* Typography */
 
   .mc-list-howto > li::before {
-    display: inline;
-    vertical-align: middle;
     text-align: center;
   }
