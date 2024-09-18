@@ -119,8 +119,8 @@
 /* Billet Position */
 
 .legal-billet {
-	margin-top: var( --Spacing-07 );
-	margin-bottom: var( --Spacing-07 );
+	margin-top: var( --Spacing-06 );
+	margin-bottom: var( --Spacing-06 );
 }
 
 .legal-billet .billet-review {
