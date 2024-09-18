@@ -253,6 +253,12 @@ class ReviewTable
 					// $ths[] = $dom->createElement( 'th', $td->textContent );
 
 					// $th = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
+
+					LegalDebug::debug( [
+						'ReviewTable' => 'create_thead-1',
+
+						'td' => $td,
+					] );
 					
 					$th = $dom->createElement( 'th', $dom->saveHTML( $td ) );
 
