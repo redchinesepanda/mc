@@ -23,6 +23,7 @@
 
 	.legal-billet .billet-title {
 		margin-top: var( --Spacing-05 );
+		margin-bottom: 0px;
 		padding-top: 0.25rem;
 		padding-bottom: 0.25rem;
 	}
@@ -64,7 +65,8 @@
 	} */
 
 	.legal-billet .billet-title {
-		margin-top: 0px;
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 
 	.legal-billet .billet-get-link {
@@ -84,7 +86,7 @@
 .legal-billet .billet-review {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	/* align-items: center; */
 	/* column-gap: 16px; */
 	column-gap: var( --Spacing-05 );
 	/* row-gap: 18px; */
@@ -152,11 +154,11 @@
 	padding: 0.625rem 1.125rem;
 }
 
-.legal-billet .billet-title {
-	/* margin-top: 0px; */
+/* .legal-billet .billet-title {
+	margin-top: 0px;
 	margin-bottom: 0px;
-	/* padding-bottom: 8px; */
-}
+	padding-bottom: 8px;
+} */
 
 .legal-billet h3:not( .legal-override ),
 .legal-billet h4:not( .legal-override ) {
