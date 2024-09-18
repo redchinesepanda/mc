@@ -30,8 +30,9 @@
 .legal-pros-cons {
 	display: flex;
 	/* column-gap: 18px; */
-	column-gap: var( --Spacing-06 );;
-	row-gap: 30px;
+	column-gap: var( --Spacing-06 );
+	row-gap: 0.5rem;
+	/* row-gap: 30px; */
 }
 
 .legal-pros-cons .pros-cons-item {
