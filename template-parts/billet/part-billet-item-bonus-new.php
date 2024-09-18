@@ -4,7 +4,7 @@
 			<?php if ( $args[ 'logo' ][ 'href' ] == '#' ) : ?>
 				<img src="<?php echo $args[ 'logo' ][ 'src' ]; ?>" class="legal-logo-picture" alt="<?php echo $args[ 'logo' ][ 'alt' ]; ?>" width="48" height="48" loading="lazy">
 			<?php else : ?>
-				<a class="legal-logo-link<?php echo $args[ 'logo' ][ 'class' ]; ?>" href="<?php echo $args[ 'title' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'logo' ][ 'nofollow' ] ); ?>>
+				<a class="legal-logo-link<?php echo $args[ 'logo' ][ 'class' ]; ?>" href="<?php echo $args[ 'title' ][ 'href' ]; ?>">
 					<img src="<?php echo $args[ 'logo' ][ 'src' ]; ?>" class="legal-logo-picture" alt="<?php echo $args[ 'logo' ][ 'alt' ]; ?>" width="48" height="48" loading="lazy">
 				</a>
 			<?php endif; ?>
