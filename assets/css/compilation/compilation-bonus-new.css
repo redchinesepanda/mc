@@ -238,6 +238,11 @@
     font-style: normal;
 }
 
+.compilation-bonus-main .legal-logo-link, 
+.compilation-bonus-main .legal-logo-linklegal-disabled {
+	line-height: 0px;
+}
+
 /* .compilation-bonus-main .compilation-review-link, */
 .compilation-bonus-main .peculiarity-bonus-link,
 .compilation-bonus-main .legal-compilation-button {
