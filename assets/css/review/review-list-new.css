@@ -129,8 +129,8 @@
   margin-bottom: 0px;
 }
 
-.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not([style]),
-.tcb-post-content>ol:not(.legal-faq-description) {
+.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
+.tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ) {
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 18px;
