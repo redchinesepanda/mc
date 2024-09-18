@@ -1,9 +1,13 @@
 <div class="legal-compilation-bonus">
 	<div class="compilation-bonus-main <?php echo $args[ 'selector' ]; ?> font-<?php echo $args[ 'font' ]; ?>">
 		<div class="legal-compilation-logo">
-			<a class="legal-logo-link<?php echo $args[ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'logo' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'logo' ][ 'nofollow' ] ); ?>>
+			<?php if ( $args[ 'logo' ][ 'href' ] == '#' ) : ?>
 				<img src="<?php echo $args[ 'logo' ][ 'src' ]; ?>" class="legal-logo-picture" alt="<?php echo $args[ 'logo' ][ 'alt' ]; ?>" width="48" height="48" loading="lazy">
-			</a>
+			<?php else : ?>
+				<a class="legal-logo-link<?php echo $args[ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'logo' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'logo' ][ 'nofollow' ] ); ?>>
+					<img src="<?php echo $args[ 'logo' ][ 'src' ]; ?>" class="legal-logo-picture" alt="<?php echo $args[ 'logo' ][ 'alt' ]; ?>" width="48" height="48" loading="lazy">
+				</a>
+			<?php endif; ?>
 		</div>
 		<div class="legal-compilation-peculiarity">
 			<div class="legal-compilation-peculiarity-bonus">
