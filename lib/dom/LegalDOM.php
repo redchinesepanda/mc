@@ -150,14 +150,20 @@ class LegalDOM
 
 		$child_nodes = $origin->childNodes;
 
-		LegalDebug::debug( [
-			'LegalDOM' => 'copyInnerHTML-1',
+		// LegalDebug::debug( [
+		// 	'LegalDOM' => 'copyInnerHTML-1',
 
-			'child_nodes' => $child_nodes,
-		] );
+		// 	'child_nodes' => $child_nodes,
+		// ] );
 
 		foreach ( $child_nodes as $child_node )
 		{ 
+			LegalDebug::debug( [
+				'LegalDOM' => 'copyInnerHTML-2',
+	
+				'textContent' => $child_node->textContent,
+			] );
+
 			try
 			{
 				$node->appendChild( $child_node );
