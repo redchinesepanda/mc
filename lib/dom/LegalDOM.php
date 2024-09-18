@@ -152,7 +152,18 @@ class LegalDOM
 
 		foreach ( $child_nodes as $child_node )
 		{ 
-			$node->appendChild( $child_node );
+			try
+			{
+				$node->appendChild( $child_node );
+			}
+			catch ( DOMException $e )
+			{
+				LegalDebug::debug( [
+					'LegalDOM' => 'copyInnerHTML-1',
+
+					'message' => $e->getMessage(),
+				] );
+			}
 		}
 
 		// return implode( '', $innerHTML );
