@@ -134,11 +134,11 @@ class LegalDOM
 	{
 		$innerHTML = [];
 
-		$child_nodes = $element->childNodes;
+		$child_nodes = $node->childNodes;
 
 		foreach ( $child_nodes as $child_node )
 		{ 
-			$innerHTML[] = $element->ownerDocument->saveHTML( $child_node );
+			$innerHTML[] = $node->ownerDocument->saveHTML( $child_node );
 		}
 
 		return $innerHTML; 
