@@ -264,11 +264,11 @@ class ReviewTable
 					// 	// 'nodeValue' => $td->nodeValue,
 					// ] );
 					
-					// $th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $td ) );
+					$th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $td ) );
 					
-					$th = $dom->createElement( 'th' );
+					// $th = $dom->createElement( 'th' );
 
-					LegalDom::copyInnerHTML( $th, $td );
+					// LegalDom::copyInnerHTML( $th, $td );
 
 					if ( $td->hasAttributes() )
 					{
