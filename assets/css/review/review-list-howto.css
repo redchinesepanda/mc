@@ -55,11 +55,6 @@ height: calc( var( --Spacing-09 ) - 0.25rem ); */
 
 /* Typography */
 
-.mc-list-howto li {
-    font-family: var(--legal-font-primary);
-    font-style: normal;
-}
-
 .mc-list-howto li::before {
     text-align: center;
 }
@@ -81,5 +76,11 @@ ul.mc-list-howto li::before {
 .mc-list-howto .question-title {
     font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.625rem;
+}
+
+.mc-list-howto .question-content {
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 1.625rem;
 }
