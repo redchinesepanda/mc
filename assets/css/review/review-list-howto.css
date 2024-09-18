@@ -47,3 +47,7 @@
   }
   
   /* Typography */
+
+  .mc-list-howto > li::before {
+    text-align: center;
+  }
