@@ -162,6 +162,8 @@ class LegalDOM
 				'LegalDOM' => 'copyInnerHTML-2',
 	
 				'textContent' => $child_node->textContent,
+
+				'nodeValue' => $child_node->nodeValue,
 			] );
 
 			try
