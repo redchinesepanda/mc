@@ -96,7 +96,7 @@ class ReviewTable
 	
 			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
-			add_filter( 'the_content', [ $handler, 'get_content' ], 10, 1 );
+			add_filter( 'the_content', [ $handler, 'modify_content' ], 10, 1 );
 		}
 	}
 
@@ -252,7 +252,15 @@ class ReviewTable
 				{
 					// $ths[] = $dom->createElement( 'th', $td->textContent );
 
-					$ths[] = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
+					// $th = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
+					
+					$th = $dom->createElement( 'th', $dom->saveHTML( $td ) );
+
+					$th->setAttribute( 'class', $td->getAttribute( 'class' ) );
+
+					$ths[] = $th;
+
+					// $ths[] = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
 				}
 			}
 			else
@@ -531,7 +539,7 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
-	public static function get_content( $content )
+	public static function modify_content( $content )
 	{
 		$content = self::set_tbody( $content );
 
@@ -542,7 +550,7 @@ class ReviewTable
 		$content = self::set_th( $content );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'ReviewTable::get_content',
+		// 	'function' => 'ReviewTable::modify_content',
 
 		// 	// 'content' => $content,
 		// ] );
