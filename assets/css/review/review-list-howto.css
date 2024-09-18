@@ -32,7 +32,7 @@
 	margin-bottom: var( --Spacing-06 );
   }
 
-  .mc-list-howto li::before {
+  .mc-list-howto li {
     padding-left: calc( var( --Spacing-09 ) + 1rem );
   }
   
