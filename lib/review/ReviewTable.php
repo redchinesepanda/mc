@@ -270,7 +270,10 @@ class ReviewTable
 
 					LegalDom::copyInnerHTML( $th, $td );
 
-					$th->setAttribute( 'class', $td->getAttribute( 'class' ) );
+					if ( $td->hasAttributes() )
+					{
+						$th->setAttribute( 'style', $td->getAttribute( 'style' ) );
+					}
 
 					$ths[] = $th;
 
