@@ -195,6 +195,7 @@
 
 .legal-billet .billet-get-link {
 	min-width: 126px;
+	height: fit-content;
  	/* min-height: 30px; */
 }
 
