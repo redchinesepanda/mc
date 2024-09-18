@@ -166,6 +166,12 @@ class LegalDOM
 			}
 		}
 
+		LegalDebug::debug( [
+			'LegalDOM' => 'copyInnerHTML-2',
+
+			'node' => $node,
+		] );
+
 		// return implode( '', $innerHTML );
 	}
 
