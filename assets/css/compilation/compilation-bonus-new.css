@@ -47,9 +47,9 @@
 
 	/* Display */
 
-	.compilation-bonus-main {
+	/* .compilation-bonus-main {
 		align-items: center;
-	}
+	} */
 
 	/* Width and Height */
 
@@ -67,8 +67,8 @@
 
 	.compilation-bonus-main .legal-compilation-peculiarity {
 		margin-right: var( --Spacing-06 );
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
+		/* padding-top: 0.5rem; */
+		/* padding-bottom: 0.5rem; */
 		/* margin-right: auto; */
 	}
 
