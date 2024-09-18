@@ -254,15 +254,17 @@ class ReviewTable
 
 					// $th = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
 
-					// LegalDebug::debug( [
-					// 	'ReviewTable' => 'create_thead-1',
+					LegalDebug::debug( [
+						'ReviewTable' => 'create_thead-1',
 
-					// 	// 'td' => $td,
+						// 'td' => $td,
 
-					// 	'getInnerHTML' => LegalDOM::getInnerHTML( $td ),
-					// ] );
+						'getInnerHTML' => LegalDOM::getInnerHTML( $td ),
+
+						'nodeValue' => $td->nodeValue,
+					] );
 					
-					$th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $td ) );
+					$th = $dom->createElement( 'th', $td->nodeValue );
 
 					$th->setAttribute( 'class', $td->getAttribute( 'class' ) );
 
