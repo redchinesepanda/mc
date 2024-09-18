@@ -98,7 +98,7 @@
 .compilation-bonus-main .legal-compilation-peculiarity {
 	display: flex;
 	flex-wrap: wrap;
-	row-gap: 8px;
+	row-gap: 0.5rem;
 	align-items: center;
 }
 
