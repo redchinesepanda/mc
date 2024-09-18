@@ -39,7 +39,7 @@
 	}
 
 	.compilation-bonus-main .legal-compilation-button {
-		margin-top: 1.75rem;
+		margin-top: var( --Spacing-06 );
 	}
 }
 

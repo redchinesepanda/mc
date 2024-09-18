@@ -28,7 +28,7 @@
 	}
 
 	.legal-billet .billet-get-link {
-		margin-top: 1.75rem;
+		margin-top: var( --Spacing-06 );
 	}
 
 	/* Billet Width and Height */
