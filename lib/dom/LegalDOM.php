@@ -160,6 +160,8 @@ class LegalDOM
 		{ 
 			LegalDebug::debug( [
 				'LegalDOM' => 'copyInnerHTML-2',
+
+				'child_node' => $child_node,
 	
 				'textContent' => $child_node->textContent,
 
