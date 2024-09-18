@@ -292,13 +292,13 @@
   font-weight: 400;
 }
 
-.tcb-post-content ul > li:before {
+.tcb-post-content ul:not( .mc-list-howto ) > li:before {
   font-family: var(--legal-font-icons);
   font-size: 24px;
   line-height: 24px;
 }
 
-.tcb-post-content ol:not(.menu__box)>li::before {
+.tcb-post-content ol:not(.menu__box):not( .mc-list-howto )>li::before {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
