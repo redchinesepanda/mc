@@ -10,16 +10,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		/* column-gap: 16px; */
 		column-gap: 0.875rem;
-		/* row-gap: var( --Spacing-07 ); */
 	}
 
 	/* Billet Position */
-
-	/* .legal-billet .billet-footer {
-		padding: 10px 15px;
-	} */
 
 	.legal-billet .billet-title {
 		margin-top: var( --Spacing-05 );
@@ -60,10 +54,6 @@
 {
 	/* Billet Position */
 
-/* 	.legal-billet:not( .no-height ) {
-		min-height: 210px;
-	} */
-
 	.legal-billet .billet-title {
 		margin-top: auto;
 		margin-bottom: auto;
@@ -87,9 +77,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	/* column-gap: 16px; */
 	column-gap: var( --Spacing-05 );
-	/* row-gap: 18px; */
 }
 
 .legal-billet .review-image {
@@ -131,14 +119,11 @@
 /* Billet Position */
 
 .legal-billet {
-	/* margin-bottom: 30px; */
 	margin-top: var( --Spacing-07 );
 	margin-bottom: var( --Spacing-07 );
 }
 
-/* .legal-billet .billet-footer, */
 .legal-billet .billet-review {
-	/* padding: 20px; */
 	padding: var( --Spacing-07 );
 }
 
@@ -150,15 +135,8 @@
 }
 
 .legal-billet .billet-get-link {
-	/* padding: 10px 18px; */
 	padding: 0.625rem 1.125rem;
 }
-
-/* .legal-billet .billet-title {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-bottom: 8px;
-} */
 
 .legal-billet h3:not( .legal-override ),
 .legal-billet h4:not( .legal-override ) {
@@ -177,8 +155,6 @@
 }
 
 .legal-billet .review-image {
-	/* width: 70px;
-	height: 70px; */
 	width: var( --Spacing-12 );
 	height: var( --Spacing-12 );
 }
@@ -194,21 +170,17 @@
 }
 
 .legal-billet .billet-get-link {
-	min-width: 126px;
+	min-width: 7.875rem;
 	height: fit-content;
- 	/* min-height: 30px; */
 }
 
 /* Billet Background */
 
 .legal-billet {
 	background-color: var(--Base-base-01);
-	/* border: 1px solid var(--Base-base-09);  */
-	/* border-radius: 24px 24px 18px 18px; */
 }
 
 .legal-billet .billet-review {
-	/* border-bottom: 1px solid var(--Base-base-09); */
 	border: 1px solid var( --Base-base-09 );
 	border-radius: var( --Spacing-06 );
 	background-color: var( --Primitives-purple-20 );
@@ -226,7 +198,6 @@
 }
 
 .legal-billet .billet-get-link {
-	/* background-color: var( --Base-base-09 ); */
 	background-color: var( --Base-purple_button );
 	border-radius: 60px;
 }
@@ -273,17 +244,10 @@
 }
 
 .legal-billet .billet-title {
-	/* font-size: 16px; */
 	font-size: 1.25rem;
 	font-weight: 600;
 	line-height: 1.625rem;
-	/* line-height: 22px; */
 }
-
-/* .legal-billet .billet-tnc-description {
-	color: rgba(10, 10, 10, 0.85);
-	text-align: justify;
-} */
 
 .legal-billet .billet-get-link {
 	font-size: 0.875rem;
