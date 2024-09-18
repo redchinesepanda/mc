@@ -154,7 +154,7 @@ class LegalDOM
 		{ 
 			try
 			{
-				$node->appendChild( $child_node->cloneNode() );
+				$node->appendChild( $child_node );
 			}
 			catch ( DOMException $e )
 			{
