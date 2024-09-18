@@ -49,5 +49,7 @@
   /* Typography */
 
   .mc-list-howto > li::before {
+    display: inline;
+    vertical-align: middle;
     text-align: center;
   }
