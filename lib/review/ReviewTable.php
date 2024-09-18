@@ -257,7 +257,9 @@ class ReviewTable
 					LegalDebug::debug( [
 						'ReviewTable' => 'create_thead-1',
 
-						'td' => $td,
+						// 'td' => $td,
+
+						'getInnerHTML' => LegalDOM::getInnerHTML( $td ),
 					] );
 					
 					$th = $dom->createElement( 'th', $dom->saveHTML( $td ) );

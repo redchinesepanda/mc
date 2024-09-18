@@ -130,6 +130,20 @@ class LegalDOM
 		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
+	public static function getInnerHTML( $node )
+	{
+		$innerHTML = [];
+
+		$child_nodes = $element->childNodes;
+
+		foreach ( $child_nodes as $child_node )
+		{ 
+			$innerHTML[] = $element->ownerDocument->saveHTML( $child_node );
+		}
+
+		return $innerHTML; 
+	}
+
 	public static function clean( &$node )
     {
         if ( $node->hasChildNodes() )
