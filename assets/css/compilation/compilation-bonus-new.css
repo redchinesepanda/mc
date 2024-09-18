@@ -127,10 +127,15 @@
 	flex-basis: fit-content;
 }
 
-.compilation-bonus-main .legal-logo-link,
+/* .compilation-bonus-main .legal-logo-link,
 .compilation-bonus-main .legal-logo-linklegal-disabled {
-	/* width: 46px;
-    height: 46px; */
+	width: 46px;
+    height: 46px;
+	width: var( --Spacing-12 );
+  	height: var( --Spacing-12 );
+} */
+
+.compilation-bonus-main .legal-compilation-logo {
 	width: var( --Spacing-12 );
   	height: var( --Spacing-12 );
 }
