@@ -304,6 +304,7 @@
     font-family: var( --legal-font-primary );
     font-style: normal;
     line-height: 20px;
+    text-align: left;
 }
 
 .tcb-post-content table:not( .legal-column-3 ) tr > * {
@@ -338,8 +339,8 @@
     font-weight: 400;
 }
 
-.tcb-post-content .legal-scroll,
+/* .tcb-post-content .legal-scroll,
 .tcb-post-content .legal-scroll-x
 {
     text-align: center;
-}
+} */
