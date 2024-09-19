@@ -168,15 +168,11 @@ class LegalDOM
 	
 			foreach ( $child_nodes as $child_node )
 			{ 
-				// LegalDebug::debug( [
-				// 	'LegalDOM' => 'copyInnerHTML-2',
+				LegalDebug::debug( [
+					'LegalDOM' => 'copyInnerHTML-2',
 	
-				// 	'child_node' => $child_node,
-		
-				// 	'textContent' => $child_node->textContent,
-	
-				// 	'nodeValue' => $child_node->nodeValue,
-				// ] );
+					'saveHTML' => $node->ownerDocument->saveHTML( $child_node ),
+				] );
 	
 				try
 				{
@@ -185,7 +181,7 @@ class LegalDOM
 				catch ( DOMException $e )
 				{
 					LegalDebug::debug( [
-						'LegalDOM' => 'copyInnerHTML-2',
+						'LegalDOM' => 'copyInnerHTML-3',
 	
 						'message' => $e->getMessage(),
 					] );
@@ -193,7 +189,7 @@ class LegalDOM
 			}
 	
 			LegalDebug::debug( [
-				'LegalDOM' => 'copyInnerHTML-2',
+				'LegalDOM' => 'copyInnerHTML-4',
 	
 				'saveHTML' => $node->ownerDocument->saveHTML( $node ),
 			] );
