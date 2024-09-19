@@ -152,7 +152,7 @@ class LegalDOM
 	 * @origin Existing node
 	 */
 
-	public static function copy_child_nodes( $dom, $node, $origin )
+	public static function copy_child_nodes( $node, $origin )
 	{
 		// $innerHTML = [];
 
@@ -168,7 +168,7 @@ class LegalDOM
 				'child_nodes' => $child_nodes,
 			] );
 
-			$node = $dom->createElement( 'th' );
+			$node = $origin->ownerDocument->createElement( 'th' );
 	
 			foreach ( $child_nodes as $id => $child_node )
 			{ 
