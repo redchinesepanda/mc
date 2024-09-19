@@ -173,19 +173,21 @@ class LegalDOM
 	
 					'child_node-saveHTML' => $node->ownerDocument->saveHTML( $child_node ),
 				] );
+
+				$node->appendChild( $child_node );
 	
-				try
-				{
-					$node->appendChild( $child_node );
-				}
-				catch ( DOMException $e )
-				{
-					LegalDebug::debug( [
-						'LegalDOM' => 'copyInnerHTML-3',
+				// try
+				// {
+				// 	$node->appendChild( $child_node );
+				// }
+				// catch ( DOMException $e )
+				// {
+				// 	LegalDebug::debug( [
+				// 		'LegalDOM' => 'copyInnerHTML-3',
 	
-						'message' => $e->getMessage(),
-					] );
-				}
+				// 		'message' => $e->getMessage(),
+				// 	] );
+				// }
 			}
 	
 			LegalDebug::debug( [
