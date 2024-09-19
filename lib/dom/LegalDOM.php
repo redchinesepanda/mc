@@ -152,7 +152,7 @@ class LegalDOM
 	 * @origin Existing node
 	 */
 
-	public static function copy_child_nodes( $node, $origin )
+	public static function copy_child_nodes( $dom, $node, $origin )
 	{
 		// $innerHTML = [];
 
