@@ -250,29 +250,11 @@ class ReviewTable
 			{
 				foreach ( $items as $td )
 				{
-					// $ths[] = $dom->createElement( 'th', $td->textContent );
-
-					// $th = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
-
-					// LegalDebug::debug( [
-					// 	'ReviewTable' => 'create_thead-1',
-
-					// 	// 'td' => $td,
-
-					// 	// 'getInnerHTML' => LegalDOM::getInnerHTML( $td ),
-
-					// 	// 'nodeValue' => $td->nodeValue,
-					// ] );
-					
-					// $th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $td ) );
-					
 					$th = $dom->createElement( 'th' );
 
 					$content = LegalDOM::getInnerHTML( $td );
 
 					LegalDOM::appendHTML( $th, $content );
-
-					// LegalDom::copy_child_nodes( $th, $td );
 
 					if ( $td->hasAttributes() )
 					{
@@ -280,8 +262,6 @@ class ReviewTable
 					}
 
 					$ths[] = $th;
-
-					// $ths[] = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
 				}
 			}
 			else
