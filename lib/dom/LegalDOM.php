@@ -176,7 +176,7 @@ class LegalDOM
 					'child_node-saveHTML' => $origin->ownerDocument->saveHTML( $child_node ),
 				] );
 
-				$node->appendChild( $child_node );
+				// $node->appendChild( $child_node );
 	
 				// try
 				// {
