@@ -171,7 +171,7 @@ class LegalDOM
 				LegalDebug::debug( [
 					'LegalDOM' => 'copyInnerHTML-2',
 	
-					'saveHTML' => $node->ownerDocument->saveHTML( $child_node ),
+					'child_node-saveHTML' => $node->ownerDocument->saveHTML( $child_node ),
 				] );
 	
 				try
@@ -191,7 +191,7 @@ class LegalDOM
 			LegalDebug::debug( [
 				'LegalDOM' => 'copyInnerHTML-4',
 	
-				'saveHTML' => $node->ownerDocument->saveHTML( $node ),
+				'node-saveHTML' => $node->ownerDocument->saveHTML( $node ),
 			] );
 		}
 
