@@ -195,7 +195,7 @@ class LegalDOM
 			LegalDebug::debug( [
 				'LegalDOM' => 'copyInnerHTML-2',
 	
-				'saveHTML' => $node->ownerDocument->saveHTML( $node );
+				'saveHTML' => $node->ownerDocument->saveHTML( $node ),
 			] );
 		}
 
