@@ -167,6 +167,8 @@ class LegalDOM
 
 				'child_nodes' => $child_nodes,
 			] );
+
+			$node = $dom->createElement( 'th' );
 	
 			foreach ( $child_nodes as $id => $child_node )
 			{ 
@@ -176,7 +178,7 @@ class LegalDOM
 					'child_node-saveHTML' => $origin->ownerDocument->saveHTML( $child_node ),
 				] );
 
-				// $node->appendChild( $child_node );
+				$node->appendChild( $child_node );
 	
 				// try
 				// {
@@ -200,6 +202,8 @@ class LegalDOM
 		}
 
 		// return implode( '', $innerHTML );
+
+		return $node;
 	}
 
 	public static function clean( &$node )
