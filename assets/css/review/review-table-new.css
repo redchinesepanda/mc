@@ -264,10 +264,10 @@
     border-top-right-radius: 18px;
 }
 
-.tcb-post-content table > thead
+/* .tcb-post-content table > thead
 {
     background-color: var( --Base-base-02, #F6F6F6 );
-}
+} */
 
 .tcb-post-content table tr > * {
     border-bottom: 1px solid var( --Base-base-04 );
