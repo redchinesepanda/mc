@@ -166,7 +166,7 @@ class LegalDOM
 				'child_nodes-length' => $child_nodes->length,
 			] );
 	
-			foreach ( $child_nodes as $child_node )
+			foreach ( $child_nodes as $id => $child_node )
 			{ 
 				LegalDebug::debug( [
 					'LegalDOM' => 'copyInnerHTML-2',
