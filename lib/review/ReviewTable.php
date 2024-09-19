@@ -240,7 +240,7 @@ class ReviewTable
 
 		// $tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
-		if ( !empty( $tr ) )
+		if ( ! empty( $tr ) )
 		{
 			$items = $tr->getElementsByTagName( 'td' );
 
@@ -264,11 +264,11 @@ class ReviewTable
 					// 	// 'nodeValue' => $td->nodeValue,
 					// ] );
 					
-					$th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $dom, $td ) );
+					// $th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $dom, $td ) );
 					
-					// $th = $dom->createElement( 'th' );
+					$th = $dom->createElement( 'th' );
 
-					// LegalDom::copyInnerHTML( $th, $td );
+					LegalDom::copy_child_nodes( $th, $td );
 
 					if ( $td->hasAttributes() )
 					{
@@ -290,7 +290,7 @@ class ReviewTable
 				}
 			}
 
-			if ( !empty( $ths ) )
+			if ( ! empty( $ths ) )
 			{
 				$tr = $dom->createElement( 'tr' );
 
