@@ -270,7 +270,7 @@ class ReviewTable
 
 					$content = LegalDOM::getInnerHTML( $td );
 
-					LegalDOM::appendHTML( DOMNode $th, $content );
+					LegalDOM::appendHTML( $th, $content );
 
 					// LegalDom::copy_child_nodes( $th, $td );
 
