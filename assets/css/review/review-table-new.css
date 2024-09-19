@@ -95,7 +95,11 @@
 
     /* Width and Height */
 
-    .tcb-post-content table.legal-raw:not( .legal-column ):not( .legal-column-3 )
+  /*   .tcb-post-content table.legal-raw:not( .legal-column ):not( .legal-column-3 )
+    {
+        width: 100%;
+    } */
+    .tcb-post-content table:not( .legal-column ):not( .legal-column-3 )
     {
         width: 100%;
     }
@@ -194,9 +198,9 @@
 
 /* Width and Height */
 
-.tcb-post-content table.legal-check {
+/* .tcb-post-content table.legal-check {
     min-width: 300px;
-}
+} */
 
 .tcb-post-content .legal-scroll-x {
     overflow-x: auto;
