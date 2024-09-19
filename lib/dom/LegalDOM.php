@@ -144,68 +144,6 @@ class LegalDOM
 		return implode( '', $innerHTML );
 	}
 
-	/**
-	 * Returns void
-	 * 
-	 * @node New node
-	 * 
-	 * @origin Existing node
-	 */
-
-	public static function copy_child_nodes( $node, $origin )
-	{
-		// $innerHTML = [];
-
-		if ( $origin->hasChildNodes() )
-		{
-			$child_nodes = $origin->childNodes;
-	
-			LegalDebug::debug( [
-				'LegalDOM' => 'copyInnerHTML-1',
-	
-				'child_nodes-length' => $child_nodes->length,
-
-				'child_nodes' => $child_nodes,
-			] );
-
-			$node = $origin->ownerDocument->createElement( 'th' );
-	
-			foreach ( $child_nodes as $id => $child_node )
-			{ 
-				LegalDebug::debug( [
-					'LegalDOM' => 'copyInnerHTML-2',
-	
-					'child_node-saveHTML' => $origin->ownerDocument->saveHTML( $child_node ),
-				] );
-
-				// $node->appendChild( $child_node );
-	
-				// try
-				// {
-				// 	$node->appendChild( $child_node );
-				// }
-				// catch ( DOMException $e )
-				// {
-				// 	LegalDebug::debug( [
-				// 		'LegalDOM' => 'copyInnerHTML-3',
-	
-				// 		'message' => $e->getMessage(),
-				// 	] );
-				// }
-			}
-	
-			LegalDebug::debug( [
-				'LegalDOM' => 'copyInnerHTML-4',
-	
-				'node-saveHTML' => $node->ownerDocument->saveHTML( $node ),
-			] );
-		}
-
-		// return implode( '', $innerHTML );
-
-		return $node;
-	}
-
 	public static function clean( &$node )
     {
         if ( $node->hasChildNodes() )
