@@ -7,7 +7,7 @@ LegalMain::register();
 function add_my_icons($file) {
     $file = get_stylesheet_directory().'/path_to_my/icons.json';
 
-	$print_r( $file );
+	print_r( $file );
 
     return $file;
 }
