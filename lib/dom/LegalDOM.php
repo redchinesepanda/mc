@@ -130,7 +130,7 @@ class LegalDOM
 		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
-	public static function getInnerHTML( $node )
+	public static function getInnerHTML( $dom, $node )
 	{
 		$innerHTML = [];
 
@@ -138,7 +138,7 @@ class LegalDOM
 
 		foreach ( $child_nodes as $child_node )
 		{ 
-			$innerHTML[] = $node->ownerDocument->saveHTML( $child_node );
+			$innerHTML[] = $dom->saveHTML( $child_node );
 		}
 
 		return implode( '', $innerHTML );

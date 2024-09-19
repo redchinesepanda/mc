@@ -252,7 +252,7 @@ class ReviewTable
 				{
 					// $ths[] = $dom->createElement( 'th', $td->textContent );
 
-					$th = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
+					// $th = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
 
 					// LegalDebug::debug( [
 					// 	'ReviewTable' => 'create_thead-1',
@@ -264,7 +264,7 @@ class ReviewTable
 					// 	// 'nodeValue' => $td->nodeValue,
 					// ] );
 					
-					// $th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $td ) );
+					$th = $dom->createElement( 'th', LegalDOM::getInnerHTML( $dom, $td ) );
 					
 					// $th = $dom->createElement( 'th' );
 
