@@ -160,11 +160,11 @@ class LegalDOM
 		{
 			$child_nodes = $origin->childNodes;
 	
-			// LegalDebug::debug( [
-			// 	'LegalDOM' => 'copyInnerHTML-1',
+			LegalDebug::debug( [
+				'LegalDOM' => 'copyInnerHTML-1',
 	
-			// 	'child_nodes' => $child_nodes,
-			// ] );
+				'child_nodes-length' => $child_nodes->length,
+			] );
 	
 			foreach ( $child_nodes as $child_node )
 			{ 
