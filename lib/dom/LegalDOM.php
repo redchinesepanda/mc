@@ -130,7 +130,7 @@ class LegalDOM
 		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
-	public static function getInnerHTML( $dom, $node )
+	public static function getInnerHTML( $node )
 	{
 		$innerHTML = [];
 
@@ -138,7 +138,7 @@ class LegalDOM
 
 		foreach ( $child_nodes as $child_node )
 		{ 
-			$innerHTML[] = $dom->saveHTML( $child_node );
+			$innerHTML[] = $node->ownerDocument->saveHTML( $child_node );
 		}
 
 		return implode( '', $innerHTML );
@@ -156,45 +156,48 @@ class LegalDOM
 	{
 		// $innerHTML = [];
 
-		$child_nodes = $origin->childNodes;
-
-		// LegalDebug::debug( [
-		// 	'LegalDOM' => 'copyInnerHTML-1',
-
-		// 	'child_nodes' => $child_nodes,
-		// ] );
-
-		foreach ( $child_nodes as $child_node )
-		{ 
-			// LegalDebug::debug( [
-			// 	'LegalDOM' => 'copyInnerHTML-2',
-
-			// 	'child_node' => $child_node,
+		if ( $origin->hasChildNodes() )
+		{
+			$child_nodes = $origin->childNodes;
 	
-			// 	'textContent' => $child_node->textContent,
-
-			// 	'nodeValue' => $child_node->nodeValue,
+			// LegalDebug::debug( [
+			// 	'LegalDOM' => 'copyInnerHTML-1',
+	
+			// 	'child_nodes' => $child_nodes,
 			// ] );
-
-			try
-			{
-				$node->appendChild( $child_node );
+	
+			foreach ( $child_nodes as $child_node )
+			{ 
+				// LegalDebug::debug( [
+				// 	'LegalDOM' => 'copyInnerHTML-2',
+	
+				// 	'child_node' => $child_node,
+		
+				// 	'textContent' => $child_node->textContent,
+	
+				// 	'nodeValue' => $child_node->nodeValue,
+				// ] );
+	
+				try
+				{
+					$node->appendChild( $child_node );
+				}
+				catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'LegalDOM' => 'copyInnerHTML-2',
+	
+						'message' => $e->getMessage(),
+					] );
+				}
 			}
-			catch ( DOMException $e )
-			{
-				LegalDebug::debug( [
-					'LegalDOM' => 'copyInnerHTML-2',
-
-					'message' => $e->getMessage(),
-				] );
-			}
+	
+			LegalDebug::debug( [
+				'LegalDOM' => 'copyInnerHTML-2',
+	
+				'saveHTML' => $node->ownerDocument->saveHTML( $node );
+			] );
 		}
-
-		// LegalDebug::debug( [
-		// 	'LegalDOM' => 'copyInnerHTML-2',
-
-		// 	'node' => $node,
-		// ] );
 
 		// return implode( '', $innerHTML );
 	}
