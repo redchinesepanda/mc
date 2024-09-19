@@ -268,7 +268,11 @@ class ReviewTable
 					
 					$th = $dom->createElement( 'th' );
 
-					LegalDom::copy_child_nodes( $th, $td );
+					$content = LegalDOM::getInnerHTML( $td );
+
+					LegalDOM::appendHTML( DOMNode $th, $content );
+
+					// LegalDom::copy_child_nodes( $th, $td );
 
 					if ( $td->hasAttributes() )
 					{
