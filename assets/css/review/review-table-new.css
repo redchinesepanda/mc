@@ -49,11 +49,11 @@
 
     /* Position */
 
-    .tcb-post-content table tr > *
+    /* .tcb-post-content table tr > *
     {
         padding-left: 16px;
         padding-right: 16px;
-    }
+    } */
 
     .tcb-post-content table.legal-column
     {
@@ -153,7 +153,8 @@
 
 .tcb-post-content table tr > *
 {
-    padding: 24px 16px;
+    /* padding: 24px 16px; */
+    padding: 1.5rem 1rem;
 }
 
 .billet-mega-content > table,
