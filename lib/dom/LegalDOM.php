@@ -171,7 +171,7 @@ class LegalDOM
 				LegalDebug::debug( [
 					'LegalDOM' => 'copyInnerHTML-2',
 	
-					'child_node-saveHTML' => $node->ownerDocument->saveHTML( $child_node ),
+					'child_node-saveHTML' => $origin->ownerDocument->saveHTML( $child_node ),
 				] );
 
 				$node->appendChild( $child_node );
