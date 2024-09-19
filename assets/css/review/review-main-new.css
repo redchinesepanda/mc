@@ -320,7 +320,7 @@
     font-weight: 700;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p):not( .footer-tnc-info ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p):not( .footer-tnc-info ):not( table p ),
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-attention a
 {
@@ -329,7 +329,7 @@
     font-weight: 400;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p):not( .footer-tnc-info ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p):not( .footer-tnc-info ):not( table p ),
 .tcb-post-content .legal-attention {
     color: var( --Base-base-09 );
 }
