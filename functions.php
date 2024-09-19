@@ -11,4 +11,13 @@ function add_my_icons($file) {
 
 add_filter( 'jvm_richtext_icons_iconset_file', 'add_my_icons');
 
+function add_my_css($cssfile) {
+    $cssfile = get_stylesheet_directory_uri().'/path_to_my/cssfile.css';
+    return $cssfile;
+}
+
+add_filter( 'jvm_richtext_icons_css_file', 'add_my_css');
+
+add_filter( 'jvm_richtext_icons_css_file', '__return_false');
+
 ?>
