@@ -164,6 +164,8 @@ class LegalDOM
 				'LegalDOM' => 'copyInnerHTML-1',
 	
 				'child_nodes-length' => $child_nodes->length,
+
+				'child_nodes' => $child_nodes,
 			] );
 	
 			foreach ( $child_nodes as $id => $child_node )
