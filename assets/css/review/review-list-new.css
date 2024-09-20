@@ -10,7 +10,7 @@
 
   /* Typography */
 
-  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ) li,
+/*   .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ) li,
   .tcb-post-content>ol li,
   .bonus-content>ul li,
   .billet-description>ul li,
@@ -18,7 +18,7 @@
   .billet-description>ol li {
     font-size: 14px;
     line-height: 20px;
-  }
+  } */
 
    /* Width and Height */
 
@@ -63,7 +63,7 @@
 
   /* Typography */
 
-  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ),
+ /*  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ),
   .tcb-post-content>ol,
   .bonus-content>ul li,
   .billet-description>ul li,
@@ -71,7 +71,9 @@
   .billet-description>ol li {
     font-size: 16px;
     line-height: 22px;
-  }
+    font-size: 1rem;
+    line-height: 1.625rem;
+  } */
 }
 
 /* Review Display */
@@ -301,6 +303,8 @@
 .bonus-content>ol li,
 .billet-description>ol li {
   font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.625rem;
 }
 
 .tcb-post-content ul:not( .mc-list-howto ) > li:before {
