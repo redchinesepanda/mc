@@ -3,19 +3,19 @@
 class ReviewIcons
 {
 	const CSS = [
-        'review-icons' => [
+        'review-set-font-mc-icons-sports' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons.css',
 
             'ver'=> '1.0.0',
         ],
 
-        'front-tinymce-iconpicker-icons' => [
+        'review-font-mc-icons-sports-icons' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
 
 			'ver' => '1.0.0',
 		],
 
-		'front-tinymce-iconpicker-font-mc-icons-sports' => [
+		'review-font-mc-icons-sports-font' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
 			'ver' => '1.0.1',
