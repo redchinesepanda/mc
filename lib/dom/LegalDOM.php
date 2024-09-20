@@ -130,7 +130,7 @@ class LegalDOM
 	// 	$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	// }
 	
-	public static function insertBeforeHTML( $dom, $content, $node )
+	public static function insertBeforeHTML( $content, $child )
 	{
 		if ( ! empty( $content ) )
 		{
@@ -140,23 +140,15 @@ class LegalDOM
 			{
 				foreach ( $dom->childNodes as $node )
 				{
-					$imported_node = $parent->ownerDocument->importNode( $node, true );
+					$node = $parent->ownerDocument->importNode( $node, true );
 
-					if ( ! empty( $imported_node ) )
+					if ( ! empty( $node ) )
 					{
-						// $parent->appendChild( $imported_node );
-
-						$parent->ownerDocument->insertBefore( $imported_node, $node );
+						$parent->ownerDocument->insertBefore( $node, $child );
 					}
 				}
 			}
 		}
-
-		// $template = new DOMDocument;
-		
-		// $template->loadHtml( $html );
-		
-		// $node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
 	public static function getInnerHTML( $node )

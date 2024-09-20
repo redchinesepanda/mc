@@ -214,7 +214,7 @@ class ReviewListHowTo
 				// 	'html' => $html,
 				// ] );
 
-				LegalDom::insertBeforeHTML( $dom, $html, $node ); 
+				LegalDom::insertBeforeHTML( $html, $node ); 
 
 				$howto_item = [];
 
