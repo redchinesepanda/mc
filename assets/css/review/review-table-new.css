@@ -187,10 +187,10 @@
     overflow-x: auto;
 }
 
-.tcb-post-content .legal-scroll-x::-webkit-scrollbar,
+/* .tcb-post-content .legal-scroll-x::-webkit-scrollbar,
 .tcb-post-content .legal-scroll::-webkit-scrollbar {
     width: var( --Spacing-04 );
-}
+} */
 
 /* Background */
 
