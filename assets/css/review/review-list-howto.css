@@ -28,12 +28,13 @@
 .mc-list-howto {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    margin-top: var(--Spacing-06);
-    margin-bottom: var(--Spacing-06);
+    margin-top: var( --Spacing-06 );
+    margin-bottom: var( --Spacing-06 );
 }
 
 .mc-list-howto li {
-    padding-left: calc(var(--Spacing-09) + 1rem);
+    margin-bottom: var( --Spacing-09 );
+    padding-left: calc( var( --Spacing-09 ) + 1rem );
 }
 
 /* Review Width and Height */
@@ -41,8 +42,8 @@
 .mc-list-howto>li::before {
     /* width: calc( var( --Spacing-09 ) - 0.25rem );
 height: calc( var( --Spacing-09 ) - 0.25rem ); */
-    width: var(--Spacing-09);
-    height: var(--Spacing-09);
+    width: var( --Spacing-09 );
+    height: var( --Spacing-09 );
     box-sizing: border-box;
 }
 
