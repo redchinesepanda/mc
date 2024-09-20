@@ -248,7 +248,8 @@
 .bonus-content li>ol li:not(:last-child),
 .billet-description li>ul li:not(:last-child),
 .billet-description li>ol li:not(:last-child) {
-  padding-bottom: 16px;
+  /* padding-bottom: 16px; */
+  margin-bottom: var( --Spacing-04 );
 }
 
 .tcb-post-content ul.legal-highlight li {
