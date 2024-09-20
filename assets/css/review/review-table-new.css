@@ -190,6 +190,7 @@
 .tcb-post-content .legal-scroll-x::-webkit-scrollbar,
 .tcb-post-content .legal-scroll::-webkit-scrollbar {
     width: var( --Spacing-04 );
+    height: var( --Spacing-04 );
 }
 
 /* Background */
@@ -215,7 +216,7 @@
 .tcb-post-content .legal-scroll { /*стиль скролла для Mozila Firefox*/
     scrollbar-color: var(--Base-base-04) var(--Base-base-02);
     scrollbar-width: thin;
-} 
+}
 
 .tcb-post-content .legal-scroll-x::-webkit-scrollbar-track,
 .tcb-post-content .legal-scroll::-webkit-scrollbar-track {
