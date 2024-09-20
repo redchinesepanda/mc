@@ -125,7 +125,7 @@
     /* Typography */
 
     .tcb-post-content table.legal-column-3 tr > * {
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 }
 
@@ -140,7 +140,7 @@
 
 .tcb-post-content .legal-scroll
 {
-    max-height: 500px;
+    max-height: 31.25rem;
     overflow-y: scroll;
 }
 
@@ -162,7 +162,8 @@
 .tcb-post-content > .legal-scroll,
 .tcb-post-content > .legal-scroll-x
 {
-    margin-top: 16px;
+    /* margin-top: 16px; */
+    margin-top: var( --Spacing-06 );
     vertical-align: top;
 }
 
@@ -173,7 +174,8 @@
 .tcb-post-content > .legal-scroll:not( :last-child ),
 .tcb-post-content > .legal-scroll-x:not( :last-child )
 {
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
+    margin-top: var( --Spacing-06 );
 }
 
 .tcb-post-content table caption
