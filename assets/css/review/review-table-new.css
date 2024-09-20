@@ -287,10 +287,10 @@
 } */
 
 /* .tcb-post-content table > tbody:last-of-type > tr > *[ rowspan ]:not([ rowspan="1" ]), */
-.tcb-post-content table > tbody:last-of-type > tr:last-of-type > *
+/* .tcb-post-content table > tbody:last-of-type > tr:last-of-type > *
 {
     border-bottom: unset;
-}
+} */
 
 .tcb-post-content .legal-check td:not(.legal-cross):last-child::after
 {
