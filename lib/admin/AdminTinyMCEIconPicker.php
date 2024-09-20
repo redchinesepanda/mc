@@ -64,11 +64,11 @@ class AdminTinyMCEIconPicker
 
 			add_filter( 'mce_external_plugins', [ $handler, 'add_tinymce_iconpicker_plugin' ] );
 
-			add_filter( 'mce_buttons', [ $handler, 'zz_register_my_tc_button' ] );
+			add_filter( 'mce_buttons', [ $handler, 'register_iconpicker_button' ] );
 
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-            // add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+			add_action( 'admin_print_styles', [ $handler, 'register_style' ] );
         // }
     }
 
@@ -76,20 +76,12 @@ class AdminTinyMCEIconPicker
 	{
 		$plugin_array[ 'tinymce_iconpicker' ] = LegalMain::LEGAL_URL . '/assets/js/admin/admin-tinymce-iconpicker.js';
 
-		// $plugin_array['zz_tc_simple'] = get_template_directory_uri() . '/includes/zz-btns.js';
-		// $plugin_array['zz_tc_button'] = get_template_directory_uri() . '/includes/zz-btns.js';
-		// $plugin_array['zz_tc_list'] = get_template_directory_uri() . '/includes/zz-btns.js';
-
 		return $plugin_array;
 	}
 
-	public static function zz_register_my_tc_button( $buttons )
+	public static function register_iconpicker_button( $buttons )
 	{
 		$buttons[] = 'tinymce_iconpicker';
-
-		// array_push($buttons, 'zz_tc_simple');
-		// array_push($buttons, 'zz_tc_button');
-		// array_push($buttons, 'zz_tc_list');
 
 		return $buttons;
 	}
