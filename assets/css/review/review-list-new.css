@@ -26,6 +26,13 @@
   .tcb-post-content .legal-list-4.legal-list-image-in-border li {
     width: calc( 50% - (18px + 24px + 14px + 18px + 2px) - 4px );
   }
+
+  /* List Position */
+
+  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
+  .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ) {
+    margin-left: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -61,6 +68,13 @@
     width: calc( 25% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
   }
 
+  /* List Position */
+
+  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
+  .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ) {
+    margin-left: var(--Spacing-06);
+  }
+
   /* Typography */
 
  /*  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ),
@@ -76,7 +90,7 @@
   } */
 }
 
-/* Review Display */
+/* List Display */
 
 .tcb-post-content ol:not(.menu__box) {
   list-style: none;
@@ -123,7 +137,7 @@
   align-items: center;
 }
 
-/* Review Position */
+/* List Position */
 
 /* .tcb-post-content ul:not(.legal-sitemap):not( .mc-list-howto ),
 .tcb-post-content ol:not( .mc-list-howto ) {
@@ -146,7 +160,6 @@
   /* margin-bottom: 18px; */
   margin-top: var(--Spacing-06);
   margin-bottom: var(--Spacing-06);
-  margin-left: var(--Spacing-06);
 }
 
 .tcb-post-content>ul:not([style]):not(.legal-list-image),
@@ -221,7 +234,8 @@
 
 .tcb-post-content li>ul,
 .tcb-post-content li>ol {
-  padding-top: 24px;
+  /* padding-top: 24px; */
+  padding-top: var( --Spacing-04 );
   padding-bottom: 0px;
   padding-left: 0px;
   margin-left: calc( 28px - ( 24px + 12px ) );
@@ -256,7 +270,7 @@
   left: 18px;
 }
 
-/* Review Width and Height */
+/* List Width and Height */
 
 .tcb-post-content ol:not( .mc-list-howto )>li::before {
   width: 24px;
@@ -267,7 +281,7 @@
   min-height: calc( 56px - (16px * 2) - 2px );
 }
 
-/* Review Background */
+/* List Background */
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
   background-color: var( --Primitives-blue-40 );
