@@ -175,7 +175,7 @@
 .tcb-post-content > .legal-scroll-x:not( :last-child )
 {
     /* margin-bottom: 24px; */
-    margin-top: var( --Spacing-06 );
+    margin-bottom: var( --Spacing-06 );
 }
 
 .tcb-post-content table caption
