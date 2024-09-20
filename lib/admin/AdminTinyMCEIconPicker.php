@@ -30,7 +30,7 @@ class AdminTinyMCEIconPicker
 	const CSS_ADMIN = [
         'admin-tinymce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
 
-        'admin-tinymce-iconpicker-icons' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+        'admin-tinymce-iconpicker-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports.css',
 
         'admin-tinymce-iconpicker-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
     ];
