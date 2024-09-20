@@ -36,7 +36,7 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_inline_title' ] );
 
-		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
+		add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
@@ -128,10 +128,13 @@ class ToolTinyMCE
         'legal-tinymce-header' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-header.css',
     ];
 
-	public static function editor_styles() {
-		foreach ( self::CSS as $style ) {
-			add_editor_style( $style );
-		}
+	public static function add_editor_styles()
+	{
+		// foreach ( self::CSS as $style ) {
+		// 	add_editor_style( $style );
+		// }
+
+		ToolEnqueue::add_editor_styles( self::CSS );
 	}
 
 	public static function style_formats_check( $settings, $style_new )

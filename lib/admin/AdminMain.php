@@ -56,6 +56,11 @@ class AdminMain
 
     public static function register()
     {
+        AdminTinyMCEIconPicker::register();
+    }
+
+    public static function register_functions_admin()
+    {
         $handler = new self();
 
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_style' ] );
@@ -80,7 +85,7 @@ class AdminMain
         
         // AdminPage::register();
 
-        AdminTinyMCEIconPicker::register();
+        AdminTinyMCEIconPicker::register_functions_admin();
     }
 }
 
