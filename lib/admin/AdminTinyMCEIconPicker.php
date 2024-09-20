@@ -8,6 +8,12 @@ class AdminTinyMCEIconPicker
 
             'ver'=> '1.2.1',
         ],
+
+		'legal-template-font-mc-icons-sports' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
 	public static function register_style()
