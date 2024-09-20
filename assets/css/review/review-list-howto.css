@@ -33,8 +33,11 @@
 }
 
 .mc-list-howto li {
-    margin-bottom: var( --Spacing-09 );
     padding-left: calc( var( --Spacing-09 ) + 1rem );
+}
+
+.mc-list-howto li:not( :last-child ) {
+    margin-bottom: var( --Spacing-09 );
 }
 
 /* Review Width and Height */
