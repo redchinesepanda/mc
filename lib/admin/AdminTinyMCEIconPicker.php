@@ -52,8 +52,8 @@ class AdminTinyMCEIconPicker
 
 	public static function register()
     {
-        if ( self::check_icon_picker() )
-        {
+        // if ( self::check_icon_picker() )
+        // {
             $handler = new self();
 
 			add_filter( 'mce_external_plugins', [ $handler, 'add_tinymce_iconpicker_plugin' ] );
@@ -63,7 +63,7 @@ class AdminTinyMCEIconPicker
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
             // add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-        }
+        // }
     }
 
 	public static function add_tinymce_iconpicker_plugin( $plugin_array )
