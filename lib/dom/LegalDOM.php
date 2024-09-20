@@ -121,13 +121,42 @@ class LegalDOM
 		}
 	}
 
-	public static function insertBeforeHTML( $dom, $html, $node )
+	// public static function insertBeforeHTML( $dom, $html, $node )
+	// {
+	// 	$template = new DOMDocument;
+		
+	// 	$template->loadHtml( $html );
+		
+	// 	$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
+	// }
+	
+	public static function insertBeforeHTML( $dom, $content, $node )
 	{
-		$template = new DOMDocument;
+		if ( ! empty( $content ) )
+		{
+			$dom = self::get_dom( $content );
+			
+			if ( $dom->hasChildNodes() )
+			{
+				foreach ( $dom->childNodes as $node )
+				{
+					$imported_node = $parent->ownerDocument->importNode( $node, true );
+
+					if ( ! empty( $imported_node ) )
+					{
+						// $parent->appendChild( $imported_node );
+
+						$parent->ownerDocument->insertBefore( $imported_node, $node );
+					}
+				}
+			}
+		}
+
+		// $template = new DOMDocument;
 		
-		$template->loadHtml( $html );
+		// $template->loadHtml( $html );
 		
-		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
+		// $node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
 	public static function getInnerHTML( $node )
