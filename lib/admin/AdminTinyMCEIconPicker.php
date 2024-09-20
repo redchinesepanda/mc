@@ -3,13 +3,13 @@
 class AdminTinyMCEIconPicker
 {
 	const CSS = [
-        'admin-tinymce-iconpicker' => [
+        'front-tinymce-iconpicker' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
 
             'ver'=> '1.2.1',
         ],
 
-		'legal-template-font-mc-icons-sports' => [
+		'front-tinymce-iconpicker-icons' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
 
 			'ver' => '1.0.0',
@@ -20,6 +20,21 @@ class AdminTinyMCEIconPicker
     {
 		ToolEnqueue::register_style( self::CSS );
     }
+
+	const CSS_ADMIN = [
+        'admin-tinymce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
+
+        'admin-tinymce-iconpicker-font' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+    ];
+
+	public static function add_editor_styles()
+	{
+		// foreach ( self::CSS as $style ) {
+		// 	add_editor_style( $style );
+		// }
+
+		ToolEnqueue::add_editor_styles( self::CSS_ADMIN );
+	}
 
 	// const JS = [
     //     'review-about' => [
@@ -56,7 +71,7 @@ class AdminTinyMCEIconPicker
 			&& self::check_editor_enabled();
     }
 
-	public static function register()
+	public static function register_functions_admin()
     {
         // if ( self::check_icon_picker() )
         // {
@@ -66,9 +81,17 @@ class AdminTinyMCEIconPicker
 
 			add_filter( 'mce_buttons', [ $handler, 'register_iconpicker_button' ] );
 
-			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+			add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
+        // }
+    }
 
-			add_action( 'admin_print_styles', [ $handler, 'register_style' ] );
+	public static function register()
+    {
+        // if ( self::check_icon_picker() )
+        // {
+            $handler = new self();
+
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
         // }
     }
 
