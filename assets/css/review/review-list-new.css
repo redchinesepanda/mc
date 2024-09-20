@@ -123,17 +123,20 @@
 
 /* Review Position */
 
-.tcb-post-content ul:not(.legal-sitemap):not( .mc-list-howto ),
-.tcb-post-content ol:not( .mc-list-howto ) {
+.tcb-post-content ul:not(.legal-sitemap):not( .mc-list-howto ):not( .tcb-post-content>ul ),
+.tcb-post-content ol:not( .mc-list-howto ):not( .tcb-post-content>ul ) {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
 .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ) {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-bottom: 18px;
+  /* padding-top: 12px; */
+  /* padding-bottom: 12px; */
+  /* margin-bottom: 18px; */
+  margin-top: var(--Spacing-06);
+  margin-bottom: var(--Spacing-06);
+  margin-left: var(--Spacing-06);
 }
 
 .tcb-post-content>ul:not([style]):not(.legal-list-image),
