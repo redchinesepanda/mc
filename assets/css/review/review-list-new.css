@@ -171,19 +171,20 @@
 
 .tcb-post-content>ul:not([style]):not(.legal-list-image):not( .mc-list-howto ) li,
 .tcb-post-content>ol:not( .mc-list-howto ) li {
-  padding-left: calc(24px + 12px);
+  padding-left: calc( 24px + 12px );
 }
 
 .tcb-post-content>.legal-list-image:not(.compilation-link):not( .legal-list-image-in-border ) li {
   padding-top: 18px;
   padding-right: 18px;
   padding-bottom: 18px;
-  padding-left: calc(24px + 14px);
+  padding-left: calc( 24px + 14px );
 }
 
 .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image)>li:not( :last-child),
 .tcb-post-content>ol:not(.legal-faq-description)>li:not( :last-child) {
-  padding-bottom: 24px;
+  /* padding-bottom: 24px; */
+  padding-bottom: var( --Spacing-04 );
 }
 
 .legal-billet ul,
@@ -208,7 +209,7 @@
 .billet-description>ul li,
 .bonus-content>ol li,
 .billet-description>ol li {
-  padding-left: calc(24px + 12px);
+  padding-left: calc( 24px + 12px );
 }
 
 .bonus-content>ul li:not(:last-child),
@@ -223,7 +224,7 @@
   padding-top: 24px;
   padding-bottom: 0px;
   padding-left: 0px;
-  margin-left: calc(28px - (24px + 12px));
+  margin-left: calc( 28px - ( 24px + 12px ) );
 }
 
 .tcb-post-content li>ul li:not(:last-child),
@@ -269,7 +270,7 @@
 /* Review Background */
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
-  background-color: var(--Primitives-blue-40);
+  background-color: var( --Primitives-blue-40 );
   border-radius: 50%;
 }
 
@@ -284,7 +285,7 @@
 .tcb-post-content ul>li,
 .tcb-post-content ol li,
 .tcb-post-content ol:not(.menu__box)>li::before {
-  font-family: var(--legal-font-primary);
+  font-family: var( --legal-font-primary );
   font-style: normal;
 }
 
@@ -293,7 +294,7 @@
 .tcb-post-content ol:not(.menu__box)>li::before,
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before,
 .tcb-post-content .legal-list-image-in-border li a {
-  color: var(--Base-base-09);
+  color: var( --Base-base-09 );
 }
 
 .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]) li,
@@ -308,7 +309,7 @@
 }
 
 .tcb-post-content ul:not( .mc-list-howto ) > li:before {
-  font-family: var(--legal-font-icons);
+  font-family: var( --legal-font-icons );
   font-size: 24px;
   line-height: 24px;
 }
@@ -338,11 +339,11 @@
 .tcb-post-content>.legal-list-cons li:before,
 .billet-mega-content>.legal-list-cons li:before {
   content: '\F10E';
-  color: var(--Base-base-05);
+  color: var( --Base-base-05 );
 }
 
 .tcb-post-content .legal-list-image li::before {
-  font-family: var(--legal-font-icons-sport);
+  font-family: var( --legal-font-icons-sport );
   font-style: normal;
 }
 
