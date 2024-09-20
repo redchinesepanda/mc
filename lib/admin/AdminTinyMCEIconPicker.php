@@ -14,6 +14,12 @@ class AdminTinyMCEIconPicker
 
 			'ver' => '1.0.0',
 		],
+
+		'front-tinymce-iconpicker-font-mc-icons-sports' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+
+			'ver' => '1.0.1',
+		],
     ];
 
 	public static function register_style()
@@ -24,7 +30,9 @@ class AdminTinyMCEIconPicker
 	const CSS_ADMIN = [
         'admin-tinymce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
 
-        'admin-tinymce-iconpicker-font' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+        'admin-tinymce-iconpicker-icons' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+        'admin-tinymce-iconpicker-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
     ];
 
 	public static function add_editor_styles()
