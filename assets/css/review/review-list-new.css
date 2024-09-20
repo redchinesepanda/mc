@@ -197,7 +197,7 @@
 .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image)>li:not( :last-child),
 .tcb-post-content>ol:not(.legal-faq-description)>li:not( :last-child) {
   /* padding-bottom: 24px; */
-  padding-bottom: var( --Spacing-04 );
+  margin-bottom: var( --Spacing-04 );
 }
 
 .legal-billet ul,
@@ -235,10 +235,11 @@
 .tcb-post-content li>ul,
 .tcb-post-content li>ol {
   /* padding-top: 24px; */
-  padding-top: var( --Spacing-04 );
-  padding-bottom: 0px;
-  padding-left: 0px;
+  margin-top: var( --Spacing-04 );
   margin-left: calc( 28px - ( 24px + 12px ) );
+  /* padding-bottom: 0px; */
+  padding-left: 0px;
+  
 }
 
 .tcb-post-content li>ul li:not(:last-child),
