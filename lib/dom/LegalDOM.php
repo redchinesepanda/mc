@@ -140,11 +140,11 @@ class LegalDOM
 			{
 				foreach ( $dom->childNodes as $node )
 				{
-					$node = $parent->ownerDocument->importNode( $node, true );
+					$node = $child->ownerDocument->importNode( $node, true );
 
 					if ( ! empty( $node ) )
 					{
-						$parent->ownerDocument->insertBefore( $node, $child );
+						$child->ownerDocument->insertBefore( $node, $child );
 					}
 				}
 			}
