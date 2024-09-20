@@ -46,6 +46,8 @@ require_once( 'ReviewSchema.php' );
 
 require_once( 'ReviewListHowTo.php' );
 
+require_once( 'ReviewIcons.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -298,6 +300,8 @@ class ReviewMain
         ReviewSchema::register();
         
         ReviewListHowTo::register();
+
+        ReviewIcons::register();
     }
 
     public static function encoding( $content )
