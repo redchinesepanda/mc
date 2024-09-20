@@ -16,6 +16,8 @@ require_once( 'AdminMedia.php' );
 
 // require_once( 'AdminPage.php' );
 
+require_once( 'AdminTinyMCEIconPicker.php' );
+
 class AdminMain
 {
     const TEXT = [
@@ -77,6 +79,8 @@ class AdminMain
         AdminMedia::register();
         
         // AdminPage::register();
+
+        AdminTinyMCEIconPicker::register();
     }
 }
 
