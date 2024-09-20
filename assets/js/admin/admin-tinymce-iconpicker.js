@@ -15,47 +15,58 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 					height: 300,
 
 					body: [
-						{
-							type: 'textbox',
-							name: 'url',
-							label: 'URL'
-						},
+						// {
+						// 	type: 'textbox',
 
-						{
-							type: 'textbox',
-							name: 'label',
-							label: 'Link Text'
-						},
+						// 	name: 'url',
 
-						{
-							type: 'checkbox',
-							name: 'newtab',
-							label: ' ',
-							text: 'Open link in new tab',
-							checked: true
-						},
+						// 	label: 'URL'
+						// },
+
+						// {
+						// 	type: 'textbox',
+
+						// 	name: 'label',
+
+						// 	label: 'Link Text'
+						// },
+
+						// {
+						// 	type: 'checkbox',
+
+						// 	name: 'newtab',
+
+						// 	label: ' ',
+
+						// 	text: 'Open link in new tab',
+
+						// 	checked: true
+						// },
 
 						{
 							type: 'listbox',
 
-							name: 'style',
+							name: 'class',
 
 							label: 'Choose Icon',
 
 							'values': [
-								{ text: "Primary", value: "default" },
+								{ text: "American football", value: "icon-american-football" },
 
-								{ text: "Secondary", value: "secondary" },
+								{ text: "Asian", value: "icon-asian" },
 
-								{ text: "Disabled", value: "disabled" }
+								{ text: "Athletics", value: "icon-athletics" }
 							]
 						}
 					],
 
-					onsubmit: function (e)
+					onsubmit: function ( element )
 					{
-						let $content = '<a href="' + e.data.url + '" class="btn' + (e.data.style !== 'default' ? ' ' + e.data.style : '') + '"' + (!!e.data.newtab ? ' target="_blank"' : '') + '>' + e.data.label + '</a>';
-						editor.insertContent($content);
+						// let $content = '<a href="' + e.data.url + '" class="btn' + (e.data.style !== 'default' ? ' ' + e.data.style : '') + '"' + (!!e.data.newtab ? ' target="_blank"' : '') + '>' + e.data.label + '</a>';
+
+						let content = '<i class="mc-icon-sports ' + e.data.class + '"></i>';
+
+						editor.insertContent( content );
 					}
 				}
 			);
