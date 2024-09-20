@@ -187,10 +187,10 @@
     overflow-x: auto;
 }
 
-/* .tcb-post-content .legal-scroll-x::-webkit-scrollbar,
+.tcb-post-content .legal-scroll-x::-webkit-scrollbar,
 .tcb-post-content .legal-scroll::-webkit-scrollbar {
     width: var( --Spacing-04 );
-} */
+}
 
 /* Background */
 
@@ -213,11 +213,11 @@
 
 .tcb-post-content .legal-scroll-x,
 .tcb-post-content .legal-scroll { /*стиль скролла для Mozila Firefox*/
-    /* scrollbar-color: var(--Base-base-04) var(--Base-base-02); */
-    /* scrollbar-width: thin; */
+    scrollbar-color: var(--Base-base-04) var(--Base-base-02);
+    scrollbar-width: thin;
 }
 
-/* .tcb-post-content .legal-scroll-x::-webkit-scrollbar-track,
+.tcb-post-content .legal-scroll-x::-webkit-scrollbar-track,
 .tcb-post-content .legal-scroll::-webkit-scrollbar-track {
     background-color: var(--Base-base-02);
     border-radius: 3.75rem;
@@ -228,7 +228,7 @@
     border-radius: 3.75rem;
     background-color: var(--Base-base-04);
     border: 3px solid var(--Base-base-02);
-} */
+}
 
 .tcb-post-content table tr > * {
     border-bottom: 1px solid var( --Base-base-04 );
