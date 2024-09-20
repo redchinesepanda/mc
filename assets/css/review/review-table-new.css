@@ -191,8 +191,8 @@
 .tcb-post-content .legal-scroll::-webkit-scrollbar {
     /* width: var( --Spacing-04 ); */
     /* height: var( --Spacing-04 ); */
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 0.5rem;
+    height: 0.5rem;
 }
 
 /* Background */
