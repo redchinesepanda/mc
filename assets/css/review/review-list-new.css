@@ -129,6 +129,14 @@
   margin-bottom: 0px;
 } */
 
+.legal-bonus ul:not(.legal-sitemap),
+.legal-bonus ol,
+.billet-mega ul:not(.legal-sitemap),
+.billet-mega ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
 .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ) {
   /* padding-top: 12px; */
