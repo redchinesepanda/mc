@@ -67,18 +67,17 @@ class AdminTinyMCEIconPicker
 			add_filter( 'mce_buttons', [ $handler, 'register_iconpicker_button' ] );
 
 			add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
+
+			add_filter( 'tiny_mce_before_init', [ $handler, 'add_valid_elements_icons' ] );
         // }
     }
 
-	public static function register()
-    {
-        // if ( self::check_icon_picker() )
-        // {
-            $handler = new self();
-
-			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-        // }
-    }
+	public static function add_valid_elements_icons( $init )
+	{
+		$init[ 'extended_valid_elements' ] = 'i[class]';
+	
+		return $init;
+	}
 
 	public static function add_tinymce_iconpicker_plugin( $plugin_array )
 	{
