@@ -64,7 +64,7 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 					{
 						// let $content = '<a href="' + e.data.url + '" class="btn' + (e.data.style !== 'default' ? ' ' + e.data.style : '') + '"' + (!!e.data.newtab ? ' target="_blank"' : '') + '>' + e.data.label + '</a>';
 
-						let content = '<i class="mc-icons-sports ' + element.data.class + '"></i>';
+						let content = '<span><i class="mc-icons-sports ' + element.data.class + '"></i></span>';
 
 						editor.insertContent( content );
 					}
