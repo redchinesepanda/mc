@@ -150,6 +150,19 @@
 .billet-mega ul:not(.legal-sitemap),
 .billet-mega ol {
   margin-top: 0px;
+}
+
+.legal-bonus ul:not(.legal-sitemap):not( :last-child ),
+.legal-bonus ol:not( :last-child ),
+.billet-mega ul:not(.legal-sitemap):not( :last-child ),
+.billet-mega ol:not( :last-child ) {
+  margin-bottom: var( --Spacing-04 );
+}
+
+.legal-bonus ul:not(.legal-sitemap):last-child,
+.legal-bonus ol:last-child,
+.billet-mega ul:not(.legal-sitemap):last-child,
+.billet-mega ol:last-child {
   margin-bottom: 0px;
 }
 
@@ -158,8 +171,8 @@
   /* padding-top: 12px; */
   /* padding-bottom: 12px; */
   /* margin-bottom: 18px; */
-  margin-top: var(--Spacing-06);
-  margin-bottom: var(--Spacing-06);
+  margin-top: var( --Spacing-06 );
+  margin-bottom: var( --Spacing-06 );
 }
 
 .tcb-post-content>ul:not([style]):not(.legal-list-image),

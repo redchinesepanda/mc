@@ -116,6 +116,10 @@
 	display: flex;
 }
 
+.legal-billet .billet-tnc-description ul {
+	display: none;
+}
+
 /* Billet Position */
 
 .legal-billet {
