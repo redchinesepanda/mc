@@ -222,12 +222,12 @@
 	padding-left: calc(24px + 12px);
 }
 
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li:not( :last-child ),
+/* .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li:not( :last-child ),
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li:not( :last-child ),
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ) li:not( :last-child ),
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol li:not( :last-child ) {
 	padding-bottom: 24px;
-}
+} */
 
 .legal-billet-mega.legal-horizontal .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
 	padding-top: 0px;
