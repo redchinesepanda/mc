@@ -52,8 +52,8 @@
 		margin-left: auto;
 	}
 
-	.legal-billet-mega h3:not( .legal-bonus h3 ),
-	.legal-billet-mega h4 {
+	.legal-billet-mega h3:not( .legal-bonus h3 ):not( :empty ),
+	.legal-billet-mega h4:not( :empty ) {
 		padding-top: 14px;
 		padding-bottom: 24px;
 	}
