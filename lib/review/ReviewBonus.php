@@ -2,6 +2,7 @@
 
 class ReviewBonus
 {
+
 	const CSS = [
         'review-bonus' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
@@ -42,6 +43,20 @@ class ReviewBonus
 		}
     }
 
+	const JS = [
+        'billet-bonus-tnc' => [
+
+			'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+	public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
+
     public static function register_inline_style()
     {
 		if ( !TemplateMain::check_new() )
@@ -68,6 +83,8 @@ class ReviewBonus
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 		}
 	}
 
@@ -84,7 +101,7 @@ class ReviewBonus
 
 		'title' => 'legal-bonus-title',
 
-		'description' => 'legal-bonus-description',
+		'tnc-description' => 'legal-bonus-description',
 
 		'content' => 'legal-bonus-content',
 
@@ -181,7 +198,7 @@ class ReviewBonus
 		return [
 			'title' => in_array( self::BONUS_CLASS[ 'title' ], $class ),
 
-			'description' => in_array( self::BONUS_CLASS[ 'description' ], $class ),
+			'tnc-description' => in_array( self::BONUS_CLASS[ 'tnc-description' ], $class ),
 
 			'content' => in_array( self::BONUS_CLASS[ 'content' ], $class ),
 
@@ -193,11 +210,11 @@ class ReviewBonus
 	{
 		$title_title = $current[ 'title' ] && $next[ 'title' ];
 
-		$description_title = $current[ 'description' ] && $next[ 'title' ];
+		$description_title = $current[ 'tnc-description' ] && $next[ 'title' ];
 
 		$content_title = $current[ 'content' ] && $next[ 'title' ];
 
-		$last = !$next[ 'title' ] && !$next[ 'description' ] && !$next[ 'content' ];
+		$last = !$next[ 'title' ] && !$next[ 'tnc-description' ] && !$next[ 'content' ];
 		
 		return $title_title || $description_title || $content_title || $last; 
 	}
@@ -274,14 +291,15 @@ class ReviewBonus
 					'index' => $index,
 
 					'id' => $id,
+
 				];
 			}
 
-			if ( $permission_node[ 'description' ] )
+			if ( $permission_node[ 'tnc-description' ] )
 			{
 				$node->removeAttribute( 'class' );
 				
-				$args[ 'description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
+				$args[ 'tnc-description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( $permission_node[ 'content' ] )
@@ -497,7 +515,7 @@ class ReviewBonus
 
 		'bonus' => 'about-bonus',
 
-		'description' => 'about-description',
+		'tnc-description' => 'about-description',
 
 		'logo' => 'about-logo',
 
@@ -619,13 +637,17 @@ class ReviewBonus
 				'tag' => $args[ 'title' ][ 'tag' ],
 			],
 
-			'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
+			'tnc-description' => ( !empty( $args[ 'tnc-description' ] ) ? $args[ 'tnc-description' ] : '' ),
 
 			'get' => [
 				'href' => self::check_url_afillate( $id ),
 
 				'text' => __( ReviewMain::TEXT[ 'get-bonus' ], ToolLoco::TEXTDOMAIN ),
 			],
+
+			'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+
+			'tnc-class' => BilletBonus::get_tnc_class(),
 		];
 	}
 
@@ -676,11 +698,11 @@ class ReviewBonus
 					],
 
 					[
-						'title' => 'Billet Description',
+						'title' => 'Billet Tnc Description',
 						
 						'selector' => 'p,ul,ol',
 
-						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'description' ],
+						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'tnc-description' ],
 					],
 
 					[

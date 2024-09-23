@@ -462,12 +462,12 @@ class ReviewSchema
             $graph[] = $faq;
         }
 
-        $hwto = ReviewHowTo::schema();
+        // $hwto = ReviewHowTo::schema();
 
-        if ( !empty( $hwto ) )
-        {
-            $graph[] = $hwto;
-        }
+        // if ( !empty( $hwto ) )
+        // {
+        //     $graph[] = $hwto;
+        // }
 
         // return json_encode(
         //     [

@@ -14,19 +14,27 @@ class ReviewHowTo
         // $handler = new self();
     }
 
-	const CSS_CLASS = [
+	const CLASSES = [
 		'base' => 'legal-howto',
 
         'title' => 'legal-howto-title',
 
         'content' => 'legal-howto-content',
+
+		// 'base-unordered' => 'legal-howto-unordered',
+
+		// 'list-howto' => 'mc-list-howto',
+
+		// 'list-howto-question' => 'mc-list-howto-question',
+
+		// 'list-howto-content' => 'mc-list-howto-content',
 	];
 
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
+		return $xpath->query( './/*[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
 	}
 
 	public static function parse ( $nodes )
@@ -35,9 +43,10 @@ class ReviewHowTo
 
 		$item = [];
 
-		foreach ( $nodes as $id => $node ) {
-			if ( $node->hasChildNodes() ) {
-
+		foreach ( $nodes as $id => $node )
+		{
+			if ( $node->hasChildNodes() )
+			{
 				// $item[ 'text' ] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
 				
 				$item[] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
@@ -53,7 +62,8 @@ class ReviewHowTo
 
 			$children = $node->getElementsByTagName( 'li' );
 			
-			if ( $children->length != 0 ) {
+			if ( $children->length != 0 )
+			{
 				// $item[ 'items' ] = self::parse( $children );
 				
 				$item = array_merge( $item, self::parse( $children ) );
@@ -79,7 +89,8 @@ class ReviewHowTo
 
 	public static function get_schema_data()
 	{
-        if ( !ReviewMain::check() ) {
+        if ( ! ReviewMain::check() )
+		{
 			return [];
 		}
 
@@ -105,7 +116,8 @@ class ReviewHowTo
 
 		$last = $nodes->length - 1;
 
-		foreach ( $nodes as $id => $node ) {
+		foreach ( $nodes as $id => $node )
+		{
 			// LegalDebug::debug( [
 			// 	'function' => 'get_schema_data',
 
@@ -116,9 +128,9 @@ class ReviewHowTo
 
             $class = explode( ' ', $node->getAttribute( 'class' ) );
 
-			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
+			$permission_title = ( in_array( self::CLASSES[ 'title' ], $class ) );
 
-			$permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
+			$permission_content = ( in_array( self::CLASSES[ 'content' ], $class ) );
 
 			$permission_last = ( $id == $last );			
 
@@ -134,7 +146,8 @@ class ReviewHowTo
 			// 	];
 			// }
 
-			if ( !empty( $item ) && $permission_content ) {
+			if ( !empty( $item ) && $permission_content )
+			{
                 $node->removeAttribute( 'class' );
 
                 // LegalDOM::clean( $node );
@@ -146,7 +159,8 @@ class ReviewHowTo
 				$item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
 			}
 
-			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
+			if ( !empty( $item ) && ( $permission_title || $permission_last ) )
+			{
                 $items[] = $item;
 
 				$index++;
@@ -154,7 +168,8 @@ class ReviewHowTo
                 $item = null;
 			}
 
-			if ( $permission_title ) {
+			if ( $permission_title )
+			{
 				// $item = [
 				// 	'@type' => 'HowToSection',
 	
@@ -184,7 +199,7 @@ class ReviewHowTo
 
 	public static function schema()
     {
-		if ( !ReviewMain::check() )
+		if ( ! ReviewMain::check() )
         {
             return [];
         }
@@ -199,15 +214,18 @@ class ReviewHowTo
 
 		$steps = [];
 
-		foreach ( $HowToSections as $HowToSectionID => $HowToSection ) {
+		foreach ( $HowToSections as $HowToSectionID => $HowToSection )
+		{
 			$items = [];
 
 			$HowToSteps = $HowToSection[ 'items' ];
 			
-			foreach ( $HowToSteps as $HowToStepID => $HowToStep ) {
+			foreach ( $HowToSteps as $HowToStepID => $HowToStep )
+			{
 				$directions = [];
 
-				foreach ( $HowToStep as $HowToDirectionID => $HowToDirection ) {
+				foreach ( $HowToStep as $HowToDirectionID => $HowToDirection )
+				{
 					$directions[] = [
 						'@type' => 'HowToDirection',
 
@@ -217,7 +235,8 @@ class ReviewHowTo
 					];
 				}
 
-				if ( !empty ( $directions ) ) {
+				if ( ! empty( $directions ) )
+				{
 					$items[] = [
 						'@type' => 'HowToStep',
 	
@@ -228,7 +247,8 @@ class ReviewHowTo
 				}
 			}
 
-			if ( !empty ( $items ) ) {
+			if ( !empty ( $items ) )
+			{
 				$steps[] = [
 					'@type' => 'HowToSection',
 	
@@ -262,7 +282,7 @@ class ReviewHowTo
 	{
 		return ToolTinyMCE::style_formats_check( $settings, [
 			[
-				'title' => 'HowTo Schema.org',
+				'title' => 'HowTo',
 
 				'items' => [
 					[
@@ -270,7 +290,7 @@ class ReviewHowTo
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'base' ] . ' ' . self::CSS_CLASS[ 'title' ],
+						'classes' => self::CLASSES[ 'base' ] . ' ' . self::CLASSES[ 'title' ],
 					],
 
 					[
@@ -278,8 +298,46 @@ class ReviewHowTo
 						
 						'selector' => 'ul,ol',
 
-						'classes' => self::CSS_CLASS[ 'base' ] . ' ' . self::CSS_CLASS[ 'content' ],
+						'classes' => self::CLASSES[ 'base' ] . ' ' . self::CLASSES[ 'content' ],
 					],
+
+					// [
+					// 	'title' => 'Список HowTo Маркированый',
+						
+					// 	'selector' => 'p',
+
+					// 	// 'classes' => implode( ' ', [
+                    //     //     self::CLASSES[ 'list-howto' ],
+                            
+                    //     //     self::CLASSES[ 'list-howto-question' ]
+                    //     // ] ),
+						
+					// 	'classes' => self::CLASSES[ 'base-unordered' ],
+					// ],
+
+					// [
+					// 	'title' => 'Список HowTo Вопрос',
+						
+					// 	'selector' => 'p',
+
+					// 	'classes' => implode( ' ', [
+                    //         self::CLASSES[ 'list-howto' ],
+                            
+                    //         self::CLASSES[ 'list-howto-question' ]
+                    //     ] ),
+					// ],
+
+					// [
+					// 	'title' => 'Список HowTo Содержимое',
+						
+					// 	'selector' => 'p',
+
+					// 	'classes' => implode( ' ', [
+                    //         self::CLASSES[ 'list-howto' ],
+                            
+                    //         self::CLASSES[ 'list-howto-content' ]
+                    //     ] ),
+					// ],
 				],
 			],
 		] );

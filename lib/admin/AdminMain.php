@@ -16,6 +16,10 @@ require_once( 'AdminMedia.php' );
 
 // require_once( 'AdminPage.php' );
 
+require_once( 'AdminTinyMCEIconPicker.php' );
+
+// require_once( 'AdminTinyMCEIconShortcode.php' );
+
 class AdminMain
 {
     const TEXT = [
@@ -54,6 +58,11 @@ class AdminMain
 
     public static function register()
     {
+        AdminTinyMCEIconPicker::register();
+    }
+
+    public static function register_functions_admin()
+    {
         $handler = new self();
 
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_style' ] );
@@ -77,6 +86,10 @@ class AdminMain
         AdminMedia::register();
         
         // AdminPage::register();
+
+        AdminTinyMCEIconPicker::register_functions_admin();
+
+        // AdminTinyMCEIconShortcode::register_functions_admin();
     }
 }
 

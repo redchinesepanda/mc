@@ -16,7 +16,7 @@ require_once( 'ReviewStats.php' );
 
 require_once( 'ReviewBonus.php' );
 
-require_once( 'ReviewHowTo.php' );
+// require_once( 'ReviewHowTo.php' );
 
 require_once( 'ReviewBanner.php' );
 
@@ -43,6 +43,10 @@ require_once( 'ReviewVideo.php' );
 require_once( 'ReviewRestricted.php' );
 
 require_once( 'ReviewSchema.php' );
+
+require_once( 'ReviewListHowTo.php' );
+
+require_once( 'ReviewIcons.php' );
 
 class ReviewMain
 {
@@ -220,7 +224,7 @@ class ReviewMain
 
 		ReviewFAQ::register_functions();
 
-		ReviewHowTo::register_functions();
+		// ReviewHowTo::register_functions();
 
 		ReviewList::register_functions();
 
@@ -237,6 +241,8 @@ class ReviewMain
         ReviewCut::register_functions();
 
         ReviewPage::register_functions();
+
+        ReviewListHowTo::register_functions();
 	}
 
     public static function register()
@@ -267,7 +273,7 @@ class ReviewMain
 
         ReviewBonus::register();
 
-        ReviewHowTo::register();
+        // ReviewHowTo::register();
 
         ReviewBanner::register();
 
@@ -292,6 +298,10 @@ class ReviewMain
         ReviewRestricted::register();
 
         ReviewSchema::register();
+        
+        ReviewListHowTo::register();
+
+        ReviewIcons::register();
     }
 
     public static function encoding( $content )

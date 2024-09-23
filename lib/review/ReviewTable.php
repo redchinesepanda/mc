@@ -96,7 +96,7 @@ class ReviewTable
 	
 			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
-			add_filter( 'the_content', [ $handler, 'get_content' ], 10, 1 );
+			add_filter( 'the_content', [ $handler, 'modify_content' ], 10, 1 );
 		}
 	}
 
@@ -240,7 +240,7 @@ class ReviewTable
 
 		// $tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
-		if ( !empty( $tr ) )
+		if ( ! empty( $tr ) )
 		{
 			$items = $tr->getElementsByTagName( 'td' );
 
@@ -250,9 +250,18 @@ class ReviewTable
 			{
 				foreach ( $items as $td )
 				{
-					// $ths[] = $dom->createElement( 'th', $td->textContent );
+					$th = $dom->createElement( 'th' );
 
-					$ths[] = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
+					$content = LegalDOM::getInnerHTML( $td );
+
+					LegalDOM::appendHTML( $th, $content );
+
+					if ( $td->hasAttributes() )
+					{
+						$th->setAttribute( 'style', $td->getAttribute( 'style' ) );
+					}
+
+					$ths[] = $th;
 				}
 			}
 			else
@@ -265,7 +274,7 @@ class ReviewTable
 				}
 			}
 
-			if ( !empty( $ths ) )
+			if ( ! empty( $ths ) )
 			{
 				$tr = $dom->createElement( 'tr' );
 
@@ -531,7 +540,7 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
-	public static function get_content( $content )
+	public static function modify_content( $content )
 	{
 		$content = self::set_tbody( $content );
 
@@ -542,7 +551,7 @@ class ReviewTable
 		$content = self::set_th( $content );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'ReviewTable::get_content',
+		// 	'function' => 'ReviewTable::modify_content',
 
 		// 	// 'content' => $content,
 		// ] );

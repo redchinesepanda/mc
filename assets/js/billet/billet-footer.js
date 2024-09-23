@@ -51,6 +51,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'string' : '.legal-billet-mega .billet-mega-tnc p:first-of-type',
 		},
 
+		{
+			'selector' : '.legal-billet .billet-tnc-description .billet-footer-control',
+
+			'string' : '.legal-billet .billet-tnc-description p:first-of-type',
+		},
+
+		{
+			'selector' : '.legal-compilation-bonus .compilation-footer-control',
+
+			'string' : '.legal-compilation-bonus .footer-tnc-info:first-of-type',
+		},
+
 	];
 
 	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );

@@ -2,6 +2,14 @@
 
 class ToolEnqueue
 {
+    public static function add_editor_styles( $styles = [] )
+    {
+		foreach ( $styles as $style )
+        {
+			add_editor_style( $style );
+		}
+	}
+
     public static function dequeue_script( $scripts = [] )
     {
         foreach ( $scripts as $name )

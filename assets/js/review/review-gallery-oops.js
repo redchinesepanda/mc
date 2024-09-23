@@ -107,7 +107,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
-	  
+
+	// function oopsInit()
+	// {
+	// 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
+	// }
+
+	// MetrikaLib.userInit( oopsInit );
 } );
 
 // review-gallery-swiper-js end

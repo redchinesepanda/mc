@@ -17,13 +17,15 @@ class ReviewAnchors
 			'ver' => '1.0.0',
 		],
 
-        /* подключение свайпера начало*/
+        // подключение свайпера начало
+        
         'review-swiper-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-swiper-new.css',
 
 			'ver' => '1.0.0',
 		],
-        /* подключение свайпера конец*/
+
+        // подключение свайпера конец
 
         'review-anchors-to-top' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors-to-top.css',
@@ -66,6 +68,12 @@ class ReviewAnchors
 
             'ver' => '1.0.0',
         ],
+        
+        // 'legal-swiper-lib' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-swiper.js',
+
+        //     'ver' => '1.0.0',
+        // ],
 
         'review-anchors-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
@@ -75,6 +83,19 @@ class ReviewAnchors
             'deps' => 'legal-swiper-lib',
         ],
     ];
+
+    // public static function get_localize()
+	// {
+	// 	return [
+	// 		'legal-swiper-lib' => [
+	// 			'object_name' => 'mcSwiperLib',
+	
+	// 			'data' => [
+	// 				'src' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
+	// 			],
+	// 		],
+	// 	];
+	// }
 
 
   /*   public static function register_script()
@@ -87,6 +108,8 @@ class ReviewAnchors
 		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_script( self::JS_NEW );
+
+            // ToolEnqueue::localize_script( self::get_localize() );
 		}
 		else
 		{
