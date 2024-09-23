@@ -194,9 +194,18 @@
   padding-left: calc( 24px + 14px );
 }
 
-.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto )>li:not( :last-child),
+/* .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto )>li:not( :last-child),
 .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto )>li:not( :last-child) {
-  /* padding-bottom: 24px; */
+  padding-bottom: 24px;
+  margin-bottom: var( --Spacing-04 );
+} */
+
+.tcb-post-content ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto ) li:not( :last-child),
+.tcb-post-content ol:not(.legal-faq-description):not( .mc-list-howto ) li:not( :last-child),
+.bonus-content>ul li:not(:last-child),
+.billet-description>ul li:not(:last-child),
+.bonus-content>ol li:not(:last-child),
+.billet-description>ol li:not(:last-child) {
   margin-bottom: var( --Spacing-04 );
 }
 
@@ -225,12 +234,13 @@
   padding-left: calc( 24px + 12px );
 }
 
-.bonus-content>ul li:not(:last-child),
+/* .bonus-content>ul li:not(:last-child),
 .billet-description>ul li:not(:last-child),
 .bonus-content>ol li:not(:last-child),
 .billet-description>ol li:not(:last-child) {
   padding-bottom: 24px;
-}
+  margin-bottom: var( --Spacing-04 );
+} */
 
 .tcb-post-content li>ul,
 .tcb-post-content li>ol {
@@ -242,15 +252,15 @@
   
 }
 
-.tcb-post-content li>ul li:not(:last-child),
+/* .tcb-post-content li>ul li:not(:last-child),
 .tcb-post-content li>ol li:not(:last-child),
 .bonus-content li>ul li:not(:last-child),
 .bonus-content li>ol li:not(:last-child),
 .billet-description li>ul li:not(:last-child),
 .billet-description li>ol li:not(:last-child) {
-  /* padding-bottom: 16px; */
+  padding-bottom: 16px;
   margin-bottom: var( --Spacing-04 );
-}
+} */
 
 .tcb-post-content ul.legal-highlight li {
   padding-bottom: 0px;
