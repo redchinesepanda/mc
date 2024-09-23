@@ -329,8 +329,8 @@
 .billet-description>ul li,
 .bonus-content>ol li,
 .billet-description>ol li {
-  font-weight: 400;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.625rem;
 }
 
