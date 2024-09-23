@@ -18,7 +18,7 @@ require_once( 'AdminMedia.php' );
 
 require_once( 'AdminTinyMCEIconPicker.php' );
 
-require_once( 'AdminTinyMCEIconShortcode.php' );
+// require_once( 'AdminTinyMCEIconShortcode.php' );
 
 class AdminMain
 {
@@ -89,7 +89,7 @@ class AdminMain
 
         AdminTinyMCEIconPicker::register_functions_admin();
 
-        AdminTinyMCEIconShortcode::register_functions_admin();
+        // AdminTinyMCEIconShortcode::register_functions_admin();
     }
 }
 
