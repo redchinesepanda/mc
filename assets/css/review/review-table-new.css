@@ -176,10 +176,10 @@
     padding-bottom: 1rem;
 }
 
-.tcb-post-content table tr p {
+/* .tcb-post-content table tr p {
     margin-top: 0px;
     margin-bottom: 0px;
-}
+} */
 
 /* Width and Height */
 
@@ -296,8 +296,8 @@
     font-weight: 400;
 }
 
-.tcb-post-content table tr p {
+/* .tcb-post-content table tr p {
     font-weight: 400;
     color: var( --Base-base-05 );
     line-height: 1.0625rem;
-}
+} */
