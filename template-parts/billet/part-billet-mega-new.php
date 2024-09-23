@@ -37,9 +37,7 @@
 		</div>
 		<div class="billet-mega-content">
 			<?php if( !$args[ 'no-controls' ] ) : ?>
-				<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title">
-					<?php echo $args[ 'title' ][ 'text' ] ?>
-				</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
+				<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title"><?php echo $args[ 'title' ][ 'text' ] ?></<?php echo $args[ 'title' ][ 'tag' ]; ?>>
 			<?php endif; ?>
 			<?php echo $args[ 'content' ]; ?>
 		</div>
