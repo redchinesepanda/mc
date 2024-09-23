@@ -220,7 +220,7 @@
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( .legal-highlight ):not( [style] ) {
 	/* padding-top: 12px; */
     /* padding-bottom: 12px; */
-	/* padding-left: 0px; */
+	padding-left: 0px;
 	margin-left: 1.125rem;
 }
 
