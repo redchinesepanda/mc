@@ -48,7 +48,7 @@ class AdminTinyMCEIconShortcode
 		    add_filter( 'mce_buttons', [ $handler, 'mce_button'] );
 	    // }
 
-		add_action( 'admin_init', [ $handler, 'init_plugin' ], 20 );
+		// add_action( 'admin_init', [ $handler, 'init_plugin' ], 20 );
 
         add_shortcode( 'boutique_banner', [ $handler, 'dtbaker_shortcode_banner' ] );
         
