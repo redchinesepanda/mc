@@ -4,6 +4,8 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 		icon: 'icon mce-i-plus',
 
+		stateSelector: ['i[class]'],
+
 		onclick: function ()
 		{
 			editor.windowManager.open(
