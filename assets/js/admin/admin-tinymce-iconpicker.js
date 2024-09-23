@@ -4,7 +4,7 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 		icon: 'icon mce-i-plus',
 
-		stateSelector: ['i[class]'],
+		stateSelector: ['span[mc-icon]'],
 
 		onclick: function ()
 		{
@@ -66,7 +66,7 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 					{
 						// let $content = '<a href="' + e.data.url + '" class="btn' + (e.data.style !== 'default' ? ' ' + e.data.style : '') + '"' + (!!e.data.newtab ? ' target="_blank"' : '') + '>' + e.data.label + '</a>';
 
-						let content = '<span><i class="mc-icons-sports ' + element.data.class + '"></i></span>';
+						let content = '<span class="mc-icon mc-icons-sports ' + element.data.class + '"></span>';
 
 						editor.insertContent( content );
 					}
