@@ -10,8 +10,10 @@
 	/* Position */
 	.legal-billet-mega h3,
 	.legal-billet-mega h4 {
-		padding-top: 16px;
-		padding-bottom: 16px;
+		/* padding-top: 16px; */
+		/* padding-bottom: 16px; */
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	/* Width and Height */
@@ -54,8 +56,10 @@
 
 	.legal-billet-mega h3:not( .legal-bonus h3 ):not( :empty ),
 	.legal-billet-mega h4:not( :empty ) {
-		padding-top: 14px;
-		padding-bottom: 24px;
+		/* padding-top: 14px; */
+		/* padding-bottom: 24px; */
+		margin-top: var( --Spacing-05 );
+		margin-bottom: var( --Spacing-07 );
 	}
 
 	/* Width and Height */
@@ -183,9 +187,12 @@
 	padding: 7px;
 }
 
-.legal-billet-mega .billet-mega-content p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ),
 .legal-billet-mega .mega-tnc-info {
 	margin: 0px;
+}
+
+.legal-billet-mega .billet-mega-content p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ) {
+	margin-top: var( --Spacing-04 );
 }
 
 .legal-billet-mega .mega-about-afillate {
@@ -193,26 +200,28 @@
 }
 
 .legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( :last-child ):not( .billet-mega-tnc p ) {
-    padding-bottom: 18px;
+    /* padding-bottom: 18px; */
+	margin-bottom: var( --Spacing-04 );
 } 
 
 .legal-billet-mega.legal-horizontal p:not( :last-child ) {
     padding-bottom: 0px;
 }
 
-.legal-billet-mega h3,
+/* .legal-billet-mega h3,
 .legal-billet-mega h4 {
     margin-top: 0px;
 	margin-bottom: 0px;
-}
+} */
 
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-pros,
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-cons,
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ),
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( .legal-highlight ):not( [style] ) {
-	padding-top: 12px;
-    padding-bottom: 12px;
-	padding-left: 0px;
+	/* padding-top: 12px; */
+    /* padding-bottom: 12px; */
+	/* padding-left: 0px; */
+	margin-left: 1.125rem;
 }
 
 .legal-billet-mega .billet-mega-content > .legal-list-pros li,
