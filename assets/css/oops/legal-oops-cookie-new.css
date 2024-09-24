@@ -129,7 +129,7 @@
 	background-color: var( --Primitives-purple-20 );
 }
 
-.legal-oops-cookie .legal-necessary {
+.legal-oops-cookie .legal-necessary:hover {
 	background-color: var( --Primitives-purple-50 );
 }
 
