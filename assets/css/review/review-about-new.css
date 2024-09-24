@@ -509,13 +509,15 @@
 
 .review-about .about-right .review-bonus-title, 
 .legal-review-page-sidebar .about-right .review-bonus-title {
-    padding-bottom: 48px;
+    /* padding-bottom: 48px; */
+    margin-bottom: 1.75rem;
 }
 
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
 .about-right .legal-cut-control {
-    padding-top: 14px;
+    /* padding-top: 14px; */
+    padding-top: 1rem;
 }
 
 .about-right .review-bonus-description .bonus-description-text {
@@ -534,7 +536,8 @@
 .review-about .about-right .legal-afillate, 
 .legal-review-page-sidebar .about-right .legal-afillate,
 .tcb-post-content .legal-afillate {
-    padding: 10px 18px;
+    /* padding: 10px 18px; */
+    padding: 0.625rem 1.125rem;
 }
 
 .review-about .achievement-bonus .achievement-bonus-link {
@@ -665,14 +668,14 @@
 
 /* Typography */
 
+/* .review-about .review-bonus-description, */
+/* .legal-review-page-sidebar .about-right .review-bonus-description, */
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
 .review-about .achievement-name,
 .review-about .achievement-tooltip,
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
-.review-about .review-bonus-description,
-.legal-review-page-sidebar .about-right .review-bonus-description,
 .about-right .legal-cut-control,
 .about-right .review-bonus-head {
     color: var( --Base-base-09 );
@@ -744,16 +747,17 @@
 
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 1.75rem;
 }
 
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description {
-    font-size: 12px;
+    color: var( --Base-base-05 );
+    font-size: 0.625rem;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 0.875rem;
 }
 
 .legal-afillate {
@@ -764,8 +768,8 @@
 }
 
 .legal-review-page-sidebar .about-right .legal-afillate {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.375rem;
 }
 
 .tcb-post-content > .legal-afillate {
