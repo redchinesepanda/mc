@@ -223,11 +223,13 @@
 }
 
 .legal-bonus:not( .no-image ) .bonus-get-link {
-	background-color: var(--Base-base-09);
+	/* background-color: var(--Base-base-09); */
+	background-color: var( --Base-purple_button );
 }
 
 .legal-bonus:not( .no-image ) .bonus-get-link:hover {
-	background-color: var(--Base-base-07);
+	/* background-color: var(--Base-base-07); */
+	background-color: var( --Base-purple_button_hover );
 }
 
 .legal-bonus.no-image .bonus-get-link {
