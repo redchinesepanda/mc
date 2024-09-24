@@ -225,7 +225,7 @@
 	background-color: var( --Primitives-purple-20 );
 }
 
-.legal-oops-age .age-button-no-link:hover {
+.legal-oops-age .oops-age-button-no:hover {
 	background-color: var( --Primitives-purple-50 );
 }
 
