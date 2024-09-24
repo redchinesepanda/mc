@@ -513,11 +513,16 @@
     margin-bottom: 1.75rem;
 }
 
-.review-about .about-right .review-bonus-description,
+/* .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
 .about-right .legal-cut-control {
-    /* padding-top: 14px; */
+    padding-top: 14px;
     padding-top: 1rem;
+} */
+
+.review-about .about-right .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description {
+    margin-top: 1rem;
 }
 
 .about-right .review-bonus-description .bonus-description-text {
@@ -526,7 +531,16 @@
 }
 
 .about-right .legal-cut-control {
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about-right .legal-cut-control:not( .legal-active ) {
+    margin-top: 1rem;
+}
+
+.about-right .legal-cut-control.legal-active {
+    margin-top: 0.75rem;
 }
 
 .about-right .review-bonus-description:not( .exclusion-rule ) + .legal-cut-control.legal-active::after {
@@ -778,9 +792,10 @@
 } 
 
 .about-right .legal-cut-control {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 18px;
+    /* line-height: 18px; */
+    line-height: normal;
     text-align: center;
 }
 
