@@ -388,7 +388,7 @@
 
 .legal-bonus-sidebar .about-action-get,
 .legal-bonus-button .about-action-get {
-	font-weight: 500;
+	font-weight: 600;
 	text-decoration: none;
 	color: var( --Base-base-01 );
 	/* text-align: center; */
