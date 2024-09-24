@@ -176,6 +176,10 @@
 	margin-top: 0px;
 }
 
+.legal-bonus .bonus-name:not(.legal-override) {
+	margin-bottom: 0px;
+}
+
 .legal-bonus .bonus-get-link {
 	padding: 10px 18px;
 }
