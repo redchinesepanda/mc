@@ -323,7 +323,8 @@
 }
 
 .legal-tabs-info .legal-tab-title.legal-active {
-	background-color: var( --Base-base-09 );
+	/* background-color: var( --Base-base-09 ); */
+    background-color: var( --Base-purple_button );
 }
 
 .legal-tabs-info .legal-tab-content {

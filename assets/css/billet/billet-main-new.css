@@ -419,12 +419,14 @@ body {
 }
 
 .billet-right .legal-play {
-    background-color: var(--Base-base-09);
+    /* background-color: var(--Base-base-09); */
+    background-color: var( --Base-purple_button );
     border-radius: 60px;
 }
 
 .billet-right .legal-play:hover {
-    background-color: var(--Base-base-07);
+    /* background-color: var(--Base-base-07); */
+    background-color: var( --Base-purple_button_hover );
 }
 
 .billet-right .bonus-spoiler {

@@ -164,7 +164,8 @@
 }
 
 .legal-tabs .legal-tab-title.legal-active:not( .legal-tabs-info .legal-tab-title ) {
-    background-color: var(--Base-base-09);
+    /* background-color: var(--Base-base-09); */
+    background-color: var( --Base-purple_button );
 }
 
 .legal-tabs .legal-tab-title[class*="tab-image-"] {
