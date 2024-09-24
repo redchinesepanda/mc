@@ -589,6 +589,8 @@ class ReviewTable
 		'cross' => 'legal-cross',
 
 		'scroll-x' => 'legal-scroll-x',
+
+		'subtitle' => 'legal-subtitle',
 	];
 
 	public static function style_formats_table( $settings )
@@ -700,6 +702,14 @@ class ReviewTable
 						'selector' => 'td',
 
 						'classes' => self::CLASSES[ 'cross' ],
+					],
+
+					[
+						'title' => 'Ячейка Подзаголовок',
+						
+						'selector' => 'p',
+
+						'classes' => self::CLASSES[ 'subtitle' ],
 					],
 				],
 			],
