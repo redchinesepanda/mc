@@ -180,7 +180,7 @@
 }
 
 .legal-oops-cookie .legal-necessary {
-	color: var( --Base-purple_button )
+	color: var( --Base-purple_button );
 }
 
 /* .legal-oops-cookie .oops-cookie-button:hover,
