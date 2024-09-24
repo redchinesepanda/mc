@@ -129,6 +129,10 @@
 	background-color: var( --Primitives-purple-20 );
 }
 
+.legal-oops-cookie .legal-necessary {
+	background-color: var( --Primitives-purple-50 );
+}
+
 .legal-oops-cookie .legal-all {
 	/* background-color: var(--Base-base-09); */
 	background-color: var( --Base-purple_button );

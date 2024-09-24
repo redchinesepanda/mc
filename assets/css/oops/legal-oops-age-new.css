@@ -225,6 +225,10 @@
 	background-color: var( --Primitives-purple-20 );
 }
 
+.legal-oops-age .age-button-no-link:hover {
+	background-color: var( --Primitives-purple-50 );
+}
+
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
 	border-radius: 60px;
