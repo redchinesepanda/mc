@@ -557,7 +557,8 @@
 }
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
-    border: 2px solid var( --Base-base-09);
+    /* border: 2px solid var( --Base-base-09 ); */
+    border: 1px solid var( --Base-base-09 );
 }
 
 .review-about-wrapper:not(.legal-mode-mini) {
@@ -600,8 +601,15 @@
 }
 
 .legal-afillate {
-    border-radius: 60px;
-    background-color: var(--Base-base-09);
+    /* border-radius: 60px; */
+    /* background-color: var(--Base-base-09); */
+    border-radius: 3.75rem;
+    background-color: var( --Base-purple_button );
+}
+
+.legal-afillate:hover {
+    /* background-color: var(--Base-base-07); */
+    background-color: var( --Base-purple_button_hover );
 }
 
 .review-about.legal-default .achievement-bonus .achievement-bonus-link {
@@ -649,8 +657,10 @@
 }
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
-    border-radius: 32px;
-    background: var( --Primitives-purple-50 );
+    /* border-radius: 32px; */
+    /* background: var( --Primitives-purple-50 ); */
+    border-radius: 1.125rem;
+    background-color: var( --Primitives-purple-20 );
 }
 
 /* Typography */
@@ -744,10 +754,6 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
-}
-
-.legal-afillate:hover {
-    background-color: var(--Base-base-07);
 }
 
 .legal-afillate {
