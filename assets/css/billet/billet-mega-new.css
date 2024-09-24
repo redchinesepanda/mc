@@ -344,12 +344,14 @@
 }
 
 .legal-billet-mega .mega-about-afillate {
-	background-color: var(--Base-base-09);
+	/* background-color: var(--Base-base-09); */
+	background-color: var( --Base-purple_button );
 	border-radius: 60px;
 }
 
 .legal-billet-mega .mega-about-afillate:hover {
-	background-color: var(--Base-base-07);
+	/* background-color: var(--Base-base-07); */
+	background-color: var( --Base-purple_button_hover );
 }
 
 .legal-billet-mega .link-item {
