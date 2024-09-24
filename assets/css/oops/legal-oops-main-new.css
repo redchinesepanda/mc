@@ -154,12 +154,14 @@
 }
 
 .legal-oops .item-button {
-	background-color: var( --Base-base-09 );
+	/* background-color: var( --Base-base-09 ); */
+	background-color: var( --Base-purple_button );
 	border-radius: 20px;
 }
 
 .legal-oops .item-button:hover {
-	background: var(--Base-base-07);
+	/* background: var(--Base-base-07); */
+	background-color: var( --Base-purple_button_hover );
 }
 
 .legal-oops .item-image {
@@ -226,7 +228,7 @@
 
 .legal-oops .item-button {
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 16px;
 	color: var( --Base-base-01 );
 	text-decoration: none;
