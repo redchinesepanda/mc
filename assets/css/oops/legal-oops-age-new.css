@@ -225,7 +225,7 @@
 	background-color: var( --Primitives-purple-20 );
 }
 
-.legal-oops-age .oops-age-button-no:hover {
+.legal-oops-age .age-button-no-link:hover {
 	background-color: var( --Primitives-purple-50 );
 }
 
@@ -266,9 +266,9 @@
 	text-align: center;
 }
 
-.legal-oops-age .oops-age-button-no {
+/* .legal-oops-age .oops-age-button-no {
 	cursor: pointer;
-}
+} */
 
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
