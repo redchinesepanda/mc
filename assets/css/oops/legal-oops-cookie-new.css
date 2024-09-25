@@ -133,6 +133,7 @@
 .legal-oops-cookie .legal-necessary:hover {
 	/* background-color: var( --Primitives-purple-50 ); */
 	border: 1px solid var( --Base-base-09 );
+	transition: 0.4s;
 }
 
 .legal-oops-cookie .legal-all {
