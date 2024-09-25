@@ -266,7 +266,7 @@ class ReviewAuthor
     const TEMPLATE = [
 		'main' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-main.php',
 
-		// 'style' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-style.php',
+		'style' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-style.php',
 	];
 
     public static function render()
