@@ -3,8 +3,8 @@
 	/* Display */
 
 	#theme-bottom-section .legal-author .author-photo {
-		width: 48px;
-		height: 48px;
+		width: var( --Spacing-12 );
+		height: var( --Spacing-12 );
 	}
 
 	/* Position */
@@ -32,8 +32,10 @@
 	/* Display */
 
 	#theme-bottom-section .legal-author .author-photo {
-		width: 80px;
-		height: 80px;
+		/* width: 80px; */
+		/* height: 80px; */
+		width: 4rem;
+		height: 4rem;
 	}
 
 	/* Position */
@@ -70,9 +72,9 @@
 	column-gap: 16px;
 }
 
-#theme-bottom-section .legal-author .author-photo::after {
+/* #theme-bottom-section .legal-author .author-photo::after {
 	display: block;
-}
+} */
 
 #theme-bottom-section .legal-author .author-data {
 	display: flex;
@@ -89,18 +91,18 @@
 	position: relative;
 }
 
-#theme-bottom-section .legal-author .author-photo::after {
+/* #theme-bottom-section .legal-author .author-photo::after {
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
-}
+} */
 
 /* Width and Height */
 
-#theme-bottom-section .legal-author .author-photo::after {
+/* #theme-bottom-section .legal-author .author-photo::after {
 	width: 18px;
 	height: 18px;
-}
+} */
 
 /* Background */
 
@@ -118,18 +120,18 @@
 	box-sizing: border-box;
 }
 
-#theme-bottom-section .legal-author .author-photo::after {
+/* #theme-bottom-section .legal-author .author-photo::after {
 	background-image: url( '../../img/review/review-label-check.svg' );
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
-}
+} */
 
 /* Typography */
 
-#theme-bottom-section .legal-author .author-photo::after {
+/* #theme-bottom-section .legal-author .author-photo::after {
 	content: "";
-}
+} */
 
 #theme-bottom-section .legal-author .author-name,
 #theme-bottom-section .legal-author .author-duty {
