@@ -382,19 +382,20 @@ body {
 {
     border-radius: 24px;
     border: var( --base-border-billet );
-    background-color: var(--Base-base-01, #FFF);
+    background-color: var( --Base-base-01 );
 }
 
 .billet-item .billet-bonus
 {
-    background-color: var(--Primitives-blue-40);
+    /* background-color: var(--Primitives-blue-40); */
+    background-color: var( --Primitives-purple-20 );
 }
 
 .billet-item .legal-logo {
-    border: 1px solid var(--Base-base-09);
+    border: 1px solid var( --Base-base-09 );
     border-radius: 12.8px;
     overflow: hidden;
-    background-color: var(--Logo-background);
+    background-color: var( --Logo-background );
 }
 
 .billet-title .billet-title-achivement {
@@ -402,8 +403,8 @@ body {
     background-repeat: no-repeat;
     background-size: auto;
     border-radius: 50px;
-    background-color: var(--Base-base-01);
-    border: 1px solid var(--Base-base-09); 
+    background-color: var( --Base-base-01 );
+    border: 1px solid var( --Base-base-09 ); 
 }
 
 .billet-list-part .billet-list-part-item {
