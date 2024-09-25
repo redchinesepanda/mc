@@ -35,10 +35,10 @@ class ReviewAuthor
 		}
     }
 
-    public static function register_inline_style()
+    /* public static function register_inline_style()
     {
 		ReviewMain::register_inline_style( 'review-author', self::render_style() );
-    }
+    } */
 
     public static function register()
     {
@@ -266,7 +266,7 @@ class ReviewAuthor
     const TEMPLATE = [
 		'main' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-main.php',
 
-		'style' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-style.php',
+		// 'style' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-style.php',
 	];
 
     public static function render()
@@ -306,7 +306,7 @@ class ReviewAuthor
     //     return $output;
     // }
 
-    public static function render_style()
+  /*   public static function render_style()
     {
         if ( !ReviewMain::check() )
         {
@@ -314,7 +314,7 @@ class ReviewAuthor
         }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'style' ], self::get_author() );
-    }
+    } */
 
     public static function schema()
     {
