@@ -10,7 +10,8 @@
 	/* Position */
 	
 	#theme-bottom-section .legal-author {
-		padding-top: 28px;
+		/* padding-top: 28px; */
+		margin-top: var( --Spacing-09 );
 	}	
 
 	/* Typography */
@@ -42,9 +43,10 @@
 	/* Position */
 
 	#theme-bottom-section .legal-author {
+		margin-top: var( --Spacing-12 );
 		margin-right: auto;
 		margin-left: auto;
-		padding-top: 40px;
+		/* padding-top: 40px; */
 	}
 
 	/* Width and Height */
@@ -84,7 +86,8 @@
 /* Position */
 
 #theme-bottom-section .legal-author {
-	padding-bottom: 24px;
+	/* padding-bottom: 24px; */
+	margin-bottom: var(--Spacing-07);
 }
 
 #theme-bottom-section .legal-author .author-photo {
