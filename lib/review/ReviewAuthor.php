@@ -193,7 +193,9 @@ class ReviewAuthor
 
 			'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
 
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_axani.svg',
 
 			'href' => $href,
 		];
@@ -253,7 +255,9 @@ class ReviewAuthor
 
 			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
 
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
+			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
+
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_imbergano.svg',
 
 			'href' => $href,
 		];
