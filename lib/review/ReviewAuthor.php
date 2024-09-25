@@ -306,7 +306,7 @@ class ReviewAuthor
     //     return $output;
     // }
 
-   /*  public static function render_style()
+    public static function render_style()
     {
         if ( !ReviewMain::check() )
         {
@@ -314,7 +314,7 @@ class ReviewAuthor
         }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'style' ], self::get_author() );
-    } */
+    }
 
     public static function schema()
     {
