@@ -17,7 +17,18 @@
 	#theme-bottom-section .legal-author {
 		/* padding-top: 28px; */
 		margin-top: var( --Spacing-09 );
-	}	
+	}
+
+	#theme-bottom-section .legal-author .author-data {
+		margin-right: auto;
+	}
+
+	/* Width and Height */
+
+	#theme-bottom-section .legal-author .social-links::before {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
 
 	/* Typography */
 
@@ -25,6 +36,11 @@
 		/* font-size: 14px; */
 		/* line-height: 20px; */
 		font-weight: 500;
+	}
+
+	#theme-bottom-section .legal-author .social-links::before {
+		font-size: 1rem;
+		line-height: 1rem;
 	}
 
 	/* #theme-bottom-section .legal-author .author-duty {
@@ -54,6 +70,10 @@
 		/* padding-top: 40px; */
 	}
 
+	#theme-bottom-section .legal-author .author-data {
+		margin-right: var( --Spacing-09 );
+	}
+
 	#theme-bottom-section .author-social-links {
 		margin-left: auto;
 	}
@@ -64,10 +84,20 @@
 		max-width: var( --base-width-desktop );
 	}
 
+	#theme-bottom-section .legal-author .social-links::before {
+		width: 2.75rem;
+		height: 2.75rem;
+	}
+
 	/* Typography */
 
 	#theme-bottom-section .legal-author .author-name {
 		font-weight: 600;
+	}
+
+	#theme-bottom-section .legal-author .social-links::before {
+		font-size: 1.25rem;
+		line-height: 1.25rem;
 	}
 
 	/* #theme-bottom-section .legal-author .author-duty {
@@ -115,7 +145,6 @@
 
 #theme-bottom-section .legal-author .author-data {
 	margin-left: var( --Spacing-04 );
-	margin-right: var( --Spacing-09 );
 }
 
 /* #theme-bottom-section .legal-author .author-photo::after {
@@ -125,11 +154,6 @@
 } */
 
 /* Width and Height */
-
-#theme-bottom-section .legal-author .social-links::before {
-	width: 2.75rem;
-    height: 2.75rem;
-}
 
 /* #theme-bottom-section .legal-author .author-photo::after {
 	width: 18px;
@@ -204,8 +228,6 @@
 
 #theme-bottom-section .legal-author .social-links::before {
 	font-family: var( --legal-font-icons );
-  	font-size: 1.25rem;
-  	line-height: 1.25rem;
   	color: var( --Base-base-04 );
 }
 
