@@ -165,6 +165,10 @@
 	text-decoration: none;
 }
 
+#theme-bottom-section .legal-author .social-links:hover {
+	color: var( --Base-purple_button_hover );
+}
+
 #theme-bottom-section .legal-author .social-links::before {
 	font-family: var( --legal-font-icons );
   	font-size: 20px;
