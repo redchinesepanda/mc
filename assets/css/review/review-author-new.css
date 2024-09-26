@@ -186,6 +186,7 @@
 #theme-bottom-section .legal-author .social-links:hover.social-links::before {
 	color: var( --Base-purple_button_hover );
 	border: 1px solid var( --Base-purple_button_hover );
+	transition: 0.4s;
 }
 
 #theme-bottom-section .legal-author .social-links::before {
