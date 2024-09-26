@@ -72,7 +72,7 @@
 #theme-bottom-section .legal-author,
 #theme-bottom-section .author-social-links {
 	display: flex;
-	column-gap: var( --Spacing-04 );
+	/* column-gap: var( --Spacing-04 ); */
 }
 
 /* #theme-bottom-section .legal-author .author-photo::after {
@@ -99,6 +99,11 @@
 
 #theme-bottom-section .legal-author .author-photo {
 	position: relative;
+}
+
+#theme-bottom-section .legal-author .author-data {
+	margin-left: var( --Spacing-04 );
+	margin-right: var( --Spacing-09 );
 }
 
 #theme-bottom-section .author-social-links {
