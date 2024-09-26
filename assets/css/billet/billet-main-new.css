@@ -502,14 +502,14 @@ body {
 }
 
 
-.billet-item .billet-footer
+/* .billet-item .billet-footer
 {
     border-radius: 0px 0px 24px 24px;
     border-left: var( --base-border-billet );
     border-right: var( --base-border-billet );
     border-bottom: var( --base-border-billet );
     background: var(--Base-base-01);
-}
+} */
 
 .billet-item .billet .billet-main,
 .billet-item .billet .billet-bonus,
@@ -579,10 +579,13 @@ body {
 
 /* .billet-item .billet-footer:not( :empty ) */
 .billet-item .billet-footer {
-    padding-top: 32px;
+    /* padding-top: 32px;
     padding-right: 24px;
     padding-bottom: 12px;
-    padding-left: 24px;
+    padding-left: 24px; */
+    padding-top: var( --Spacing-09 );
+    padding-bottom: var( --Spacing-04 );
+    
 }
 
 /* .billet-item .billet-footer:empty {
