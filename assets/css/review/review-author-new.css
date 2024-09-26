@@ -155,3 +155,32 @@
 	line-height: 1.25rem;
 	color: var( --Base-base-05 );
 }
+
+#theme-bottom-section .legal-author .social-links::before {
+	font-family: var( --legal-font-icons );
+  	font-size: 20px;
+  	line-height: 20px;
+  	color: var( --Base-base-04 );
+}
+
+#theme-bottom-section .legal-author .social-links::before {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+#theme-bottom-section .legal-author .social-links::before {
+	width: 44px;
+    height: 44px;
+}
+
+#theme-bottom-section .legal-author .social-links::before {
+	border-radius: 8px;
+  	border: 1px solid var( --Base-base-04 );
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	box-sizing: border-box;
+}
+
+#theme-bottom-section .social-links-twitter::before {
+	content: '\F113';
+}
