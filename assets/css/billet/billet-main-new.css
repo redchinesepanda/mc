@@ -131,7 +131,7 @@
     .billet-left,
     .billet-center,
     .billet-right {
-        min-height: 250px;
+        /* min-height: 250px; */
         min-height: calc( 4.375rem + 1.125rem + 5.5rem + ( 1.75rem * 2 ) );
     }
 
@@ -496,10 +496,10 @@ body {
     border-radius: 24px;
 }
 
-.billet-item:hover {
+/* .billet-item:hover {
     box-shadow: 4px 4px 0px 0px #000;
 	transition: 0.4s;
-}
+} */
 
 
 /* .billet-item .billet-footer
