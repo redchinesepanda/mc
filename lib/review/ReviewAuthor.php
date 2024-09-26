@@ -260,6 +260,12 @@ class ReviewAuthor
             'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_imbergano.svg',
 
 			'href' => $href,
+
+            'socialLinks' => [
+
+                'twitter' => 'https://www.linkedin.com/in/borjaimbergamo/',
+            ],
+
 		];
     }
 
@@ -350,6 +356,8 @@ class ReviewAuthor
             // "jobTitle" => "Site manager",
             
             "jobTitle" => $author[ 'duty' ],
+
+            "linkTwitter" => $author[ 'socialLinks' ][ 'twitter' ],
 
             // "worksFor" => ReviewSchema::schema_publisher(),
         ];
