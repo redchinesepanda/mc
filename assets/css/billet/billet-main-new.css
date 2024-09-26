@@ -112,7 +112,7 @@
      /* Billet Display */
 
     .billet-center {
-        row-gap: 18px;
+        row-gap: 1.125rem;
     }    
 
     .billet-title {
@@ -132,6 +132,7 @@
     .billet-center,
     .billet-right {
         min-height: 250px;
+        min-height: calc( 4.375rem + 1.125rem + 5.5rem );
     }
 
     .billet-left {
