@@ -84,6 +84,12 @@
 	flex-direction: column;
 }
 
+#theme-bottom-section .legal-author .social-links::before {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
 /* Position */
 
 #theme-bottom-section .legal-author {
@@ -107,6 +113,11 @@
 
 /* Width and Height */
 
+#theme-bottom-section .legal-author .social-links::before {
+	width: 2.75rem;
+    height: 2.75rem;
+}
+
 /* #theme-bottom-section .legal-author .author-photo::after {
 	width: 18px;
 	height: 18px;
@@ -125,6 +136,13 @@
 	background-size: contain;
 	border-radius: 50%;
 	border: 2px solid var(--Base-base-09);
+	box-sizing: border-box;
+}
+
+#theme-bottom-section .legal-author .social-links::before {
+	border-radius: 0.5rem;
+  	border: 1px solid var( --Base-base-04 );
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 	box-sizing: border-box;
 }
 
@@ -172,29 +190,19 @@
 
 #theme-bottom-section .legal-author .social-links::before {
 	font-family: var( --legal-font-icons );
-  	font-size: 20px;
-  	line-height: 20px;
+  	font-size: 1.25rem;
+  	line-height: 1.25rem;
   	color: var( --Base-base-04 );
-}
-
-#theme-bottom-section .legal-author .social-links::before {
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-}
-
-#theme-bottom-section .legal-author .social-links::before {
-	width: 44px;
-    height: 44px;
-}
-
-#theme-bottom-section .legal-author .social-links::before {
-	border-radius: 8px;
-  	border: 1px solid var( --Base-base-04 );
-	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-	box-sizing: border-box;
 }
 
 #theme-bottom-section .social-links-twitter::before {
 	content: '\F119';
+}
+
+#theme-bottom-section .social-links-facebook::before {
+	content: '\F117';
+}
+
+#theme-bottom-section .social-links-linkedin::before {
+	content: '\F118';
 }
