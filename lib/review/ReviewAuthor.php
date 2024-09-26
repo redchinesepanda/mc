@@ -357,7 +357,7 @@ class ReviewAuthor
             
             "jobTitle" => $author[ 'duty' ],
 
-            "linkTwitter" => $author[ 'socialLinks' ][ 'twitter' ],
+            // "linkTwitter" => $author[ 'socialLinks' ][ 'twitter' ],
 
             // "worksFor" => ReviewSchema::schema_publisher(),
         ];
