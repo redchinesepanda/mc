@@ -198,6 +198,15 @@ class ReviewAuthor
             'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_axani.svg',
 
 			'href' => $href,
+
+            'socialLinks' => [
+
+                'twitter' => 'https://www.linkedin.com/in/borjaimbergamo/',
+
+                'facebook' => '#',
+
+                'linkedin' => 'https://www.linkedin.com/in/alexander-nadislau-49b789264/',
+            ],
 		];
     }
 

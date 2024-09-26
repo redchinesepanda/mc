@@ -6,7 +6,15 @@
 	</div>
 	<?php if ( !empty( $args[ 'socialLinks' ] ) ) : ?>
 		<div class="author-social-links">
-			<a href="<?php echo $args[ 'socialLinks' ][ 'twitter' ]; ?>" class="social-links-twitter" target="_blank" rel="nofollow"></a>
+			<?php if ( !empty( $args[ 'socialLinks' ][ 'twitter' ] ) ) : ?>
+				<a href="<?php echo $args[ 'socialLinks' ][ 'twitter' ]; ?>" class="social-links-twitter" target="_blank" rel="nofollow"></a>
+			<?php endif; ?>
+			<?php if ( !empty( $args[ 'socialLinks' ][ 'facebook' ] ) ) : ?>
+				<a href="<?php echo $args[ 'socialLinks' ][ 'facebook' ]; ?>" class="social-links-twitter" target="_blank" rel="nofollow"></a>
+			<?php endif; ?>
+			<?php if ( !empty( $args[ 'socialLinks' ][ 'linkedin' ] ) ) : ?>
+				<a href="<?php echo $args[ 'socialLinks' ][ 'linkedin' ]; ?>" class="social-links-twitter" target="_blank" rel="nofollow"></a>
+			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 </div>
