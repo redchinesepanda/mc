@@ -165,7 +165,7 @@
 	text-decoration: none;
 }
 
-#theme-bottom-section .legal-author .social-links:hover .social-links::before {
+#theme-bottom-section .legal-author .social-links:hover.social-links::before {
 	color: var( --Base-purple_button_hover );
 	border: 1px solid var( --Base-purple_button_hover );
 }
