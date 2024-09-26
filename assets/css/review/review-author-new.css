@@ -2,6 +2,11 @@
 {
 	/* Display */
 
+	#theme-bottom-section .legal-author {
+		flex-wrap: wrap;
+		row-gap: var( --Spacing-04 );
+	}
+
 	#theme-bottom-section .legal-author .author-photo {
 		width: var( --Spacing-12 );
 		height: var( --Spacing-12 );
@@ -47,6 +52,10 @@
 		margin-right: auto;
 		margin-left: auto;
 		/* padding-top: 40px; */
+	}
+
+	#theme-bottom-section .author-social-links {
+		margin-left: auto;
 	}
 
 	/* Width and Height */
@@ -107,10 +116,6 @@
 #theme-bottom-section .legal-author .author-data {
 	margin-left: var( --Spacing-04 );
 	margin-right: var( --Spacing-09 );
-}
-
-#theme-bottom-section .author-social-links {
-	margin-left: auto;
 }
 
 /* #theme-bottom-section .legal-author .author-photo::after {
