@@ -69,10 +69,8 @@
 
 /* Display */
 
-#theme-bottom-section .legal-author,
-#theme-bottom-section .author-social-links {
+#theme-bottom-section .legal-author {
 	display: flex;
-	/* column-gap: var( --Spacing-04 ); */
 }
 
 /* #theme-bottom-section .legal-author .author-photo::after {
@@ -82,6 +80,11 @@
 #theme-bottom-section .legal-author .author-data {
 	display: flex;
 	flex-direction: column;
+}
+
+#theme-bottom-section .author-social-links {
+	display: flex;
+	column-gap: var( --Spacing-04 );
 }
 
 #theme-bottom-section .legal-author .social-links::before {
