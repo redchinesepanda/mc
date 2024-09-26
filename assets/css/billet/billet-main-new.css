@@ -39,7 +39,8 @@
 
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
-        padding: 20px;
+        /* padding: 20px; */
+        padding: 1.5rem 1.25rem;
     }
 
     .billet-right .bonus-button {
@@ -175,9 +176,13 @@
 
     /* Position */
 
-    .billet-item .billet .billet-main,
+/*     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
         padding: 20px 24px;
+    } */
+
+    .billet-item .billet .billet-main {
+        padding: 1.75rem;
     }
 
     .billet-title .legal-review,
@@ -187,6 +192,10 @@
 
     .billet .bonus-mobile {
         margin-left: auto;
+    }
+
+    .billet-item .billet .billet-bonus {
+        padding: 1.75rem 1.5rem;
     }
 
     .billet-right .bonus-button {
