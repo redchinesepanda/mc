@@ -112,7 +112,7 @@
      /* Billet Display */
 
      .billet-item .billet-center {
-        row-gap: 1.125rem;
+        row-gap: var( --Spacing-06 );
     }    
 
    /*  .billet-item .billet-title {
