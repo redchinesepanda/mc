@@ -134,6 +134,11 @@
 	box-sizing: border-box;
 }
 
+#theme-bottom-section .legal-author .social-links:hover.social-links::before {
+	border: 1px solid var( --Base-purple_button_hover );
+	transition: 0.4s;
+}
+
 /* Typography */
 
 #theme-bottom-section .legal-author .author-name,
@@ -162,7 +167,6 @@
 
 #theme-bottom-section .legal-author .social-links:hover.social-links::before {
 	color: var( --Base-purple_button_hover );
-	border: 1px solid var( --Base-purple_button_hover );
 	transition: 0.4s;
 }
 

@@ -207,6 +207,17 @@
 	padding: 7px;
 } */
 
+.legal-billet-mega .link-item {
+	position: relative;
+	overflow: hidden;
+}
+
+.legal-billet-mega .link-item:hover.link-item::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 .legal-billet-mega .mega-tnc-info {
 	margin: 0px;
 }
@@ -317,6 +328,11 @@
 	height: 16px;
 }
 
+.legal-billet-mega .link-item:hover.link-item::after {
+	width: 100%;
+	height: 100%;
+}
+
 .legal-billet-mega .mega-about-afillate {
 	min-width: 128px;
 	min-height: 30px;
@@ -361,6 +377,16 @@
 .legal-billet-mega.legal-author .mega-about-logo {
 	background-size: cover;
 	border-radius: 50%;
+}
+
+.legal-billet-mega .link-item:hover {
+	border: 1px solid var( --Base-purple_button_hover );
+	transition: 0.4s;
+}
+
+.legal-billet-mega .link-item:hover.link-item::after {
+	background-color: rgba(95, 55, 255, 0.1);
+	transition: 0.4s;
 }
 
 .legal-billet-mega .mega-about-afillate {
@@ -463,18 +489,8 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
-.legal-billet-mega .link-item {
-	position: relative;
-}
-
 .legal-billet-mega .link-item:hover.link-item::after {
 	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(95, 55, 255, 0.1);
 }
 
 .legal-billet-mega .legal-license {
