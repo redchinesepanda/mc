@@ -18,9 +18,9 @@
 		height: 2.25rem;
 	}
 
-	.legal-billet-mega.legal-author .mega-about-options {
+	/* .legal-billet-mega.legal-author .mega-about-options {
 		margin-right: 1rem;
-	}
+	} */
 
 	.legal-billet-mega h3:not( :empty ),
 	.legal-billet-mega h4:not( :empty ) {
