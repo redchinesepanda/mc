@@ -43,8 +43,12 @@
         padding: var( --Spacing-07 ) 1.25rem;
     }
 
-    .billet-right .bonus-button {
+    .billet-right .bonus-title ~ .bonus-button {
         margin-top: var( --Spacing-09 );
+    }
+
+    .billet-right .bonus-button:not( .bonus-title ~ .bonus-button ) {
+        margin-top: 0rem;
     }
 
     /* .billet-item .billet-footer:not( :empty ) */
