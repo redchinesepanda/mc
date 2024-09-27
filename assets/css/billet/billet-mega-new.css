@@ -18,6 +18,10 @@
 		height: 2.25rem;
 	}
 
+	.legal-billet-mega.legal-author .mega-about-options {
+		margin-right: 1rem;
+	}
+
 	.legal-billet-mega h3:not( :empty ),
 	.legal-billet-mega h4:not( :empty ) {
 		/* padding-top: 16px; */
@@ -82,6 +86,10 @@
 	.legal-billet-mega .link-item {
 		width: 2.75rem;
 		height: 2.75rem;
+	}
+
+	.legal-billet-mega.legal-author .mega-about-options {
+		margin-right: var( --Spacing-07 );
 	}
 
 	.legal-billet-mega h3:not( .legal-bonus h3 ):not( :empty ),
@@ -225,10 +233,6 @@
 /* .legal-billet-mega .link-item {
 	padding: 7px;
 } */
-
-.legal-billet-mega.legal-author .mega-about-options {
-	margin-right: var( --Spacing-09 );
-}
 
 .legal-billet-mega .link-item {
 	position: relative;
