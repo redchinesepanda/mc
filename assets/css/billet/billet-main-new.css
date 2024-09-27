@@ -12,7 +12,6 @@
 
     .billet-item .billet-title {
         flex-wrap: wrap;
-        /* column-gap: 0.75rem; */
         row-gap: 1rem;
     }
 
@@ -39,7 +38,6 @@
 
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
-        /* padding: 1.5rem 1.25rem; */
         padding: var( --Spacing-07 ) 1.25rem;
     }
 
@@ -51,17 +49,9 @@
         margin-top: 0rem;
     }
 
-    /* .billet-item .billet-footer:not( :empty ) */
-   /*  .billet-item .billet-footer {
-        padding-right: 1rem;
-        padding-left: 1rem;
-    } */
-
     /* Billet Width and Height */
-    /* .billet-left, */
-    /* .billet-right */
+   
     .billet-center {
-        /* min-height: 168px; */
         min-height: calc( var( --Spacing-12 ) + ( var( --Spacing-07 ) * 2 ) );
     }
 
@@ -100,11 +90,6 @@
         line-height: 1.25rem;
     }
 
-   /*  .billet-item .billet-footer {
-        font-size: 10px;
-        line-height: 0.875rem;
-    } */
-
     .billet-item .billet-description-full ul li {
         font-size: 0.875rem;
         line-height: 1.25rem;
@@ -120,14 +105,6 @@
         row-gap: var( --Spacing-06 );
     }    
 
-   /*  .billet-item .billet-title {
-        column-gap: 1rem;
-    } */
-
-   /*  .billet .title-data {
-        row-gap: 4px;
-    } */
-
     .billet-list-part.legal-column {
         flex-direction: column;
     }
@@ -136,7 +113,6 @@
     .billet-left,
     .billet-center,
     .billet-right {
-        /* min-height: 250px; */
         min-height: calc( 4.375rem + 1.125rem + 5.5rem + ( 1.75rem * 2 ) );
     }
 
@@ -182,11 +158,6 @@
 
     /* Position */
 
-/*     .billet-item .billet .billet-main,
-    .billet-item .billet .billet-bonus {
-        padding: 1.25rem 1.5rem;
-    } */
-
     .billet-item .billet .billet-main {
         padding: 1.75rem;
     }
@@ -194,7 +165,6 @@
     .billet-title .legal-review,
     .billet-title .billet-title-rating {
         margin-top: 0.25rem;
-        /* padding-top: 4px; */
     }
 
     .billet .bonus-mobile {
@@ -208,12 +178,6 @@
     .billet-right .bonus-button {
         margin-top: auto;
     }
-
-    /* .billet-item .billet-footer:not( :empty ) */
-    /* .billet-item .billet-footer {
-        padding-right: 1.5rem;
-        padding-left: 1.5rem;
-    } */
 
     /* Billet Background */
 
@@ -235,11 +199,6 @@
         font-size: 1rem;
         line-height: 1.375rem;
     }
-
-  /*   .billet-item .billet-footer {
-        font-size: 0.75rem;
-        line-height: 1.125rem;
-    } */
 
     .billet-item .billet-description-full ul li {
         font-size: 1rem;
@@ -333,7 +292,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* row-gap: 0.875rem; */
 }
 
 .billet-right .legal-play {
@@ -341,13 +299,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-/* .billet-right .billet-footer-control {
-    display: flex;
-    align-items: center;
-    column-gap: 4px;
-    cursor: pointer;
-} */
 
 .billet-spoiler:not( .legal-active ) {
     display: none;
@@ -385,14 +336,6 @@ body {
     flex-wrap: wrap;
 }
 
-/* .billet-item .billet-footer:not( .legal-active ) {
-    display: none;
-} */
-
-/* .billet-item .billet-footer.legal-active {
-    display: block;
-} */
-
 /* Background */
 
 .billet-item .billet
@@ -404,7 +347,6 @@ body {
 
 .billet-item .billet-bonus
 {
-    /* background-color: var(--Primitives-blue-40); */
     background-color: var( --Primitives-purple-20 );
 }
 
@@ -437,13 +379,11 @@ body {
 }
 
 .billet-right .legal-play {
-    /* background-color: var(--Base-base-09); */
     background-color: var( --Base-purple_button );
     border-radius: 60px;
 }
 
 .billet-right .legal-play:hover {
-    /* background-color: var(--Base-base-07); */
     background-color: var( --Base-purple_button_hover );
 }
 
@@ -502,21 +442,6 @@ body {
     --base-border-billet: 1px solid var(--Base-base-09, #0A0A0A);
     border-radius: 1.5rem;
 }
-
-/* .billet-item:hover {
-    box-shadow: 4px 4px 0rem 0rem #000;
-	transition: 0.4s;
-} */
-
-
-/* .billet-item .billet-footer
-{
-    border-radius: 0rem 0rem 1.5rem 1.5rem;
-    border-left: var( --base-border-billet );
-    border-right: var( --base-border-billet );
-    border-bottom: var( --base-border-billet );
-    background: var(--Base-base-01);
-} */
 
 .billet-item .billet .billet-main,
 .billet-item .billet .billet-bonus,
@@ -584,21 +509,11 @@ body {
     margin-top: -1.5rem;
 }
 
-/* .billet-item .billet-footer:not( :empty ) */
 .billet-item .billet-footer {
-    /* padding-top: 32px;
-    padding-right: 1.5rem;
-    padding-bottom: 0.75rem;
-    padding-left: 1.5rem; */
     padding-top: var( --Spacing-09 );
     padding-bottom: var( --Spacing-04 );
     
 }
-
-/* .billet-item .billet-footer:empty {
-    padding-top: 23px;
-    padding-bottom: 0rem;
-} */
 
 .billet-title h3 {
     margin: 0rem;
@@ -636,10 +551,6 @@ body {
 .billet-right .bonus-spoiler {
     padding-right: 1.375rem;
 }
-
-/* .billet-right .billet-footer-control.legal-active::after {
-    transform: rotate(180deg);
-} */
 
 .billet .billet-license {
     padding-top: 2.8125rem;
@@ -846,11 +757,6 @@ body {
     line-height: 1.5rem;
 }
 
-/* .billet-right .billet-footer-control {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-} */
-
 .billet-item .billet-footer-control:not( .legal-active ) {
     white-space: nowrap;
     cursor: pointer;
@@ -864,17 +770,6 @@ body {
 .billet-item .billet-footer:not( .legal-short-tnc ):not( .legal-active ) .billet-footer-control:before {
     content: attr( data-default );
 }
-
-/* .billet-right .billet-footer-control.legal-active::before {
-    content: attr( data-active );
-} */
-
-/* .billet-right .billet-footer-control::after {
-    content: '\F103';
-    font-family: var(--legal-font-icons);
-    font-size: 1rem;
-    line-height: 1rem;
-} */
 
 .billet-right .bonus-spoiler {
     font-size: 0.75rem;
@@ -920,10 +815,6 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-/* .billet-item .billet-footer::after {
-    content: attr( data-footer-text );
-} */
 
 .billet .billet-license .billet-license-label {
     color: rgb(59, 59, 59);
