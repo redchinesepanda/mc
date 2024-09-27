@@ -12,7 +12,7 @@
 
     .billet-item .billet-title {
         flex-wrap: wrap;
-        /* column-gap: 9.18px; */
+        /* column-gap: 0.75rem; */
         row-gap: 1rem;
     }
 
@@ -61,12 +61,12 @@
     }
 
     .billet-item .legal-logo {  
-        width: 48px;
-        height: 48px;
+        width: var( --Spacing-12 );
+        height: var( --Spacing-12 );
     }
 
     .billet .title-data {
-        width: calc( 100% - 48px - 9.18px );
+        width: calc( 100% - var( --Spacing-12 ) - 0.75rem );
     } 
 
     .billet .bonus-mobile-item::before {
@@ -150,13 +150,13 @@
     }
 
     .billet-item .legal-logo {  
-        width: 70px;
-        height: 70px;
+        width: 4.375rem;
+        height: 4.375rem;
     }
 
     .billet .bonus-mobile-item::before {
-        width: 28px;
-        height: 28px;
+        width: 1.75rem;
+        height: 1.75rem;
     }
 
     .billet .billet-list-part:not( .legal-default )
@@ -172,7 +172,7 @@
 
     .billet-list-part.legal-default.legal-column:nth-child( 2 ),
     .billet-list-part.legal-default.legal-column + .billet-list-part.legal-default.legal-column {
-        flex-basis: calc( 50% - ( 28px / 2 ) );
+        flex-basis: calc( 50% - ( 1.75rem / 2 ) );
     }
 
     /* Position */
