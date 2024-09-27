@@ -458,10 +458,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(255, 0, 0, 0.5);
-	mix-blend-mode: multiply;
+	background-color: rgba(255, 0, 0, 0.1);
 }
 
 .legal-billet-mega .legal-license {
