@@ -195,7 +195,7 @@ class ReviewAuthor
 
 			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
 
-            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_axani.svg',
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_axani.png',
 
 			'href' => $href,
 
@@ -239,7 +239,9 @@ class ReviewAuthor
 
 			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
 
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/alexander-kachalov.webp',
+			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/alexander-kachalov.webp',
+
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_kachalov.png',
 
 			'href' => $href,
 		];
@@ -266,7 +268,7 @@ class ReviewAuthor
 
 			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
 
-            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_imbergano.svg',
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_imbergano.png',
 
 			'href' => $href,
 
