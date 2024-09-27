@@ -39,12 +39,12 @@
 
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
-        /* padding: 1.25rem; */
-        padding: 1.5rem 1.25rem;
+        /* padding: 1.5rem 1.25rem; */
+        padding: var( --Spacing-07 ) 1.25rem;
     }
 
     .billet-right .bonus-button {
-        margin-top: 32px;
+        margin-top: var( --Spacing-09 );
     }
 
     /* .billet-item .billet-footer:not( :empty ) */
@@ -77,11 +77,11 @@
     /* Billet Background */
 
     .billet-left {
-        border-radius: 1.25rem 1.25rem 0px 0px;
+        border-radius: 1.25rem 1.25rem 0rem 0rem;
     }
 
     .billet-right {
-        border-radius: 0px 0px 1.5rem 1.5rem;
+        border-radius: 0rem 0rem 1.5rem 1.5rem;
     }
 
     .billet-item .billet .billet-main {
@@ -213,11 +213,11 @@
     /* Billet Background */
 
     .billet-left {
-        border-radius: 1.25rem 0px 0px 1.25rem;
+        border-radius: 1.25rem 0rem 0rem 1.25rem;
     }
 
     .billet-right {
-        border-radius: 0px 1.5rem 1.5rem 0px;
+        border-radius: 0rem 1.5rem 1.5rem 0rem;
     }
 
     .billet-item .billet .billet-main {
@@ -328,7 +328,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    row-gap: 0.875rem;
+    /* row-gap: 0.875rem; */
 }
 
 .billet-right .legal-play {
@@ -499,14 +499,14 @@ body {
 }
 
 /* .billet-item:hover {
-    box-shadow: 4px 4px 0px 0px #000;
+    box-shadow: 4px 4px 0rem 0rem #000;
 	transition: 0.4s;
 } */
 
 
 /* .billet-item .billet-footer
 {
-    border-radius: 0px 0px 1.5rem 1.5rem;
+    border-radius: 0rem 0rem 1.5rem 1.5rem;
     border-left: var( --base-border-billet );
     border-right: var( --base-border-billet );
     border-bottom: var( --base-border-billet );
@@ -592,11 +592,11 @@ body {
 
 /* .billet-item .billet-footer:empty {
     padding-top: 23px;
-    padding-bottom: 0px;
+    padding-bottom: 0rem;
 } */
 
 .billet-title h3 {
-    margin: 0px;
+    margin: 0rem;
 }
 
 .billet-title .billet-title-achivement {
@@ -610,7 +610,7 @@ body {
 
 .billet-left .billet-order {
     position: absolute;
-    top: 0px;
+    top: 0rem;
     left: 1.25rem;
     padding: 8px 5px;
 }
@@ -619,8 +619,13 @@ body {
     position: relative;
 }
 
+.billet-right .bonus-description {
+    margin-top: var( --Spacing-05 );
+    margin-bottom: var( --Spacing-04 );
+}
+
 .billet-right .legal-play {
-    padding: 10px 1.125rem;
+    padding: 0.625rem 1.125rem;
 }
 
 .billet-right .bonus-spoiler {
@@ -632,7 +637,7 @@ body {
 } */
 
 .billet .billet-license {
-    padding-top: 45px;
+    padding-top: 2.8125rem;
 }
 
 .billet-item .billet
@@ -643,9 +648,9 @@ body {
 .billet-item .billet-description-full ul {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    padding-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    padding-left: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 .billet-item .billet-description-full ul li {
@@ -659,12 +664,12 @@ body {
 
 .billet-item .billet-description-full ul li::before {
     position: absolute;
-    left: 0px;
+    left: 0rem;
 }
 
 .billet-item .billet-footer p {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 /* Billet Typography */
