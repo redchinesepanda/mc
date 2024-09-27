@@ -27,13 +27,9 @@
 				<?php if( !empty( $args[ 'author' ][ 'items' ] ) ) : ?>
 					<div class="mega-about-links">
 						<?php foreach( $args[ 'author' ][ 'items' ] as $item ) : ?>
-							<?php if ( $logo[ 'image' ] == 'https://old.match.center/ie/wp-content/themes/mc-theme/assets/img/review/author/link-facebook.svg' ) : ?>
-								<a class="link-item social-links-facebook" href="<?php echo $item[ 'url' ]; ?>"></a>
-							<?php else : ?>
-								<a class="link-item" href="<?php echo $item[ 'url' ]; ?>">
-									<img src="<?php echo $item[ 'image' ]; ?>" width="20" height="20" loading="lazy">
-								</a>
-							<?php endif; ?>
+							<a class="link-item" href="<?php echo $item[ 'url' ]; ?>">
+								<img src="<?php echo $item[ 'image' ]; ?>" width="20" height="20" loading="lazy">
+							</a>
 						<?php endforeach; ?>
 					</div>
 				<?php endif; ?>
