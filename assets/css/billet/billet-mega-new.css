@@ -157,7 +157,7 @@
 
 .legal-billet-mega .mega-about-links {
 	display: flex;
-	column-gap: 10px;
+	column-gap: var( --Spacing-04 );
 }
 
 .legal-billet-mega .legal-license {
@@ -206,6 +206,10 @@
 /* .legal-billet-mega .link-item {
 	padding: 7px;
 } */
+
+.legal-billet-mega.legal-author .mega-about-options {
+	margin-right: var( --Spacing-09 );
+}
 
 .legal-billet-mega .link-item {
 	position: relative;
