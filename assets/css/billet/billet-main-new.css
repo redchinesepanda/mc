@@ -621,7 +621,7 @@ body {
 
 .billet-right .bonus-description {
     margin-top: var( --Spacing-05 );
-    margin-bottom: var( --Spacing-04 );
+    margin-bottom: 0.5rem;
 }
 
 .billet-right .legal-play {
