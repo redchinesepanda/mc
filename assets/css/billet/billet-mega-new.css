@@ -34,7 +34,7 @@
 		flex-basis: 100%;
 	}
 
-	.legal-billet-mega.legal-author .mega-about-logo {
+	.legal-billet-mega.legal-author .mega-about-logo img {
 		width: var( --Spacing-12 );
     	height: var( --Spacing-12 );
 	}
@@ -94,7 +94,7 @@
 
 	/* Width and Height */
 
-	.legal-billet-mega.legal-author .mega-about-logo {
+	.legal-billet-mega.legal-author .mega-about-logo img {
 		width: 4.375rem;
 		height: 4.375rem;
 	}
