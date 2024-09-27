@@ -447,6 +447,17 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
+.legal-billet-mega .link-item::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 0, 0, 0.5);
+	mix-blend-mode: multiply;
+}
+
 .legal-billet-mega .legal-license {
 	font-size: 13px;
 	line-height: 26px;
