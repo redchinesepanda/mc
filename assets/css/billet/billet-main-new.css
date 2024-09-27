@@ -54,10 +54,11 @@
     } */
 
     /* Billet Width and Height */
-    .billet-left,
-    .billet-center,
-    .billet-right {
-        min-height: 168px;
+    /* .billet-left, */
+    /* .billet-right */
+    .billet-center {
+        /* min-height: 168px; */
+        min-height: calc( var( --Spacing-12 ) + ( var( --Spacing-07 ) * 2 ) );
     }
 
     .billet-item .legal-logo {  
