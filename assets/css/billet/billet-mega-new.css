@@ -68,9 +68,9 @@
 
 	/* Width and Height */
 
-	.legal-billet-mega.legal-author .billet-mega-about {
+	/* .legal-billet-mega.legal-author .billet-mega-about {
 		flex-basis: 100%;
-	}
+	} */
 
 	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
 		width: 90%;
@@ -106,7 +106,7 @@
 .legal-billet-mega .billet-mega-about {
 	display: flex;
 	align-items: center;
-	column-gap: var( --Base-base-04 );
+	column-gap: var( --Spacing-04 );
 	row-gap: 18px;
 }
 
