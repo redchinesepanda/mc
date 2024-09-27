@@ -7,6 +7,10 @@
 		flex-wrap: wrap;
 	}
 
+	.legal-billet-mega .mega-about-links {
+		column-gap: 0.5rem;
+	}
+
 	/* Position */
 
 	.legal-billet-mega .link-item {
@@ -51,6 +55,12 @@
 }
 
 @media screen and ( min-width: 768px ) {
+
+	/* Display */
+
+	.legal-billet-mega .mega-about-links {
+		column-gap: var( --Spacing-04 );
+	}
 
 	/* Position */
 
@@ -157,7 +167,6 @@
 
 .legal-billet-mega .mega-about-links {
 	display: flex;
-	column-gap: var( --Spacing-04 );
 }
 
 .legal-billet-mega .legal-license {

@@ -7,9 +7,8 @@
 		row-gap: var( --Spacing-04 );
 	}
 
-	#theme-bottom-section .legal-author .author-photo {
-		width: var( --Spacing-12 );
-		height: var( --Spacing-12 );
+	#theme-bottom-section .author-social-links {
+		column-gap: 0.5rem;
 	}
 
 	/* Position */
@@ -23,6 +22,11 @@
 	}
 
 	/* Width and Height */
+
+	#theme-bottom-section .legal-author .author-photo {
+		width: var( --Spacing-12 );
+		height: var( --Spacing-12 );
+	}
 
 	#theme-bottom-section .legal-author .social-links::before {
 		width: 2.25rem;
@@ -41,9 +45,8 @@
 
 	/* Display */
 
-	#theme-bottom-section .legal-author .author-photo {
-		width: 4rem;
-		height: 4rem;
+	#theme-bottom-section .author-social-links {
+		column-gap: var( --Spacing-04 );
 	}
 
 	/* Position */
@@ -66,6 +69,11 @@
 
 	#theme-bottom-section .legal-author {
 		max-width: var( --base-width-desktop );
+	}
+
+	#theme-bottom-section .legal-author .author-photo {
+		width: 4rem;
+		height: 4rem;
 	}
 
 	#theme-bottom-section .legal-author .social-links::before {
@@ -93,7 +101,6 @@
 
 #theme-bottom-section .author-social-links {
 	display: flex;
-	column-gap: var( --Spacing-04 );
 }
 
 #theme-bottom-section .legal-author .social-links::before {
