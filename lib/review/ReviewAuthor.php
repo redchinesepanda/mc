@@ -199,14 +199,14 @@ class ReviewAuthor
 
 			'href' => $href,
 
-            'socialLinks' => [
+           /*  'socialLinks' => [
 
                 'twitter' => 'https://www.linkedin.com/in/borjaimbergamo/',
 
                 'facebook' => '#',
 
                 'linkedin' => 'https://www.linkedin.com/in/alexander-nadislau-49b789264/',
-            ],
+            ], */
 		];
     }
 
