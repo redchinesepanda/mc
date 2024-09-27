@@ -300,18 +300,18 @@ body {
 
 .billet .title-data-group {
     display: flex;
-    column-gap: 8px;
+    column-gap: 0.5rem;
 }
 
 .billet-title .billet-title-rating {
     display: flex;
-    column-gap: 4px;
+    column-gap: 0.25rem;
     align-items: center;
 }
 
 .billet-list-part {
     display: flex;
-    row-gap: 8px;
+    row-gap: 0.5rem;
 }
 
 .billet-list-part.legal-row {
@@ -320,7 +320,7 @@ body {
 
 .billet-list-part:not( .legal-default.legal-row ) .billet-list-part-item {
     display: flex;
-    column-gap: 8px;
+    column-gap: 0.5rem;
 }
 
 .billet-right {
@@ -328,7 +328,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    row-gap: 14px;
+    row-gap: 0.875rem;
 }
 
 .billet-right .legal-play {
