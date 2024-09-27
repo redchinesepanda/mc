@@ -26,8 +26,8 @@
 	/* Width and Height */
 
 	#theme-bottom-section .legal-author .social-links::before {
-		width: 1.5rem;
-		height: 1.5rem;
+		width: 2.25rem;
+		height: 2.25rem;
 	}
 
 	/* Typography */
@@ -38,10 +38,10 @@
 		font-weight: 500;
 	}
 
-	#theme-bottom-section .legal-author .social-links::before {
+/* 	#theme-bottom-section .legal-author .social-links::before {
 		font-size: 1rem;
 		line-height: 1rem;
-	}
+	} */
 
 	/* #theme-bottom-section .legal-author .author-duty {
 		font-size: 13px;
@@ -95,10 +95,10 @@
 		font-weight: 600;
 	}
 
-	#theme-bottom-section .legal-author .social-links::before {
+/* 	#theme-bottom-section .legal-author .social-links::before {
 		font-size: 1.25rem;
 		line-height: 1.25rem;
-	}
+	} */
 
 	/* #theme-bottom-section .legal-author .author-duty {
 		font-size: 14px;
@@ -228,6 +228,8 @@
 
 #theme-bottom-section .legal-author .social-links::before {
 	font-family: var( --legal-font-icons );
+	font-size: 1.25rem;
+	line-height: 1.25rem;
   	color: var( --Base-base-04 );
 }
 
