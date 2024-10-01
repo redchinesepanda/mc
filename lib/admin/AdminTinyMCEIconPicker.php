@@ -21,6 +21,19 @@ class AdminTinyMCEIconPicker
 		ToolEnqueue::add_editor_styles( self::CSS_ADMIN );
 	}
 
+	private static function get_ajax_general()
+	{
+		return [
+			'mc-ajax-icon-picker' => [
+				'object_name' => 'MCAjax',
+	
+				'data' => [
+					'ajax_url' => admin_url( 'admin-ajax.php' ),
+				],
+			],
+		];
+	}
+
 	// const JS = [
     //     'review-about' => [
 	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about.js',
@@ -29,13 +42,10 @@ class AdminTinyMCEIconPicker
 	// 	],
     // ];
 
-	// public static function register_script()
-    // {
-	// 	if ( TemplateMain::check_new() )
-	// 	{
-	// 		ToolEnqueue::register_script( self::JS_NEW );
-	// 	}
-    // }
+	public static function register_script()
+    {
+		ToolEnqueue::localize_script( self::get_ajax_general() );
+    }
 
 	public static function check_user_permission_edit()
     {
@@ -73,6 +83,8 @@ class AdminTinyMCEIconPicker
 			add_action( 'wp_ajax_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
 
 			add_action( 'wp_ajax_nopriv_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
+
+			add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
         // }
     }
 
@@ -101,6 +113,29 @@ class AdminTinyMCEIconPicker
 		return $buttons;
 	}
 
+	public static function get_icons()
+	{
+		return [
+			'categories' => [
+				[
+					'key' => 'arrows',
+	
+					'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
+	
+					'icons' => [
+						'ti-arrow-up' => 'arrow-up',
+	
+						'ti-arrow-right' => 'arrow-right',
+	
+						'ti-arrow-left' => 'arrow-left',
+	
+						'ti-arrow-down' => 'arrow-down',
+					],
+				],
+			]
+		];
+	}
+
 	public static function ajax_mc_get_icons()
 	{
 		// if ( current_user_can( 'edit_theme_options' ) || current_user_can( 'publish_posts' ) )
@@ -124,29 +159,6 @@ class AdminTinyMCEIconPicker
 	public static function render_icons()
 	{
 		return LegalComponents::render_main( self::TEMPLATE[ 'default' ], self::get_icons() );
-	}
-
-	public static function get_icons()
-	{
-		return [
-			'categories' => [
-				[
-					'key' => 'arrows',
-	
-					'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
-	
-					'icons' => [
-						'ti-arrow-up' => 'arrow-up',
-	
-						'ti-arrow-right' => 'arrow-right',
-	
-						'ti-arrow-left' => 'arrow-left',
-	
-						'ti-arrow-down' => 'arrow-down',
-					],
-				],
-			]
-		];
 	}
 }
 
