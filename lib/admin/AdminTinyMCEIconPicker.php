@@ -70,9 +70,9 @@ class AdminTinyMCEIconPicker
 
 			add_filter( 'tiny_mce_before_init', [ $handler, 'add_valid_elements_icons' ] );
 
-			add_action( 'wp_ajax_mc_get_icons', 'wp_ajax_mc_get_icons' );
+			add_action( 'wp_ajax_mc_get_icons', 'ajax_mc_get_icons' );
 
-			add_action( 'wp_ajax_nopriv_mc_get_icons', 'wp_ajax_mc_get_icons' );
+			add_action( 'wp_ajax_nopriv_mc_get_icons', 'ajax_mc_get_icons' );
         // }
     }
 
@@ -101,7 +101,7 @@ class AdminTinyMCEIconPicker
 		return $buttons;
 	}
 
-	public static function wp_ajax_mc_get_icons()
+	public static function ajax_mc_get_icons()
 	{
 		// if ( current_user_can( 'edit_theme_options' ) || current_user_can( 'publish_posts' ) )
 		// {
@@ -113,6 +113,8 @@ class AdminTinyMCEIconPicker
 		// }
 
 		echo self::render_icons();
+
+		die();
 	}
 
 	const TEMPLATE = [
