@@ -71,6 +71,8 @@ class AdminTinyMCEIconPicker
 			add_filter( 'tiny_mce_before_init', [ $handler, 'add_valid_elements_icons' ] );
 
 			add_action( 'wp_ajax_mc_get_icons', 'wp_ajax_mc_get_icons' );
+
+			add_action( 'wp_ajax_nopriv_mc_get_icons', 'wp_ajax_mc_get_icons' );
         // }
     }
 
