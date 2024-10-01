@@ -119,7 +119,9 @@ class AdminTinyMCEIconPicker
 
 	public static function render_icons()
 	{
-		return LegalComponents::render_main( self::TEMPLATE[ 'default' ], self::get_icons() );
+		return 'test';
+
+		// return LegalComponents::render_main( self::TEMPLATE[ 'default' ], self::get_icons() );
 	}
 
 	public static function get_icons()
