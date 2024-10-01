@@ -71,11 +71,11 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 							direction: "row",
 
 							items: [
-								{ type: "textbox", name: c.name },
+								{ type: "textbox", name: "mc-textbox-name" },
 
 								{
 									type: "button",
-									
+
 									text: "Choose"
 									// onclick() {
 									// 	(TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
