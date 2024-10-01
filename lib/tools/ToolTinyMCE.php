@@ -36,6 +36,8 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_inline_title' ] );
 
+		add_filter( 'tiny_mce_before_init', [ $handler, 'modify_color_map' ] );
+
 		add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
@@ -46,6 +48,23 @@ class ToolTinyMCE
 		
 		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noopener' ], 999 );
     }
+
+	public static function modify_color_map( $init )
+	{
+		// $init[ 'color_map' ] = [
+		
+		$init[ 'textcolor_map' ] = [
+			'000000', 'Black',
+			'808080', 'Gray',
+			'FFFFFF', 'White',
+			'FF0000', 'Red',
+			'FFFF00', 'Yellow',
+			'008000', 'Green',
+			'0000FF', 'Blue'
+		];
+	
+		return $init;
+	}
 
 	public static function init_link_attribute_rel( $init )
 	{
