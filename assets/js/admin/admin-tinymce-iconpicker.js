@@ -59,6 +59,29 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 								{ text: "Athletics", value: "icon-athletics" }
 							]
+						},
+
+						{
+							type: "container",
+
+							label: "MC Icon",
+
+							layout: "flex",
+
+							direction: "row",
+
+							items: [
+								{ type: "textbox", name: c.name },
+
+								{
+									type: "button",
+									
+									text: "Choose"
+									// onclick() {
+									// 	(TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
+									// },
+								}
+							],
 						}
 					],
 
