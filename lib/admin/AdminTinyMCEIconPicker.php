@@ -69,6 +69,8 @@ class AdminTinyMCEIconPicker
 			add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
 
 			add_filter( 'tiny_mce_before_init', [ $handler, 'add_valid_elements_icons' ] );
+
+			add_action( 'wp_ajax_mc_get_icons', 'wp_ajax_mc_get_icons' );
         // }
     }
 
@@ -97,6 +99,51 @@ class AdminTinyMCEIconPicker
 		return $buttons;
 	}
 
+	public static function wp_ajax_mc_get_icons()
+	{
+		// if ( current_user_can( 'edit_theme_options' ) || current_user_can( 'publish_posts' ) )
+		// {
+			// $icons = Themify_Icons_Icon_Picker::get_icons();
+
+			// include THEMIFY_ICONS_DIR . 'templates/icon-picker.php';
+
+			// die;
+		// }
+
+		echo self::render_icons();
+	}
+
+	const TEMPLATE = [
+        'default' => LegalMain::LEGAL_PATH . '/template-parts/admin/part-icon-picker.php',
+    ];
+
+	public static function render_icons()
+	{
+		return LegalComponents::render_main( self::TEMPLATE[ 'default' ], self::get_icons() );
+	}
+
+	public static function get_icons()
+	{
+		return [
+			'categories' => [
+				[
+					'key' => 'arrows',
+	
+					'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
+	
+					'icons' => [
+						'ti-arrow-up' => 'arrow-up',
+	
+						'ti-arrow-right' => 'arrow-right',
+	
+						'ti-arrow-left' => 'arrow-left',
+	
+						'ti-arrow-down' => 'arrow-down',
+					],
+				],
+			]
+		];
+	}
 }
 
 ?>
