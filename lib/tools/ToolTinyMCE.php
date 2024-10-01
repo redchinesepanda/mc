@@ -53,7 +53,7 @@ class ToolTinyMCE
 	{
 		// $init[ 'color_map' ] = [
 		
-		$init[ 'textcolor_map' ] = [
+		$init[ 'textcolor_map' ] = json_encode( [
 			'000000', 'Black',
 			'808080', 'Gray',
 			'FFFFFF', 'White',
@@ -61,7 +61,7 @@ class ToolTinyMCE
 			'FFFF00', 'Yellow',
 			'008000', 'Green',
 			'0000FF', 'Blue'
-		];
+		] );
 	
 		return $init;
 	}
