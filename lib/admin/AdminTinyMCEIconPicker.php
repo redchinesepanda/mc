@@ -72,7 +72,7 @@ class AdminTinyMCEIconPicker
 
 			add_action( 'wp_ajax_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
 
-			// add_action( 'wp_ajax_nopriv_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
+			add_action( 'wp_ajax_nopriv_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
         // }
     }
 
