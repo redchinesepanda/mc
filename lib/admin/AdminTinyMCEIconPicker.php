@@ -74,7 +74,7 @@ class AdminTinyMCEIconPicker
 
 	public static function add_valid_elements_icons( $init )
 	{
-		$init[ 'extended_valid_elements' ] = 'i[class],span[class]';
+		$init[ 'extended_valid_elements' ] = 'i[class],span[class,style]';
 
 		// custom_elements: "emstart,emend",
 
