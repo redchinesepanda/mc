@@ -76,7 +76,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 				console.log( 'openDialog onSubmit' );
 
-				console.log( 'content' );
+				console.log( content );
 
 				/* Insert content when the window form is submitted */
 
