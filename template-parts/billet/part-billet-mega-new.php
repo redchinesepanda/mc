@@ -27,7 +27,7 @@
 				<?php if( !empty( $args[ 'author' ][ 'items' ] ) ) : ?>
 					<div class="mega-about-links">
 						<?php foreach( $args[ 'author' ][ 'items' ] as $item ) : ?>
-							<a class="link-item" href="<?php echo $item[ 'url' ]; ?>">
+							<a class="link-item <?php echo $item[ 'class' ]; ?>" href="<?php echo $item[ 'url' ]; ?>">
 								<img src="<?php echo $item[ 'image' ]; ?>" width="20" height="20" loading="lazy">
 							</a>
 						<?php endforeach; ?>
