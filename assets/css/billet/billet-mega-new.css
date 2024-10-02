@@ -13,7 +13,7 @@
 
 	/* Position */
 
-	.legal-billet-mega .social-links {
+	.legal-billet-mega .social-links::before {
 		width: 2.25rem;
 		height: 2.25rem;
 	}
@@ -83,7 +83,7 @@
 		margin-left: auto;
 	}
 
-	.legal-billet-mega .social-links {
+	.legal-billet-mega .social-links::before {
 		width: 2.75rem;
 		height: 2.75rem;
 	}
@@ -199,7 +199,7 @@
 	justify-content: center;
 }
 
-.legal-billet-mega .social-links {
+.legal-billet-mega .social-links::before {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -230,20 +230,20 @@
 	padding: 20px;
 }
 
-/* .legal-billet-mega .social-links {
+/* .legal-billet-mega .social-links::before {
 	padding: 7px;
 } */
 
-.legal-billet-mega .social-links {
+.legal-billet-mega .social-links::before {
 	position: relative;
 	overflow: hidden;
 }
 
-.legal-billet-mega .social-links:hover.social-links::after {
+/* .legal-billet-mega .social-links:hover.social-links::after {
 	position: absolute;
 	top: 0;
 	left: 0;
-}
+} */
 
 .legal-billet-mega .mega-tnc-info {
 	margin: 0px;
@@ -345,7 +345,7 @@
 	height: auto;
 }
 
-/* .legal-billet-mega .social-links {
+/* .legal-billet-mega .social-links::before {
 	width: calc(32px - 7px * 2);
     height: calc(32px - 7px * 2);
 } */
@@ -355,10 +355,10 @@
 	height: 16px;
 }
 
-.legal-billet-mega .social-links:hover.social-links::after {
+/* .legal-billet-mega .social-links:hover.social-links::after {
 	width: 100%;
 	height: 100%;
-}
+} */
 
 .legal-billet-mega .mega-about-afillate {
 	min-width: 128px;
@@ -411,10 +411,10 @@
 	transition: 0.4s;
 }
 
-.legal-billet-mega .social-links:hover.social-links::after {
+/* .legal-billet-mega .social-links:hover.social-links::after {
 	background-color: rgba(95, 55, 255, 0.1);
 	transition: 0.4s;
-}
+} */
 
 .legal-billet-mega .mega-about-afillate {
 	/* background-color: var(--Base-base-09); */
@@ -427,9 +427,7 @@
 	background-color: var( --Base-purple_button_hover );
 }
 
-.legal-billet-mega .social-links {
-	/* border: 1px solid var(--Base-base-09);
-    border-radius: 4px; */
+.legal-billet-mega .social-links::before {
 	border-radius: 0.5rem;
 	border: 1px solid var( --Base-base-04 );
 	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
@@ -516,9 +514,9 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
-.legal-billet-mega .social-links:hover.social-links::after {
+/* .legal-billet-mega .social-links:hover.social-links::after {
 	content: '';
-}
+} */
 
 .legal-billet-mega .legal-license {
 	font-size: 13px;
