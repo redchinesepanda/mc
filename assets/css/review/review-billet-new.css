@@ -116,6 +116,10 @@
 	display: flex;
 }
 
+.legal-billet .billet-tnc-description:not( .legal-active ) p:not( :first-child ) {
+	display: none;
+}
+
 .legal-billet .billet-tnc-description ul,
 .legal-billet .billet-tnc-description ol {
 	display: none;
@@ -272,14 +276,6 @@
 .legal-billet .billet-tnc-description a {
 	color: var( --Base-base-05 );
 }
-
-.legal-billet .billet-tnc-description:not( .legal-active ) p:not( :first-child ) {
-	display: none;
-}
-
-/* .legal-billet .billet-tnc-description.legal-active {
-	display: flex;
-} */
 
 .legal-billet .billet-tnc-description:not( .legal-active ) p {
 	overflow: hidden;
