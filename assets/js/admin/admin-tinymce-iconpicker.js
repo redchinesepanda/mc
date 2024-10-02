@@ -1,4 +1,4 @@
-tinymce.PluginManager.add( 'tinymce-iconpicker', (editor, url) => {
+tinymce.PluginManager.add( 'tinymce_iconpicker', (editor, url) => {
 	const openDialog = () => editor.windowManager.open( {
 		title: 'Example plugin',
 		body: {
@@ -40,7 +40,7 @@ tinymce.PluginManager.add( 'tinymce-iconpicker', (editor, url) => {
 
 	/* Add a button that opens a window */
 
-	editor.ui.registry.addButton( 'tinymce-iconpicker-button', {
+	editor.ui.registry.addButton( 'tinymce_iconpicker', {
 		text: 'My button',
 
 		onAction: () => {
