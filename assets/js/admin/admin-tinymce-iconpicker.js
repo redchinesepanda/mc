@@ -61,11 +61,11 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 							]
 						},
 
-						{
-							type: 'htmlpanel',
+						// {
+						// 	type: 'htmlpanel',
 
-							html: 'Panel content goes here.'
-						},
+						// 	html: 'Panel content goes here.'
+						// },
 
 						{
 							type: "container",
