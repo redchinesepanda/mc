@@ -74,7 +74,7 @@ class AdminTinyMCEIconPicker
 
 			add_filter( 'mce_external_plugins', [ $handler, 'add_tinymce_iconpicker_plugin' ] );
 
-			// add_filter( 'mce_buttons', [ $handler, 'register_iconpicker_button' ] );
+			add_filter( 'mce_buttons', [ $handler, 'register_iconpicker_button' ] );
 
 			add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
 
@@ -106,12 +106,12 @@ class AdminTinyMCEIconPicker
 		return $plugin_array;
 	}
 
-	// public static function register_iconpicker_button( $buttons )
-	// {
-	// 	$buttons[] = 'tinymce_iconpicker';
+	public static function register_iconpicker_button( $buttons )
+	{
+		$buttons[] = 'tinymce_iconpicker';
 
-	// 	return $buttons;
-	// }
+		return $buttons;
+	}
 
 	public static function get_icons()
 	{
