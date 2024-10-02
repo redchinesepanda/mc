@@ -101,7 +101,7 @@ class AdminTinyMCEIconPicker
 
 	public static function add_tinymce_iconpicker_plugin( $plugin_array )
 	{
-		$plugin_array[ 'tinymce_iconpicker' ] = LegalMain::LEGAL_URL . '/assets/js/admin/admin-tinymce-iconpicker.js';
+		$plugin_array[ 'tinymce-iconpicker' ] = LegalMain::LEGAL_URL . '/assets/js/admin/admin-tinymce-iconpicker.js';
 
 		return $plugin_array;
 	}
