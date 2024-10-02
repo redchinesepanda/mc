@@ -518,6 +518,10 @@
 	content: '';
 } */
 
+.legal-billet-mega .social-links {
+	text-decoration: none;
+}
+
 .legal-billet-mega .social-links::before {
 	font-family: var( --legal-font-icons );
 	font-size: 1.25rem;
