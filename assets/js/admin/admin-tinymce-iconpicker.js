@@ -47,7 +47,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	/* Add a button that opens a window */
 
 	editor.addButton( 'tinymce_iconpicker', {
-		text: 'Insert Button',
+		// text: 'Insert Button',
+
+		title: 'Insert Button',
+
+		icon: 'icon mce-i-plus',
 
 		onAction: () => {
 		  /* Open window */
