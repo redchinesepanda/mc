@@ -49,7 +49,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	editor.addButton( 'tinymce_iconpicker', {
 		// text: 'Insert Button',
 
-		title: 'Insert Button',
+		title: 'Insert Icon',
 
 		icon: 'icon mce-i-plus',
 
