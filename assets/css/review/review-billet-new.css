@@ -112,7 +112,7 @@
     pointer-events: none;
 }
 
-.legal-billet .billet-tnc-description {
+.legal-billet .billet-tnc-description:not( .legal-active ) {
 	display: flex;
 }
 
@@ -271,6 +271,14 @@
 .legal-billet .billet-tnc-description p,
 .legal-billet .billet-tnc-description a {
 	color: var( --Base-base-05 );
+}
+
+.legal-billet .billet-tnc-description:not( .legal-active ) *:not( :first-child ) {
+	display: none;
+}
+
+.legal-billet .billet-tnc-description.legal-active {
+	display: flex;
 }
 
 .legal-billet .billet-tnc-description:not( .legal-active ) p {
