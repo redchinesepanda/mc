@@ -76,10 +76,15 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 								{
 									type: "button",
 
-									text: "Choose"
-									// onclick() {
-									// 	(TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
-									// },
+									text: "Choose",
+
+									onclick() {
+										// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
+
+										console.log( 'container button' );
+
+										console.log( this.$el );
+									},
 								}
 							],
 						}

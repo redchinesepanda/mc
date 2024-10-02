@@ -82,6 +82,8 @@ class ToolTinyMCE
 		'E3E3E3', 'Logo-background',
 		'34C759', 'Status-Success',
 		'FF3B30', 'Status-Error',
+		'D40000', 'Status-Number-Low',
+		'038608', 'Status-Number-High',
 	];
 
 	public static function modify_color_map( $init )
