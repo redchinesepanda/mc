@@ -62,6 +62,12 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 						},
 
 						{
+							type: 'htmlpanel',
+
+							html: 'Panel content goes here.'
+						},
+
+						{
 							type: "container",
 
 							label: "MC Icon",
