@@ -518,6 +518,25 @@
 	content: '';
 } */
 
+.legal-billet-mega .social-links::before {
+	font-family: var( --legal-font-icons );
+	font-size: 1.25rem;
+	line-height: 1.25rem;
+  	color: var( --Base-base-04 );
+}
+
+.legal-billet-mega .social-link-twitter::before {
+	content: '\F119';
+}
+
+.legal-billet-mega .social-link-facebook::before {
+	content: '\F117';
+}
+
+.legal-billet-mega .social-link-linkedin::before {
+	content: '\F118';
+}
+
 .legal-billet-mega .legal-license {
 	font-size: 13px;
 	line-height: 26px;
