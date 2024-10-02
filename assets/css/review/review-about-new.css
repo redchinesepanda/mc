@@ -509,13 +509,20 @@
 
 .review-about .about-right .review-bonus-title, 
 .legal-review-page-sidebar .about-right .review-bonus-title {
-    padding-bottom: 48px;
+    /* padding-bottom: 48px; */
+    margin-bottom: 1.75rem;
 }
 
-.review-about .about-right .review-bonus-description,
+/* .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
 .about-right .legal-cut-control {
     padding-top: 14px;
+    padding-top: 1rem;
+} */
+
+.review-about .about-right .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description {
+    margin-top: 1rem;
 }
 
 .about-right .review-bonus-description .bonus-description-text {
@@ -524,7 +531,16 @@
 }
 
 .about-right .legal-cut-control {
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about-right .legal-cut-control:not( .legal-active ) {
+    margin-top: 1rem;
+}
+
+.about-right .legal-cut-control.legal-active {
+    margin-top: 0.75rem;
 }
 
 .about-right .review-bonus-description:not( .exclusion-rule ) + .legal-cut-control.legal-active::after {
@@ -534,7 +550,8 @@
 .review-about .about-right .legal-afillate, 
 .legal-review-page-sidebar .about-right .legal-afillate,
 .tcb-post-content .legal-afillate {
-    padding: 10px 18px;
+    /* padding: 10px 18px; */
+    padding: 0.625rem 1.125rem;
 }
 
 .review-about .achievement-bonus .achievement-bonus-link {
@@ -557,7 +574,8 @@
 }
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
-    border: 2px solid var( --Base-base-09);
+    /* border: 2px solid var( --Base-base-09 ); */
+    border: 1px solid var( --Base-base-09 );
 }
 
 .review-about-wrapper:not(.legal-mode-mini) {
@@ -600,8 +618,15 @@
 }
 
 .legal-afillate {
-    border-radius: 60px;
-    background-color: var(--Base-base-09);
+    /* border-radius: 60px; */
+    /* background-color: var(--Base-base-09); */
+    border-radius: 3.75rem;
+    background-color: var( --Base-purple_button );
+}
+
+.legal-afillate:hover {
+    /* background-color: var(--Base-base-07); */
+    background-color: var( --Base-purple_button_hover );
 }
 
 .review-about.legal-default .achievement-bonus .achievement-bonus-link {
@@ -649,20 +674,22 @@
 }
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
-    border-radius: 32px;
-    background: var( --Primitives-purple-50 );
+    /* border-radius: 32px; */
+    /* background: var( --Primitives-purple-50 ); */
+    border-radius: 1.125rem;
+    background-color: var( --Primitives-purple-20 );
 }
 
 /* Typography */
 
+/* .review-about .review-bonus-description, */
+/* .legal-review-page-sidebar .about-right .review-bonus-description, */
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
 .review-about .achievement-name,
 .review-about .achievement-tooltip,
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
-.review-about .review-bonus-description,
-.legal-review-page-sidebar .about-right .review-bonus-description,
 .about-right .legal-cut-control,
 .about-right .review-bonus-head {
     color: var( --Base-base-09 );
@@ -734,32 +761,29 @@
 
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 1.75rem;
 }
 
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description {
-    font-size: 12px;
+    color: var( --Base-base-05 );
+    font-size: 0.625rem;
     font-weight: 400;
-    line-height: 18px;
-}
-
-.legal-afillate:hover {
-    background-color: var(--Base-base-07);
+    line-height: 0.875rem;
 }
 
 .legal-afillate {
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     text-align: center;
     color: var( --Base-base-01 );
 }
 
 .legal-review-page-sidebar .about-right .legal-afillate {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1rem;
+    line-height: 1.375rem;
 }
 
 .tcb-post-content > .legal-afillate {
@@ -768,9 +792,10 @@
 } 
 
 .about-right .legal-cut-control {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 18px;
+    /* line-height: 18px; */
+    line-height: normal;
     text-align: center;
 }
 

@@ -7,7 +7,21 @@
 		flex-wrap: wrap;
 	}
 
+	.legal-billet-mega .mega-about-links {
+		column-gap: 0.5rem;
+	}
+
 	/* Position */
+
+	.legal-billet-mega .social-links::before {
+		width: 2.25rem;
+		height: 2.25rem;
+	}
+
+	/* .legal-billet-mega.legal-author .mega-about-options {
+		margin-right: 1rem;
+	} */
+
 	.legal-billet-mega h3:not( :empty ),
 	.legal-billet-mega h4:not( :empty ) {
 		/* padding-top: 16px; */
@@ -24,6 +38,11 @@
 		flex-basis: 100%;
 	}
 
+	.legal-billet-mega.legal-author .mega-about-logo img {
+		width: var( --Spacing-12 );
+    	height: var( --Spacing-12 );
+	}
+
 	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
 		width: 75%;
 	} */
@@ -34,6 +53,10 @@
 
 	/* Typography */
 
+	.legal-billet-mega .mega-about-name {
+		font-weight: 500;
+	}
+
 	.legal-billet-mega li {
 		font-size: 14px;
         line-height: 20px;
@@ -41,6 +64,12 @@
 }
 
 @media screen and ( min-width: 768px ) {
+
+	/* Display */
+
+	.legal-billet-mega .mega-about-links {
+		column-gap: var( --Spacing-04 );
+	}
 
 	/* Position */
 
@@ -54,6 +83,15 @@
 		margin-left: auto;
 	}
 
+	.legal-billet-mega .social-links::before {
+		width: 2.75rem;
+		height: 2.75rem;
+	}
+
+	.legal-billet-mega.legal-author .mega-about-options {
+		margin-right: var( --Spacing-07 );
+	}
+
 	.legal-billet-mega h3:not( .legal-bonus h3 ):not( :empty ),
 	.legal-billet-mega h4:not( :empty ) {
 		/* padding-top: 14px; */
@@ -64,9 +102,14 @@
 
 	/* Width and Height */
 
-	.legal-billet-mega.legal-author .billet-mega-about {
-		flex-basis: 100%;
+	.legal-billet-mega.legal-author .mega-about-logo img {
+		width: 4.375rem;
+		height: 4.375rem;
 	}
+
+	/* .legal-billet-mega.legal-author .billet-mega-about {
+		flex-basis: 100%;
+	} */
 
 	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
 		width: 90%;
@@ -77,6 +120,10 @@
 	} */
 
 	/* Typography */
+
+	.legal-billet-mega .mega-about-name {
+		font-weight: 600;
+	}
 
 	.legal-billet-mega li {
 		font-size: 16px;
@@ -98,7 +145,7 @@
 .legal-billet-mega .billet-mega-about {
 	display: flex;
 	align-items: center;
-	column-gap: 16px;
+	column-gap: var( --Spacing-04 );
 	row-gap: 18px;
 }
 
@@ -138,7 +185,6 @@
 
 .legal-billet-mega .mega-about-links {
 	display: flex;
-	column-gap: 10px;
 }
 
 .legal-billet-mega .legal-license {
@@ -153,9 +199,10 @@
 	justify-content: center;
 }
 
-.legal-billet-mega .link-item {
+.legal-billet-mega .social-links::before {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .legal-billet-mega .billet-mega-tnc {
@@ -183,9 +230,20 @@
 	padding: 20px;
 }
 
-.legal-billet-mega .link-item {
+/* .legal-billet-mega .social-links::before {
 	padding: 7px;
+} */
+
+.legal-billet-mega .social-links::before {
+	position: relative;
+	overflow: hidden;
 }
+
+/* .legal-billet-mega .social-links:hover.social-links::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+} */
 
 .legal-billet-mega .mega-tnc-info {
 	margin: 0px;
@@ -278,7 +336,7 @@
 	flex-basis: 100%; 
 }
 
-.legal-billet-mega .mega-about-logo {
+.legal-billet-mega:not( .legal-billet-mega.legal-author ) .mega-about-logo {
 	width: 70px;
 	height: 70px;
 }
@@ -287,15 +345,20 @@
 	height: auto;
 }
 
-.legal-billet-mega .link-item {
+/* .legal-billet-mega .social-links::before {
 	width: calc(32px - 7px * 2);
     height: calc(32px - 7px * 2);
-}
+} */
 
 .legal-billet-mega .legal-license::before {
 	width: 16px;
 	height: 16px;
 }
+
+/* .legal-billet-mega .social-links:hover.social-links::after {
+	width: 100%;
+	height: 100%;
+} */
 
 .legal-billet-mega .mega-about-afillate {
 	min-width: 128px;
@@ -343,18 +406,32 @@
 	border-radius: 50%;
 }
 
+.legal-billet-mega .social-links:hover.social-links::before {
+	border: 1px solid var( --Base-purple_button_hover );
+	transition: 0.4s;
+}
+
+/* .legal-billet-mega .social-links:hover.social-links::after {
+	background-color: rgba(95, 55, 255, 0.1);
+	transition: 0.4s;
+} */
+
 .legal-billet-mega .mega-about-afillate {
-	background-color: var(--Base-base-09);
+	/* background-color: var(--Base-base-09); */
+	background-color: var( --Base-purple_button );
 	border-radius: 60px;
 }
 
 .legal-billet-mega .mega-about-afillate:hover {
-	background-color: var(--Base-base-07);
+	/* background-color: var(--Base-base-07); */
+	background-color: var( --Base-purple_button_hover );
 }
 
-.legal-billet-mega .link-item {
-	border: 1px solid var(--Base-base-09);
-    border-radius: 4px;
+.legal-billet-mega .social-links::before {
+	border-radius: 0.5rem;
+	border: 1px solid var( --Base-base-04 );
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	box-sizing: border-box;
 }
 
 .legal-billet-mega.legal-horizontal {
@@ -400,7 +477,7 @@
 }
 
 .legal-billet-mega .mega-about-afillate {
-	font-weight: 500;
+	font-weight: 600;
 	text-decoration: none;
 	text-align: center;
 	color: var(--Base-base-01);
@@ -417,17 +494,16 @@
 }
 
 .legal-billet-mega .mega-about-name {
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 24px;
-	color: var( --Base-base-09 );
+	font-size: 1rem;
+  	line-height: 1.375rem;
+  	color: var( --Base-base-09 );
 }
 
 .legal-billet-mega .mega-about-post {
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 400;
-	line-height: 20px;
-	color: var(--Base-base-05);
+	line-height: 1.25rem;
+	color: var( --Base-base-05 );
 }
 
 .legal-billet-mega .mega-about-prefix {
@@ -436,6 +512,38 @@
 	letter-spacing: normal;
 	line-height: 28px;
 	color: rgba(10, 10, 10, 0.85);
+}
+
+/* .legal-billet-mega .social-links:hover.social-links::after {
+	content: '';
+} */
+
+.legal-billet-mega .social-links {
+	text-decoration: none;
+}
+
+.legal-billet-mega .social-links:hover.social-links::before {
+	color: var( --Base-purple_button_hover );
+	transition: 0.4s;
+}
+
+.legal-billet-mega .social-links::before {
+	font-family: var( --legal-font-icons );
+	font-size: 1.25rem;
+	line-height: 1.25rem;
+  	color: var( --Base-base-04 );
+}
+
+.legal-billet-mega .social-link-twitter::before {
+	content: '\F119';
+}
+
+.legal-billet-mega .social-link-facebook::before {
+	content: '\F117';
+}
+
+.legal-billet-mega .social-link-linkedin::before {
+	content: '\F118';
 }
 
 .legal-billet-mega .legal-license {

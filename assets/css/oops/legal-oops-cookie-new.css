@@ -120,21 +120,31 @@
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	border-radius: 20px;
-	border: 1px solid var(--Base-base-09);
+	border-radius: 3.75rem;
+	/* border: 1px solid var(--Base-base-09); */
 }
 
 .legal-oops-cookie .legal-necessary {
 	background-color: var(--Base-base-01);
+	/* background-color: var( --Primitives-purple-20 ); */
+	border: 1px solid var( --Base-base-04 );
+}
+
+.legal-oops-cookie .legal-necessary:hover {
+	/* background-color: var( --Primitives-purple-50 ); */
+	border: 1px solid var( --Base-base-09 );
+	transition: 0.4s;
 }
 
 .legal-oops-cookie .legal-all {
-	background-color: var(--Base-base-09);
+	/* background-color: var(--Base-base-09); */
+	background-color: var( --Base-purple_button );
 }
 
 .legal-oops-cookie .legal-all:hover {
-	background-color: var(--Base-base-07);
-	border: 1px solid var(--Base-base-07);
+	/* background-color: var(--Base-base-07); */
+	/* border: 1px solid var(--Base-base-07); */
+	background-color: var( --Base-purple_button_hover );
 }
 
 /* Typography */
@@ -171,16 +181,20 @@
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 20px;
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.25rem;
 	text-align: center;
 }
 
-.legal-oops-cookie .oops-cookie-button:hover,
+/* .legal-oops-cookie .legal-necessary {
+	color: var( --Base-purple_button );
+} */
+
+/* .legal-oops-cookie .oops-cookie-button:hover,
 .legal-oops-cookie .oops-cookie-privacy:hover {
 	text-shadow: 0 0 0.6px var(--Base-base-09);
-}
+} */
 
 .legal-oops-cookie .oops-cookie-button {
 	cursor: pointer;

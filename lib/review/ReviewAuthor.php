@@ -193,9 +193,20 @@ class ReviewAuthor
 
 			'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
 
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_axani.png',
 
 			'href' => $href,
+
+          /*   'socialLinks' => [
+
+                'twitter' => 'https://www.linkedin.com/in/borjaimbergamo/',
+
+                'facebook' => '#',
+
+                'linkedin' => 'https://www.linkedin.com/in/alexander-nadislau-49b789264/',
+            ], */
 		];
     }
 
@@ -228,7 +239,9 @@ class ReviewAuthor
 
 			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
 
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/alexander-kachalov.webp',
+			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/alexander-kachalov.webp',
+
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_kachalov.png',
 
 			'href' => $href,
 		];
@@ -253,9 +266,17 @@ class ReviewAuthor
 
 			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
 
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
+			// 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
+
+            'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_imbergano.png',
 
 			'href' => $href,
+
+            'socialLinks' => [
+
+                'twitter' => 'https://www.linkedin.com/in/borjaimbergamo/',
+            ],
+
 		];
     }
 
@@ -346,6 +367,8 @@ class ReviewAuthor
             // "jobTitle" => "Site manager",
             
             "jobTitle" => $author[ 'duty' ],
+
+            // "linkTwitter" => $author[ 'socialLinks' ][ 'twitter' ],
 
             // "worksFor" => ReviewSchema::schema_publisher(),
         ];

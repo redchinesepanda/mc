@@ -1,7 +1,6 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
     <div class="about-right">
         <?php if( !empty( $args[ 'bonus' ][ 'name' ] ) ) : ?>
-            <span class="review-bonus-head"><?php echo $args[ 'text' ][ 'head' ]; ?></span>
             <div class="review-bonus-title"><?php echo $args[ 'bonus' ][ 'name' ]; ?></div>
         <?php endif; ?>
         <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>

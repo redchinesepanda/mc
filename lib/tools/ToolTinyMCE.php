@@ -36,6 +36,8 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_inline_title' ] );
 
+		add_filter( 'tiny_mce_before_init', [ $handler, 'modify_color_map' ] );
+
 		add_action( 'after_setup_theme', [ $handler, 'add_editor_styles' ] );
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
@@ -46,6 +48,89 @@ class ToolTinyMCE
 		
 		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noopener' ], 999 );
     }
+
+	const COLOR_MAP = [
+		'FFF', 'Base-base-01',
+		'F6F6F6', 'Base-base-02',
+		'EDEDED', 'Base-base-03',
+		'C8C8C8', 'Base-base-04',
+		'939393', 'Base-base-05',
+		'353535', 'Base-base-07',
+		'1D1D1D', 'Base-base-08',
+		'0A0A0A', 'Base-base-09',
+		'6F56FF', 'Base-purple_button',
+		'5F37FF', 'Base-purple_button_hover',
+		'846FFF', 'Base-link',
+		'9a88ff', 'Base-link-hover',
+		'6C6C6C', 'Base-breadcrumbs',
+		'06F', 'primary-blue-Primary-Blue',
+		'D9F2FF', 'Primitives-blue-40',
+		'4D80FF', 'primary-blue-Blue-80',
+		'F5FCF6', 'Primitives-green-20',
+		'ECF9E2', 'Primitives-green-40',
+		'F7F5FF', 'Primitives-purple-20',
+		'EBE8FC', 'Primitives-purple-40',
+		'E3DEFF', 'Primitives-purple-50',
+		'C7BFFF', 'Primitives-purple-60',
+		'FFD9D9', 'Primitives-red-40',
+		'FF845E', 'Primitives-red-60',
+		'FDFFA0', 'Primitives-yellow-60',
+		'EDFF6A', 'Primitives-yellow-100',
+		'rgba(255, 255, 255, 0.20)', 'white-20',
+		'rgba(255, 255, 255, 0.60)', 'white-60',
+		'EAECF0', 'Gray-200',
+		'E3E3E3', 'Logo-background',
+		'34C759', 'Status-Success',
+		'FF3B30', 'Status-Error',
+		'D40000', 'Status-Number-Low',
+		'038608', 'Status-Number-High',
+	];
+
+	public static function modify_color_map( $init )
+	{
+		// $init[ 'color_map' ] = [
+		
+		$init[ 'color_map' ] = json_encode( self::COLOR_MAP );
+		
+		$init[ 'textcolor_map' ] = json_encode( self::COLOR_MAP );
+
+		// $init[ 'textcolor_map' ] = json_encode( [
+		// 	'FFF', 'Base-base-01',
+		// 	'F6F6F6', 'Base-base-02',
+		// 	'EDEDED', 'Base-base-03',
+		// 	'C8C8C8', 'Base-base-04',
+		// 	'939393', 'Base-base-05',
+		// 	'353535', 'Base-base-07',
+		// 	'1D1D1D', 'Base-base-08',
+		// 	'0A0A0A', 'Base-base-09',
+		// 	'6F56FF', 'Base-purple_button',
+		// 	'5F37FF', 'Base-purple_button_hover',
+		// 	'846FFF', 'Base-link',
+		// 	'9a88ff', 'Base-link-hover',
+		// 	'6C6C6C', 'Base-breadcrumbs',
+		// 	'06F', 'primary-blue-Primary-Blue',
+		// 	'D9F2FF', 'Primitives-blue-40',
+		// 	'4D80FF', 'primary-blue-Blue-80',
+		// 	'F5FCF6', 'Primitives-green-20',
+		// 	'ECF9E2', 'Primitives-green-40',
+		// 	'F7F5FF', 'Primitives-purple-20',
+		// 	'EBE8FC', 'Primitives-purple-40',
+		// 	'E3DEFF', 'Primitives-purple-50',
+		// 	'C7BFFF', 'Primitives-purple-60',
+		// 	'FFD9D9', 'Primitives-red-40',
+		// 	'FF845E', 'Primitives-red-60',
+		// 	'FDFFA0', 'Primitives-yellow-60',
+		// 	'EDFF6A', 'Primitives-yellow-100',
+		// 	'rgba(255, 255, 255, 0.20)', 'white-20',
+		// 	'rgba(255, 255, 255, 0.60)', 'white-60',
+		// 	'EAECF0', 'Gray-200',
+		// 	'E3E3E3', 'Logo-background',
+		// 	'34C759', 'Status-Success',
+		// 	'FF3B30', 'Status-Error',
+		// ] );
+	
+		return $init;
+	}
 
 	public static function init_link_attribute_rel( $init )
 	{

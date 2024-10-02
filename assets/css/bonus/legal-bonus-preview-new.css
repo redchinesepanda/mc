@@ -205,11 +205,13 @@
 }
 
 .legal-bonus-list .about-get-button {
-	background-color: var(--Base-base-09);
+	/* background-color: var(--Base-base-09); */
+	background-color: var( --Base-purple_button );
 	border-radius: 30px;
 }
 .legal-bonus-list .about-get-button:hover {
-	background-color: var(--Base-base-07);
+	/* background-color: var(--Base-base-07); */
+	background-color: var( --Base-purple_button_hover );
 }
 
 .legal-bonus-list .item-about-expired {
@@ -265,7 +267,7 @@
 
 .legal-bonus-list .about-get-button {
 	font-size: 14px;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 20px;
 	text-decoration: none;
 	color: var(--Base-base-01);

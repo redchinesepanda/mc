@@ -123,6 +123,8 @@ class ACFReview
 
         $choices[ 'link-twitter' ] = 'Twitter';
 
+        $choices[ 'link-facebook' ] = 'Facebook';
+
         $field[ 'choices' ] = $choices;
 
         return $field;

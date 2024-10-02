@@ -116,7 +116,8 @@
 	display: flex;
 }
 
-.legal-billet .billet-tnc-description ul {
+.legal-billet .billet-tnc-description ul,
+.legal-billet .billet-tnc-description ol {
 	display: none;
 }
 
@@ -133,9 +134,7 @@
 
 .legal-billet .billet-footer {
 	padding-top: 0.5rem;
-	padding-right: var( --Spacing-07 );
 	padding-bottom: var( --Spacing-04 );
-	padding-left: var( --Spacing-07 );
 }
 
 .legal-billet .billet-get-link {
@@ -255,7 +254,7 @@
 
 .legal-billet .billet-get-link {
 	font-size: 0.875rem;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.25rem;
 	color: var( --Base-base-01 );
 	text-decoration: none;

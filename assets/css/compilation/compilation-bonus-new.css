@@ -100,6 +100,11 @@
 	display: flex;
 }
 
+.legal-compilation-bonus .compilation-bonus-footer ul,
+.legal-compilation-bonus .compilation-bonus-footer ol {
+	display: none;
+}
+
 /* Width and Height */
 
 .compilation-bonus-main .legal-compilation-logo {
@@ -147,9 +152,7 @@
 
 .legal-compilation-bonus .compilation-bonus-footer {
 	padding-top: 0.5rem;
-	padding-right: var( --Spacing-07 );
 	padding-bottom: var( --Spacing-04 );
-	padding-left: var( --Spacing-07 );
 }
 
 .legal-compilation-bonus .footer-tnc-info {

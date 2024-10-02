@@ -262,6 +262,8 @@ class BilletMega
 					'url' => $link[ ReviewAuthor::LINK_ITEM[ 'url' ] ],
 	
 					'image' => LegalMain::LEGAL_URL . '/assets/img/review/author/' . $link[ ReviewAuthor::LINK_ITEM[ 'image' ] ] . '.svg',
+
+					'class' => 'social-' . $link[ ReviewAuthor::LINK_ITEM[ 'image' ] ],
 				];
 			}
 		}
