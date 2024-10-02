@@ -1,6 +1,6 @@
 tinymce.PluginManager.add( 'tinymce_iconpicker', (editor, url) => {
 	const openDialog = () => editor.windowManager.open( {
-		title: 'Example plugin',
+		title: 'Insert icon',
 		body: {
 			type: 'panel',
 
@@ -41,7 +41,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', (editor, url) => {
 	/* Add a button that opens a window */
 
 	editor.ui.registry.addButton( 'tinymce_iconpicker', {
-		text: 'My button',
+		text: 'Insert Button',
 
 		onAction: () => {
 		  /* Open window */
@@ -49,6 +49,16 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', (editor, url) => {
 		  openDialog();
 		}
 	} );
+
+	/* Return the metadata for the help plugin */
+
+	return {
+		getMetadata: () => ( {
+		  name: 'Example plugin',
+
+		  url: 'http://exampleplugindocsurl.com'
+		} )
+	  };
 } );
 
 // tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
