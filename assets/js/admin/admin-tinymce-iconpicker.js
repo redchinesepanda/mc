@@ -1,4 +1,10 @@
-tinymce.PluginManager.add( 'tinymce_iconpicker', (editor, url) => {
+/*
+  Note: We have included the plugin in the same JavaScript file as the TinyMCE
+  instance for display purposes only. Tiny recommends not maintaining the plugin
+  with the TinyMCE instance and using the `external_plugins` option.
+*/
+tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
+{
 	const openDialog = () => editor.windowManager.open( {
 		title: 'Insert icon',
 		body: {
