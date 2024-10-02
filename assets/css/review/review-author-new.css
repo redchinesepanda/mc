@@ -184,14 +184,14 @@
   	color: var( --Base-base-04 );
 }
 
-#theme-bottom-section .social-links-twitter::before {
+#theme-bottom-section .social-link-twitter::before {
 	content: '\F119';
 }
 
-#theme-bottom-section .social-links-facebook::before {
+#theme-bottom-section .social-link-facebook::before {
 	content: '\F117';
 }
 
-#theme-bottom-section .social-links-linkedin::before {
+#theme-bottom-section .social-link-linkedin::before {
 	content: '\F118';
 }

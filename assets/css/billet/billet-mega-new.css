@@ -13,7 +13,7 @@
 
 	/* Position */
 
-	.legal-billet-mega .link-item {
+	.legal-billet-mega .social-links {
 		width: 2.25rem;
 		height: 2.25rem;
 	}
@@ -83,7 +83,7 @@
 		margin-left: auto;
 	}
 
-	.legal-billet-mega .link-item {
+	.legal-billet-mega .social-links {
 		width: 2.75rem;
 		height: 2.75rem;
 	}
@@ -199,7 +199,7 @@
 	justify-content: center;
 }
 
-.legal-billet-mega .link-item {
+.legal-billet-mega .social-links {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -230,16 +230,16 @@
 	padding: 20px;
 }
 
-/* .legal-billet-mega .link-item {
+/* .legal-billet-mega .social-links {
 	padding: 7px;
 } */
 
-.legal-billet-mega .link-item {
+.legal-billet-mega .social-links {
 	position: relative;
 	overflow: hidden;
 }
 
-.legal-billet-mega .link-item:hover.link-item::after {
+.legal-billet-mega .social-links:hover.social-links::after {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -345,7 +345,7 @@
 	height: auto;
 }
 
-/* .legal-billet-mega .link-item {
+/* .legal-billet-mega .social-links {
 	width: calc(32px - 7px * 2);
     height: calc(32px - 7px * 2);
 } */
@@ -355,7 +355,7 @@
 	height: 16px;
 }
 
-.legal-billet-mega .link-item:hover.link-item::after {
+.legal-billet-mega .social-links:hover.social-links::after {
 	width: 100%;
 	height: 100%;
 }
@@ -406,12 +406,12 @@
 	border-radius: 50%;
 }
 
-.legal-billet-mega .link-item:hover {
+.legal-billet-mega .social-links:hover {
 	border: 1px solid var( --Base-purple_button_hover );
 	transition: 0.4s;
 }
 
-.legal-billet-mega .link-item:hover.link-item::after {
+.legal-billet-mega .social-links:hover.social-links::after {
 	background-color: rgba(95, 55, 255, 0.1);
 	transition: 0.4s;
 }
@@ -427,7 +427,7 @@
 	background-color: var( --Base-purple_button_hover );
 }
 
-.legal-billet-mega .link-item {
+.legal-billet-mega .social-links {
 	/* border: 1px solid var(--Base-base-09);
     border-radius: 4px; */
 	border-radius: 0.5rem;
@@ -516,7 +516,7 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
-.legal-billet-mega .link-item:hover.link-item::after {
+.legal-billet-mega .social-links:hover.social-links::after {
 	content: '';
 }
 
