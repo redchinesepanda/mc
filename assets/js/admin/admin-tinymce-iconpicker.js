@@ -8,6 +8,84 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 		onclick: function ()
 		{
+			// editor.windowManager.open(
+			// 	{
+			// 		title: 'Insert icon',
+
+			// 		width: 500,
+
+			// 		height: 300,
+
+			// 		body: [
+
+			// 			{
+			// 				type: 'listbox',
+
+			// 				name: 'class',
+
+			// 				label: 'Choose Icon',
+
+			// 				'values': [
+			// 					{ text: "American football", value: "icon-american-football" },
+
+			// 					{ text: "Asian", value: "icon-asian" },
+
+			// 					{ text: "Athletics", value: "icon-athletics" }
+			// 				]
+			// 			},
+
+			// 			// {
+			// 			// 	type: 'htmlpanel',
+
+			// 			// 	html: 'Panel content goes here.'
+			// 			// },
+
+			// 			{
+			// 				type: "container",
+
+			// 				label: "MC Icon",
+
+			// 				layout: "flex",
+
+			// 				direction: "row",
+
+			// 				items: [
+			// 					{ type: "textbox", name: "mc-textbox-name" },
+
+			// 					{
+			// 						type: "button",
+
+			// 						text: "Choose",
+
+			// 						onclick() {
+			// 							// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
+
+			// 							console.log( 'container button' );
+
+			// 							console.log( this.$el.previousElementSibling );
+
+			// 							console.log( this.$el.children );
+
+			// 							console.log( this.$el.previousSibling );
+
+			// 							console.log( this.$el );
+			// 						},
+			// 					}
+			// 				],
+			// 			}
+			// 		],
+
+			// 		onsubmit: function ( element )
+			// 		{
+			// 			// let $content = '<a href="' + e.data.url + '" class="btn' + (e.data.style !== 'default' ? ' ' + e.data.style : '') + '"' + (!!e.data.newtab ? ' target="_blank"' : '') + '>' + e.data.label + '</a>';
+
+			// 			let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
+
+			// 			editor.insertContent( content );
+			// 		}
+			// 	}
+			// );
+			
 			editor.windowManager.open(
 				{
 					title: 'Insert icon',
@@ -16,91 +94,67 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 					height: 300,
 
-					body: [
-						// {
-						// 	type: 'textbox',
+					body: {
+						type: 'panel',
 
-						// 	name: 'url',
+						items: [
+							{
+								type: 'listbox',
 
-						// 	label: 'URL'
-						// },
+								name: 'class',
 
-						// {
-						// 	type: 'textbox',
+								label: 'Choose Icon',
 
-						// 	name: 'label',
+								'values': [
+									{ text: "American football", value: "icon-american-football" },
 
-						// 	label: 'Link Text'
-						// },
+									{ text: "Asian", value: "icon-asian" },
 
-						// {
-						// 	type: 'checkbox',
+									{ text: "Athletics", value: "icon-athletics" }
+								]
+							},
 
-						// 	name: 'newtab',
+							{
+								type: 'htmlpanel',
 
-						// 	label: ' ',
+								html: 'Panel content goes here.'
+							},
 
-						// 	text: 'Open link in new tab',
+							{
+								type: "container",
 
-						// 	checked: true
-						// },
+								label: "MC Icon",
 
-						{
-							type: 'listbox',
+								layout: "flex",
 
-							name: 'class',
+								direction: "row",
 
-							label: 'Choose Icon',
+								items: [
+									{ type: "textbox", name: "mc-textbox-name" },
 
-							'values': [
-								{ text: "American football", value: "icon-american-football" },
+									{
+										type: "button",
 
-								{ text: "Asian", value: "icon-asian" },
+										text: "Choose",
 
-								{ text: "Athletics", value: "icon-athletics" }
-							]
-						},
+										onclick() {
+											// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
-						// {
-						// 	type: 'htmlpanel',
+											console.log( 'container button' );
 
-						// 	html: 'Panel content goes here.'
-						// },
+											console.log( this.$el.previousElementSibling );
 
-						{
-							type: "container",
+											console.log( this.$el.children );
 
-							label: "MC Icon",
+											console.log( this.$el.previousSibling );
 
-							layout: "flex",
-
-							direction: "row",
-
-							items: [
-								{ type: "textbox", name: "mc-textbox-name" },
-
-								{
-									type: "button",
-
-									text: "Choose",
-
-									onclick() {
-										// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
-
-										console.log( 'container button' );
-
-										console.log( this.$el.previousElementSibling );
-
-										console.log( this.$el.children );
-
-										console.log( this.$el.previousSibling );
-
-										console.log( this.$el );
-									},
-								}
-							],
-						}
-					],
+											console.log( this.$el );
+										},
+									}
+								],
+							}
+						],
+					},
 
 					onsubmit: function ( element )
 					{
