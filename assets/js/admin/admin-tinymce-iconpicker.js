@@ -5,44 +5,84 @@
 */
 tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 {
-	const openDialog = () => editor.windowManager.open( {
-		title: 'Insert icon',
-		body: {
-			type: 'panel',
+	// const openDialog = () => editor.windowManager.open( {
+	const openDialog = function ()
+	{
+		editor.windowManager.open( {
+			title: 'Insert icon',
+			// body: {
+			// 	type: 'panel',
 
-			items: [
+			// 	items: [
+			// 		{
+			// 			type: 'input',
+			// 			name: 'title',
+			// 			label: 'Title'
+			// 		}
+			// 	]
+			// },
+			
+			body: [
 				{
-					type: 'input',
-					name: 'title',
-					label: 'Title'
+					type: "container",
+
+					label: "MC Icon",
+
+					layout: "flex",
+
+					direction: "row",
+
+					items: [
+						{ type: "textbox", name: "mc-textbox-name" },
+
+						{
+							type: "button",
+
+							text: "Choose",
+
+							onclick() {
+								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
+
+								console.log( 'container button' );
+
+								console.log( this.$el.previousElementSibling );
+
+								console.log( this.$el.children );
+
+								console.log( this.$el.previousSibling );
+
+								console.log( this.$el );
+							},
+						}
+					],
 				}
-			]
-		},
+			],
 
-		buttons: [
-			{
-				type: 'cancel',
-				text: 'Close'
-			},
-			{
-				type: 'submit',
-				text: 'Save',
-				buttonType: 'primary'
+			buttons: [
+				{
+					type: 'cancel',
+					text: 'Close'
+				},
+				{
+					type: 'submit',
+					text: 'Save',
+					buttonType: 'primary'
+				}
+			],
+
+			onSubmit: (api) => {
+				const data = api.getData();
+
+				// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
+
+				/* Insert content when the window form is submitted */
+
+				editor.insertContent( 'Title: ' + data.title );
+
+				api.close();
 			}
-		],
-
-		onSubmit: (api) => {
-			const data = api.getData();
-
-			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
-
-			/* Insert content when the window form is submitted */
-
-			editor.insertContent( 'Title: ' + data.title );
-
-			api.close();
-		}
-	} );
+		} );
+	}
 
 	/* Add a button that opens a window */
 
