@@ -100,7 +100,8 @@
 	display: flex;
 }
 
-.legal-compilation-bonus .compilation-bonus-footer ul {
+.legal-compilation-bonus .compilation-bonus-footer ul,
+.legal-compilation-bonus .compilation-bonus-footer ol {
 	display: none;
 }
 

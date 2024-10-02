@@ -116,7 +116,8 @@
 	display: flex;
 }
 
-.legal-billet .billet-tnc-description ul {
+.legal-billet .billet-tnc-description ul,
+.legal-billet .billet-tnc-description ol {
 	display: none;
 }
 
