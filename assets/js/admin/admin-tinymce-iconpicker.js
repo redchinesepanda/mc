@@ -108,7 +108,7 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 								direction: "row",
 
 								items: [
-									{ type: "textbox", name: "mc-textbox-name" },
+									{ type: "textbox", name: "mc-textbox-name-select" },
 
 									{
 										type: 'listbox',
@@ -126,7 +126,7 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 										]
 									},
 								],
-							}
+							},
 
 							// {
 							// 	type: 'htmlpanel',
