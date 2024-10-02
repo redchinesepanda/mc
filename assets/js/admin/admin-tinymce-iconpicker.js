@@ -95,8 +95,6 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 					height: 300,
 
 					body: {
-						type: 'panel',
-
 						items: [
 							{
 								type: "container",
