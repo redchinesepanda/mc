@@ -70,16 +70,13 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			// 	}
 			// ],
 
-			onSubmit: (api) => {
-				const data = api.getData();
-
-				// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
+			onSubmit: function ( element )
+			{
+				let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
 
 				/* Insert content when the window form is submitted */
 
-				editor.insertContent( 'Title: ' + data.title );
-
-				api.close();
+				editor.insertContent( content );
 			}
 		} );
 	}
