@@ -74,6 +74,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			{
 				let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
 
+				console.log( 'openDialog onSubmit' );
+
+				console.log( 'content' );
+
 				/* Insert content when the window form is submitted */
 
 				editor.insertContent( content );
