@@ -83,6 +83,13 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 										console.log( 'container button' );
 
+										if ( this.$el.previousElementSibling )
+										{
+											let previous = this.$el.previousElementSibling;
+
+											console.log( previous );
+										}
+
 										console.log( this.$el );
 									},
 								}
