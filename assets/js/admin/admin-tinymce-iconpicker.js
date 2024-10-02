@@ -58,17 +58,17 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 				}
 			],
 
-			buttons: [
-				{
-					type: 'cancel',
-					text: 'Close'
-				},
-				{
-					type: 'submit',
-					text: 'Save',
-					buttonType: 'primary'
-				}
-			],
+			// buttons: [
+			// 	{
+			// 		type: 'cancel',
+			// 		text: 'Close'
+			// 	},
+			// 	{
+			// 		type: 'submit',
+			// 		text: 'Save',
+			// 		buttonType: 'primary'
+			// 	}
+			// ],
 
 			onSubmit: (api) => {
 				const data = api.getData();
