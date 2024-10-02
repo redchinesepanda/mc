@@ -85,6 +85,8 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 										console.log( this.$el.previousElementSibling );
 
+										console.log( this.$el.children );
+
 										console.log( this.$el.previousSibling );
 
 										console.log( this.$el );
