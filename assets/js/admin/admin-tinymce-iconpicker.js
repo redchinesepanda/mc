@@ -53,7 +53,8 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 		icon: 'icon mce-i-plus',
 
-		onAction: () => {
+		onAction: function ()
+		{
 		  /* Open window */
 
 		  openDialog();
