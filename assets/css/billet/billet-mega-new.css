@@ -406,7 +406,7 @@
 	border-radius: 50%;
 }
 
-.legal-billet-mega .social-links:hover {
+.legal-billet-mega .social-links:hover.social-links::before {
 	border: 1px solid var( --Base-purple_button_hover );
 	transition: 0.4s;
 }
@@ -520,6 +520,11 @@
 
 .legal-billet-mega .social-links {
 	text-decoration: none;
+}
+
+.legal-billet-mega .social-links:hover.social-links::before {
+	color: var( --Base-purple_button_hover );
+	transition: 0.4s;
 }
 
 .legal-billet-mega .social-links::before {
