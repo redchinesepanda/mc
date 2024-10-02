@@ -99,20 +99,34 @@ tinymce.PluginManager.add('tinymce_iconpicker', function (editor, url) {
 
 						items: [
 							{
-								type: 'listbox',
+								type: "container",
 
-								name: 'class',
+								label: "MC Icon Select",
 
-								label: 'Choose Icon',
+								layout: "flex",
 
-								'values': [
-									{ text: "American football", value: "icon-american-football" },
+								direction: "row",
 
-									{ text: "Asian", value: "icon-asian" },
+								items: [
+									{ type: "textbox", name: "mc-textbox-name" },
 
-									{ text: "Athletics", value: "icon-athletics" }
-								]
-							},
+									{
+										type: 'listbox',
+		
+										name: 'class',
+		
+										label: 'Choose Icon',
+		
+										'values': [
+											{ text: "American football", value: "icon-american-football" },
+		
+											{ text: "Asian", value: "icon-asian" },
+		
+											{ text: "Athletics", value: "icon-athletics" }
+										]
+									},
+								],
+							}
 
 							// {
 							// 	type: 'htmlpanel',
