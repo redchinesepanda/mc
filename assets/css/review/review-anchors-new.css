@@ -44,19 +44,34 @@
         display: none;
     }
 
-    .review-anchors .swiper.legal-active-end .anchors-btn-prev {
+   /*  .review-anchors .swiper.legal-active-end .anchors-btn-prev {
         display: flex;
-    }
+    } */
 
+    /* .review-anchors .swiper.legal-active-end .anchors-btn-next {
+        display: none;
+    } */
+
+    .review-anchors .anchors-btn {
+        position: absolute;
+        top: 50%;
+        width: var( --Spacing-09 );
+        height: var( --Spacing-09 );
+        margin-top: calc( 0px - ( var( --Spacing-09 )/ 2 ) );
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .review-anchors .swiper:not( .legal-active-end ) .anchors-btn-prev,
     .review-anchors .swiper.legal-active-end .anchors-btn-next {
         display: none;
     }
-    
-    .review-anchors .swiper:not( .legal-active-end ) .anchors-btn-prev {
-        display: none;
-    }
 
-    .review-anchors .swiper:not( .legal-active-end ) .anchors-btn-next {
+    .review-anchors .swiper:not( .legal-active-end ) .anchors-btn-next,
+    .review-anchors .swiper.legal-active-end .anchors-btn-prev {
         display: flex;
     }
 
