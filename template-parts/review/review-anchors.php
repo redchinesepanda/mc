@@ -18,8 +18,8 @@
                 <?php endforeach; ?>
                 </div>
             </div>
-            <div class="swiper-button-prev anchors-btn anchors-btn-prev"></div>
-            <div class="swiper-button-next anchors-btn anchors-btn-next"></div>
+            <div class="anchors-btn anchors-btn-prev"></div>
+            <div class="anchors-btn anchors-btn-next"></div>
         </div>
         <span class="legal-to-top"></span>
     </nav>

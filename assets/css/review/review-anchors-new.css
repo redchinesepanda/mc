@@ -44,20 +44,12 @@
         display: none;
     }
 
-   /*  .review-anchors .swiper.legal-active-end .anchors-btn-prev {
-        display: flex;
-    } */
-
-    /* .review-anchors .swiper.legal-active-end .anchors-btn-next {
-        display: none;
-    } */
-
     .review-anchors .anchors-btn {
         position: absolute;
         top: 50%;
         width: var( --Spacing-09 );
         height: var( --Spacing-09 );
-        margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
+        margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem );
         z-index: 10;
         cursor: pointer;
         align-items: center;
@@ -69,11 +61,11 @@
 
     .review-anchors .anchors-btn-prev {
         right: auto;
-        left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem );
+        left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
     }
 
     .review-anchors .anchors-btn-next {
-        right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem );
+        right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
         left: auto;
     }
 
