@@ -128,7 +128,7 @@
  /* Anchors Position */
 
 .review-anchors {
-    /* margin: 0px auto; */
+    position: relative;
     margin-right: auto;
     margin-bottom: 24px;
     margin-left: auto;
