@@ -27,7 +27,7 @@
 				<?php if( !empty( $args[ 'author' ][ 'items' ] ) ) : ?>
 					<div class="mega-about-links">
 						<?php foreach( $args[ 'author' ][ 'items' ] as $item ) : ?>
-							<a class="social-links <?php echo $item[ 'class' ]; ?>" href="<?php echo $item[ 'url' ]; ?>"></a>
+							<a class="social-links <?php echo $item[ 'class' ]; ?>" href="<?php echo $item[ 'url' ]; ?>" target="_blank" rel="noreferrer nofollow"></a>
 						<?php endforeach; ?>
 					</div>
 				<?php endif; ?>

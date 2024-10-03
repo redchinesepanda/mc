@@ -274,7 +274,7 @@ class ReviewAuthor
 
             'socialLinks' => [
 
-                'twitter' => 'https://www.linkedin.com/in/borjaimbergamo/',
+                'linkedin' => 'https://www.linkedin.com/in/borjaimbergamo/',
             ],
 
 		];
