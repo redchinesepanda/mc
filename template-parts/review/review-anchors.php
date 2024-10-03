@@ -20,8 +20,8 @@
                     <a class="anchors-item swiper-slide" href="<?php echo $item[ 'href' ]; ?>"><?php echo $item[ 'label' ]; ?></a>
                 <?php endforeach; ?>
                 </div>
-                <div class="swiper-button-prev"><</div>
-                <div class="swiper-button-next">></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
         <span class="legal-to-top"></span>
