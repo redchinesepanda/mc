@@ -93,13 +93,13 @@
         content: "\F102";
     }
     
-    .review-anchors .swiper:not( .legal-active-end ) .anchors-btn-prev,
-    .review-anchors .swiper.legal-active-end .anchors-btn-next {
+    .review-anchors .swiper:not( .legal-active-end ) ~ .anchors-btn-prev,
+    .review-anchors .swiper.legal-active-end ~ .anchors-btn-next {
         display: none;
     }
 
-    .review-anchors .swiper:not( .legal-active-end ) .anchors-btn-next,
-    .review-anchors .swiper.legal-active-end .anchors-btn-prev {
+    .review-anchors .swiper:not( .legal-active-end ) ~ .anchors-btn-next,
+    .review-anchors .swiper.legal-active-end ~ .anchors-btn-prev {
         display: flex;
     }
 
