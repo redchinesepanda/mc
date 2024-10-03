@@ -108,7 +108,7 @@
 	<div class="choose-you-country-block">
 		<a class="lang-item" href="/ca/" target="_blank" draggable="false">
 			<div class="lang-image locale-8"></div>
-			<div class="lang-title">Canada (En)</div>
+			<div class="lang-title">Canada (EN)</div>
 		</a>
 		<a class="lang-item" href="/ca-fr/" target="_blank" draggable="false">
 			<div class="lang-image locale-8"></div>
