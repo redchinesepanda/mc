@@ -347,7 +347,7 @@
   line-height: 1.625rem;
 }
 
-.tcb-post-content ul:not( .mc-list-howto ) > li:before {
+.tcb-post-content ul:not( .mc-list-howto ):not( .legal-list-image ) > li:before {
   font-family: var( --legal-font-icons );
   font-size: 24px;
   line-height: 24px;
