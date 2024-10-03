@@ -57,7 +57,7 @@
         top: 50%;
         width: var( --Spacing-09 );
         height: var( --Spacing-09 );
-        margin-top: calc( 0rem - ( var( --Spacing-09 )/ 2 ) );
+        margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
         z-index: 10;
         cursor: pointer;
         align-items: center;
@@ -65,6 +65,16 @@
         border-radius: 3.75rem;
         border: 1px solid var( --Base-base-09 );
         background-color: var( --Base-base-01 );
+    }
+
+    .review-anchors .anchors-btn-prev {
+        right: auto;
+        left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
+    }
+
+    .review-anchors .anchors-btn-next {
+        right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
+        left: auto;
     }
 
     .review-anchors .anchors-btn::after {
