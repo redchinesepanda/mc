@@ -10,6 +10,11 @@
         cursor: pointer;
     }
 
+    .review-anchors .anchors-btn-next,
+    .review-anchors .anchors-btn-prev {
+        display: none;
+    }
+
     /* Anchors Position */
     
     .review-anchors {
@@ -45,18 +50,9 @@
     }
 
     .review-anchors .anchors-btn {
-        position: absolute;
-        top: 50%;
-        width: var( --Spacing-09 );
-        height: var( --Spacing-09 );
-        margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem );
-        z-index: 10;
         cursor: pointer;
         align-items: center;
         justify-content: center;
-        border-radius: 3.75rem;
-        border: 1px solid var( --Base-base-09 );
-        background-color: var( --Base-base-01 );
     }
 
     .review-anchors .anchors-btn-prev {
@@ -69,20 +65,8 @@
         left: auto;
     }
 
-    .review-anchors .anchors-btn::after {
-        font-family: var( --legal-font-icons );
-        font-size: 1.125rem;
-        line-height: 1.125rem;
-        color: var( --Base-base-09 );
-    }
-
     .review-anchors .anchors-btn-prev::after {
-        content: "\F102";
         transform: rotate(180deg);
-    }
-
-    .review-anchors .anchors-btn-next::after {
-        content: "\F102";
     }
     
     .review-anchors .swiper:not( .legal-active-end ) ~ .anchors-btn-prev,
@@ -101,10 +85,58 @@
         max-width: var( --base-width-desktop );
     }
 
+    .review-anchors .anchors-btn {
+        width: var( --Spacing-09 );
+        height: var( --Spacing-09 );
+    }
+
+    /* Anchors Background */
+
+    .review-anchors .anchors-btn {
+        border-radius: 3.75rem;
+        border: 1px solid var( --Base-base-09 );
+        background-color: var( --Base-base-01 );
+    }
+
     /* Anchors Position */
     
     .review-anchors {
         margin-top: 48px;
+    }
+
+    .review-anchors .anchors-btn {
+        position: absolute;
+        top: 50%;
+        margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem );
+        z-index: 10;
+    }
+
+    .review-anchors .anchors-btn-prev {
+        right: auto;
+        left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
+    }
+
+    .review-anchors .anchors-btn-next {
+        right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
+        left: auto;
+    }
+
+    .review-anchors .anchors-btn-prev::after {
+        transform: rotate(180deg);
+    }
+
+    /* Anchors Typography */
+
+    .review-anchors .anchors-btn::after {
+        font-family: var( --legal-font-icons );
+        font-size: 1.125rem;
+        line-height: 1.125rem;
+        color: var( --Base-base-09 );
+    }
+    
+    .review-anchors .anchors-btn-next::after,
+    .review-anchors .anchors-btn-prev::after {
+        content: "\F102";
     }
 
 }
