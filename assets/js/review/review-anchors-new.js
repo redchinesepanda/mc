@@ -97,16 +97,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	  };
 
-	  function findMiddlePosithion () {
+	  /* function findMiddlePosithion () {
 		console.log('подключены 2 функции')
-	  };
+	  }; */
 	  
 	  function swiperAnchorsInit()
 	  {
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
-		//   document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsDesc );
-		document.querySelectorAll( selectors.anchorsSwiper ).forEach( { swiperAnchorsDesc, findMiddlePosithion, }, );
+		  document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsDesc );
+		// document.querySelectorAll( selectors.anchorsSwiper ).forEach( { swiperAnchorsDesc, findMiddlePosithion, }, );
 		}
 		else
 		{
