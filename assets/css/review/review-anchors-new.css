@@ -43,15 +43,16 @@
         width: 100%;
     }
 
-    .review-anchors .swiper.legal-active-end::after {
-        width: 83px;
-        height: 36px;
+    .review-anchors .swiper.legal-active-end::after,
+    .review-anchors .swiper:not( .legal-active-end )::after {
+        width: 5.1875rem;
+        height: 2.25rem;
     }
 
-    .review-anchors .swiper:not( .legal-active-end )::after {
-        width: 83px;
-        height: 36px;
-    }
+   /*  .review-anchors .swiper:not( .legal-active-end )::after {
+        width: 5.1875rem;
+        height: 2.25rem;
+    } */
 
     /* Background */
 
@@ -122,8 +123,8 @@
     }
 
     .review-anchors .anchors-btn::before {
-        width: 83px;
-        height: 36px;
+        width: 5.1875rem;
+        height: 2.25rem;
     }
 
     /* Anchors Background */
