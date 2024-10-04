@@ -31,9 +31,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	});
 
-	document.querySelectorAll('.review-anchors-swiper').forEach(el1 => {
+	document.querySelectorAll('.review-anchors-swiper').forEach(el => {
 		/* --------------------Swiper-------------- */
-		const swiper1 = new Swiper(el1, {
+		const swiperAnchors = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
 			spaceBetween: 8,
@@ -43,23 +43,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			},
 		});
 
-		swiper1.on('slideChange', function () {
+		swiperAnchors.on('slideChange', function () {
 			console.log('slide changed');
-			el1.classList.add('legal-active-changed');
+			el.classList.add('legal-active-changed');
 		});
 
-		swiper1.on('reachBeginning', function () {
+		swiperAnchors.on('reachBeginning', function () {
 			// console.log('slide reachBeginning');
 
-			el1.classList.add('legal-active-start');
-			el1.classList.remove('legal-active-end');
+			el.classList.add('legal-active-start');
+			el.classList.remove('legal-active-end');
 		}); 
 
-		swiper1.on('reachEnd', function () {
+		swiperAnchors.on('reachEnd', function () {
 			// console.log('slide reachEnd');
 
-			el1.classList.add('legal-active-end');
-			el1.classList.remove('legal-active-start');
+			el.classList.add('legal-active-end');
+			el.classList.remove('legal-active-start');
 		});
 	});
 
