@@ -177,7 +177,6 @@
     margin-left: auto;
 }
 
-/* .review-anchors .swiper.legal-active-end::before  */
 .review-anchors .swiper.legal-active-end::after {
     position: absolute;
     left: 0px;
@@ -205,8 +204,12 @@
     width: 100%;
 }
 
-/* .review-anchors .swiper.legal-active-end::before  */
 .review-anchors .swiper.legal-active-end::after {
+    width: 83px;
+    height: 36px;
+}
+
+.review-anchors .anchors-btn::before {
     width: 83px;
     height: 36px;
 }
@@ -223,13 +226,20 @@
     border-radius: 60px;
 }
 
-/* .review-anchors .swiper.legal-active-end::before  */
 .review-anchors .swiper.legal-active-end::after {
     background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
 
 .review-anchors .swiper:not( .legal-active-end ):after {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.review-anchors .anchors-btn-prev::before {
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, rgb(52, 10, 116) 100%);
+}
+
+.review-anchors .anchors-btn-next::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgb(52, 10, 116) 100%);
 }
 
 /* Anchors Typography */
@@ -248,12 +258,19 @@
     font-weight: 700;
 }
 
-/* .review-anchors .swiper.legal-active-end::before  */
 .review-anchors .swiper.legal-active-end::after {
     content: "";
 }
 
 .review-anchors .swiper:not( .legal-active-end ):after {
+    content: "";
+}
+
+.review-anchors .anchors-btn-prev::before {
+    content: "";
+}
+
+.review-anchors .anchors-btn-next::before {
     content: "";
 }
 
