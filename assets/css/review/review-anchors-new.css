@@ -17,9 +17,9 @@
 
     /* Anchors Position */
     
-    .review-anchors {
+   /*  .review-anchors {
         margin-top: 32px;
-    }
+    } */
 
     .review-anchors .anchors-title {
         padding-right: 30px;
@@ -145,9 +145,9 @@
 
     /* Anchors Position */
     
-    .review-anchors {
+   /*  .review-anchors {
         margin-top: 48px;
-    }
+    } */
 
     .review-anchors .anchors-btn {
         position: absolute;
@@ -235,8 +235,10 @@
 
 .review-anchors {
     position: relative;
+    margin-top: var( --Spacing-06 );
     margin-right: auto;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
+    margin-bottom: var( --Spacing-06 );
     margin-left: auto;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

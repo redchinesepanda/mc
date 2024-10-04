@@ -10,7 +10,6 @@
 <?php if( !empty( $args[ 'items' ] ) ) : ?>
     <nav class="anchors">
         <div class="review-anchors">
-            <!-- <div class="anchors-title"><?php echo $args[ 'title' ]; ?></div> -->
             <div class="swiper review-anchors-swiper">
                 <div class="swiper-wrapper">
                 <?php foreach( $args[ 'items' ] as $item ) : ?>
