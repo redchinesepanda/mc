@@ -77,13 +77,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function swiperAnchorsDesc ( el ) {
 		const swiperAnchors = new Swiper(el, {
-		  loop: false,
+		 /*  loop: false,
 		  slidesPerView: 'auto',
 		  spaceBetween: 8,
 		  navigation: {
 			nextEl: '.anchors-btn-next',
 			prevEl: '.anchors-btn-prev',
-		  },
+		  }, */
 		});
 	  
 		swiperAnchors.on('reachBeginning', function () {
