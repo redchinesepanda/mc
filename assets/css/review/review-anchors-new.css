@@ -99,11 +99,11 @@
         background-color: var( --Base-base-01 );
     }
 
-    .review-anchors .anchors-btn-prev::after {
+    .review-anchors .anchors-btn-prev::before {
         background: linear-gradient( -90deg, rgba(255, 255, 255, 0.00) 0%, #7732b0 100% );
     }
     
-    .review-anchors .anchors-btn-next::after {
+    .review-anchors .anchors-btn-next::before {
         background: linear-gradient( 90deg, rgba(255, 255, 255, 0.00) 0%, #7732b0 100% );
     }
 
@@ -132,36 +132,36 @@
         left: auto;
     }
 
-    .review-anchors .anchors-btn-prev::before {
+    .review-anchors .anchors-btn-prev::after {
         transform: rotate(180deg);
     }
 
-    .review-anchors .anchors-btn-prev::after,
-    .review-anchors .anchors-btn-next::after {
+    .review-anchors .anchors-btn-prev::before,
+    .review-anchors .anchors-btn-next::before {
         position: absolute;
         top: calc( 0rem - ( ( 2.25rem - var( --Spacing-09 ) ) / 2 ) );
         z-index: -1;
     }
 
-    .review-anchors .anchors-btn-prev::after {
+    .review-anchors .anchors-btn-prev::before {
         left: calc( 0rem + ( var( --Spacing-09 ) / 2 ) );
     }
     
-    .review-anchors .anchors-btn-next::after {
+    .review-anchors .anchors-btn-next::before {
         right: calc( 0rem + ( var( --Spacing-09 ) / 2 ) );
     }
 
     /* Anchors Typography */
 
-    .review-anchors .anchors-btn::before {
+    .review-anchors .anchors-btn::after {
         font-family: var( --legal-font-icons );
         font-size: 1.125rem;
         line-height: 1.125rem;
         color: var( --Base-base-09 );
     }
     
-    .review-anchors .anchors-btn-next::before,
-    .review-anchors .anchors-btn-prev::before {
+    .review-anchors .anchors-btn-next::after,
+    .review-anchors .anchors-btn-prev::after {
         content: "\F102";
     }
 
@@ -170,12 +170,12 @@
         background-color: var( --Primitives-purple-20 );
     }
 
-    .review-anchors .anchors-btn:hover.anchors-btn::before {
+    .review-anchors .anchors-btn:hover.anchors-btn::after {
         color: var( --Base-purple_button_hover );
     }
 
-    .review-anchors .anchors-btn-prev::after,
-    .review-anchors .anchors-btn-next::after {
+    .review-anchors .anchors-btn-prev::before,
+    .review-anchors .anchors-btn-next::before {
         content: "";
     }
     
