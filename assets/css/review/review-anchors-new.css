@@ -140,7 +140,7 @@
     .review-anchors .anchors-btn-next::after {
         position: absolute;
         top: calc( 0rem - ( ( 2.25rem - var( --Spacing-09 ) ) / 2 ) );
-        /* top: -0.0625rem; */
+        z-index: -1;
     }
 
     .review-anchors .anchors-btn-prev::after {
