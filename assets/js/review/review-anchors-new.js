@@ -10,10 +10,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			loop: false,
 			slidesPerView: 'auto',
 			spaceBetween: 8,
-			navigation: {
+			/* navigation: {
 				nextEl: '.anchors-btn-next',
 				prevEl: '.anchors-btn-prev',
-			},
+			}, */
 		});
 
 		/* swiper.on('slideChange', function () {
