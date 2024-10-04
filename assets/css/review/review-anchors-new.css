@@ -278,13 +278,13 @@
     content: "";
 }
 
-.review-anchors .anchors-btn-prev::before {
+/* .review-anchors .anchors-btn-prev::before {
     content: "";
 }
 
 .review-anchors .anchors-btn-next::before {
     content: "";
-}
+} */
 
 .review-anchors .anchors-item {
     font-size: 16px;
