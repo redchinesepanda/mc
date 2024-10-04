@@ -55,16 +55,6 @@
         justify-content: center;
     }
 
-    .review-anchors .anchors-btn-prev {
-        right: auto;
-        left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
-    }
-
-    .review-anchors .anchors-btn-next {
-        right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
-        left: auto;
-    }
-
     .review-anchors .anchors-btn-prev::after {
         transform: rotate(180deg);
     }
