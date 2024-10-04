@@ -76,7 +76,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}); */
 
 	function swiperAnchorsDesc ( el ) {
-		/* --------------------Swiper-------------- */
 		const swiperAnchors = new Swiper(el, {
 		  loop: false,
 		  slidesPerView: 'auto',
@@ -101,20 +100,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	  };
 	  
 	  function swiperAnchorsMobile ( el ) {
-		/* --------------------Swiper-------------- */
-		const swiperAnchors = new Swiper(el, {
+		const swiperAnchorsMobile = new Swiper(el, {
 		  loop: false,
 		  slidesPerView: 'auto',
 		  spaceBetween: 8,
 		});
 	  
-		swiperAnchors.on('reachBeginning', function () {
+		swiperAnchorsMobile.on('reachBeginning', function () {
 		  console.log('slide reachBeginning');
 		  el.classList.add( classes.startSwipe );
 		  el.classList.remove( classes.endSwipe );
 		}); 
 	  
-		swiperAnchors.on('reachEnd', function () {
+		swiperAnchorsMobile.on('reachEnd', function () {
 		  console.log('slide reachEnd');
 		  el.classList.add( classes.endSwipe );
 		  el.classList.remove( classes.startSwipe );
