@@ -159,6 +159,7 @@
     }
 
     .review-anchors .anchors-btn::after {
+        position: absolute;
         top: calc( ( 2.25rem - var( --Spacing-09 ) ) / 2 );
         z-index: 1;
     }
@@ -180,7 +181,8 @@
     .review-anchors .anchors-btn-prev::before,
     .review-anchors .anchors-btn-next::before {
         position: absolute;
-        top: calc( 0rem - ( ( 2.25rem - var( --Spacing-09 ) ) / 2 ) );
+        /* top: calc( 0rem - ( ( 2.25rem - var( --Spacing-09 ) ) / 2 ) ); */
+        top: 0rem;
     }
 
     .review-anchors .anchors-btn-prev::before {
