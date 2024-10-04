@@ -35,9 +35,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	});
 
-	document.querySelectorAll('.review-anchors .swiper').forEach(el => {
+	document.querySelectorAll('.review-anchors .swiper').forEach(el1 => {
 		/* --------------------Swiper-------------- */
-		const swiper1 = new Swiper(el, {
+		const swiper1 = new Swiper(el1, {
 			loop: false,
 			slidesPerView: 'auto',
 			spaceBetween: 8,
@@ -54,15 +54,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		swiper1.on('reachBeginning', function () {
 			// console.log('slide reachBeginning');
 
-			el.classList.add('legal-active-start');
-			el.classList.remove('legal-active-end');
+			el1.classList.add('legal-active-start');
+			el1.classList.remove('legal-active-end');
 		}); 
 
 		swiper1.on('reachEnd', function () {
 			// console.log('slide reachEnd');
 
-			el.classList.add('legal-active-end');
-			el.classList.remove('legal-active-start');
+			el1.classList.add('legal-active-end');
+			el1.classList.remove('legal-active-start');
 		});
 	});
 
