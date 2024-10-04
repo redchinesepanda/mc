@@ -11,10 +11,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		anchorsSwiper : '.review-anchors-swiper',
 
-		buttonNavSwiperPrev : '.review-anchors-swiper',
-
-		buttonNavSwiperNext : '.review-anchors-swiper',
-
 		// stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
 	};
 
@@ -69,21 +65,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			},
 		});
 
-		/* swiperAnchors.on('slideChange', function () {
-			console.log('slide changed');
-			el.classList.add('legal-active-changed');
-		}); */
-
 		swiperAnchors.on('reachBeginning', function () {
 			// console.log('slide reachBeginning');
-
 			el.classList.add( classes.startSwipe );
 			el.classList.remove( classes.endSwipe );
 		}); 
 
 		swiperAnchors.on('reachEnd', function () {
 			// console.log('slide reachEnd');
-
 			el.classList.add( classes.endSwipe );
 			el.classList.remove( classes.startSwipe );
 		});
