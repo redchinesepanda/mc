@@ -6,8 +6,31 @@
 tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 {
 	// const openDialog = () => editor.windowManager.open( {
+	
 	const openDialog = function ()
 	{
+		function getIconsAjax( e )
+		{
+			console.log( 'getIconsAjax e' );
+
+			console.log( e );
+		}
+
+		function insertDataToContent ( e )
+		{
+			let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
+
+			console.log( 'insertDataToContent content' );
+
+			console.log( content );
+
+			editor.insertContent( content );
+
+			/* Insert content when the window form is submitted */
+
+			// return content;
+		}
+
 		editor.windowManager.open( {
 			title: 'Insert icon',
 			// body: {
@@ -40,18 +63,21 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 							text: "Choose",
 
-							onclick() {
+							onclick: function ()
+							{
+								getIconsAjax( this.$el );
+
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
-								console.log( 'container button' );
+								// console.log( 'container button' );
 
-								console.log( this.$el.previousElementSibling );
+								// console.log( this.$el.previousElementSibling );
 
-								console.log( this.$el.children );
+								// console.log( this.$el.children );
 
-								console.log( this.$el.previousSibling );
+								// console.log( this.$el.previousSibling );
 
-								console.log( this.$el );
+								// console.log( this.$el );
 							},
 						}
 					],
@@ -70,17 +96,28 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			// 	}
 			// ],
 
-			onSubmit: function ( element )
+			// onSubmit: dataOutput
+			
+			// onSubmit: function ( e )
+			// {
+			// 	let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
+
+			// 	console.log( 'openDialog onSubmit' );
+
+			// 	console.log( content );
+
+			// 	/* Insert content when the window form is submitted */
+
+			// 	editor.insertContent( content );
+			// }
+			
+			onSubmit: function ( e )
 			{
-				let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + element.data.class + '"></i></span>';
+				insertDataToContent( e );
 
-				console.log( 'openDialog onSubmit' );
+				// let html = toIconHTML( e.data );
 
-				console.log( content );
-
-				/* Insert content when the window form is submitted */
-
-				editor.insertContent( content );
+				// editor.insertContent( html );
 			}
 		} );
 	}
@@ -105,11 +142,13 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	/* Return the metadata for the help plugin */
 
 	return {
-		getMetadata: () => ( {
-		  name: 'Example plugin',
+		getMetadata: function () {
+			return  {
+				name: 'TinyMCE Custom Font Icon Picker',
 
-		  url: 'http://exampleplugindocsurl.com'
-		} )
+				url: 'http://match.center'
+			};
+		}
 	  };
 } );
 
