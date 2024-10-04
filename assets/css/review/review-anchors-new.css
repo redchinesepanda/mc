@@ -190,6 +190,18 @@
     top: 0;
 }
 
+.review-anchors .anchors-btn-prev::before {
+    position: absolute;
+    left: 0px;
+    top: 0;
+}
+
+.review-anchors .anchors-btn-next::before {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
 .review-anchors .anchors-item {
     /* margin-right: 8px; */
     padding-top: 6px;
