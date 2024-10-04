@@ -149,6 +149,15 @@
         content: "\F102";
     }
 
+    .review-anchors .anchors-btn:hover {
+        border: 1px solid var( --Base-purple_button_hover );
+        background-color: var( --Primitives-purple-20 );
+    }
+
+    .review-anchors .anchors-btn:hover.anchors-btn::after {
+        color: var( --Base-purple_button_hover );
+    }
+
 }
 
 /* Anchors Display */
