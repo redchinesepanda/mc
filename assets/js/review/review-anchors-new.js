@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	// swiper init start
 
-	document.querySelectorAll('.swiper:not( .review-anchors )').forEach(el => {
+	document.querySelectorAll('.swiper:not( .review-anchors-swiper )').forEach(el => {
 		/* --------------------Swiper-------------- */
 		const swiper = new Swiper(el, {
 			loop: false,
@@ -35,7 +35,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	});
 
-	document.querySelectorAll('.review-anchors .swiper').forEach(el1 => {
+	document.querySelectorAll('.review-anchors-swiper').forEach(el1 => {
 		/* --------------------Swiper-------------- */
 		const swiper1 = new Swiper(el1, {
 			loop: false,
