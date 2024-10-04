@@ -164,6 +164,18 @@
         z-index: 1;
     }
 
+    .review-anchors .anchors-btn-prev {
+        right: auto;
+        /* left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) ); */
+        left: 0rem;
+    }
+
+    .review-anchors .anchors-btn-next {
+        /* right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) ); */
+        right: 0rem;
+        left: auto;
+    }
+
     .review-anchors .anchors-btn-prev::after {
         right: auto;
         left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
