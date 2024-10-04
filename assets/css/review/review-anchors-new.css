@@ -127,6 +127,10 @@
         /* z-index: 10; */
     }
 
+    .review-anchors .anchors-btn::after {
+        z-index: 1;
+    }
+
     .review-anchors .anchors-btn-prev {
         right: auto;
         left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
