@@ -64,17 +64,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		  },
 		});
 	  
-		swiperAnchors.on('reachBeginning', function () {
-		//   console.log('slide reachBeginning');
+		/* swiperAnchors.on('reachBeginning', function () {
 		  el.classList.add( classes.startSwipe );
 		  el.classList.remove( classes.endSwipe );
-		}); 
+		}); */ 
 	  
-		swiperAnchors.on('reachEnd', function () {
-		//   console.log('slide reachEnd');
+		/* swiperAnchors.on('reachEnd', function () {
 		  el.classList.add( classes.endSwipe );
 		  el.classList.remove( classes.startSwipe );
-		});
+		}); */
 	  };
 	  
 	  function swiperAnchorsMobile ( el ) {
@@ -85,28 +83,21 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	  
 		swiperAnchorsMobile.on('reachBeginning', function () {
-		//   console.log('slide reachBeginning');
 		  el.classList.add( classes.startSwipe );
 		  el.classList.remove( classes.endSwipe );
 		}); 
 	  
 		swiperAnchorsMobile.on('reachEnd', function () {
-		//   console.log('slide reachEnd');
 		  el.classList.add( classes.endSwipe );
 		  el.classList.remove( classes.startSwipe );
 		});
 	  };
-
-	  /* function findMiddlePosithion () {
-		console.log('подключены 2 функции')
-	  }; */
 	  
 	  function swiperAnchorsInit()
 	  {
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
 		  document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsDesc );
-		// document.querySelectorAll( selectors.anchorsSwiper ).forEach( { swiperAnchorsDesc, findMiddlePosithion, }, );
 		}
 		else
 		{
