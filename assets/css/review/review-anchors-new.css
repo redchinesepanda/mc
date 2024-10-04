@@ -85,7 +85,7 @@
         max-width: var( --base-width-desktop );
     }
 
-    .review-anchors .anchors-btn {
+    .review-anchors .anchors-btn::after {
         width: var( --Spacing-09 );
         height: var( --Spacing-09 );
         box-sizing: border-box;
@@ -98,7 +98,7 @@
 
     /* Anchors Background */
 
-    .review-anchors .anchors-btn {
+    .review-anchors .anchors-btn::after {
         border-radius: 3.75rem;
         border: 1px solid var( --Base-base-09 );
         background-color: var( --Base-base-01 );
@@ -145,7 +145,7 @@
     .review-anchors .anchors-btn-next::before {
         position: absolute;
         top: calc( 0rem - ( ( 2.25rem - var( --Spacing-09 ) ) / 2 ) );
-        z-index: -1;
+        /* z-index: -1; */
     }
 
     .review-anchors .anchors-btn-prev::before {
