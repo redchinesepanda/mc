@@ -85,7 +85,7 @@
         max-width: var( --base-width-desktop );
     }
 
-    .review-anchors .anchors-btn::after {
+    .review-anchors .anchors-btn {
         width: var( --Spacing-09 );
         height: var( --Spacing-09 );
         box-sizing: border-box;
