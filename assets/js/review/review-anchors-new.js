@@ -123,11 +123,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	  {
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
-		  document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsMobile );
+		  document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsDesc );
 		}
 		else
 		{
-		  document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsDesc );
+		  document.querySelectorAll( selectors.anchorsSwiper ).forEach( swiperAnchorsMobile );
 		}
 	  };
 	  
