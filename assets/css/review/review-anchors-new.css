@@ -70,12 +70,12 @@
     }
 
     .review-anchors .anchors-btn-prev.swiper-button-disabled,
-    .review-anchors .anchors-btn-next:not( .swiper-button-disabled ) {
+    .review-anchors .anchors-btn-next.swiper-button-disabled {
         display: none;
     }
 
     .review-anchors .anchors-btn-prev:not( .swiper-button-disabled ),
-    .review-anchors .anchors-btn-next.swiper-button-disabled {
+    .review-anchors .anchors-btn-next:not( .swiper-button-disabled ) {
         display: flex;
     }
     
