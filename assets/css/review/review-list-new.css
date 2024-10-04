@@ -43,6 +43,7 @@
   .tcb-post-content .legal-list-4 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     /* row-gap: 15px; */
   }
 
