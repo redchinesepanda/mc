@@ -98,6 +98,14 @@
         background-color: var( --Base-base-01 );
     }
 
+    .review-anchors .anchors-btn-prev::after {
+        background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, rgb(52, 10, 116) 100%);
+    }
+    
+    .review-anchors .anchors-btn-next::after {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgb(52, 10, 116) 100%);
+    }
+
     /* Anchors Position */
     
     .review-anchors {
@@ -126,6 +134,20 @@
         transform: rotate(180deg);
     }
 
+    .review-anchors .anchors-btn-prev::after,
+    .review-anchors .anchors-btn-next::after {
+        position: absolute;
+        top: -0.0625rem;
+    }
+
+    .review-anchors .anchors-btn-prev::after {
+        left: calc( 0rem + ( var( --Spacing-09 ) / 2 ) );
+    }
+    
+    .review-anchors .anchors-btn-next::after {
+        right: calc( 0rem + ( var( --Spacing-09 ) / 2 ) );
+    }
+
     /* Anchors Typography */
 
     .review-anchors .anchors-btn::before {
@@ -149,6 +171,11 @@
         color: var( --Base-purple_button_hover );
     }
 
+    .review-anchors .anchors-btn-prev::after,
+    .review-anchors .anchors-btn-next::after {
+        content: "";
+    }
+    
 }
 
 /* Anchors Display */
@@ -179,20 +206,6 @@
     position: absolute;
     right: 0px;
     top: 0;
-}
-
-.review-anchors .anchors-btn-prev::after,
-.review-anchors .anchors-btn-next::after {
-    position: absolute;
-    top: -0.0625rem;
-}
-
-.review-anchors .anchors-btn-prev::after {
-    left: calc( 0rem + ( var( --Spacing-09 ) / 2 ) );
-}
-
-.review-anchors .anchors-btn-next::after {
-    right: calc( 0rem + ( var( --Spacing-09 ) / 2 ) );
 }
 
 .review-anchors .anchors-item {
@@ -239,14 +252,6 @@
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
 
-.review-anchors .anchors-btn-prev::after {
-    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, rgb(52, 10, 116) 100%);
-}
-
-.review-anchors .anchors-btn-next::after {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgb(52, 10, 116) 100%);
-}
-
 /* Anchors Typography */
 
 .review-anchors .anchors-title,
@@ -263,19 +268,8 @@
     font-weight: 700;
 }
 
-.review-anchors .swiper.legal-active-end::after {
-    content: "";
-}
-
+.review-anchors .swiper.legal-active-end::after,
 .review-anchors .swiper:not( .legal-active-end ):after {
-    content: "";
-}
-
-.review-anchors .anchors-btn-prev::after {
-    content: "";
-}
-
-.review-anchors .anchors-btn-next::after {
     content: "";
 }
 
