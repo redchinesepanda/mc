@@ -64,8 +64,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			slidesPerView: 'auto',
 			spaceBetween: 8,
 			navigation: {
-				nextEl: selectors.buttonNavSwiperNext,
-				prevEl: selectors.buttonNavSwiperPrev,
+				nextEl: '.anchors-btn-next',
+				prevEl: '.anchors-btn-prev',
 			},
 		});
 
