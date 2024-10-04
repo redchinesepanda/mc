@@ -45,6 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		swiper1.on('slideChange', function () {
 			console.log('slide changed');
+			el1.classList.add('legal-active-changed');
 		});
 
 		swiper1.on('reachBeginning', function () {
