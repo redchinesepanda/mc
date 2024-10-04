@@ -53,28 +53,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	});
 
-/* 	document.querySelectorAll( selectors.anchorsSwiper ).forEach(el => {
-		const swiperAnchors = new Swiper(el, {
-			loop: false,
-			slidesPerView: 'auto',
-			spaceBetween: 8,
-			navigation: {
-				nextEl: '.anchors-btn-next',
-				prevEl: '.anchors-btn-prev',
-			},
-		});
-
-		swiperAnchors.on('reachBeginning', function () {
-			el.classList.add( classes.startSwipe );
-			el.classList.remove( classes.endSwipe );
-		}); 
-
-		swiperAnchors.on('reachEnd', function () {
-			el.classList.add( classes.endSwipe );
-			el.classList.remove( classes.startSwipe );
-		});
-	}); */
-
 	function swiperAnchorsDesc ( el ) {
 		const swiperAnchors = new Swiper(el, {
 		  loop: false,
