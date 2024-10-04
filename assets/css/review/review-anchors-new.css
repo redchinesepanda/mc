@@ -91,6 +91,11 @@
         box-sizing: border-box;
     }
 
+    .review-anchors .anchors-btn::before {
+        width: 83px;
+        height: 36px;
+    }
+
     /* Anchors Background */
 
     .review-anchors .anchors-btn {
@@ -204,11 +209,11 @@
     top: 0;
 }  */
 
-.review-anchors .swiper:not( .legal-active-end ):after {
+/* .review-anchors .swiper:not( .legal-active-end ):after {
     position: absolute;
     right: 0px;
     top: 0;
-}
+} */
 
 .review-anchors .anchors-item {
     /* margin-right: 8px; */
@@ -229,15 +234,10 @@
     height: 36px;
 } */
 
-.review-anchors .anchors-btn::after {
+/* .review-anchors .swiper:not( .legal-active-end )::after {
     width: 83px;
     height: 36px;
-}
-
-.review-anchors .swiper:not( .legal-active-end )::after {
-    width: 83px;
-    height: 36px;
-}
+} */
 
 /* Anchors Background */
 
