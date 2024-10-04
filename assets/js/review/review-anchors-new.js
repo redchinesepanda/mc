@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	// swiper init start
 
-	document.querySelectorAll('.swiper').forEach(el => {
+	document.querySelectorAll('.swiper:not( .review-anchors )').forEach(el => {
 		/* --------------------Swiper-------------- */
 		const swiper = new Swiper(el, {
 			loop: false,
@@ -16,9 +16,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			},
 		});
 
-		swiper.on('slideChange', function () {
-			// console.log('slide changed');
-		});
+		/* swiper.on('slideChange', function () {
+			console.log('slide changed');
+		}); */
 
 		swiper.on('reachBeginning', function () {
 			// console.log('slide reachBeginning');
@@ -28,6 +28,37 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}); 
 
 		swiper.on('reachEnd', function () {
+			// console.log('slide reachEnd');
+
+			el.classList.add('legal-active-end');
+			el.classList.remove('legal-active-start');
+		});
+	});
+
+	document.querySelectorAll('.review-anchors .swiper').forEach(el => {
+		/* --------------------Swiper-------------- */
+		const swiper1 = new Swiper(el, {
+			loop: false,
+			slidesPerView: 'auto',
+			spaceBetween: 8,
+			navigation: {
+				nextEl: '.anchors-btn-next',
+				prevEl: '.anchors-btn-prev',
+			},
+		});
+
+		swiper1.on('slideChange', function () {
+			console.log('slide changed');
+		});
+
+		swiper1.on('reachBeginning', function () {
+			// console.log('slide reachBeginning');
+
+			el.classList.add('legal-active-start');
+			el.classList.remove('legal-active-end');
+		}); 
+
+		swiper1.on('reachEnd', function () {
 			// console.log('slide reachEnd');
 
 			el.classList.add('legal-active-end');
