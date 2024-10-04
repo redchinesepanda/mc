@@ -114,19 +114,19 @@
         margin-top: 48px;
     }
 
-    .review-anchors .anchors-btn::before {
+    .review-anchors .anchors-btn {
         position: absolute;
         /* top: 50%; */
         /* margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem ); */
         z-index: 10;
     }
 
-    .review-anchors .anchors-btn-prev::before {
+    .review-anchors .anchors-btn-prev {
         right: auto;
         left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
     }
 
-    .review-anchors .anchors-btn-next::before {
+    .review-anchors .anchors-btn-next {
         right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
         left: auto;
     }
