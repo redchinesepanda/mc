@@ -109,7 +109,7 @@
         top: 0.0625rem;
         /* top: 50%; */
         /* margin-top: calc( 0rem - ( var( --Spacing-09 ) / 2 ) - 0.0625rem ); */
-        z-index: 10;
+        /* z-index: 10; */
     }
 
     .review-anchors .anchors-btn-prev {
@@ -181,16 +181,18 @@
     top: 0;
 }
 
-.review-anchors .anchors-btn-prev::after {
+.review-anchors .anchors-btn-prev::after,
+.review-anchors .anchors-btn-next::after {
     position: absolute;
+    top: -0.0625rem;
+}
+
+.review-anchors .anchors-btn-prev::after {
     left: 0px;
-    top: 0;
 }
 
 .review-anchors .anchors-btn-next::after {
-    position: absolute;
     right: 0px;
-    top: 0;
 }
 
 .review-anchors .anchors-item {
