@@ -2,9 +2,35 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	const selectors = {
+		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
+
+		buttonToTop : '.legal-section-anchors .legal-to-top',
+
+		allSwiper : '.swiper:not( .review-anchors-swiper )',
+
+		anchorsSwiper : '.review-anchors-swiper',
+
+		buttonNavSwiperPrev : '.review-anchors-swiper',
+
+		buttonNavSwiperNext : '.review-anchors-swiper',
+
+		// stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
+	};
+
+	const classes = {
+		active : 'legal-active',
+
+		startSwipe : 'legal-active-start',
+
+		endSwipe : 'legal-active-end',
+
+		// shortStr: 'legal-short-str',
+	};
+
 	// swiper init start
 
-	document.querySelectorAll('.swiper:not( .review-anchors-swiper )').forEach(el => {
+	document.querySelectorAll( selectors.allSwiper ).forEach(el => {
 		/* --------------------Swiper-------------- */
 		const swiper = new Swiper(el, {
 			loop: false,
@@ -19,47 +45,47 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		swiper.on('reachBeginning', function () {
 			// console.log('slide reachBeginning');
 
-			el.classList.add('legal-active-start');
-			el.classList.remove('legal-active-end');
+			el.classList.add( classes.startSwipe );
+			el.classList.remove( classes.endSwipe );
 		}); 
 
 		swiper.on('reachEnd', function () {
 			// console.log('slide reachEnd');
 
-			el.classList.add('legal-active-end');
-			el.classList.remove('legal-active-start');
+			el.classList.add( classes.endSwipe );
+			el.classList.remove( classes.startSwipe );
 		});
 	});
 
-	document.querySelectorAll('.review-anchors-swiper').forEach(el => {
+	document.querySelectorAll( selectors.anchorsSwiper ).forEach(el => {
 		/* --------------------Swiper-------------- */
 		const swiperAnchors = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
 			spaceBetween: 8,
 			navigation: {
-				nextEl: '.anchors-btn-next',
-				prevEl: '.anchors-btn-prev',
+				nextEl: selectors.buttonNavSwiperNext,
+				prevEl: selectors.buttonNavSwiperPrev,
 			},
 		});
 
-		swiperAnchors.on('slideChange', function () {
+		/* swiperAnchors.on('slideChange', function () {
 			console.log('slide changed');
 			el.classList.add('legal-active-changed');
-		});
+		}); */
 
 		swiperAnchors.on('reachBeginning', function () {
 			// console.log('slide reachBeginning');
 
-			el.classList.add('legal-active-start');
-			el.classList.remove('legal-active-end');
+			el.classList.add( classes.startSwipe );
+			el.classList.remove( classes.endSwipe );
 		}); 
 
 		swiperAnchors.on('reachEnd', function () {
 			// console.log('slide reachEnd');
 
-			el.classList.add('legal-active-end');
-			el.classList.remove('legal-active-start');
+			el.classList.add( classes.endSwipe );
+			el.classList.remove( classes.startSwipe );
 		});
 	});
 
@@ -117,20 +143,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		click : 'click',
 
 		scroll : 'scroll',
-	};
-
-	const selectors = {
-		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
-
-		buttonToTop : '.legal-section-anchors .legal-to-top',
-
-		// stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
-	};
-
-	const classes = {
-		active : 'legal-active',
-
-		// shortStr: 'legal-short-str',
 	};
 	
 	document.querySelectorAll( selectors.anchorsItem ).forEach( anchor => {
