@@ -164,12 +164,12 @@
         z-index: 1;
     }
 
-    .review-anchors .anchors-btn-prev {
+    .review-anchors .anchors-btn-prev::after {
         right: auto;
         left: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
     }
 
-    .review-anchors .anchors-btn-next {
+    .review-anchors .anchors-btn-next::after {
         right: calc( 0rem - ( var( --Spacing-09 ) / 2 ) );
         left: auto;
     }
