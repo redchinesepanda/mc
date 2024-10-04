@@ -248,7 +248,7 @@
 }
 
 .review-anchors .swiper.legal-active-end::after {
-    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
 
 .review-anchors .swiper:not( .legal-active-end ):after {
