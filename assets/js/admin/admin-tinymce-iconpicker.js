@@ -32,7 +32,7 @@ let IconPicker = ( function()
 
 			console.log( 'IconPicker.initIcons' );
 
-			console.log( document.querySelectorAll( '.mc-icon-picker a[data-icon]' ) );
+			console.log( document.querySelectorAll( '.mc-icon-picker a' ) );
 
 			document.querySelectorAll( '.mc-icon-picker a[data-icon]' ).forEach( function ( icon )
 			{
