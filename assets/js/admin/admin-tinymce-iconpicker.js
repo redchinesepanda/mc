@@ -59,6 +59,8 @@ let IconPicker = ( function()
 						if ( iconPicker != null )
 						{
 							iconPicker.innerHTML = this.responseText;
+
+							IconPicker.initIcons();
 						}
 					}
 					catch ( error )
@@ -180,7 +182,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 								IconPicker.getIcons();
 
-								IconPicker.initIcons();
+								// IconPicker.initIcons();
 
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
