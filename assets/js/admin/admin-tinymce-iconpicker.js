@@ -130,6 +130,8 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( e.data.mcIconClass );
 
+			console.log( tinyMCE.activeEditor.selection );
+
 			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
 
 			// editor.insertContent( content );
