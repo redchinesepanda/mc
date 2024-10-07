@@ -26,6 +26,40 @@ let IconPicker = ( function()
 		getIcons: function ( icon )
 		{
 			console.log( 'IconPicker.getIcons' );
+
+			const xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange = function()
+			{
+				if ( xhr.readyState === xhr.DONE && xhr.status === 200 )
+				{
+					try
+					{
+						// let parsed = JSON.parse( this.responseText );
+
+						let iconPicker = document.querySelector( '.mc-icon-picker' );
+		
+						if ( iconPicker != null )
+						{
+							iconPicker.innerHTML = this.responseText;
+						}
+					}
+					catch ( error )
+					{
+						console.error( 'IconPicker.getIcons' );
+
+						console.error( error );
+					}
+				}
+			}
+
+			xhr.open( "POST", MCAjax.ajax_url );
+
+			// xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+			
+			xhr.setRequestHeader( 'Content-type', 'text/html' );
+			
+			xhr.send( 'action=mc_get_icons' );
 		},
 
 		setIcon: function ( icon )
@@ -104,9 +138,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 							{
 								// getIconsAjax( this.$el );
 
-								IconPicker.show();
+								// IconPicker.show();
 
 								openDialogIcons();
+
+								IconPicker.getIcons();
 
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 

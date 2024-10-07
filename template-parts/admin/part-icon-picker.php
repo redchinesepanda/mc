@@ -3,7 +3,7 @@
  * @var $icons
  */
 ?>
-<div class="mc-icon-picker">
+<!-- <div class="mc-icon-picker"> -->
 	<h3>Choose icon</h3>
 
 	<a href="#" class="themify-icons-close_lightbox">
@@ -34,6 +34,8 @@
 			</section>
 		<?php endforeach; ?>
 
-	</div><!-- .themify-icons-lightbox_container -->
-</div>
-<div id="TI_Picker_overlay"></div>
+	</div>
+	
+	<!-- .themify-icons-lightbox_container -->
+<!-- </div> -->
+<!-- <div id="TI_Picker_overlay"></div> -->
