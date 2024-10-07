@@ -27,12 +27,10 @@ let IconPicker = ( function()
 		{
 			function handleIcon( event )
 			{
-				editor.windowManager.close();
+				// editor.windowManager.close();
+
+				tinyMCE.activeEditor.windowManager.close();
 			}
-
-			console.log( 'IconPicker.initIcons' );
-
-			console.log( document.querySelectorAll( '.mc-icon-picker a' ) );
 
 			document.querySelectorAll( '.mc-icon-picker a[data-icon]' ).forEach( function ( icon )
 			{
