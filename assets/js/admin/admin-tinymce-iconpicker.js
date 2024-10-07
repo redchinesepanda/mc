@@ -136,7 +136,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			{
 				console.log( tinyMCE.activeEditor.selection.getNode() );
 
-				tinyMCE.activeEditor.selection.getNode().classlist.add( e.data.mcIconPosition, e.data.mcIconClass );
+				tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition, e.data.mcIconClass );
 			}
 
 			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
