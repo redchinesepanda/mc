@@ -3,18 +3,62 @@
   instance for display purposes only. Tiny recommends not maintaining the plugin
   with the TinyMCE instance and using the `external_plugins` option.
 */
+
+// lib-cookie start
+
+let IconPicker = ( function()
+{
+	"use strict";
+
+	return {
+		target: {},
+
+		show: function ()
+		{
+			console.log( 'IconPicker.show' );
+		},
+
+		close: function ()
+		{
+			console.log( 'IconPicker.close' );
+		},
+
+		getIcons: function ( icon )
+		{
+			console.log( 'IconPicker.getIcons' );
+		},
+
+		setIcon: function ( icon )
+		{
+			console.log( 'IconPicker.setIcon' );
+		}
+	};
+} )();
+
+// lib-cookie end
 tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 {
 	// const openDialog = () => editor.windowManager.open( {
 	
+	const openDialogIcons = function ()
+	{
+		editor.windowManager.open( {
+			title: 'All icons',
+
+			body: [
+				{}
+			]
+		} );
+	}
+
 	const openDialog = function ()
 	{
-		function getIconsAjax( e )
-		{
-			console.log( 'getIconsAjax e' );
+		// function getIconsAjax( e )
+		// {
+		// 	console.log( 'getIconsAjax e' );
 
-			console.log( e );
-		}
+		// 	console.log( e );
+		// }
 
 		function insertDataToContent ( e )
 		{
@@ -33,17 +77,6 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 		editor.windowManager.open( {
 			title: 'Insert icon',
-			// body: {
-			// 	type: 'panel',
-
-			// 	items: [
-			// 		{
-			// 			type: 'input',
-			// 			name: 'title',
-			// 			label: 'Title'
-			// 		}
-			// 	]
-			// },
 			
 			body: [
 				{
@@ -65,7 +98,9 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 							onclick: function ()
 							{
-								getIconsAjax( this.$el );
+								// getIconsAjax( this.$el );
+
+								IconPicker.show();
 
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
