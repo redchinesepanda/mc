@@ -128,6 +128,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( e.data );
 
+			console.log( Object.values( this.$el )[ 'mc-class-position' ] );
+
+			console.log( Object.values( this.$el )[ 'mc-class-icon' ] );
+
 			// editor.insertContent( content );
 		}
 
@@ -163,15 +167,15 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 					items: [
 
 						{
-							type: "textbox",
+							type: 'textbox',
 							
-							name: "mc-class-icon"
+							name: 'mc-class-icon'
 						},
 
 						{
-							type: "button",
+							type: 'button',
 
-							text: "Choose",
+							text: 'Choose',
 
 							onclick: function ( event )
 							{
