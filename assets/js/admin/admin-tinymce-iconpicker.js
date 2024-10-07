@@ -170,7 +170,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 						{
 							type: 'listbox',
 
-							name: 'class',
+							name: 'mc-class-position',
 
 							label: 'Icon Position',
 
@@ -183,7 +183,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 							]
 						},
 
-						{ type: "textbox", name: "mc-textbox-name" },
+						{
+							type: "textbox",
+							
+							name: "mc-class-icon"
+						},
 
 						{
 							type: "button",
