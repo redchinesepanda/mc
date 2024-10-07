@@ -53,8 +53,8 @@ let IconPicker = ( function()
 				}
 			}
 
-			// try
-			// {
+			try
+			{
 				// xhr.open( "POST", MCAjax.ajax_url );
 				
 				// xhr.open( 'POST', '/wp-admin/admin-ajax.php' );
@@ -64,15 +64,17 @@ let IconPicker = ( function()
 				xhr.setRequestHeader( 'Content-type', 'text/html' );
 
 				xhr.responseType = 'text/html';
+
+				req.send();
 				
 				// xhr.send( 'action=mc_get_icons' );
-			// }
-			// catch ( error )
-			// {
-			// 	console.error( 'IconPicker.getIcons error' );
+			}
+			catch ( error )
+			{
+				console.error( 'IconPicker.getIcons error' );
 
-			// 	console.error( error );
-			// }
+				console.error( error );
+			}
 		},
 
 		setIcon: function ( icon )
