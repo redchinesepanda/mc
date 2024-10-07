@@ -122,13 +122,13 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	{
 		function insertDataToContent ( e )
 		{
-			let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
+			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
 
-			console.log( 'insertDataToContent content' );
+			console.log( 'openDialogIconSettings.insertDataToContent' );
 
-			console.log( content );
+			console.log( e.data );
 
-			editor.insertContent( content );
+			// editor.insertContent( content );
 		}
 
 		editor.windowManager.open( {
