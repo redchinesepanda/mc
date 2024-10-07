@@ -31,6 +31,8 @@ let IconPicker = ( function()
 
 				console.log( event.target.dataset.icon );
 
+				IconPicker.target.value = event.target.dataset.icon;
+
 				tinyMCE.activeEditor.windowManager.close();
 			}
 
@@ -186,11 +188,15 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 								console.log( this.$el );
 
-								let element = Object.values( this.$el )[ 0 ];
+								let elementButton = Object.values( this.$el )[ 0 ];
 
-								console.log( element );
+								console.log( elementButton );
 
-								console.log( element.previousElementSibling );
+								let elementInput = elementButton.previousElementSibling;
+
+								console.log( elementInput );
+
+								IconPicker.target = elementInput;
 
 								// getIconsAjax( this.$el );
 
