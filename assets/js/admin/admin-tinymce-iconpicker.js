@@ -172,9 +172,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 							text: "Choose",
 
-							onclick: function ()
+							onclick: function ( event )
 							{
 								console.log( 'openDialogIconSettings' );
+
+								console.log( event );
 
 								console.log( this );
 
