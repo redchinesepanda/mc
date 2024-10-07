@@ -59,11 +59,13 @@ let IconPicker = ( function()
 				
 				// xhr.open( 'POST', '/wp-admin/admin-ajax.php' );
 				
-				xhr.open( 'GET', '/wp-admin/admin-ajax.php' );
+				xhr.open( 'GET', '/wp-admin/admin-ajax.php?action=mc_get_icons' );
 				
 				xhr.setRequestHeader( 'Content-type', 'text/html' );
+
+				xhr.responseType = 'text/html';
 				
-				xhr.send( 'action=mc_get_icons' );
+				// xhr.send( 'action=mc_get_icons' );
 			}
 			catch ( error )
 			{
