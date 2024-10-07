@@ -167,6 +167,22 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 					direction: "row",
 
 					items: [
+						{
+							type: 'listbox',
+
+							name: 'class',
+
+							label: 'Icon Position',
+
+							'values': [
+								{ text: "::before", value: "icon-position-before" },
+
+								{ text: "span", value: "icon-position-span" },
+
+								{ text: "::after", value: "icon-position-after" }
+							]
+						},
+
 						{ type: "textbox", name: "mc-textbox-name" },
 
 						{
@@ -176,7 +192,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 							onclick: function ( event )
 							{
-								console.log( 'openDialogIconSettings' );
+								// console.log( 'openDialogIconSettings' );
 
 								// console.log( event );
 
@@ -184,17 +200,17 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 								// console.log( event.target. );
 
-								console.log( this );
+								// console.log( this );
 
-								console.log( this.$el );
+								// console.log( this.$el );
 
 								let elementButton = Object.values( this.$el )[ 0 ];
 
-								console.log( elementButton );
+								// console.log( elementButton );
 
 								let elementInput = elementButton.previousElementSibling;
 
-								console.log( elementInput );
+								// console.log( elementInput );
 
 								IconPicker.target = elementInput;
 
