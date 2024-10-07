@@ -23,6 +23,19 @@ let IconPicker = ( function()
 			console.log( 'IconPicker.close' );
 		},
 
+		initIcons: function ()
+		{
+			function handleIcon( event )
+			{
+				editor.windowManager.close();
+			}
+
+			document.querySelectorAll( '.mc-icon-picker a[data-icon]' ).forEach( function ( icon )
+			{
+				icon.addEventListener( 'click', handleIcon, false );
+			} );
+		},
+
 		getIcons: function ( icon )
 		{
 			console.log( 'IconPicker.getIcons' );
@@ -162,6 +175,8 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 								openDialogIcons();
 
 								IconPicker.getIcons();
+
+								IconPicker.init();
 
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
