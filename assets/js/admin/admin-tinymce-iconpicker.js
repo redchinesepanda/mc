@@ -190,7 +190,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 								console.log( element );
 
-								console.log( element.previousSeiblingElement );
+								console.log( element.previousElementSibling );
 
 								// getIconsAjax( this.$el );
 
