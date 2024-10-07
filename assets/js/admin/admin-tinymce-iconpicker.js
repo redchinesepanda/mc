@@ -132,6 +132,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( tinyMCE.activeEditor.selection );
 
+			if ( [ "icon-position-before", "icon-position-after" ].includes( e.data.mcIconPosition ) )
+			{
+				tinyMCE.activeEditor.selection.getNode.classlist.add( e.data.mcIconPosition, e.data.mcIconClass );
+			}
+
 			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
 
 			// editor.insertContent( content );
@@ -151,9 +156,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 					'values': [
 						{ text: "::before", value: "icon-position-before" },
 
-						{ text: "span", value: "icon-position-span" },
+						{ text: "::after", value: "icon-position-after" },
 
-						{ text: "::after", value: "icon-position-after" }
+						{ text: "span::before", value: "icon-position-span-before" },
+
+						{ text: "span::after", value: "icon-position-span-after" }
 					]
 				},
 
