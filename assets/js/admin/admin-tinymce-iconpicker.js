@@ -94,13 +94,13 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 		editor.windowManager.open( {
 			title: 'All icons',
 
+			with: 1080,
+
+			height: 768,
+
 			body: [
 				{
 					type: "container",
-
-					with: 1080,
-
-					height: 768,
 
 					html: '<div class="mc-icon-picker"></div>'
 				}
