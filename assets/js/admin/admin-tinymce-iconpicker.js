@@ -94,7 +94,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 		editor.windowManager.open( {
 			title: 'All icons',
 
-			with: '1080px',
+			width: '1080px',
 
 			height: 768,
 
