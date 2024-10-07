@@ -53,7 +53,9 @@ let IconPicker = ( function()
 				}
 			}
 
-			xhr.open( "POST", MCAjax.ajax_url );
+			// xhr.open( "POST", MCAjax.ajax_url );
+			
+			xhr.open( 'POST', '/wp-admin/admin-ajax.php' );
 
 			// xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
 			
