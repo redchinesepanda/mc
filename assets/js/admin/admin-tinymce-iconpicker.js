@@ -139,6 +139,25 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 				tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition, e.data.mcIconClass );
 			}
 
+			if ( [ "icon-position-span-before", "icon-position-span-after" ].includes( e.data.mcIconPosition ) )
+			{
+				let content = tinyMCE.activeEditor.selection.getContent();
+
+				console.log( content );
+
+				let contentElement = document.createElement( 'span' );
+
+				contentElement.innerHTML = content;
+
+				contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
+
+				content = contentElement.outerHTML;
+
+				console.log( content );
+
+				// editor.setContent( content );
+			}
+
 			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
 
 			// editor.insertContent( content );
