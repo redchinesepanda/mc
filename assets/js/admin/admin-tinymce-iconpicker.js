@@ -174,6 +174,8 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 							onclick: function ()
 							{
+								console.log( 'openDialog>button.onclick' );
+
 								// getIconsAjax( this.$el );
 
 								// IconPicker.show();
