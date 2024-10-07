@@ -128,9 +128,9 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( e.data );
 
-			console.log( Object.values( this.$el )[ 'mc-class-position' ] );
+			console.log( Object.values( e.data )[ 'mc-class-position' ] );
 
-			console.log( Object.values( this.$el )[ 'mc-class-icon' ] );
+			console.log( Object.values( e.data )[ 'mc-class-icon' ] );
 
 			// editor.insertContent( content );
 		}
