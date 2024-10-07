@@ -122,15 +122,15 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	{
 		function insertDataToContent ( e )
 		{
-			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
-
 			console.log( 'openDialogIconSettings.insertDataToContent' );
 
 			console.log( e.data );
 
-			console.log( Object.values( e.data )[ 'mc-class-position' ] );
+			console.log( e.data.mcIconPosition );
 
-			console.log( Object.values( e.data )[ 'mc-class-icon' ] );
+			console.log( e.data.mcIconClass );
+
+			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
 
 			// editor.insertContent( content );
 		}
@@ -142,7 +142,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 				{
 					type: 'listbox',
 
-					name: 'mc-class-position',
+					name: 'mcIconPosition',
 
 					label: 'Icon Position',
 
@@ -169,7 +169,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 						{
 							type: 'textbox',
 							
-							name: 'mc-class-icon'
+							name: 'mcIconClass'
 						},
 
 						{
