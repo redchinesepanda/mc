@@ -184,6 +184,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 								console.log( this );
 
+								console.log( this.$el );
+
+								console.log( this.$el.previousElementSibling );
+
 								// getIconsAjax( this.$el );
 
 								// IconPicker.show();
