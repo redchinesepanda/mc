@@ -4,8 +4,6 @@
   with the TinyMCE instance and using the `external_plugins` option.
 */
 
-// lib-cookie start
-
 let IconPicker = ( function()
 {
 	"use strict";
@@ -27,9 +25,7 @@ let IconPicker = ( function()
 		{
 			function handleIcon( event )
 			{
-				console.log( 'IconPicker.handleIcon' );
-
-				console.log( event.target.dataset.icon );
+				event.preventDefault();
 
 				IconPicker.target.value = event.target.dataset.icon;
 
@@ -44,8 +40,6 @@ let IconPicker = ( function()
 
 		getIcons: function ( icon )
 		{
-			console.log( 'IconPicker.getIcons' );
-
 			const xhr = new XMLHttpRequest();
 
 			xhr.onreadystatechange = function()
@@ -54,8 +48,6 @@ let IconPicker = ( function()
 				{
 					try
 					{
-						// let parsed = JSON.parse( this.responseText );
-
 						let iconPicker = document.querySelector( '.mc-icon-picker' );
 		
 						if ( iconPicker != null )
@@ -105,11 +97,8 @@ let IconPicker = ( function()
 	};
 } )();
 
-// lib-cookie end
 tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 {
-	// const openDialog = () => editor.windowManager.open( {
-	
 	const openDialogIcons = function ()
 	{
 		editor.windowManager.open( {
@@ -131,13 +120,6 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 	const openDialogIconSettings = function ()
 	{
-		// function getIconsAjax( e )
-		// {
-		// 	console.log( 'getIconsAjax e' );
-
-		// 	console.log( e );
-		// }
-
 		function insertDataToContent ( e )
 		{
 			let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
@@ -147,10 +129,6 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			console.log( content );
 
 			editor.insertContent( content );
-
-			/* Insert content when the window form is submitted */
-
-			// return content;
 		}
 
 		editor.windowManager.open( {
@@ -197,111 +175,38 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 							onclick: function ( event )
 							{
-								// console.log( 'openDialogIconSettings' );
-
-								// console.log( event );
-
-								// console.log( event.target );
-
-								// console.log( event.target. );
-
-								// console.log( this );
-
-								// console.log( this.$el );
-
 								let elementButton = Object.values( this.$el )[ 0 ];
-
-								// console.log( elementButton );
 
 								let elementInput = elementButton.previousElementSibling;
 
-								// console.log( elementInput );
-
 								IconPicker.target = elementInput;
-
-								// getIconsAjax( this.$el );
-
-								// IconPicker.show();
 
 								openDialogIcons();
 
 								IconPicker.getIcons();
-
-								// IconPicker.initIcons();
-
-								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
-
-								// console.log( 'container button' );
-
-								// console.log( this.$el.previousElementSibling );
-
-								// console.log( this.$el.children );
-
-								// console.log( this.$el.previousSibling );
-
-								// console.log( this.$el );
 							},
 						}
 					],
 				}
 			],
-
-			// buttons: [
-			// 	{
-			// 		type: 'cancel',
-			// 		text: 'Close'
-			// 	},
-			// 	{
-			// 		type: 'submit',
-			// 		text: 'Save',
-			// 		buttonType: 'primary'
-			// 	}
-			// ],
-
-			// onSubmit: dataOutput
-			
-			// onSubmit: function ( e )
-			// {
-			// 	let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
-
-			// 	console.log( 'openDialog onSubmit' );
-
-			// 	console.log( content );
-
-			// 	/* Insert content when the window form is submitted */
-
-			// 	editor.insertContent( content );
-			// }
 			
 			onSubmit: function ( e )
 			{
 				insertDataToContent( e );
-
-				// let html = toIconHTML( e.data );
-
-				// editor.insertContent( html );
 			}
 		} );
 	}
 
-	/* Add a button that opens a window */
-
 	editor.addButton( 'tinymce_iconpicker', {
-		// text: 'Insert Button',
-
 		title: 'Insert Icon',
 
 		icon: 'icon mce-i-plus',
 
-		onClick: function ()
+		onclick: function ()
 		{
-		  /* Open window */
-
 		  openDialogIconSettings();
 		}
 	} );
-
-	/* Return the metadata for the help plugin */
 
 	return {
 		getMetadata: function () {
