@@ -127,7 +127,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 		} );
 	}
 
-	const openDialog = function ()
+	const openDialogIconSettings = function ()
 	{
 		// function getIconsAjax( e )
 		// {
@@ -254,7 +254,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 		{
 		  /* Open window */
 
-		  openDialog();
+		  openDialogIconSettings();
 		}
 	} );
 
