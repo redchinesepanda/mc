@@ -98,6 +98,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 				{
 					type: "container",
 
+					with: 1080,
+
+					height: 768,
+
 					html: '<div class="mc-icon-picker"></div>'
 				}
 			]
