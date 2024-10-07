@@ -158,30 +158,31 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			
 			body: [
 				{
+					type: 'listbox',
+
+					name: 'mc-class-position',
+
+					label: 'Icon Position',
+
+					'values': [
+						{ text: "::before", value: "icon-position-before" },
+
+						{ text: "span", value: "icon-position-span" },
+
+						{ text: "::after", value: "icon-position-after" }
+					]
+				},
+
+				{
 					type: "container",
 
 					label: "MC Icon",
 
-					// layout: "flex",
+					layout: "flex",
 
-					// direction: "row",
+					direction: "row",
 
 					items: [
-						{
-							type: 'listbox',
-
-							name: 'mc-class-position',
-
-							label: 'Icon Position',
-
-							'values': [
-								{ text: "::before", value: "icon-position-before" },
-
-								{ text: "span", value: "icon-position-span" },
-
-								{ text: "::after", value: "icon-position-after" }
-							]
-						},
 
 						{
 							type: "textbox",
