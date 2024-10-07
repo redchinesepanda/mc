@@ -30,6 +30,10 @@ let IconPicker = ( function()
 				editor.windowManager.close();
 			}
 
+			console.log( 'IconPicker.initIcons' );
+
+			console.log( document.querySelectorAll( '.mc-icon-picker a[data-icon]' ) );
+
 			document.querySelectorAll( '.mc-icon-picker a[data-icon]' ).forEach( function ( icon )
 			{
 				icon.addEventListener( 'click', handleIcon, false );
