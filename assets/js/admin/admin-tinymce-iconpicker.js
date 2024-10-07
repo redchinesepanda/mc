@@ -46,7 +46,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			title: 'All icons',
 
 			body: [
-				{}
+				{
+					type: "container",
+
+					html: '<div class="mc-icon-picker"></div>'
+				}
 			]
 		} );
 	}
@@ -101,6 +105,8 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 								// getIconsAjax( this.$el );
 
 								IconPicker.show();
+
+								openDialogIcons();
 
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
