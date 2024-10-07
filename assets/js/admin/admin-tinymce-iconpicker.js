@@ -27,7 +27,9 @@ let IconPicker = ( function()
 		{
 			function handleIcon( event )
 			{
-				// editor.windowManager.close();
+				console.log( 'IconPicker.handleIcon' );
+
+				console.log( event.target.dataset.icon );
 
 				tinyMCE.activeEditor.windowManager.close();
 			}
