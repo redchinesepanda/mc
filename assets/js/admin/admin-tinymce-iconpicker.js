@@ -65,7 +65,7 @@ let IconPicker = ( function()
 
 				xhr.responseType = 'text/html';
 
-				req.send();
+				xhr.send();
 				
 				// xhr.send( 'action=mc_get_icons' );
 			}
