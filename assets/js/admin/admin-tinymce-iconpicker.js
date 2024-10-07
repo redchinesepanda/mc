@@ -176,7 +176,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 								IconPicker.getIcons();
 
-								IconPicker.init();
+								IconPicker.initIcons();
 
 								// (TI_Picker.target = jQuery(this.$el).prev()), TI_Picker.showLightbox(null);
 
