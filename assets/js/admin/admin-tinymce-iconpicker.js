@@ -162,9 +162,9 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 					label: "MC Icon",
 
-					layout: "flex",
+					// layout: "flex",
 
-					direction: "row",
+					// direction: "row",
 
 					items: [
 						{
