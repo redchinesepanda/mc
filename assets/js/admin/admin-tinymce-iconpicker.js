@@ -46,7 +46,7 @@ let IconPicker = ( function()
 					}
 					catch ( error )
 					{
-						console.error( 'IconPicker.getIcons' );
+						console.error( 'IconPicker.getIcons error' );
 
 						console.error( error );
 					}
