@@ -24,10 +24,10 @@
 			<section id="ti_picker-<?php echo $category['key']; ?>">
 				<h2 class="page-header"><?php echo $category['label']; ?></h2>
 				<div class="row">
-					<?php foreach( $category['icons'] as $icon_key => $icon_label ) : ?>
-						<a href="#" data-icon="<?php echo $icon_key; ?>">
-							<i class="<?php echo $icon_key; ?>" aria-hidden="true"></i>
-							<?php echo $icon_label; ?>
+					<?php foreach( $category['icons'] as $icon_name ) : ?>
+						<a href="#" data-icon="<?php echo $icon_name; ?>">
+							<i class="<?php echo $icon_name; ?>" aria-hidden="true"></i>
+							<?php echo $icon_name; ?>
 						</a>
 					<?php endforeach; ?>
 				</div>
@@ -35,7 +35,7 @@
 		<?php endforeach; ?>
 
 	</div>
-	
+
 	<!-- .themify-icons-lightbox_container -->
 <!-- </div> -->
 <!-- <div id="TI_Picker_overlay"></div> -->
