@@ -36,9 +36,11 @@ class AdminTinyMCEIconPicker
 	const CSS_ADMIN_MCE = [
         'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-mce-iconpicker.css',
 
-		'admin-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
 
-        'admin-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+        'admin-mce-style-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+
+		'admin-mce-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
     ];
 
 	public static function add_editor_styles()
