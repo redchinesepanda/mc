@@ -172,11 +172,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			if ( tinyMCE.activeEditor.selection.getContent() !== tinyMCE.activeEditor.selection.getNode().textContent )
 			{
-				insertIconClass( e );
+				insertIconElement( e );
 			}
 			else
 			{
-				insertIconElement( e );
+				insertIconClass( e );
 			}
 
 			// if ( [ "icon-position-before", "icon-position-after" ].includes( e.data.mcIconPosition ) )
