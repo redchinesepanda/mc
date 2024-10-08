@@ -116,44 +116,60 @@ class AdminTinyMCEIconPicker
 	}
 
 	const JSON_ICONS = [
-		'mc-icons-sports' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
+		'mc-icons-sports' => [
+			'name' => ToolLoco::translate( 'MC Icons Sports' ),
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
+		], 
 	];
 
-	public static function get_icons_json()
+	public static function get_categories_json()
 	{
-		foreach ( self::JSON_ICONS as $font => $path )
+		$categories = [];
+
+		foreach ( self::JSON_ICONS as $key => $font )
 		{
-			$json = file_get_contents( $path );
+			$json = file_get_contents( $font[ 'path' ] );
 
-			LegalDebug::debug( [
-				'AdminTinyMCEIconPicker' => 'get_icons_json-1',
+			// LegalDebug::debug( [
+			// 	'AdminTinyMCEIconPicker' => 'get_categories_json-1',
 
-				'path' => $path,
+			// 	'path' => $path,
 
-				'json' => $json,
-			] );
+			// 	'json' => $json,
+			// ] );
 
 			if ( $json )
 			{
 				$icons = json_decode( $json, true );
 
-				LegalDebug::debug( [
-					'AdminTinyMCEIconPicker' => 'get_icons_json-1',
+				// LegalDebug::debug( [
+				// 	'AdminTinyMCEIconPicker' => 'get_categories_json-2',
 	
-					'icons' => $icons,
-				] );
+				// 	'icons' => $icons,
+				// ] );
 
 				if ( $icons )
 				{
-					LegalDebug::debug( [
-						'AdminTinyMCEIconPicker' => 'get_icons_json-1',
+					// LegalDebug::debug( [
+					// 	'AdminTinyMCEIconPicker' => 'get_categories_json-3',
 
-						'font' => $font,
+					// 	'font' => $font,
 
-						'icons' => $icons,
-					] );
+					// 	'icons' => $icons,
+					// ] );
+
+					$categories[] = [
+						'key' => $key,
+	
+						'label' => $font[ 'name' ],
+		
+						'icons' => array_keys( $icons ),
+					];
 				}
 			}
+
+			return $categories;
 		}
 
 		// Read the JSON file
@@ -183,23 +199,25 @@ class AdminTinyMCEIconPicker
 	public static function get_icons()
 	{
 		return [
-			'categories' => [
-				[
-					'key' => 'arrows',
+			'categories' => self::get_categories_json(),
+
+			// 'categories' => [
+			// 	[
+			// 		'key' => 'arrows',
 	
-					'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
+			// 		'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
 	
-					'icons' => [
-						'ti-arrow-up' => 'arrow-up',
+			// 		'icons' => [
+			// 			'ti-arrow-up' => 'arrow-up',
 	
-						'ti-arrow-right' => 'arrow-right',
+			// 			'ti-arrow-right' => 'arrow-right',
 	
-						'ti-arrow-left' => 'arrow-left',
+			// 			'ti-arrow-left' => 'arrow-left',
 	
-						'ti-arrow-down' => 'arrow-down',
-					],
-				],
-			]
+			// 			'ti-arrow-down' => 'arrow-down',
+			// 		],
+			// 	],
+			// ]
 		];
 	}
 
