@@ -113,6 +113,57 @@ class AdminTinyMCEIconPicker
 		return $buttons;
 	}
 
+	const JSON_ICONS = [
+		'mc-icons-sports' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
+	];
+
+	public static function get_icons_json()
+	{
+		foreach ( $JSON_ICONS as $font => $path )
+		{
+			$json = file_get_contents( $path );
+
+			if ( $json )
+			{
+				$icons = json_decode( $json, true );
+
+				if ( $icons )
+				{
+					LegalDebug::debug( [
+						'AdminTinyMCEIconPicker' => 'get_icons_json-1',
+
+						'font' => $font,
+
+						'icons' => $icons,
+					] );
+				}
+			}
+		}
+
+		// Read the JSON file
+
+		// $json = file_get_contents('my_data.json'); 
+
+		// Check if the file was read successfully
+
+		// if ($json === false) {
+		// 	die('Error reading the JSON file');
+		// }
+
+		// Decode the JSON file
+		// $json_data = json_decode($json, true); 
+
+		// Check if the JSON was decoded successfully
+		// if ($json_data === null) {
+		// 	die('Error decoding the JSON file');
+		// }
+
+		// Display data
+		// echo "<pre>";
+		// print_r($json_data);
+		// echo "</pre>";
+	}
+
 	public static function get_icons()
 	{
 		return [
