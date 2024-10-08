@@ -134,7 +134,7 @@ class AdminTinyMCEIconPicker
 			LegalDebug::debug( [
 				'AdminTinyMCEIconPicker' => 'get_categories_json-1',
 
-				'path' => $path,
+				'path' => $font[ 'path' ],
 
 				'json' => $json,
 			] );
