@@ -151,7 +151,13 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 				contentElement.innerHTML = content;
 
-				contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
+				// contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
+				
+				contentElement.classList.add( e.data.mcIconPosition );
+
+				e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
+					contentElement.classList.add( item );
+				} );
 
 				content = contentElement.outerHTML;
 
