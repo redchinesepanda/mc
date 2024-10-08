@@ -85,6 +85,8 @@ class AdminTinyMCEIconPicker
 			add_action( 'wp_ajax_nopriv_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
 
 			add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
+			
+			self::get_icons_json();
         // }
     }
 
@@ -180,8 +182,6 @@ class AdminTinyMCEIconPicker
 
 	public static function get_icons()
 	{
-		self::get_icons_json();
-
 		return [
 			'categories' => [
 				[
