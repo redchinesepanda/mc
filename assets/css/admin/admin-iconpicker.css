@@ -15,3 +15,9 @@
 {
 	flex-basis: calc( 25% - 10px );
 }
+
+.mce-container .mc-icon-picker-wrapper
+{
+	height: 750px;
+  	overflow-y: scroll;
+}
