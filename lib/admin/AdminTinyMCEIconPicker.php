@@ -3,13 +3,20 @@
 class AdminTinyMCEIconPicker
 {
 	const CSS_ADMIN = [
-        'admin-tinymce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
+        'admin-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
 
-		// assets\font\mc-icons-sports\mc-icons-sports.css
+        'admin-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
 
-        'admin-tinymce-iconpicker-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+        'admin-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+    ];
 
-        'admin-tinymce-iconpicker-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+	public static function register_style()
+    {
+		ToolEnqueue::register_style( self::CSS_ADMIN );
+    }
+
+	const CSS_ADMIN_MCE = [
+        'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
     ];
 
 	public static function add_editor_styles()
@@ -18,7 +25,7 @@ class AdminTinyMCEIconPicker
 		// 	add_editor_style( $style );
 		// }
 
-		ToolEnqueue::add_editor_styles( self::CSS_ADMIN );
+		ToolEnqueue::add_editor_styles( self::CSS_ADMIN_MCE );
 	}
 
 	private static function get_ajax_general()
@@ -86,7 +93,7 @@ class AdminTinyMCEIconPicker
 
 			add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-			// self::get_categories_json();
+			add_action( 'admin_enqueue_scripts', [ $handler, 'register_style' ] );
         // }
     }
 
@@ -131,34 +138,12 @@ class AdminTinyMCEIconPicker
 		{
 			$json = file_get_contents( $font[ 'path' ] );
 
-			// LegalDebug::debug( [
-			// 	'AdminTinyMCEIconPicker' => 'get_categories_json-1',
-
-			// 	'path' => $font[ 'path' ],
-
-			// 	'json' => $json,
-			// ] );
-
 			if ( $json )
 			{
 				$icons = json_decode( $json, true );
 
-				// LegalDebug::debug( [
-				// 	'AdminTinyMCEIconPicker' => 'get_categories_json-2',
-	
-				// 	'icons' => $icons,
-				// ] );
-
 				if ( $icons )
 				{
-					// LegalDebug::debug( [
-					// 	'AdminTinyMCEIconPicker' => 'get_categories_json-3',
-
-					// 	'font' => $font,
-
-					// 	'icons' => $icons,
-					// ] );
-
 					$categories[] = [
 						'key' => $key,
 	
@@ -169,75 +154,19 @@ class AdminTinyMCEIconPicker
 				}
 			}
 
-			// LegalDebug::debug( [
-			// 	'AdminTinyMCEIconPicker' => 'get_categories_json-4',
-
-			// 	'categories' => $categories,
-			// ] );
-
 			return $categories;
 		}
-
-		// Read the JSON file
-
-		// $json = file_get_contents('my_data.json'); 
-
-		// Check if the file was read successfully
-
-		// if ($json === false) {
-		// 	die('Error reading the JSON file');
-		// }
-
-		// Decode the JSON file
-		// $json_data = json_decode($json, true); 
-
-		// Check if the JSON was decoded successfully
-		// if ($json_data === null) {
-		// 	die('Error decoding the JSON file');
-		// }
-
-		// Display data
-		// echo "<pre>";
-		// print_r($json_data);
-		// echo "</pre>";
 	}
 
 	public static function get_icons()
 	{
 		return [
 			'categories' => self::get_categories_json(),
-
-			// 'categories' => [
-			// 	[
-			// 		'key' => 'arrows',
-	
-			// 		'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
-	
-			// 		'icons' => [
-			// 			'ti-arrow-up' => 'arrow-up',
-	
-			// 			'ti-arrow-right' => 'arrow-right',
-	
-			// 			'ti-arrow-left' => 'arrow-left',
-	
-			// 			'ti-arrow-down' => 'arrow-down',
-			// 		],
-			// 	],
-			// ]
 		];
 	}
 
 	public static function ajax_mc_get_icons()
 	{
-		// if ( current_user_can( 'edit_theme_options' ) || current_user_can( 'publish_posts' ) )
-		// {
-			// $icons = Themify_Icons_Icon_Picker::get_icons();
-
-			// include THEMIFY_ICONS_DIR . 'templates/icon-picker.php';
-
-			// die;
-		// }
-
 		echo self::render_icons();
 
 		die();
