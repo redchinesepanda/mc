@@ -123,9 +123,23 @@ class AdminTinyMCEIconPicker
 		{
 			$json = file_get_contents( $path );
 
+			LegalDebug::debug( [
+				'AdminTinyMCEIconPicker' => 'get_icons_json-1',
+
+				'path' => $path,
+
+				'json' => $json,
+			] );
+
 			if ( $json )
 			{
 				$icons = json_decode( $json, true );
+
+				LegalDebug::debug( [
+					'AdminTinyMCEIconPicker' => 'get_icons_json-1',
+	
+					'icons' => $icons,
+				] );
 
 				if ( $icons )
 				{
