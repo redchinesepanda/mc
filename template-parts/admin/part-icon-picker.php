@@ -7,12 +7,12 @@
 <ul class="icon-picker-categories">
 	<?php foreach( $args[ 'categories' ] as $category ) : ?>
 		<li>
-			<a class="picker-categories-item" href="#mc-category-<?php echo $category[ 'key' ]; ?>"><?php echo $category[ 'label' ]; ?></a>
+			<a class="picker-categories-item" href="#category-<?php echo $category[ 'key' ]; ?>"><?php echo $category[ 'label' ]; ?></a>
 		</li>
 	<?php endforeach; ?>
 </ul>
 <?php foreach( $args[ 'categories' ] as $category ) : ?>
-	<section id="mc-category-<?php echo $category[ 'key' ]; ?>">
+	<section id="category-<?php echo $category[ 'key' ]; ?>">
 		<h2 class="picker-category-header"><?php echo $category[ 'label' ]; ?></h2>
 		<div class="picker-category-items">
 			<?php foreach( $category[ 'icons' ] as $icon_name ) : ?>
