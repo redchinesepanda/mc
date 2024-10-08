@@ -170,7 +170,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( tinyMCE.activeEditor.selection.getNode().textContent );
 
-			if ( tinyMCE.activeEditor.selection.getContent() !== tinyMCE.activeEditor.selection.getNode().textContent )
+			if ( tinyMCE.activeEditor.selection.getContent() !== tinyMCE.activeEditor.selection.getNode().textContent && tinyMCE.activeEditor.selection.getContent() !== '' )
 			{
 				insertIconElement( e );
 			}
