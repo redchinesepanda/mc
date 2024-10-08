@@ -166,6 +166,8 @@ class AdminTinyMCEIconPicker
 
 	public static function get_icons()
 	{
+		self::get_icons_json();
+
 		return [
 			'categories' => [
 				[
