@@ -1,4 +1,5 @@
-#tinymce .mc-icons-sports
+#tinymce .mc-icons-sports::before,
+#tinymce .mc-icons-sports::after,
 {
 	font-family: var(--legal-font-icons-sport);
 	font-style: normal;
