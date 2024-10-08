@@ -218,7 +218,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 		// icon: 'icon mce-i-plus',
 		
-		icon: 'icon mce-i-outlet',
+		icon: 'plus',
 
 		onclick: function ()
 		{
