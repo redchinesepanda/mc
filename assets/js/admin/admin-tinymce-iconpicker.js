@@ -216,7 +216,9 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	editor.addButton( 'tinymce_iconpicker', {
 		title: 'Insert Icon',
 
-		icon: 'icon mce-i-plus',
+		// icon: 'icon mce-i-plus',
+		
+		icon: 'icon mce-i-outlet',
 
 		onclick: function ()
 		{
