@@ -7,7 +7,7 @@
 
 .legal-section-content .icon-position-after
 {
-	display: flex;
+	display: inline-flex;
 	flex-direction: row-reverse;
 	justify-content: flex-end;
 }
