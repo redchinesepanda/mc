@@ -3,7 +3,7 @@
  * @var $icons
  */
 ?>
-<h3>Choose icon</h3>
+<h2>Choose icon</h2>
 <ul class="icon-picker-categories">
 	<?php foreach( $args[ 'categories' ] as $category ) : ?>
 		<li>
@@ -13,7 +13,7 @@
 </ul>
 <?php foreach( $args[ 'categories' ] as $category ) : ?>
 	<section id="category-<?php echo $category[ 'key' ]; ?>">
-		<h2 class="picker-category-header"><?php echo $category[ 'label' ]; ?></h2>
+		<h3 class="picker-category-header"><?php echo $category[ 'label' ]; ?></h3>
 		<div class="picker-category-items">
 			<?php foreach( $category[ 'icons' ] as $icon_name ) : ?>
 				<a href="#" data-icon="<?php echo $icon_name; ?>">
