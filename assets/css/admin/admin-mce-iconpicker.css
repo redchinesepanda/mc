@@ -15,3 +15,10 @@
 {
 	background-color: bisque;
 }
+
+#tinymce .icon-position-after
+{
+	display: inline-flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
