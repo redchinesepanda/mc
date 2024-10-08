@@ -17,7 +17,7 @@
 		<div class="picker-category-items">
 			<?php foreach( $category[ 'icons' ] as $icon_name ) : ?>
 				<a class="category-item" href="#" data-category="<?php echo $category[ 'key' ]; ?>" data-icon="icon-<?php echo $icon_name; ?>">
-					<i class="<?php echo $icon_name; ?>" aria-hidden="true"></i>
+					<i class="icon-<?php echo $icon_name; ?>" aria-hidden="true"></i>
 					<?php echo $icon_name; ?>
 				</a>
 			<?php endforeach; ?>
