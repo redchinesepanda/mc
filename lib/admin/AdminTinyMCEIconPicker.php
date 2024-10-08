@@ -86,7 +86,7 @@ class AdminTinyMCEIconPicker
 
 			add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-			self::get_icons_json();
+			self::get_categories_json();
         // }
     }
 
