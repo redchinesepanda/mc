@@ -1,17 +1,5 @@
-.mce-container .mc-icons-sports
+#tinymce .mc-icons-sports
 {
 	font-family: var(--legal-font-icons-sport);
 	font-style: normal;
-}
-
-.mce-container .mc-icon-picker .picker-category-items
-{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-}
-
-.mce-container .mc-icon-picker .picker-category-items .category-item
-{
-	flex-basis: 25%;
-}
+} 
