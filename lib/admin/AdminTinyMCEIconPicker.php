@@ -117,7 +117,7 @@ class AdminTinyMCEIconPicker
 
 	const JSON_ICONS = [
 		'mc-icons-sports' => [
-			'name' => ToolLoco::translate( 'MC Icons Sports' ),
+			'name' => 'MC Icons Sports',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
 		], 
@@ -162,7 +162,7 @@ class AdminTinyMCEIconPicker
 					$categories[] = [
 						'key' => $key,
 	
-						'label' => $font[ 'name' ],
+						'label' => ToolLoco::translate( $font[ 'name' ] ),
 		
 						'icons' => array_keys( $icons ),
 					];
