@@ -7,16 +7,6 @@ let IconPicker = ( function()
 	return {
 		target: {},
 
-		// show: function ()
-		// {
-		// 	console.log( 'IconPicker.show' );
-		// },
-
-		// close: function ()
-		// {
-		// 	console.log( 'IconPicker.close' );
-		// },
-
 		initIcons: function ()
 		{
 			function handleIcon( event )
@@ -87,11 +77,6 @@ let IconPicker = ( function()
 				console.error( error );
 			}
 		}
-
-		// setIcon: function ( icon )
-		// {
-		// 	console.log( 'IconPicker.setIcon' );
-		// }
 	};
 } )();
 
@@ -120,8 +105,6 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	{
 		function insertIconClass( e )
 		{
-			console.log( tinyMCE.activeEditor.selection.getNode() );
-
 			tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
 
 			e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
@@ -133,14 +116,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 		{
 			let content = tinyMCE.activeEditor.selection.getContent();
 
-			console.log( content );
-
 			let contentElement = document.createElement( 'span' );
 
 			contentElement.innerHTML = content;
 
-			// contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
-			
 			contentElement.classList.add( e.data.mcIconPosition );
 
 			e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
@@ -149,27 +128,11 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			content = contentElement.outerHTML;
 
-			console.log( content );
-
 			tinyMCE.activeEditor.selection.setContent( content );
 		}
 
 		function insertDataToContent ( e )
 		{
-			console.log( 'openDialogIconSettings.insertDataToContent' );
-
-			console.log( e.data );
-
-			console.log( e.data.mcIconPosition );
-
-			console.log( e.data.mcIconClass );
-
-			console.log( tinyMCE.activeEditor.selection );
-
-			console.log( tinyMCE.activeEditor.selection.getContent() );
-
-			console.log( tinyMCE.activeEditor.selection.getNode().textContent );
-
 			if ( tinyMCE.activeEditor.selection.getContent() !== tinyMCE.activeEditor.selection.getNode().textContent && tinyMCE.activeEditor.selection.getContent() !== '' )
 			{
 				insertIconElement( e );
@@ -178,46 +141,6 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 			{
 				insertIconClass( e );
 			}
-
-			// if ( [ "icon-position-before", "icon-position-after" ].includes( e.data.mcIconPosition ) )
-			// {
-			// 	console.log( tinyMCE.activeEditor.selection.getNode() );
-
-			// 	tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
-
-			// 	e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
-			// 		tinyMCE.activeEditor.selection.getNode().classList.add( item );
-			// 	} );
-			// }
-
-			// if ( [ "icon-position-span-before", "icon-position-span-after" ].includes( e.data.mcIconPosition ) )
-			// {
-			// 	let content = tinyMCE.activeEditor.selection.getContent();
-
-			// 	console.log( content );
-
-			// 	let contentElement = document.createElement( 'span' );
-
-			// 	contentElement.innerHTML = content;
-
-			// 	// contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
-				
-			// 	contentElement.classList.add( e.data.mcIconPosition );
-
-			// 	e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
-			// 		contentElement.classList.add( item );
-			// 	} );
-
-			// 	content = contentElement.outerHTML;
-
-			// 	console.log( content );
-
-			// 	tinyMCE.activeEditor.selection.setContent( content );
-			// }
-
-			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
-
-			// editor.insertContent( content );
 		}
 
 		editor.windowManager.open( {
