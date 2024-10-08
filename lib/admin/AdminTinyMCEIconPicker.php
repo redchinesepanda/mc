@@ -86,7 +86,7 @@ class AdminTinyMCEIconPicker
 
 			add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-			// self::get_categories_json();
+			self::get_categories_json();
         // }
     }
 
@@ -168,6 +168,12 @@ class AdminTinyMCEIconPicker
 					];
 				}
 			}
+
+			LegalDebug::debug( [
+				'AdminTinyMCEIconPicker' => 'get_categories_json-4',
+
+				'categories' => $categories,
+			] );
 
 			return $categories;
 		}
