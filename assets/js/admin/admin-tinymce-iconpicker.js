@@ -36,7 +36,7 @@ let IconPicker = ( function()
 				{
 					try
 					{
-						let iconPicker = document.querySelector( '.mc-icon-picker' );
+						let iconPicker = document.querySelector( '.mc-icon-picker-wrapper' );
 		
 						if ( iconPicker != null )
 						{
