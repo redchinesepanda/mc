@@ -1,0 +1,41 @@
+{
+	"@context": "https://schema.org",
+	"@type": "Product",
+	"name": "Обзор Betberry.io",
+	"description": "Подробный обзор букмекерской конторы Betberry.io, включая информацию о бонусах, ставках и пользовательском опыте.",
+	"url": "https://match.center/br/betberry-io/",
+	"brand": {
+		"@type": "Brand",
+		"name": "Betberry"
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.5",
+		"reviewCount": "120"
+	},
+	"review": [
+		{
+			"@type": "Review",
+			"author": {
+				"@type": "Person",
+				"name": "Иван Иванов"
+			},
+			"datePublished": "2024-06-19",
+			"reviewBody": "Betberry.io предлагает отличные бонусы и удобный интерфейс. Рекомендую для всех любителей ставок.",
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "5",
+				"bestRating": "5",
+				"worstRating": "1"
+			}
+		}
+	],
+	"offers": {
+		"@type": "Offer",
+		"url": "https://match.center/br/betberry-io/",
+		"priceCurrency": "USD",
+		"price": "0",
+		"priceValidUntil": "2024-12-31",
+		"availability": "https://schema.org/InStock"
+	}
+}

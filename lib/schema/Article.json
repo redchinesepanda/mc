@@ -1,0 +1,22 @@
+{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": "Casas de Apostas com Bônus de Cadastro",
+	"description": "Подборка букмекерских контор, предлагающих бонусы за регистрацию.",
+	"url": "https://match.center/br/casas-de-apostas-com-bonus-de-cadastro/",
+	"author": {
+		"@type": "Person",
+		"name": "Valentin Axani"
+	},
+	"datePublished": "2024-06-19",
+	"publisher": {
+		"@type": "Organization",
+		"name": "Match Center",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://match.center/logo.png"
+		}
+	},
+	"image": "https://match.center/images/casas-de-apostas.jpg",
+	"articleBody": "Эта подборка включает лучшие предложения бонусов за регистрацию от различных букмекерских контор."
+}
