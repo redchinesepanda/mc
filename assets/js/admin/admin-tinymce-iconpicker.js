@@ -155,7 +155,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 					label: 'Icon Position',
 
 					'values': [
-						{ text: "::before", value: "icon-position-before" },
+						{ text: "::before", value: "" },
 
 						{ text: "::after", value: "icon-position-after" },
 					]
