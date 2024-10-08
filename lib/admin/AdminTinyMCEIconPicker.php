@@ -116,11 +116,7 @@ class AdminTinyMCEIconPicker
 	}
 
 	const JSON_ICONS = [
-		// D:\share\sites\mc-theme\assets\font\mc-icons-sports\mc-icons-sports.json
-
-		// 'mc-icons-sports' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
-		
-		'mc-icons-sports' => LegalMain::LEGAL_PATH . '/template-parts/admin/part-notice.php',
+		'mc-icons-sports' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
 	];
 
 	public static function get_icons_json()
