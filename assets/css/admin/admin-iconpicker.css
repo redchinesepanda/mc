@@ -13,5 +13,5 @@
 
 .mce-container .mc-icon-picker .picker-category-items .category-item
 {
-	flex-basis: cals( 25% - 10px );
+	flex-basis: calc( 25% - 10px );
 }
