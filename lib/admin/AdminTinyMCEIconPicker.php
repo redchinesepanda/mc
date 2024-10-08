@@ -3,7 +3,7 @@
 class AdminTinyMCEIconPicker
 {
 	const CSS_ADMIN = [
-        'admin-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
+        'admin-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-iconpicker.css',
 
         'admin-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
 
@@ -16,7 +16,7 @@ class AdminTinyMCEIconPicker
     }
 
 	const CSS_ADMIN_MCE = [
-        'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
+        'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-mce-iconpicker.css',
     ];
 
 	public static function add_editor_styles()
