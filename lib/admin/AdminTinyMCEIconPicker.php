@@ -3,14 +3,26 @@
 class AdminTinyMCEIconPicker
 {
 	const CSS_ADMIN = [
-        'admin-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-iconpicker.css',
+		'admin-font-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
-        'admin-style-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+			'ver' => '1.0.0',
+		],
 
-        'admin-font-main' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+        'admin-style-mc-icons-sports' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
 
 		'admin-font-mc-icons-sports' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
+
+        'admin-iconpicker' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-iconpicker.css',
 
 			'ver' => '1.0.0',
 		],
