@@ -130,6 +130,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( tinyMCE.activeEditor.selection );
 
+			console.log( tinyMCE.activeEditor.selection.getContent() );
+
+			console.log( tinyMCE.activeEditor.selection.getNode().value );
+
 			if ( [ "icon-position-before", "icon-position-after" ].includes( e.data.mcIconPosition ) )
 			{
 				console.log( tinyMCE.activeEditor.selection.getNode() );
