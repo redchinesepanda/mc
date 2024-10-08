@@ -4,3 +4,10 @@
 	font-family: var(--legal-font-icons-sport);
 	font-style: normal;
 }
+
+.legal-section-content .icon-position-after
+{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
