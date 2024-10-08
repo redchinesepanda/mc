@@ -5,9 +5,15 @@ class AdminTinyMCEIconPicker
 	const CSS_ADMIN = [
         'admin-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-iconpicker.css',
 
-        'admin-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+        'admin-style-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
 
-        'admin-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+        'admin-font-main' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+
+		'admin-font-mc-icons-sports' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
 	public static function register_style()
