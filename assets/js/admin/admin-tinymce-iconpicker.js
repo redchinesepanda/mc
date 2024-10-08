@@ -95,7 +95,7 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 				{
 					type: "container",
 
-					html: '<div class="mc-icon-picker"></div>'
+					html: '<div class="mc-icon-picker-wrapper"></div>'
 				}
 			]
 		} );
