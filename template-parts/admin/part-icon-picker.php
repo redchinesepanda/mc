@@ -12,11 +12,11 @@
 	<?php endforeach; ?>
 </ul>
 <?php foreach( $args[ 'categories' ] as $category ) : ?>
-	<section id="category-<?php echo $category[ 'key' ]; ?>">
+	<section id="category-<?php echo $category[ 'key' ]; ?>" class="picker-category">
 		<h3 class="picker-category-header"><?php echo $category[ 'label' ]; ?></h3>
 		<div class="picker-category-items">
 			<?php foreach( $category[ 'icons' ] as $icon_name ) : ?>
-				<a href="#" data-icon="<?php echo $icon_name; ?>">
+				<a class="category-item" href="#" data-icon="<?php echo $icon_name; ?>">
 					<i class="<?php echo $icon_name; ?>" aria-hidden="true"></i>
 					<?php echo $icon_name; ?>
 				</a>
