@@ -5,6 +5,13 @@
 	font-style: normal;
 }
 
+.mc-icon-picker .picker-category-items
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
 .mce-container .mc-icon-picker .picker-category-items
 {
 	display: flex;
