@@ -1,5 +1,4 @@
 acf-json/
-*.json
 languages/
 *.pot
 *.pot~
