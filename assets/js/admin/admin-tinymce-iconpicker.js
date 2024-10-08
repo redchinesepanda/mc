@@ -118,6 +118,42 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 	const openDialogIconSettings = function ()
 	{
+		function insertIconClass( e )
+		{
+			console.log( tinyMCE.activeEditor.selection.getNode() );
+
+			tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
+
+			e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
+				tinyMCE.activeEditor.selection.getNode().classList.add( item );
+			} );
+		}
+
+		function insertIconElement( e )
+		{
+			let content = tinyMCE.activeEditor.selection.getContent();
+
+			console.log( content );
+
+			let contentElement = document.createElement( 'span' );
+
+			contentElement.innerHTML = content;
+
+			// contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
+			
+			contentElement.classList.add( e.data.mcIconPosition );
+
+			e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
+				contentElement.classList.add( item );
+			} );
+
+			content = contentElement.outerHTML;
+
+			console.log( content );
+
+			tinyMCE.activeEditor.selection.setContent( content );
+		}
+
 		function insertDataToContent ( e )
 		{
 			console.log( 'openDialogIconSettings.insertDataToContent' );
@@ -132,43 +168,52 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			console.log( tinyMCE.activeEditor.selection.getContent() );
 
-			console.log( tinyMCE.activeEditor.selection.getNode().value );
+			console.log( tinyMCE.activeEditor.selection.getNode().textContent );
 
-			if ( [ "icon-position-before", "icon-position-after" ].includes( e.data.mcIconPosition ) )
+			if ( tinyMCE.activeEditor.selection.getContent() !== tinyMCE.activeEditor.selection.getNode().textContent )
 			{
-				console.log( tinyMCE.activeEditor.selection.getNode() );
-
-				tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
-
-				e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
-					tinyMCE.activeEditor.selection.getNode().classList.add( item );
-				} );
+				insertIconClass( e );
+			}
+			else
+			{
+				insertIconElement( e );
 			}
 
-			if ( [ "icon-position-span-before", "icon-position-span-after" ].includes( e.data.mcIconPosition ) )
-			{
-				let content = tinyMCE.activeEditor.selection.getContent();
+			// if ( [ "icon-position-before", "icon-position-after" ].includes( e.data.mcIconPosition ) )
+			// {
+			// 	console.log( tinyMCE.activeEditor.selection.getNode() );
 
-				console.log( content );
+			// 	tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
 
-				let contentElement = document.createElement( 'span' );
+			// 	e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
+			// 		tinyMCE.activeEditor.selection.getNode().classList.add( item );
+			// 	} );
+			// }
 
-				contentElement.innerHTML = content;
+			// if ( [ "icon-position-span-before", "icon-position-span-after" ].includes( e.data.mcIconPosition ) )
+			// {
+			// 	let content = tinyMCE.activeEditor.selection.getContent();
 
-				// contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
+			// 	console.log( content );
+
+			// 	let contentElement = document.createElement( 'span' );
+
+			// 	contentElement.innerHTML = content;
+
+			// 	// contentElement.classList.add( e.data.mcIconPosition, e.data.mcIconClass );
 				
-				contentElement.classList.add( e.data.mcIconPosition );
+			// 	contentElement.classList.add( e.data.mcIconPosition );
 
-				e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
-					contentElement.classList.add( item );
-				} );
+			// 	e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
+			// 		contentElement.classList.add( item );
+			// 	} );
 
-				content = contentElement.outerHTML;
+			// 	content = contentElement.outerHTML;
 
-				console.log( content );
+			// 	console.log( content );
 
-				tinyMCE.activeEditor.selection.setContent( content );
-			}
+			// 	tinyMCE.activeEditor.selection.setContent( content );
+			// }
 
 			// let content = '<span class="mc-icon-container"><i class="mc-icon mc-icons-sports ' + e.data.class + '"></i></span>';
 
