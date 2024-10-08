@@ -105,7 +105,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 	{
 		function insertIconClass( e )
 		{
-			tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
+			if ( e.data.mcIconPosition !== '' )
+			{
+				tinyMCE.activeEditor.selection.getNode().classList.add( e.data.mcIconPosition );
+			}
 
 			e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
 				tinyMCE.activeEditor.selection.getNode().classList.add( item );
@@ -120,7 +123,10 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 
 			contentElement.innerHTML = content;
 
-			contentElement.classList.add( e.data.mcIconPosition );
+			if ( e.data.mcIconPosition !== '' )
+			{
+				contentElement.classList.add( e.data.mcIconPosition );
+			}
 
 			e.data.mcIconClass.split( ' ' ).forEach( function ( item ) {
 				contentElement.classList.add( item );
