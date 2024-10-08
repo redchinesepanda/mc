@@ -158,10 +158,6 @@ tinymce.PluginManager.add( 'tinymce_iconpicker', function (editor, url)
 						{ text: "::before", value: "icon-position-before" },
 
 						{ text: "::after", value: "icon-position-after" },
-
-						{ text: "span::before", value: "icon-position-span-before" },
-
-						{ text: "span::after", value: "icon-position-span-after" }
 					]
 				},
 
