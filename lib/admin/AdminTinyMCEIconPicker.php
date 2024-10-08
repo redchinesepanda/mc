@@ -131,33 +131,33 @@ class AdminTinyMCEIconPicker
 		{
 			$json = file_get_contents( $font[ 'path' ] );
 
-			// LegalDebug::debug( [
-			// 	'AdminTinyMCEIconPicker' => 'get_categories_json-1',
+			LegalDebug::debug( [
+				'AdminTinyMCEIconPicker' => 'get_categories_json-1',
 
-			// 	'path' => $path,
+				'path' => $path,
 
-			// 	'json' => $json,
-			// ] );
+				'json' => $json,
+			] );
 
 			if ( $json )
 			{
 				$icons = json_decode( $json, true );
 
-				// LegalDebug::debug( [
-				// 	'AdminTinyMCEIconPicker' => 'get_categories_json-2',
+				LegalDebug::debug( [
+					'AdminTinyMCEIconPicker' => 'get_categories_json-2',
 	
-				// 	'icons' => $icons,
-				// ] );
+					'icons' => $icons,
+				] );
 
 				if ( $icons )
 				{
-					// LegalDebug::debug( [
-					// 	'AdminTinyMCEIconPicker' => 'get_categories_json-3',
+					LegalDebug::debug( [
+						'AdminTinyMCEIconPicker' => 'get_categories_json-3',
 
-					// 	'font' => $font,
+						'font' => $font,
 
-					// 	'icons' => $icons,
-					// ] );
+						'icons' => $icons,
+					] );
 
 					$categories[] = [
 						'key' => $key,
