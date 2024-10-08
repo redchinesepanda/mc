@@ -3,5 +3,15 @@
 {
 	font-family: var(--legal-font-icons-sport);
 	font-style: normal;
+}
+
+#tinymce .mc-icons-sports
+{
 	background-color: lightgoldenrodyellow;
+}
+
+#tinymce .mc-icons-sports::before,
+#tinymce .mc-icons-sports::after
+{
+	background-color: bisque;
 }
