@@ -194,7 +194,7 @@
   position: relative;
 }
 
-.tcb-post-content li:not( .legal-list-image-in-border li )::before {
+.tcb-post-content ul:not( .mc-list-tile-icons ) li:not( .legal-list-image-in-border li )::before {
   position: absolute;
   left: 0px;
 }
