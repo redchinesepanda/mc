@@ -48,6 +48,8 @@ require_once( 'ReviewListHowTo.php' );
 
 require_once( 'ReviewIcons.php' );
 
+require_once( 'ReviewListTileIcons.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -243,6 +245,8 @@ class ReviewMain
         ReviewPage::register_functions();
 
         ReviewListHowTo::register_functions();
+
+        ReviewListTileIcons::register_functions();
 	}
 
     public static function register()
