@@ -4,15 +4,11 @@
 	/* font-style: normal; */
     content: "";
     display: inline-block;
-    width: 24px;
+    width: 32px;
     height: 24px;
     background-size: contain;
 }
 
-.icon-country-en:before {
-    background-image: url( '../../img/multisite/flag/en.svg' );
-}
-
-.icon-country-br:before {
-    background-image: url( '../../img/multisite/flag/br.svg' );
+.icon-country-paypal:before {
+    background-image: url( '../../img/review/icons/payment/paypal.svg' );
 }
