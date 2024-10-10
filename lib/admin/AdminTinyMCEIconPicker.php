@@ -42,6 +42,14 @@ class AdminTinyMCEIconPicker
 
 			'ver' => '1.0.0',
 		],
+
+		// mc-icons-payment style
+
+		'admin-style-mc-icons-country' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
 	public static function register_style()
