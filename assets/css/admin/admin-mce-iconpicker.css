@@ -22,3 +22,25 @@
 	flex-direction: row-reverse;
 	justify-content: flex-end;
 }
+
+/* mc-icons-country */
+
+#tinymce .mc-icons-country:before
+{
+	content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+}
+
+/* mc-icons-payment */
+
+#tinymce .mc-icons-payment:before
+{
+	content: "";
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    background-size: contain;
+}

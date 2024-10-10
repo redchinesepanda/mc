@@ -58,15 +58,29 @@ class AdminTinyMCEIconPicker
     }
 
 	const CSS_ADMIN_MCE = [
-        'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-mce-iconpicker.css',
-
-		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+		// global css variables
 
         'admin-mce-style-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
+		// admin mce isons style
+
+        'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-mce-iconpicker.css',
+
+		// admin mce mc-icons-sports style
+
 		'admin-mce-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
 
+		// admin mce mc-icons-sports font
+
+		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+
+		// admin mce mc-icons-country style
+
 		'admin-mce-style-mc-icons-country' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-country/mc-icons-country.css',
+
+		// admin mce mc-icons-payment style
+
+		'admin-mce-style-mc-icons-payment' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
     ];
 
 	public static function add_editor_styles()
