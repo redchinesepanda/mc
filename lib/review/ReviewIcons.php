@@ -15,22 +15,20 @@ class ReviewIcons
 			'ver' => '1.0.0',
 		],
 
-		// 'review-icons-font-main' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
-
-		// 	'ver' => '1.0.1',
-		// ],
-
 		'review-icons-font-mc-icons-sports' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
 
 			'ver' => '1.0.0',
 		],
 
-		// assets\css\review\review-icons-flag.css
-
-        'review-icons-style-mc-icons-country' => [
+		'review-icons-style-mc-icons-country' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-country.css',
+
+			'ver' => '1.0.0',
+		],
+
+        'review-icons-style-mc-icons-payment' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-payment.css',
 
 			'ver' => '1.0.0',
 		],
