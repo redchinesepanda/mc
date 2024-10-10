@@ -17,6 +17,17 @@
     background-size: contain;
 }
 
+/* mc-icons-payment */
+
+.mce-container .mc-icons-payment:before
+{
+	content: "";
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    background-size: contain;
+}
+
 /* iconpicker */
 
 .mce-container .mc-icon-picker .picker-category-items
