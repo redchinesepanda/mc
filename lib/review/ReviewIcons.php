@@ -26,6 +26,12 @@ class ReviewIcons
 
 			'ver' => '1.0.0',
 		],
+
+        'review-icons-style-mc-icons-country' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/mc-icons-country.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
 	public static function register_style()

@@ -184,10 +184,27 @@ class AdminTinyMCEIconPicker
 		}
 	}
 
+	public static function get_categories_manual()
+	{
+		return [
+			[
+				'key' => 'mc-icons-country',
+
+				'label' => 'MC Icons Country',
+
+				'icons' => [
+					'country-en',
+
+					'country-br',
+				],
+			]
+		];
+	}
+
 	public static function get_icons()
 	{
 		return [
-			'categories' => self::get_categories_json(),
+			'categories' => array_merge( self::get_categories_json(), self::get_categories_manual() ),
 		];
 	}
 
