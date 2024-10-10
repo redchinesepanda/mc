@@ -306,6 +306,8 @@ class ReviewMain
         ReviewListHowTo::register();
 
         ReviewIcons::register();
+
+        ReviewListTileIcons::register();
     }
 
     public static function encoding( $content )
