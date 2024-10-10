@@ -1,4 +1,4 @@
-.legal-section-content .mc-icons-country:before
+.legal-section-content .mc-icons-payment:before
 {
 	/* font-family: var(--legal-font-icons-sport); */
 	/* font-style: normal; */
@@ -9,6 +9,6 @@
     background-size: contain;
 }
 
-.icon-country-paypal:before {
+.icon-payment-paypal:before {
     background-image: url( '../../img/review/icons/payment/paypal.svg' );
 }
