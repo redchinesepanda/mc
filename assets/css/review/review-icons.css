@@ -11,3 +11,21 @@
 	flex-direction: row-reverse;
 	justify-content: flex-end;
 }
+
+.legal-section-content .mc-icons-country:before
+{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+}
+
+.legal-section-content .mc-icons-payment:before
+{
+	content: "";
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    background-size: contain;
+}
