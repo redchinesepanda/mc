@@ -187,6 +187,8 @@ class ReviewAbout
         'pt',
 
         'se',
+
+        'br',
     ];
 
     public static function check_bonus_exception()
