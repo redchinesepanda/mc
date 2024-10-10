@@ -26,6 +26,12 @@ class AdminTinyMCEIconPicker
 
 			'ver' => '1.0.0',
 		],
+
+		'admin-style-mc-icons-country' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-country.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
 	public static function register_style()
