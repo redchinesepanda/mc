@@ -1,14 +1,3 @@
-.legal-section-content .mc-icons-payment:before
-{
-	/* font-family: var(--legal-font-icons-sport); */
-	/* font-style: normal; */
-    content: "";
-    display: inline-block;
-    width: 34px;
-    height: 24px;
-    background-size: contain;
-}
-
 .icon-payment-paypal:before {
     background-image: url( '../../img/review/icons/payment/paypal.svg' );
 }

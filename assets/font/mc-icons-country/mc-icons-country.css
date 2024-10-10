@@ -1,14 +1,3 @@
-.legal-section-content .mc-icons-country:before
-{
-	/* font-family: var(--legal-font-icons-sport); */
-	/* font-style: normal; */
-    content: "";
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-}
-
 .icon-country-en:before {
     background-image: url( '../../img/multisite/flag/en.svg' );
 }
