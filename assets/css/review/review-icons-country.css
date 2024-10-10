@@ -3,6 +3,9 @@
 	/* font-family: var(--legal-font-icons-sport); */
 	/* font-style: normal; */
     content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
 }
 
 .icon-country-en:before {
