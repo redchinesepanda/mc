@@ -2,3 +2,15 @@
 {
 	background-color: darkseagreen;
 }
+
+.tcb-post-content .mc-list-tile-icons
+{
+	display: flex;
+  	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.tcb-post-content .mc-list-tile-icons li
+{
+	flex-basis: calc( 100% / 3 - 10px );
+}
