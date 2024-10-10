@@ -27,6 +27,8 @@ class ReviewIcons
 			'ver' => '1.0.0',
 		],
 
+		// assets\css\review\review-icons-flag.css
+
         'review-icons-style-mc-icons-country' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/mc-icons-country.css',
 
