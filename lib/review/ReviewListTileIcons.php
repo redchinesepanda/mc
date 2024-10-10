@@ -10,7 +10,7 @@ class ReviewListTileIcons
         'review-list-tile-icons' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-tile-icons.css',
 
-            'ver'=> '1.1.7',
+            'ver'=> '1.0.0',
         ],
     ];
 
