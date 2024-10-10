@@ -21,14 +21,18 @@ class ReviewIcons
 			'ver' => '1.0.0',
 		],
 
+		// country icons style
+
 		'review-icons-style-mc-icons-country' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-country.css',
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-country/mc-icons-country.css',
 
 			'ver' => '1.0.0',
 		],
 
+		// payment ixon style
+
         'review-icons-style-mc-icons-payment' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-payment.css',
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
 
 			'ver' => '1.0.0',
 		],
