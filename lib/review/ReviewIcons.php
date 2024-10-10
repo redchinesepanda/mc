@@ -30,7 +30,7 @@ class ReviewIcons
 		// assets\css\review\review-icons-flag.css
 
         'review-icons-style-mc-icons-country' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/mc-icons-country.css',
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-country.css',
 
 			'ver' => '1.0.0',
 		],
