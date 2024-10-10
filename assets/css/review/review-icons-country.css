@@ -6,6 +6,7 @@
     display: inline-block;
     width: 16px;
     height: 16px;
+    background-size: contain;
 }
 
 .icon-country-en:before {
