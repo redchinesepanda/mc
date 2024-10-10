@@ -65,6 +65,8 @@ class AdminTinyMCEIconPicker
         'admin-mce-style-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
 		'admin-mce-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+		'admin-mce-style-mc-icons-country' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-country/mc-icons-country.css',
     ];
 
 	public static function add_editor_styles()
