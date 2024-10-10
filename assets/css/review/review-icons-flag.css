@@ -1,0 +1,14 @@
+.legal-section-content .mc-icons-country:before
+{
+	/* font-family: var(--legal-font-icons-sport); */
+	/* font-style: normal; */
+    content: "";
+}
+
+.icon-country-en:before {
+    background-image: url( '../../img/multisite/flag/en.svg' );
+}
+
+.icon-country-br:before {
+    background-image: url( '../../img/multisite/flag/br.svg' );
+}
