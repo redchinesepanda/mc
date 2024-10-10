@@ -12,5 +12,7 @@
 
 .tcb-post-content .mc-list-tile-icons li
 {
-	flex-basis: calc( 100% / 3 - 6px );
+	flex-basis: calc( 100% / 3 - 8px );
+
+	border: 1px solid #000;
 }
