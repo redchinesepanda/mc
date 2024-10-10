@@ -197,7 +197,17 @@ class AdminTinyMCEIconPicker
 
 					'country-br',
 				],
-			]
+			],
+
+			[
+				'key' => 'mc-icons-payment',
+
+				'label' => 'MC Icons Payment',
+
+				'icons' => [
+					'payment-paypal',
+				],
+			],
 		];
 	}
 
