@@ -6,14 +6,14 @@ class ReviewListTileIcons
 	{
 		$handler = new self();
 
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_list' ] );
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_list_tile_icons' ] );
 	}
 	
 	const CLASSES = [
 		'default' => 'mc-list-tile-icons',
 	];
 
-	public static function style_formats_howto( $settings )
+	public static function style_formats_list_tile_icons( $settings )
 	{
 		return ToolTinyMCE::style_formats_check( $settings, [
 			[
