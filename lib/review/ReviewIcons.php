@@ -3,7 +3,7 @@
 class ReviewIcons
 {
 	const CSS = [
-		// global icons style front
+		// front icons style 
 
         'review-icons-style' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons.css',

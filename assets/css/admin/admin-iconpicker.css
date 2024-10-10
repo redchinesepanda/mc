@@ -1,8 +1,23 @@
+/* mc-icons-sports */
+
 .mce-container .mc-icons-sports
 {
 	font-family: var(--legal-font-icons-sport);
 	font-style: normal;
 }
+
+/* mc-icons-country */
+
+.mce-container .mc-icons-country:before
+{
+	content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+}
+
+/* iconpicker */
 
 .mce-container .mc-icon-picker .picker-category-items
 {

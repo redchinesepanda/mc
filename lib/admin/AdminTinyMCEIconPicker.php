@@ -3,23 +3,15 @@
 class AdminTinyMCEIconPicker
 {
 	const CSS_ADMIN = [
+		// global css variables
+
 		'admin-font-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
 			'ver' => '1.0.0',
 		],
 
-        'admin-style-mc-icons-sports' =>  [
-			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
-
-			'ver' => '1.0.0',
-		],
-
-		'admin-font-mc-icons-sports' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
-
-			'ver' => '1.0.0',
-		],
+		// admin icons style 
 
         'admin-iconpicker' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-iconpicker.css',
@@ -27,8 +19,26 @@ class AdminTinyMCEIconPicker
 			'ver' => '1.0.0',
 		],
 
+		// mc-icons-sports style
+
+        'admin-style-mc-icons-sports' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons-sports font
+
+		'admin-font-mc-icons-sports' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons-country style
+
 		'admin-style-mc-icons-country' =>  [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-icons-country.css',
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-country/mc-icons-country.css',
 
 			'ver' => '1.0.0',
 		],
