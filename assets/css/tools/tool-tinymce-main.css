@@ -167,6 +167,13 @@
 
 /* List How To */
 
+#tinymce .mc-list-howto.mc-list-howto-title
+{
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.625rem;
+}
+
 #tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )::before
 {
 	position: absolute;
