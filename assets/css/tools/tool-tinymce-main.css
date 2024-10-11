@@ -167,6 +167,24 @@
 
 /* List How To */
 
+#tinymce .mc-list-howto:not( .mc-list-howto-unordered )::before
+{
+	position: absolute;
+  	left: 0px;
+	content: counter(legal-counter);
+	display: inline-block;
+	font-family: var( --legal-font-primary );
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.625rem;
+	text-align: center;
+	border: 0.125rem solid var(--Base-base-09);
+  	border-radius: 50%;
+	width: var( --Spacing-09 );
+	height: var( --Spacing-09 );
+	box-sizing: border-box;
+}
+
 #tinymce .mc-list-howto.mc-list-howto-unordered::before
 {
 	position: absolute;
