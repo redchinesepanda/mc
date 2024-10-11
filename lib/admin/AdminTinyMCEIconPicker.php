@@ -35,6 +35,14 @@ class AdminTinyMCEIconPicker
 			'ver' => '1.0.0',
 		],
 
+		// mc-icons font
+
+		'admin-font-mc-icons' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons.css',
+
+			'ver' => '1.0.0',
+		],
+
 		// mc-icons-country style
 
 		'admin-style-mc-icons-country' =>  [
