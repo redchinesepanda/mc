@@ -35,14 +35,6 @@ class AdminTinyMCEIconPicker
 			'ver' => '1.0.0',
 		],
 
-		// mc-icons font
-
-		'admin-font-mc-icons' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons.css',
-
-			'ver' => '1.0.0',
-		],
-
 		// mc-icons-country style
 
 		'admin-style-mc-icons-country' =>  [
@@ -89,6 +81,10 @@ class AdminTinyMCEIconPicker
 		// admin mce mc-icons-payment style
 
 		'admin-mce-style-mc-icons-payment' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
+
+		// admin mce mc-icons font
+
+		'admin-mce-font-mc-icons' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons.css',
     ];
 
 	public static function add_editor_styles()
