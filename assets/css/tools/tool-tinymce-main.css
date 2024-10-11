@@ -167,7 +167,7 @@
 
 /* List How To */
 
-#tinymce .mc-list-howto.question-title:not( .mc-list-howto-unordered )::before
+#tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )::before
 {
 	position: absolute;
   	left: 0px;
@@ -185,7 +185,7 @@
 	box-sizing: border-box;
 }
 
-#tinymce .mc-list-howto.question-title.mc-list-howto-unordered::before
+#tinymce .mc-list-howto.mc-list-howto-title.mc-list-howto-unordered::before
 {
 	position: absolute;
   	left: 0px;
