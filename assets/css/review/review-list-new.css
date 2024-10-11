@@ -218,8 +218,8 @@
   margin-bottom: var( --Spacing-04 );
 } */
 
-.tcb-post-content ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto ) li:not( :last-child),
-.tcb-post-content ol:not(.legal-faq-description):not( .mc-list-howto ) li:not( :last-child),
+.tcb-post-content ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:not( :last-child),
+.tcb-post-content ol:not(.legal-faq-description):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:not( :last-child),
 .bonus-content>ul li:not(:last-child),
 .billet-description>ul li:not(:last-child),
 .bonus-content>ol li:not(:last-child),
