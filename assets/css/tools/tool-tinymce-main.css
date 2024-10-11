@@ -170,7 +170,7 @@
 #tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )::before
 {
 	position: absolute;
-  	left: 0px;
+  	left: 0.5rem;
 	content: counter(legal-counter);
 	display: inline-block;
 	font-family: var( --legal-font-primary );
