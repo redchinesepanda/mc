@@ -29,8 +29,8 @@
 
   /* List Position */
 
-  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]):not( .mc-list-tile-icons ),
-  .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ):not( .mc-list-tile-icons )
+  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
+  .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto )
   {
     margin-left: 0.5rem;
   }
@@ -72,8 +72,8 @@
 
   /* List Position */
 
-  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]):not( .mc-list-tile-icons ),
-  .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ):not( .mc-list-tile-icons )
+  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
+  .tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto )
   {
     margin-left: var(--Spacing-06);
   }
@@ -169,8 +169,8 @@
   margin-bottom: 0px;
 }
 
-.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]):not( .mc-list-tile-icons ),
-.tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto ):not( .mc-list-tile-icons )
+.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.legal-list-image):not( .mc-list-howto ):not([style]),
+.tcb-post-content>ol:not(.legal-faq-description):not( .mc-list-howto )
 {
   /* padding-top: 12px; */
   /* padding-bottom: 12px; */
@@ -194,13 +194,13 @@
   position: relative;
 }
 
-.tcb-post-content ul:not( .mc-list-tile-icons ) li:not( .legal-list-image-in-border li )::before {
+.tcb-post-content li:not( .legal-list-image-in-border li )::before {
   position: absolute;
   left: 0px;
 }
 
-.tcb-post-content>ul:not([style]):not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li,
-.tcb-post-content>ol:not( .mc-list-howto ):not( .mc-list-tile-icons ) li
+.tcb-post-content>ul:not([style]):not(.legal-list-image):not( .mc-list-howto ) li,
+.tcb-post-content>ol:not( .mc-list-howto ) li
 {
   padding-left: calc( 24px + 12px );
 }
@@ -218,8 +218,8 @@
   margin-bottom: var( --Spacing-04 );
 } */
 
-.tcb-post-content ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:not( :last-child),
-.tcb-post-content ol:not(.legal-faq-description):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:not( :last-child),
+.tcb-post-content ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not(.legal-list-image):not( .mc-list-howto ) li:not( :last-child),
+.tcb-post-content ol:not(.legal-faq-description):not( .mc-list-howto ) li:not( :last-child),
 .bonus-content>ul li:not(:last-child),
 .billet-description>ul li:not(:last-child),
 .bonus-content>ol li:not(:last-child),
@@ -303,7 +303,7 @@
 
 /* List Width and Height */
 
-.tcb-post-content ol:not( .mc-list-howto ):not( .mc-list-tile-icons ) > li::before
+.tcb-post-content ol:not( .mc-list-howto ) > li::before
 {
   width: 24px;
   height: 24px;
@@ -354,14 +354,14 @@
   line-height: 1.625rem;
 }
 
-.tcb-post-content ul:not( .mc-list-howto ):not( .mc-list-tile-icons ):not( .legal-list-image ) > li:before
+.tcb-post-content ul:not( .mc-list-howto ):not( .legal-list-image ) > li:before
 {
   font-family: var( --legal-font-icons );
   font-size: 24px;
   line-height: 24px;
 }
 
-.tcb-post-content ol:not(.menu__box):not( .mc-list-howto ):not( .mc-list-tile-icons ) > li::before
+.tcb-post-content ol:not(.menu__box):not( .mc-list-howto ) > li::before
 {
   font-size: 16px;
   font-weight: 600;
@@ -369,13 +369,13 @@
   text-align: center;
 }
 
-.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) > li:before,
-.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) ul > li:before,
-.tcb-post-content>ol ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
-.legal-billet ul:not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
-.legal-bonus ul:not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
-.billet ul:not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
-.billet-mega-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before
+.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) > li:before,
+.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) ul > li:before,
+.tcb-post-content>ol ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) li:before,
+.legal-billet ul:not(.legal-list-image):not( .mc-list-howto ) li:before,
+.legal-bonus ul:not(.legal-list-image):not( .mc-list-howto ) li:before,
+.billet ul:not(.legal-list-image):not( .mc-list-howto ) li:before,
+.billet-mega-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) li:before
 {
   content: '\F107';
 }
