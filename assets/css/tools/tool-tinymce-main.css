@@ -177,3 +177,9 @@
 	line-height: 1.8125rem;
 	text-align: center;
 }
+
+#tinymce .mc-list-howto
+{
+	position: relative;
+	padding-left: calc( var( --Spacing-09 ) + 1rem );
+}
