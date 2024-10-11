@@ -369,13 +369,13 @@
   text-align: center;
 }
 
-.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) > li:before,
-.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) ul > li:before,
-.tcb-post-content>ol ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) li:before,
-.legal-billet ul:not(.legal-list-image):not( .mc-list-howto ) li:before,
-.legal-bonus ul:not(.legal-list-image):not( .mc-list-howto ) li:before,
-.billet ul:not(.legal-list-image):not( .mc-list-howto ) li:before,
-.billet-mega-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ) li:before
+.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) > li:before,
+.tcb-post-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) ul > li:before,
+.tcb-post-content>ol ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
+.legal-billet ul:not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
+.legal-bonus ul:not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
+.billet ul:not(.legal-list-image):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before,
+.billet-mega-content>ul:not(.legal-list-image):not(.legal-list-pros):not(.legal-list-cons):not( .mc-list-howto ):not( .mc-list-tile-icons ) li:before
 {
   content: '\F107';
 }
