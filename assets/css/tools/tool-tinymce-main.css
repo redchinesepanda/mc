@@ -188,7 +188,7 @@
 #tinymce .mc-list-howto.mc-list-howto-title.mc-list-howto-unordered::before
 {
 	position: absolute;
-  	left: 0.5rem;
+  	left: 0.5rem; 
 	content: '\F10D';
 	font-family: var(--legal-font-icons);
 	font-size: 1.5rem;
