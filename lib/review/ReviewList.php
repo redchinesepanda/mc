@@ -38,6 +38,12 @@ class ReviewList
 
     public static function check_contains_list()
     {
+        LegalDebug::debug( [
+            'ReviewList' => 'check_contains_list-1',
+
+            'check_contains' => LegalComponents::check_contains( self::SELCTORS[ 'list' ] ),
+        ] );
+
         return LegalComponents::check_contains( self::SELCTORS[ 'list' ] );
     }
 
