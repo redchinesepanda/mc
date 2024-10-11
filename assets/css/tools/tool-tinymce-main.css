@@ -167,11 +167,18 @@
 
 /* List How To */
 
+#tinymce :not( .mc-list-howto ) + .mc-list-howto.mc-list-howto-title
+{
+	counter-reset: legal-counter;
+
+}
+
 #tinymce .mc-list-howto.mc-list-howto-title
 {
 	font-size: 1.25rem;
 	font-weight: 600;
 	line-height: 1.625rem;
+	counter-increment: legal-counter;
 }
 
 #tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )::before
