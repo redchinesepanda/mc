@@ -188,7 +188,7 @@
 #tinymce .mc-list-howto.mc-list-howto-title.mc-list-howto-unordered::before
 {
 	position: absolute;
-  	left: 0px;
+  	left: 0.5rem;
 	content: '\F10D';
 	font-family: var(--legal-font-icons);
 	font-size: 1.5rem;
@@ -204,27 +204,27 @@
 #tinymce .mc-list-howto
 {
 	position: relative;
-	padding-left: calc( var( --Spacing-09 ) + 1rem );
+	padding-left: calc( var( --Spacing-09 ) + 1.5rem );
 }
 
 #tinymce .mc-list-howto.mc-list-howto-title
 {
-	margin-bottom: 0px;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	border-top: 1px dashed dodgerblue;
-	border-left: 1px dashed dodgerblue;
-	border-right: 1px dashed dodgerblue;
+	margin-bottom: 0rem;
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-top: 0.1rem dashed dodgerblue;
+	border-left: 0.1rem dashed dodgerblue;
+	border-right: 0.1rem dashed dodgerblue;
   }
 
 #tinymce .mc-list-howto.mc-list-howto-content
 {
-	margin-top: 0px;
-	padding-top: 0px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	border-left: 1px dashed dodgerblue;
-	border-right: 1px dashed dodgerblue;
-	border-bottom: 1px dashed dodgerblue;
+	margin-top: 0rem;
+	padding-top: 0rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-left: 0.1rem dashed dodgerblue;
+	border-right: 0.1rem dashed dodgerblue;
+	border-bottom: 0.1rem dashed dodgerblue;
   }
