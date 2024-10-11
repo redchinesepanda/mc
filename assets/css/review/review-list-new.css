@@ -303,7 +303,7 @@
 
 /* List Width and Height */
 
-.tcb-post-content ol:not( .mc-list-howto ) > li::before
+.tcb-post-content ol:not( .mc-list-howto ):not( .mc-list-tile-icons ) > li::before
 {
   width: 24px;
   height: 24px;
