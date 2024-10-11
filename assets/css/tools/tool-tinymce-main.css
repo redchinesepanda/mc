@@ -173,7 +173,7 @@
 
 }
 
-#tinymce .mc-list-howto.mc-list-howto-title
+#tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )
 {
 	font-size: 1.25rem;
 	font-weight: 600;
