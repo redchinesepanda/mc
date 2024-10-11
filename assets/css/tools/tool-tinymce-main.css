@@ -176,6 +176,8 @@
 	font-size: 1.5rem;
 	line-height: 1.8125rem;
 	text-align: center;
+	border: 0.125rem solid var(--Base-base-09);
+  	border-radius: 50%;
 }
 
 #tinymce .mc-list-howto
