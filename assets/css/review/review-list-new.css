@@ -354,14 +354,14 @@
   line-height: 1.625rem;
 }
 
-.tcb-post-content ul:not( .mc-list-howto ):not( .legal-list-image ) > li:before
+.tcb-post-content ul:not( .mc-list-howto ):not( .mc-list-tile-icons ):not( .legal-list-image ) > li:before
 {
   font-family: var( --legal-font-icons );
   font-size: 24px;
   line-height: 24px;
 }
 
-.tcb-post-content ol:not(.menu__box):not( .mc-list-howto ) > li::before
+.tcb-post-content ol:not(.menu__box):not( .mc-list-howto ):not( .mc-list-tile-icons ) > li::before
 {
   font-size: 16px;
   font-weight: 600;
