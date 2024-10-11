@@ -36,14 +36,23 @@ class ReviewList
 		'list' => '<li',
 	];
 
-    public static function check_contains_list()
+    public static function check_contains_list_all()
     {
         LegalDebug::debug( [
             'ReviewList' => 'check_contains_list-1',
 
             'check_contains' => LegalComponents::check_contains( self::SELCTORS[ 'list' ] ),
+
+            'check_contains_list_howto' => ReviewListHowTo::check_contains_list_howto(),
         ] );
 
+        return self::check_contains_list_common()
+        
+            || ReviewListHowTo::check_contains_list_howto();
+    }
+
+    public static function check_contains_list_common()
+    {
         return LegalComponents::check_contains( self::SELCTORS[ 'list' ] );
     }
 
@@ -56,7 +65,7 @@ class ReviewList
     {
         if ( TemplateMain::check_new() ) 
         {
-            if ( self::check_contains_list() )
+            if ( self::check_contains_list_all() )
             {
                 ReviewMain::register_style( self::CSS_NEW );
             }
