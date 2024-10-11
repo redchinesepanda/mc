@@ -178,7 +178,9 @@ class ReviewListHowTo
 			{
                 // $howto_item[ 'content' ] = ToolEncode::encode( $node->textContent );
                 
-				$howto_item_question[ 'content' ] = ToolEncode::encode( $node->textContent );
+				// $howto_item_question[ 'content' ] = ToolEncode::encode( $node->textContent );
+				
+				$howto_item_question[ 'content' ] = ToolEncode::encode( LegalDOM::getInnerHTML( $node ) );
 			}
 
 			// LegalDebug::debug( [
