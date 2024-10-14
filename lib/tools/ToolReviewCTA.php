@@ -182,11 +182,11 @@ class ToolReviewCTA
 
 			$cta_data = self::filter_cta_bookmaker( $cta_data, $bookmaker_name );
 
-			LegalDebug::debug( [
-				'ToolReviewCTA' => 'get_cta_data-1',
+			// LegalDebug::debug( [
+			// 	'ToolReviewCTA' => 'get_cta_data-1',
 	
-				'cta_data' => $cta_data,
-			] );
+			// 	'cta_data' => $cta_data,
+			// ] );
 
 			if ( ! empty( $cta_data ) && count( $cta_data ) == 1 )
 			{
@@ -227,13 +227,13 @@ class ToolReviewCTA
 			self::update_cta_fields( $cta_item, $post_id );
 		}
 		
-		LegalDebug::die( [
-			'ToolReviewCTA' => 'modify_fields-1',
+		// LegalDebug::die( [
+		// 	'ToolReviewCTA' => 'modify_fields-1',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			'bookmaker_name' => $bookmaker_name,
-		] );
+		// 	'bookmaker_name' => $bookmaker_name,
+		// ] );
 	}
 
 	public static function get_stats_fields( $post_id = false )
