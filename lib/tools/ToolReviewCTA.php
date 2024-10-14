@@ -29,13 +29,13 @@ class ToolReviewCTA
 			$cta_item_language = 'en';
 		}
 
-		LegalDebug::debug( [
-			'ToolReviewCTA' => 'check_cta_current_language-1',
+		// LegalDebug::debug( [
+		// 	'ToolReviewCTA' => 'check_cta_current_language-1',
 
-			'current_language' => $current_language,
+		// 	'current_language' => $current_language,
 
-			'cta_item_language' => $cta_item_language,
-		] );
+		// 	'cta_item_language' => $cta_item_language,
+		// ] );
 
         return $cta_item_language == $current_language;
     }
