@@ -20,6 +20,20 @@ class ToolReviewCTA
 		'margin' => 7,
 	];
 
+	const CTA_ACF_FIELDS = [
+        'license' => 'review-cta-license',
+		
+        'regulator' => 'review-cta-regulator',
+
+        'date-founded' => 'review-cta-date-founded',
+
+        'apps' => 'review-cta-apps',
+
+        'min-deposit' => 'review-cta-min-deposit',
+
+        'margin' => 'review-cta-margin',
+	];
+
 	const POST_TYPE = [
 		'page' => 'page',
 
@@ -183,20 +197,6 @@ class ToolReviewCTA
 		return null;
 	}
 
-	const CTA_ACF_FIELDS = [
-        'license' => 'review-cta-license',
-		
-        'regulator' => 'review-cta-regulator',
-
-        'date-founded' => 'review-cta-date-founded',
-
-        'apps' => 'review-cta-apps',
-
-        'min-deposit' => 'review-cta-min-deposit',
-
-        'margin' => 'review-cta-margin',
-	];
-
 	public static function update_cta_fields( $cta_item, $post_id )
 	{
 		update_field( self::CTA_ACF_FIELDS[ 'license' ], $cta_item[ self::CTA_CSV_FIELDS[ 'license' ] ], $post_id );
@@ -222,6 +222,23 @@ class ToolReviewCTA
 		{
 			self::update_cta_fields( $cta_item, $post_id );
 		}
+	}
+
+	public static function get_cta_fields( $post_id = false )
+	{
+		return [
+			'license' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+		
+			'regulator' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
+
+			'date-founded' => get_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $post_id ),
+
+			'apps' => get_field( self::CTA_ACF_FIELDS[ 'apps' ], $post_id ),
+
+			'min-deposit' => get_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $post_id ),
+
+			'margin' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
+		];
 	}
 
 	const TEMPLATE = [
