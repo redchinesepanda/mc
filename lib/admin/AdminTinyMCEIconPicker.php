@@ -201,6 +201,14 @@ class AdminTinyMCEIconPicker
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
 		],
 
+		'mc-icons-country' => [
+			'name' => 'MC Icons Country',
+
+			'prefix' => 'icon-country',
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-country/mc-icons-country.json',
+		],
+
 		'mc-icons-payment' => [
 			'name' => 'MC Icons Payment',
 
@@ -240,37 +248,39 @@ class AdminTinyMCEIconPicker
 		return $categories;
 	}
 
-	public static function get_categories_manual()
-	{
-		return [
-			[
-				'key' => 'mc-icons-country',
+	// public static function get_categories_manual()
+	// {
+	// 	return [
+	// 		[
+	// 			'key' => 'mc-icons-country',
 
-				'label' => 'MC Icons Country',
+	// 			'label' => 'MC Icons Country',
 
-				'icons' => [
-					'country-en',
+	// 			'icons' => [
+	// 				'country-en',
 
-					'country-br',
-				],
-			],
+	// 				'country-br',
+	// 			],
+	// 		],
 
-			// [
-			// 	'key' => 'mc-icons-payment',
+	// 		// [
+	// 		// 	'key' => 'mc-icons-payment',
 
-			// 	'label' => 'MC Icons Payment',
+	// 		// 	'label' => 'MC Icons Payment',
 
-			// 	'icons' => [
-			// 		'payment-paypal',
-			// 	],
-			// ],
-		];
-	}
+	// 		// 	'icons' => [
+	// 		// 		'payment-paypal',
+	// 		// 	],
+	// 		// ],
+	// 	];
+	// }
 
 	public static function get_icons()
 	{
 		return [
-			'categories' => array_merge( self::get_categories_json(), self::get_categories_manual() ),
+			// 'categories' => array_merge( self::get_categories_json(), self::get_categories_manual() ),
+			
+			'categories' => self::get_categories_json(),
 		];
 	}
 
