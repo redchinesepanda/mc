@@ -24,6 +24,11 @@ class ToolReviewCTA
 
 		$cta_item_language = strtolower( $cta_item[ 0 ] );
 
+		if ( $cta_item_language == 'en' )
+		{
+			$cta_item_language = 'uk';
+		}
+
 		LegalDebug::debug( [
 			'ToolReviewCTA' => 'check_cta_current_language-1',
 
