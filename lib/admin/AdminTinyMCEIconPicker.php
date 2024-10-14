@@ -204,7 +204,7 @@ class AdminTinyMCEIconPicker
 		'mc-icons-payment' => [
 			'name' => 'MC Icons Payment',
 
-			'prefix' => 'payment',
+			'prefix' => 'icon-payment',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-payment/mc-icons-payment.json',
 		], 
@@ -231,7 +231,7 @@ class AdminTinyMCEIconPicker
 		
 						'icons' => array_keys( $icons ),
 
-						'prefix' => $prefix,
+						'prefix' => $font[ 'prefix' ],
 					];
 				}
 			}
