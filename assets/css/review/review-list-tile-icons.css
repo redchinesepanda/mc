@@ -127,9 +127,7 @@
 .tcb-post-content .mc-list-tile-icons li a {
 	position: absolute;
 	left: 0;
-	padding-top: 16px;
-	padding-right: 18px;
-	padding-bottom: 16px;
+	padding-right: 0.75rem;
 	padding-left: calc( 0.75rem + 1.5rem + 0.75rem );
 	width: 100%;
 	box-sizing: border-box;
