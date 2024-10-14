@@ -18,11 +18,30 @@ class ToolReviewCTA
 		}
     }
 
+	const CTA_FIELDS = [
+		'location' => 0,
+		'bookmaker' => 1,
+		'license' => 2,
+		'regulator' => 3,
+		'date-founded' => 4,
+		'apps' => 5,
+		'min-deposit' => 6,
+		'margin' => 7,
+	];
+
+	public static function filter_cta_bookmaker( $cta_data, $bookmaker_name )
+    {
+        return array_filter( $cta_data, function( $cta_data_item ) use ( $bookmaker_name )
+        {
+            return $cta_data_item[ self::CTA_FIELDS[ 'bookmaker' ] ] == $bookmaker_name;
+		} );
+    }
+
 	public static function check_cta_current_language( $cta_item )
     {
 		$current_language = MultisiteSiteOptions::get_blog_language();
 
-		$cta_item_language = strtolower( $cta_item[ 0 ] );
+		$cta_item_language = strtolower( $cta_item[ self::CTA_FIELDS[ 'location' ] ] );
 
 		if ( $cta_item_language == 'uk' )
 		{
@@ -81,6 +100,10 @@ class ToolReviewCTA
 		$cta_data = self::get_cta_csv();
 
 		$cta_data = self::filter_cta_current_language( $cta_data );
+
+		$bookmaker_name = '10bet';
+
+		$cta_data = self::filter_cta_bookmaker( $cta_data, $bookmaker_name );
 
 		LegalDebug::debug( [
 			'ToolReviewCTA' => 'get_cta_data-1',
