@@ -62,12 +62,11 @@
 	align-items: center;
 }
 
-.tcb-post-content .mc-list-tile-icons li
+/* .tcb-post-content .mc-list-tile-icons li
 {
-	/* flex-basis: calc( 100% / 3 - 8px ); */
-	flex-basis: calc( 100% / 3 - ( ( 0.5rem * 2 ) / 3 ) );
-	/* border: 1px solid #000; */
-}
+	flex-basis: calc( 100% / 3 - 8px );
+	border: 1px solid #000;
+} */
 
 /* Position */
 
@@ -98,7 +97,9 @@
 /* Width and Height */
 
 .tcb-post-content .mc-list-tile-icons li {
+	flex-basis: calc( 100% / 3 - ( ( 0.5rem * 2 ) / 3 ) );
 	min-height: calc( 56px - (16px * 2) - 2px );
+	box-sizing: border-box;
 }
 
 /* Background */
