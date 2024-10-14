@@ -21,7 +21,7 @@
         <?php endif; ?>
         <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ] ) ) : ?>
             <div class="review-bonus-stats">
-                <?php foreach ( $args[ 'afillate' ][ 'stats' ] as $stats_item ) ?>
+                <?php foreach ( $args[ 'afillate' ][ 'stats' ] as $stats_item ) : ?>
                     <div class="bonus-stats-items">
                         <span class="stats-item-label">License</span>
                         <span class="stats-item-value"><?php echo $args[ 'afillate' ][ 'stats' ][ 'license' ]; ?></span>
