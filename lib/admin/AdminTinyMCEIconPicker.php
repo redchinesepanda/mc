@@ -210,23 +210,9 @@ class AdminTinyMCEIconPicker
 	{
 		$categories = [];
 
-		LegalDebug::debug( [
-			'AdminTinyMCEIconPicker' => 'get_categories_json-1',
-
-			'JSON_ICONS' => self::JSON_ICONS,
-		] );
-
 		foreach ( self::JSON_ICONS as $key => $font )
 		{
 			$json = file_get_contents( $font[ 'path' ] );
-
-			LegalDebug::debug( [
-				'AdminTinyMCEIconPicker' => 'get_categories_json-1',
-
-				'path' => $font[ 'path' ],
-
-				'json' => $json,
-			] );
 
 			if ( $json )
 			{
