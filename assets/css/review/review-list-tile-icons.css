@@ -91,7 +91,7 @@
   
 .tcb-post-content .mc-list-tile-icons li::before {
 	position: absolute;
-	left: 18px;
+	left: 0.75rem;
 }
 
 /* Width and Height */
