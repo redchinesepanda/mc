@@ -21,9 +21,12 @@
         <?php endif; ?>
         <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ] ) ) : ?>
             <div class="review-bonus-stats">
-                <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ][ 'license' ] ) ) : ?>
-                    <span>License</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'license' ]; ?></span>
-                <?php endif; ?>
+                <span>License</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'license' ]; ?></span>
+                <span>Regulator</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'regulator' ]; ?></span>
+                <span>Date Founded</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'date-founded' ]; ?></span>
+                <span>Apps</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'apps' ]; ?></span>
+                <span>Min. Deposit</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'min-deposit' ]; ?></span>
+                <span>Margin</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'margin' ]; ?></span>
             </div>
         <?php endif; ?>
     </div>
