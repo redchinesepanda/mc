@@ -266,8 +266,13 @@
 /* Anchors Background */
 
 .review-anchors .anchors-item {
-    border: 1px solid var(--Base-base-09);
+    border: 1px solid var( --Base-base-09 );
     border-radius: 60px;
+}
+
+.review-anchors .anchors-item:hover {
+    border: 1px solid var( --Base-link-hover );
+    background-color: var( --Primitives-purple-20 );
 }
 
 /* Anchors Typography */
@@ -275,7 +280,7 @@
 .review-anchors .anchors-title,
 .review-anchors .anchors-item {
     font-family: var( --legal-font-primary );
-    color: var(--Base-base-09);
+    color: var( --Base-base-09 );
     line-height: 22px;
     font-style: normal;
     /* white-space: nowrap; */
