@@ -31,9 +31,9 @@ class ToolReviewCTA
 
 	public static function filter_cta_bookmaker( $cta_data, $bookmaker_name )
     {
-        return array_filter( $cta_data, function( $cta_data_item ) use ( $bookmaker_name )
+        return array_filter( $cta_data, function( $cta_item ) use ( $bookmaker_name )
         {
-            return $cta_data_item[ self::CTA_FIELDS[ 'bookmaker' ] ] == $bookmaker_name;
+            return $cta_item[ self::CTA_FIELDS[ 'bookmaker' ] ] == $bookmaker_name;
 		} );
     }
 
@@ -41,7 +41,7 @@ class ToolReviewCTA
     {
 		$current_language = MultisiteSiteOptions::get_blog_language();
 
-        return array_filter( $cta_data, function( $cta_data_item ) use ( $current_language )
+        return array_filter( $cta_data, function( $cta_item ) use ( $current_language )
         {
 			$cta_item_language = strtolower( $cta_item[ self::CTA_FIELDS[ 'location' ] ] );
 
