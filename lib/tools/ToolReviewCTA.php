@@ -212,15 +212,11 @@ class ToolReviewCTA
 
 	public static function modify_fields( $post_id, $post )
 	{
-		$bookmaker_name = ReviewAbout::get_title( $post_id );
-		
-		LegalDebug::debug( [
-			'ToolReviewCTA' => 'modify_fields-1',
+		// $bookmaker_name = ReviewAbout::get_title( $post_id );
 
-			'post_id' => $post_id,
+		$group = get_field( ReviewAbout::FIELD, $post_id );
 
-			'bookmaker_name' => $bookmaker_name,
-		] );
+		$bookmaker_name = ReviewAbout::get_about_title( $group );
 
 		$cta_item = self::get_cta_data_item( $bookmaker_name );
 
@@ -228,6 +224,14 @@ class ToolReviewCTA
 		{
 			self::update_cta_fields( $cta_item, $post_id );
 		}
+		
+		LegalDebug::die( [
+			'ToolReviewCTA' => 'modify_fields-1',
+
+			'post_id' => $post_id,
+
+			'bookmaker_name' => $bookmaker_name,
+		] );
 	}
 
 	public static function get_stats_fields( $post_id = false )
