@@ -21,12 +21,12 @@
         <?php endif; ?>
         <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ] ) ) : ?>
             <div class="review-bonus-stats">
-                <span>License</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'license' ]; ?></span>
-                <span>Regulator</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'regulator' ]; ?></span>
-                <span>Date Founded</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'date-founded' ]; ?></span>
-                <span>Apps</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'apps' ]; ?></span>
-                <span>Min. Deposit</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'min-deposit' ]; ?></span>
-                <span>Margin</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'margin' ]; ?></span>
+                <?php foreach ( $args[ 'afillate' ][ 'stats' ] as $stats_item ) ?>
+                    <div class="bonus-stats-items">
+                        <span class="stats-item-label">License</span>
+                        <span class="stats-item-value"><?php echo $args[ 'afillate' ][ 'stats' ][ 'license' ]; ?></span>
+                    </div>
+                <?php endforeach; ?>
             </div>
         <?php endif; ?>
     </div>
