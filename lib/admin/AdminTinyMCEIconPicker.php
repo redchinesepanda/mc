@@ -214,6 +214,12 @@ class AdminTinyMCEIconPicker
 		{
 			$json = file_get_contents( $font[ 'path' ] );
 
+			LegalDebug::debug( [
+				'AdminTinyMCEIconPicker' => 'get_categories_json-1',
+
+				'json' => $json,
+			] );
+
 			if ( $json )
 			{
 				$icons = json_decode( $json, true );
