@@ -54,6 +54,8 @@ require_once( 'ToolForbidden.php' );
 
 require_once( 'ToolAnchorAttributes.php' );
 
+require_once( 'ToolReviewCTA.php' );
+
 class ToolsMain
 {
     const TEXT = [
@@ -113,6 +115,8 @@ class ToolsMain
         ToolPermalink::register_functions_admin();
 
         ToolAnchorAttributes::register_functions_admin();
+
+        ToolReviewCTA::register_functions_admin();
     }
 }
 
