@@ -65,6 +65,8 @@ class ToolReviewCTA
 
 			'result' => $result,
 		] );
+
+		return $result;
 	}
 
 	public static function get_cta_data()
