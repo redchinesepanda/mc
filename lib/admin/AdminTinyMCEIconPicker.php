@@ -249,15 +249,15 @@ class AdminTinyMCEIconPicker
 				],
 			],
 
-			[
-				'key' => 'mc-icons-payment',
+			// [
+			// 	'key' => 'mc-icons-payment',
 
-				'label' => 'MC Icons Payment',
+			// 	'label' => 'MC Icons Payment',
 
-				'icons' => [
-					'payment-paypal',
-				],
-			],
+			// 	'icons' => [
+			// 		'payment-paypal',
+			// 	],
+			// ],
 		];
 	}
 
