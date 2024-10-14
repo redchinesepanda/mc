@@ -17,8 +17,8 @@
 			<h3 class="picker-category-header"><?php echo $category[ 'label' ]; ?></h3>
 			<div class="picker-category-items">
 				<?php foreach( $category[ 'icons' ] as $icon_name ) : ?>
-					<a class="category-item" href="#" data-category="<?php echo $category[ 'key' ]; ?>" data-icon="icon-<?php echo $icon_name; ?>">
-						<i class="<?php echo $category[ 'key' ]; ?> icon-<?php echo $icon_name; ?>" aria-hidden="true"></i>
+					<a class="category-item" href="#" data-category="<?php echo $category[ 'key' ]; ?>" data-icon="<?php echo $category[ 'prefix' ]; ?>-<?php echo $icon_name; ?>">
+						<i class="<?php echo $category[ 'key' ]; ?> <?php echo $category[ 'prefix' ]; ?>-<?php echo $icon_name; ?>" aria-hidden="true"></i>
 						<?php echo $icon_name; ?>
 					</a>
 				<?php endforeach; ?>

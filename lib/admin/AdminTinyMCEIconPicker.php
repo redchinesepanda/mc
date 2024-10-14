@@ -196,11 +196,15 @@ class AdminTinyMCEIconPicker
 		'mc-icons-sports' => [
 			'name' => 'MC Icons Sports',
 
+			'prefix' => 'icon',
+
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
 		],
 
 		'mc-icons-payment' => [
 			'name' => 'MC Icons Payment',
+
+			'prefix' => 'payment',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-payment/mc-icons-payment.json',
 		], 
@@ -226,6 +230,8 @@ class AdminTinyMCEIconPicker
 						'label' => ToolLoco::translate( $font[ 'name' ] ),
 		
 						'icons' => array_keys( $icons ),
+
+						'prefix' => $prefix,
 					];
 				}
 			}
