@@ -37,7 +37,7 @@ class ToolReviewCTA
 		} );
     }
 
-	public static function filter_cta_current_language( $cta_data, $bookmaker_name )
+	public static function filter_cta_current_language( $cta_data )
     {
 		$current_language = MultisiteSiteOptions::get_blog_language();
 
