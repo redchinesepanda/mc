@@ -78,7 +78,7 @@ class ReviewAnchors
         'review-anchors-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
 
-            'ver' => '1.0.1',
+            'ver' => '1.0.2',
 
             'deps' => 'legal-swiper-lib',
         ],
