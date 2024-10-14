@@ -91,6 +91,8 @@ class ReviewMain
 
         'min-deposit'=> 'Min. Deposit',
 
+        // 'no' => 'No',
+
 		'open' => 'Open',
 
 		'overall-rating' => 'Overall Rating',
@@ -110,6 +112,8 @@ class ReviewMain
 		'review' => 'Review',
 
 		'show-tnc' => 'Show T&C',
+
+        // 'yes' => 'Yes',
         
 		'valentin-axani' => 'Valentin Axani',
 

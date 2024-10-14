@@ -183,11 +183,11 @@ class ToolReviewCTA
 			$cta_data = self::filter_cta_bookmaker( $cta_data, $bookmaker_name );
 		}
 
-		// LegalDebug::debug( [
-		// 	'ToolReviewCTA' => 'get_cta_data-1',
+		LegalDebug::die( [
+			'ToolReviewCTA' => 'get_cta_data-1',
 
-		// 	'cta_data' => $cta_data,
-		// ] );
+			'cta_data' => $cta_data,
+		] );
 
 		if ( ! empty( $cta_data ) && count( $cta_data ) == 1 )
 		{
@@ -262,16 +262,6 @@ class ToolReviewCTA
 
 				'value' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
 			],
-		
-			// 'regulator' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
-
-			// 'date-founded' => get_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $post_id ),
-
-			// 'apps' => get_field( self::CTA_ACF_FIELDS[ 'apps' ], $post_id ),
-
-			// 'min-deposit' => get_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $post_id ),
-
-			// 'margin' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
 		];
 	}
 
