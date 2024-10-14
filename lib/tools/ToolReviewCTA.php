@@ -227,17 +227,51 @@ class ToolReviewCTA
 	public static function get_stats_fields( $post_id = false )
 	{
 		return [
-			'license' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+			'license' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+			],
+
+			'regulator' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'regulator' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
+			],
+
+			'date-founded' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'date-founded' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $post_id ),
+			],
+
+			'apps' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'apps' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'apps' ], $post_id ),
+			],
+
+			'min-deposit' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'min-deposit' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $post_id ),
+			],
+
+			'margin' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'margin' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
+			],
 		
-			'regulator' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
+			// 'regulator' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
 
-			'date-founded' => get_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $post_id ),
+			// 'date-founded' => get_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $post_id ),
 
-			'apps' => get_field( self::CTA_ACF_FIELDS[ 'apps' ], $post_id ),
+			// 'apps' => get_field( self::CTA_ACF_FIELDS[ 'apps' ], $post_id ),
 
-			'min-deposit' => get_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $post_id ),
+			// 'min-deposit' => get_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $post_id ),
 
-			'margin' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
+			// 'margin' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
 		];
 	}
 

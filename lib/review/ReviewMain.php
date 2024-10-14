@@ -57,6 +57,8 @@ class ReviewMain
 
 		'app' => 'App',
 
+        'apps' => 'Apps',
+
 		'bet-here' => 'Bet here',
 
 		'bonus' => 'Bonus',
@@ -71,6 +73,8 @@ class ReviewMain
 
 		'close' => 'Close',
 
+        'date-founded' => 'Date Founded',
+
 		'deposit' => 'Deposit',
 
 		'download' => 'Download',
@@ -80,6 +84,12 @@ class ReviewMain
 		'hide-tnc' => 'Hide T&C',
 
 		'how-to-play' => 'How to play',
+
+        'license' => 'License',
+
+        'margin' => 'Margin',
+
+        'min-deposit'=> 'Min. Deposit',
 
 		'open' => 'Open',
 
@@ -94,6 +104,8 @@ class ReviewMain
 		'rating' => 'Rating',
 
 		'registration' => 'Registration',
+
+        'regulator' => 'Regulator',
 
 		'review' => 'Review',
 
