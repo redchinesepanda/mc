@@ -224,7 +224,7 @@ class ToolReviewCTA
 		}
 	}
 
-	public static function get_cta_fields( $post_id = false )
+	public static function get_stats_fields( $post_id = false )
 	{
 		return [
 			'license' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),

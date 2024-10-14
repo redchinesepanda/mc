@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'template' => 'review-about-bonus.php',
-    
-    'args' => $args,
-] );
+// LegalDebug::debug( [
+//     'template' => 'review-about-bonus.php',
+
+//     'args' => $args,
+// ] );
 
 ?>
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
@@ -18,6 +18,13 @@ LegalDebug::debug( [
         <?php endif; ?>
         <?php if( empty( $args[ 'mode' ] ) && !empty( $args[ 'bonus' ][ 'description' ] ) ) : ?>
             <span class="legal-cut-control" data-review-default="<?php echo $args[ 'text' ][ 'show' ]; ?>" data-review-active="<?php echo $args[ 'text' ][ 'hide' ]; ?>" data-cut-set-id="0"></span>
+        <?php endif; ?>
+        <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ] ) ) : ?>
+            <div class="review-bonus-stats">
+                <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ][ 'license' ] ) ) : ?>
+                    <span>License</span><span><?php echo $args[ 'afillate' ][ 'stats' ][ 'license' ]; ?></span>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
     </div>
 <?php endif; ?>
