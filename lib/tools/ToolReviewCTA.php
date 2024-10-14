@@ -37,36 +37,53 @@ class ToolReviewCTA
 		} );
     }
 
-	public static function check_cta_current_language( $cta_item )
+	public static function filter_cta_current_language( $cta_data, $bookmaker_name )
     {
 		$current_language = MultisiteSiteOptions::get_blog_language();
 
-		$cta_item_language = strtolower( $cta_item[ self::CTA_FIELDS[ 'location' ] ] );
+        return array_filter( $cta_data, function( $cta_data_item ) use ( $current_language )
+        {
+			$cta_item_language = strtolower( $cta_item[ self::CTA_FIELDS[ 'location' ] ] );
 
-		if ( $cta_item_language == 'uk' )
-		{
-			$cta_item_language = 'en';
-		}
+			if ( $cta_item_language == 'uk' )
+			{
+				$cta_item_language = 'en';
+			}
 
-		// LegalDebug::debug( [
-		// 	'ToolReviewCTA' => 'check_cta_current_language-1',
-
-		// 	'current_language' => $current_language,
-
-		// 	'cta_item_language' => $cta_item_language,
-		// ] );
-
-        return $cta_item_language == $current_language;
+            return $cta_item_language == $current_language;
+		} );
     }
 
-    public static function filter_cta_current_language( $cta_data )
-    {
-        // $language = MultisiteSiteOptions::get_blog_language();
+	// public static function check_cta_current_language( $cta_item )
+    // {
+	// 	$current_language = MultisiteSiteOptions::get_blog_language();
 
-        $handler = new self();
+	// 	$cta_item_language = strtolower( $cta_item[ self::CTA_FIELDS[ 'location' ] ] );
 
-        return array_filter( $cta_data, [ $handler, 'check_cta_current_language' ] );
-    }
+	// 	if ( $cta_item_language == 'uk' )
+	// 	{
+	// 		$cta_item_language = 'en';
+	// 	}
+
+	// 	// LegalDebug::debug( [
+	// 	// 	'ToolReviewCTA' => 'check_cta_current_language-1',
+
+	// 	// 	'current_language' => $current_language,
+
+	// 	// 	'cta_item_language' => $cta_item_language,
+	// 	// ] );
+
+    //     return $cta_item_language == $current_language;
+    // }
+
+    // public static function filter_cta_current_language( $cta_data )
+    // {
+    //     // $language = MultisiteSiteOptions::get_blog_language();
+
+    //     $handler = new self();
+
+    //     return array_filter( $cta_data, [ $handler, 'check_cta_current_language' ] );
+    // }
 
 	public static function get_cta_csv()
 	{
