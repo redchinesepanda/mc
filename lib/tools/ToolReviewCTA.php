@@ -180,7 +180,7 @@ class ToolReviewCTA
 
 			$cta_data = self::filter_cta_bookmaker( $cta_data, $bookmaker_name );
 
-			LegalDebug::die( [
+			LegalDebug::debug( [
 				'ToolReviewCTA' => 'get_cta_data-1',
 	
 				'cta_data' => $cta_data,
