@@ -83,10 +83,10 @@
 } */
 
 .tcb-post-content .mc-list-tile-icons li {
-	padding-top: 16px;
-	padding-right: 18px;
-	padding-bottom: 16px;
-	padding-left: calc( 18px + 24px + 14px );
+	/* padding-top: 16px; */
+	padding-right: 0.75rem;
+	/* padding-bottom: 16px; */
+	padding-left: calc( 0.75rem + 24px + 0.75rem );
 }
   
 .tcb-post-content .mc-list-tile-icons li::before {
@@ -98,7 +98,8 @@
 
 .tcb-post-content .mc-list-tile-icons li {
 	flex-basis: calc( 100% / 3 - ( ( 0.5rem * 2 ) / 3 ) );
-	min-height: calc( 56px - (16px * 2) - 2px );
+	/* min-height: calc( 56px - (16px * 2) - 2px ); */
+	min-height: 3.25rem;
 	box-sizing: border-box;
 }
 
