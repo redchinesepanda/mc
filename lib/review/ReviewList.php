@@ -14,7 +14,7 @@ class ReviewList
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-new.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
     ];
 
@@ -37,6 +37,13 @@ class ReviewList
 	];
 
     public static function check_contains_list()
+    {
+        return self::check_contains_list_default()
+        
+            || ReviewListHowTo::check_contains_list_howto();
+    }
+
+    public static function check_contains_list_default()
     {
         return LegalComponents::check_contains( self::SELCTORS[ 'list' ] );
     }

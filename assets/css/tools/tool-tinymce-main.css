@@ -164,3 +164,85 @@
 {
     padding-bottom: 20px;
 }
+
+/* List How To */
+
+#tinymce :not( .mc-list-howto ) + .mc-list-howto.mc-list-howto-title
+{
+	counter-reset: legal-counter;
+
+}
+
+#tinymce .mc-list-howto.mc-list-howto-title
+{
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.625rem;
+}
+
+#tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )
+{
+	counter-increment: legal-counter;
+}
+
+#tinymce .mc-list-howto.mc-list-howto-title:not( .mc-list-howto-unordered )::before
+{
+	position: absolute;
+  	left: 0.5rem;
+	content: counter(legal-counter);
+	display: inline-block;
+	font-family: var( --legal-font-primary );
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.625rem;
+	text-align: center;
+	border: 0.125rem solid var(--Base-base-09);
+  	border-radius: 50%;
+	width: var( --Spacing-09 );
+	height: var( --Spacing-09 );
+	box-sizing: border-box;
+}
+
+#tinymce .mc-list-howto.mc-list-howto-title.mc-list-howto-unordered::before
+{
+	position: absolute;
+  	left: 0.5rem;
+	content: '\F10D';
+	font-family: var(--legal-font-icons);
+	font-size: 1.5rem;
+	line-height: 1.8125rem;
+	text-align: center;
+	border: 0.125rem solid var(--Base-base-09);
+  	border-radius: 50%;
+	width: var( --Spacing-09 );
+	height: var( --Spacing-09 );
+	box-sizing: border-box;
+}
+
+#tinymce .mc-list-howto
+{
+	position: relative;
+	padding-left: calc( var( --Spacing-09 ) + 1.5rem );
+}
+
+#tinymce .mc-list-howto.mc-list-howto-title
+{
+	margin-bottom: 0rem;
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-top: 0.1rem dashed var( --Base-purple_button_hover );
+	border-left: 0.1rem dashed var( --Base-purple_button_hover );
+	border-right: 0.1rem dashed var( --Base-purple_button_hover );
+  }
+
+#tinymce .mc-list-howto.mc-list-howto-content
+{
+	margin-top: 0rem;
+	padding-top: 0rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-left: 0.1rem dashed var( --Base-purple_button_hover );
+	border-right: 0.1rem dashed var( --Base-purple_button_hover );
+	border-bottom: 0.1rem dashed var( --Base-purple_button_hover );
+  }

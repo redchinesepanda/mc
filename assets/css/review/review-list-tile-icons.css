@@ -1,0 +1,118 @@
+@media screen and (max-width: 767px) {
+
+	/* Display */
+
+	.tcb-post-content .mc-list-tile-icons {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 16px;
+	}
+
+	  /* Width and Height */
+
+	.tcb-post-content .legal-list-3.mc-list-tile-icons li,
+	.tcb-post-content .legal-list-4.mc-list-tile-icons li {
+		width: calc( 50% - (18px + 24px + 14px + 18px + 2px) - 4px );
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+
+	/* Width and Height */
+
+	/* .tcb-post-content .legal-list-3:not( .mc-list-tile-icons ) li {
+		width: calc(33.333% - (24px + 14px + 18px));
+	}
+
+	.tcb-post-content .legal-list-4:not( .mc-list-tile-icons ) li {
+		width: calc(25% - (24px + 14px + 18px));
+	} */
+
+	.tcb-post-content .legal-list-3.mc-list-tile-icons li {
+		width: calc( 33.333% - (18px + 24px + 14px + 18px + 2px) - (8px / 3 * 2) );
+	}
+	
+	.tcb-post-content .legal-list-4.mc-list-tile-icons li {
+		width: calc( 25% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
+	}
+
+}
+
+/* Display */
+
+/* .tcb-post-content .mc-list-tile-icons
+{
+	background-color: darkseagreen;
+} */
+
+.tcb-post-content .mc-list-tile-icons
+{
+	display: flex;
+  	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+/* .tcb-post-content .mc-list-tile-icons {
+	column-gap: 8px;
+} */
+
+.tcb-post-content .mc-list-tile-icons li {
+	display: flex;
+	align-items: center;
+}
+
+/* .tcb-post-content .mc-list-tile-icons li
+{
+	flex-basis: calc( 100% / 3 - 8px );
+	border: 1px solid #000;
+} */
+
+/* Position */
+
+/* .tcb-post-content :not( .mc-list-tile-icons ) li:not( .mc-list-tile-icons li )::before {
+	position: absolute;
+	left: 0px;
+}
+
+.tcb-post-content>.legal-list-image:not(.compilation-link):not( .mc-list-tile-icons ) li {
+	padding-top: 18px;
+	padding-right: 18px;
+	padding-bottom: 18px;
+	padding-left: calc( 24px + 14px );
+} */
+
+.tcb-post-content .mc-list-tile-icons li {
+	padding-top: 16px;
+	padding-right: 18px;
+	padding-bottom: 16px;
+	padding-left: calc( 18px + 24px + 14px );
+}
+  
+.tcb-post-content .mc-list-tile-icons li::before {
+	position: absolute;
+	left: 18px;
+}
+
+/* Width and Height */
+
+.tcb-post-content .mc-list-tile-icons li {
+	flex-basis: calc( 100% / 3 - ( ( 0.5rem * 2 ) / 3 ) );
+	min-height: calc( 56px - (16px * 2) - 2px );
+	box-sizing: border-box;
+}
+
+/* Background */
+
+.tcb-post-content .mc-list-tile-icons li {
+	border-radius: 14px;
+	border: 1px solid var( --Base-base-04 );
+	background-color: var( --Base-base-01 ); 
+}
+
+/* Typography */
+
+.tcb-post-content .mc-list-tile-icons li a {
+	color: var( --Base-base-09 );
+	text-decoration: none;
+}

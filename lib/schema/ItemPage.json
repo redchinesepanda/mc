@@ -1,0 +1,30 @@
+{
+	"@context": "https://schema.org",
+	"@type": "ItemPage",
+	"name": "Обзор Betberry.io",
+	"description": "Подробный обзор букмекерской конторы Betberry.io, включая информацию о бонусах, ставках и пользовательском опыте.",
+	"url": "https://match.center/br/betberry-io/",
+	"author": {
+		"@type": "Person",
+		"name": "Иван Иванов"
+	},
+	"datePublished": "2024-06-19",
+	"publisher": {
+		"@type": "Organization",
+		"name": "Match Center",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://match.center/logo.png"
+		}
+	},
+	"mainEntity": {
+		"@type": "Product",
+		"name": "Betberry.io",
+		"description": "Букмекерская контора Betberry.io предлагает широкий выбор ставок и привлекательные бонусы.",
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.5",
+			"reviewCount": "150"
+		}
+	}
+}

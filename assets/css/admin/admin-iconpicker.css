@@ -1,0 +1,49 @@
+/* mc-icons-sports */
+
+.mce-container .mc-icons-sports
+{
+	font-family: var(--legal-font-icons-sport);
+	font-style: normal;
+}
+
+/* mc-icons-country */
+
+.mce-container .mc-icons-country:before
+{
+	content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+}
+
+/* mc-icons-payment */
+
+.mce-container .mc-icons-payment:before
+{
+	content: "";
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    background-size: contain;
+}
+
+/* iconpicker */
+
+.mce-container .mc-icon-picker .picker-category-items
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.mce-container .mc-icon-picker .picker-category-items .category-item
+{
+	flex-basis: calc( 25% - 10px );
+}
+
+.mce-container .mc-icon-picker-wrapper
+{
+	height: 736px;
+  	overflow-y: scroll;
+}

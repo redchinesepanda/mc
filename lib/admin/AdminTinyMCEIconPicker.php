@@ -3,13 +3,88 @@
 class AdminTinyMCEIconPicker
 {
 	const CSS_ADMIN = [
-        'admin-tinymce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-tinymce-iconpicker.css',
+		// global css variables
 
-		// assets\font\mc-icons-sports\mc-icons-sports.css
+		'admin-font-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
-        'admin-tinymce-iconpicker-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+			'ver' => '1.0.0',
+		],
 
-        'admin-tinymce-iconpicker-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+		// admin icons style 
+
+        'admin-iconpicker' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-iconpicker.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons-sports style
+
+        'admin-style-mc-icons-sports' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons-sports font
+
+		'admin-font-mc-icons-sports' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons-country style
+
+		'admin-style-mc-icons-country' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-country/mc-icons-country.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons-payment style
+
+		'admin-style-mc-icons-payment' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+	public static function register_style()
+    {
+		ToolEnqueue::register_style( self::CSS_ADMIN );
+    }
+
+	const CSS_ADMIN_MCE = [
+		// global css variables
+
+        'admin-mce-style-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
+
+		// admin mce isons style
+
+        'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-mce-iconpicker.css',
+
+		// admin mce mc-icons-sports style
+
+		'admin-mce-font-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
+
+		// admin mce mc-icons-sports font
+
+		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+
+		// admin mce mc-icons-country style
+
+		'admin-mce-style-mc-icons-country' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-country/mc-icons-country.css',
+
+		// admin mce mc-icons-payment style
+
+		'admin-mce-style-mc-icons-payment' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
+
+		// admin mce mc-icons font
+
+		'admin-mce-font-mc-icons' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons.css',
     ];
 
 	public static function add_editor_styles()
@@ -18,7 +93,7 @@ class AdminTinyMCEIconPicker
 		// 	add_editor_style( $style );
 		// }
 
-		ToolEnqueue::add_editor_styles( self::CSS_ADMIN );
+		ToolEnqueue::add_editor_styles( self::CSS_ADMIN_MCE );
 	}
 
 	private static function get_ajax_general()
@@ -85,12 +160,16 @@ class AdminTinyMCEIconPicker
 			add_action( 'wp_ajax_nopriv_mc_get_icons', [ $handler, 'ajax_mc_get_icons' ] );
 
 			add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
+
+			add_action( 'admin_enqueue_scripts', [ $handler, 'register_style' ] );
         // }
     }
 
 	public static function add_valid_elements_icons( $init )
 	{
-		$init[ 'extended_valid_elements' ] = 'i[class],span[class,style]';
+		// $init[ 'extended_valid_elements' ] = 'i[class],span[class,style]';
+		
+		$init[ 'extended_valid_elements' ] = '-em[class|style],i[class|id|style]';
 
 		// custom_elements: "emstart,emend",
 
@@ -113,40 +192,100 @@ class AdminTinyMCEIconPicker
 		return $buttons;
 	}
 
+	const JSON_ICONS = [
+		'mc-icons-sports' => [
+			'name' => 'MC Icons Sports',
+
+			'prefix' => 'icon',
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
+		],
+
+		'mc-icons-country' => [
+			'name' => 'MC Icons Country',
+
+			'prefix' => 'icon-country',
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-country/mc-icons-country.json',
+		],
+
+		'mc-icons-payment' => [
+			'name' => 'MC Icons Payment',
+
+			'prefix' => 'icon-payment',
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-payment/mc-icons-payment.json',
+		], 
+	];
+
+	public static function get_categories_json()
+	{
+		$categories = [];
+
+		foreach ( self::JSON_ICONS as $key => $font )
+		{
+			$json = file_get_contents( $font[ 'path' ] );
+
+			if ( $json )
+			{
+				$icons = json_decode( $json, true );
+
+				if ( $icons )
+				{
+					$categories[] = [
+						'key' => $key,
+	
+						'label' => ToolLoco::translate( $font[ 'name' ] ),
+		
+						'icons' => array_keys( $icons ),
+
+						'prefix' => $font[ 'prefix' ],
+					];
+				}
+			}
+		}
+
+		return $categories;
+	}
+
+	// public static function get_categories_manual()
+	// {
+	// 	return [
+	// 		[
+	// 			'key' => 'mc-icons-country',
+
+	// 			'label' => 'MC Icons Country',
+
+	// 			'icons' => [
+	// 				'country-en',
+
+	// 				'country-br',
+	// 			],
+	// 		],
+
+	// 		// [
+	// 		// 	'key' => 'mc-icons-payment',
+
+	// 		// 	'label' => 'MC Icons Payment',
+
+	// 		// 	'icons' => [
+	// 		// 		'payment-paypal',
+	// 		// 	],
+	// 		// ],
+	// 	];
+	// }
+
 	public static function get_icons()
 	{
 		return [
-			'categories' => [
-				[
-					'key' => 'arrows',
-	
-					'label' => ToolLoco::translate( 'Arrows & Direction Icons' ),
-	
-					'icons' => [
-						'ti-arrow-up' => 'arrow-up',
-	
-						'ti-arrow-right' => 'arrow-right',
-	
-						'ti-arrow-left' => 'arrow-left',
-	
-						'ti-arrow-down' => 'arrow-down',
-					],
-				],
-			]
+			// 'categories' => array_merge( self::get_categories_json(), self::get_categories_manual() ),
+			
+			'categories' => self::get_categories_json(),
 		];
 	}
 
 	public static function ajax_mc_get_icons()
 	{
-		// if ( current_user_can( 'edit_theme_options' ) || current_user_can( 'publish_posts' ) )
-		// {
-			// $icons = Themify_Icons_Icon_Picker::get_icons();
-
-			// include THEMIFY_ICONS_DIR . 'templates/icon-picker.php';
-
-			// die;
-		// }
-
 		echo self::render_icons();
 
 		die();

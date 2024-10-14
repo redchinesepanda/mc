@@ -14,7 +14,7 @@ class ReviewAnchors
         'review-anchors-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors-new.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
 
         // подключение свайпера начало
@@ -66,7 +66,7 @@ class ReviewAnchors
             
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
         
         // 'legal-swiper-lib' => [
@@ -78,7 +78,7 @@ class ReviewAnchors
         'review-anchors-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
 
             'deps' => 'legal-swiper-lib',
         ],
