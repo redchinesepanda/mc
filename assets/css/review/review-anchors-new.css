@@ -33,7 +33,7 @@
 
     .review-anchors .swiper:not( .legal-active-end ):after {
         position: absolute;
-        right: 0px;
+        right: -1px;
         top: 0;
     }
 
