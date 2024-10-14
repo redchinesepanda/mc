@@ -24,9 +24,9 @@ class ToolReviewCTA
 
 		$cta_item_language = strtolower( $cta_item[ 0 ] );
 
-		if ( $cta_item_language == 'en' )
+		if ( $cta_item_language == 'uk' )
 		{
-			$cta_item_language = 'uk';
+			$cta_item_language = 'en';
 		}
 
 		LegalDebug::debug( [
