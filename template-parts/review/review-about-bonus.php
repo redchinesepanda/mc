@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+    'template' => 'review-about-bonus.php',
+    
+    'args' => $args,
+] );
+
+?>
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
     <div class="about-right">
         <?php if( !empty( $args[ 'bonus' ][ 'name' ] ) ) : ?>
