@@ -67,11 +67,11 @@ class ToolReviewCTA
 			fclose( $handle );
 		}
 
-		LegalDebug::debug( [
-			'ToolReviewCTA' => 'get_cta_csv-1',
+		// LegalDebug::debug( [
+		// 	'ToolReviewCTA' => 'get_cta_csv-1',
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 
 		return $result;
 	}
