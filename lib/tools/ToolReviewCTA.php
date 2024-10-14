@@ -22,7 +22,7 @@ class ToolReviewCTA
     {
 		$language = MultisiteSiteOptions::get_blog_language();
 
-        return $cta_item[ 0 ] == $language;
+        return strtolower( $cta_item[ 0 ] ) == $language;
     }
 
     public static function filter_cta_current_language( $cta_data )
