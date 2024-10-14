@@ -493,7 +493,9 @@ class ReviewAbout
 
                     // 'description' => self::get_afillate_description( $mode, $bonus_exception ), 
                     
-                    'description' => self::get_afillate_description( $mode ), 
+                    'description' => self::get_afillate_description( $mode ),
+
+                    'cta' => ToolReviewCTA::get_cta_fields(),
                 ],
 
                 'mode' => $mode,
