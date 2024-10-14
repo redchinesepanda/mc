@@ -203,7 +203,7 @@ class AdminTinyMCEIconPicker
 			'name' => 'MC Icons Payment',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-payment/mc-icons-payment.json',
-		],
+		], 
 	];
 
 	public static function get_categories_json()
