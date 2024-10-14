@@ -122,7 +122,9 @@ class ToolReviewCTA
     {
         return array_filter( $cta_data, function( $cta_item ) use ( $bookmaker_name )
         {
-            return $cta_item[ self::CTA_CSV_FIELDS[ 'bookmaker' ] ] == $bookmaker_name;
+            // return $cta_item[ self::CTA_CSV_FIELDS[ 'bookmaker' ] ] == $bookmaker_name;
+            
+			return str_contains( $bookmaker_name, $cta_item[ self::CTA_CSV_FIELDS[ 'bookmaker' ] ] );
 		} );
     }
 
