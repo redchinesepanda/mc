@@ -231,7 +231,7 @@ class AdminTinyMCEIconPicker
 		
 						'icons' => array_keys( $icons ),
 
-						'prefix' => $prefix,
+						'prefix' => $font[ 'prefix' ],
 					];
 				}
 			}
