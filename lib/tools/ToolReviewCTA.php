@@ -172,26 +172,24 @@ class ToolReviewCTA
 
 	public static function get_cta_data_item( $bookmaker_name = '' )
 	{
-		$cta_data = self::get_cta_csv();
-
-		$cta_data = self::filter_cta_current_language( $cta_data );
-
-		$bookmaker_name = '10bet';
-
 		if ( ! empty( $bookmaker_name ) )
 		{
+			$cta_data = self::get_cta_csv();
+
+			$cta_data = self::filter_cta_current_language( $cta_data );
+
 			$cta_data = self::filter_cta_bookmaker( $cta_data, $bookmaker_name );
-		}
 
-		LegalDebug::die( [
-			'ToolReviewCTA' => 'get_cta_data-1',
+			LegalDebug::die( [
+				'ToolReviewCTA' => 'get_cta_data-1',
+	
+				'cta_data' => $cta_data,
+			] );
 
-			'cta_data' => $cta_data,
-		] );
-
-		if ( ! empty( $cta_data ) && count( $cta_data ) == 1 )
-		{
-			return array_shift( $cta_data );
+			if ( ! empty( $cta_data ) && count( $cta_data ) == 1 )
+			{
+				return array_shift( $cta_data );
+			}
 		}
 
 		return null;
@@ -216,7 +214,7 @@ class ToolReviewCTA
 	{
 		$bookmaker_name = ReviewAbout::get_title( $post_id );
 		
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'ToolReviewCTA' => 'modify_fields-1',
 
 			'post_id' => $post_id,
