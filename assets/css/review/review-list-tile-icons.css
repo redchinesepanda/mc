@@ -116,3 +116,17 @@
 	color: var( --Base-base-09 );
 	text-decoration: none;
 }
+
+.tcb-post-content .mc-list-tile-icons li a {
+	position: absolute;
+	left: 0;
+	padding-top: 16px;
+	padding-right: 18px;
+	padding-bottom: 16px;
+	padding-left: calc( 18px + 24px + 14px );
+	width: 100%;
+	box-sizing: border-box;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
