@@ -197,7 +197,13 @@ class AdminTinyMCEIconPicker
 			'name' => 'MC Icons Sports',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
-		], 
+		],
+
+		'mc-icons-payment' => [
+			'name' => 'MC Icons Payment',
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-payment/mc-icons-payment.json',
+		],
 	];
 
 	public static function get_categories_json()
