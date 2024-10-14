@@ -273,7 +273,7 @@
 .review-anchors .anchors-item:hover {
     border: 1px solid var( --Base-link-hover );
     background-color: var( --Primitives-purple-20 );
-}
+} 
 
 /* Anchors Typography */
 
