@@ -27,7 +27,7 @@ class ToolReviewCTA
 		LegalDebug::debug( [
 			'ToolReviewCTA' => 'check_cta_current_language-1',
 
-			'language' => $language,
+			'current_language' => $current_language,
 
 			'cta_item_language' => $cta_item_language,
 		] );
