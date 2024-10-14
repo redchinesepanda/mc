@@ -243,9 +243,9 @@ class AdminTinyMCEIconPicker
 					];
 				}
 			}
-
-			return $categories;
 		}
+
+		return $categories;
 	}
 
 	public static function get_categories_manual()
