@@ -200,6 +200,16 @@ class ToolReviewCTA
 	public static function update_cta_fields( $cta_item, $post_id )
 	{
 		update_field( self::CTA_ACF_FIELDS[ 'license' ], $cta_item[ self::CTA_CSV_FIELDS[ 'license' ] ], $post_id );
+		
+		update_field( self::CTA_ACF_FIELDS[ 'regulator' ], $cta_item[ self::CTA_CSV_FIELDS[ 'regulator' ] ], $post_id );
+
+		update_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $cta_item[ self::CTA_CSV_FIELDS[ 'date-founded' ] ], $post_id );
+
+		update_field( self::CTA_ACF_FIELDS[ 'apps' ], $cta_item[ self::CTA_CSV_FIELDS[ 'apps' ] ], $post_id );
+
+		update_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $cta_item[ self::CTA_CSV_FIELDS[ 'min-deposit' ] ], $post_id );
+
+		update_field( self::CTA_ACF_FIELDS[ 'margin' ], $cta_item[ self::CTA_CSV_FIELDS[ 'margin' ] ], $post_id );
 	}
 
 	public static function modify_fields( $post_id, $post )
