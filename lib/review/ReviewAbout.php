@@ -223,9 +223,13 @@ class ReviewAbout
         return BilletAchievement::get_achievement( $id, [] );
     }
 
-    public static function get_title()
+    // public static function get_title()
+    
+    public static function get_title( $post_id = false )
     {
-        $group = get_field( self::FIELD );
+        // $group = get_field( self::FIELD );
+        
+        $group = get_field( self::FIELD, $post_id );
 
         if ( $group )
         {
