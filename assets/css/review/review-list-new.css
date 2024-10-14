@@ -344,7 +344,7 @@
   color: var( --Base-base-09 );
 }
 
-.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]) li,
+.tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not(.mc-list-tile-icons):not([style]) li,
 .tcb-post-content>ol li,
 .bonus-content>ul li,
 .billet-description>ul li,
