@@ -20,17 +20,19 @@ class ToolReviewCTA
 
 	public static function check_cta_current_language( $cta_item )
     {
-		$language = MultisiteSiteOptions::get_blog_language();
+		$current_language = MultisiteSiteOptions::get_blog_language();
+
+		$cta_item_language = strtolower( $cta_item[ 0 ] );
 
 		LegalDebug::debug( [
 			'ToolReviewCTA' => 'check_cta_current_language-1',
 
 			'language' => $language,
 
-			'cta_item-language' => $cta_item[ 0 ],
+			'cta_item_language' => $cta_item_language,
 		] );
 
-        return strtolower( $cta_item[ 0 ] ) == $language;
+        return $cta_item_language == $current_language;
     }
 
     public static function filter_cta_current_language( $cta_data )
