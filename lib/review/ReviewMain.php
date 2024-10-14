@@ -140,7 +140,7 @@ class ReviewMain
         'review-main-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main-new.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
 
         'review-overview-new' => [
