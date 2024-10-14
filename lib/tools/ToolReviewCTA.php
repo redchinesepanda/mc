@@ -22,6 +22,14 @@ class ToolReviewCTA
     {
 		$language = MultisiteSiteOptions::get_blog_language();
 
+		LegalDebug::debug( [
+			'ToolReviewCTA' => 'check_cta_current_language-1',
+
+			'language' => $language,
+
+			'cta_item-language' => $cta_item[ 0 ],
+		] );
+
         return strtolower( $cta_item[ 0 ] ) == $language;
     }
 
