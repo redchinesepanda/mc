@@ -86,7 +86,7 @@
 	/* padding-top: 16px; */
 	padding-right: 0.75rem;
 	/* padding-bottom: 16px; */
-	padding-left: calc( 0.75rem + 24px + 0.75rem );
+	padding-left: calc( 0.75rem + 1.5rem + 0.75rem );
 }
   
 .tcb-post-content .mc-list-tile-icons li::before {
@@ -106,7 +106,7 @@
 /* Background */
 
 .tcb-post-content .mc-list-tile-icons li {
-	border-radius: 14px;
+	border-radius: 0.5rem;
 	border: 1px solid var( --Base-base-04 );
 	background-color: var( --Base-base-01 ); 
 }
@@ -124,7 +124,7 @@
 	padding-top: 16px;
 	padding-right: 18px;
 	padding-bottom: 16px;
-	padding-left: calc( 18px + 24px + 14px );
+	padding-left: calc( 0.75rem + 1.5rem + 0.75rem );
 	width: 100%;
 	box-sizing: border-box;
 	height: 100%;
