@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+	'tempalte' => 'review-stats.php',
+
+	'args' => $args,
+] );
+
+?>
 <?php if( !empty( $args ) ) : ?>
 	<?php foreach ( $args as $id => $item ) : ?>
 		<div class="stats-item stats-item-<?php echo $id; ?>">
