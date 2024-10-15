@@ -73,12 +73,12 @@
 
 /* Position */
 
-.tcb-post-content .mc-list-tile-icons {
+.tcb-post-content .mc-list-tile-icons:not( .mc-list-tile-icons:has( + .mc-list-tile-icons ) ):not( .mc-list-tile-icons + .mc-list-tile-icons ) {
 	margin-top: var( --Spacing-06 );
 	margin-bottom: var( --Spacing-06 );
 }
 
-.tcb-post-content .mc-list-tile-icons:has( + .legal-cut-control ),
+/* .tcb-post-content .mc-list-tile-icons:has( + .legal-cut-control ), */
 .tcb-post-content .mc-list-tile-icons:has( + .mc-list-tile-icons ) {
 	margin-top: var( --Spacing-06 );
 	margin-bottom: 0.5rem;
