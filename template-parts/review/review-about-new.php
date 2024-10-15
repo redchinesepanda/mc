@@ -62,6 +62,7 @@ LegalDebug::debug( [
                             <span  class="info-author-name"><?php echo $args[ 'author' ][ 'name' ]; ?></span>
                         </a>
                     </div>
+                    <div class="about-info-date"><?php echo $args[ 'date' ][ 'label' ]; ?>: <?php echo $args[ 'date' ][ 'value' ]; ?></div>
                 </div>
             </div>
         </div>

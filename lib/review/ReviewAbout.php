@@ -511,6 +511,12 @@ class ReviewAbout
                 'tnc-class' => BilletBonus::get_tnc_class(),
 
                 'author' => ReviewAuthor::get_author(),
+
+                'date' => [
+                    'label' => ToolLoco::translate( 'Last update' ),
+
+                    'value' => get_the_modified_date( 'F.j.Y' ),
+                ],
             ];
         }
 
