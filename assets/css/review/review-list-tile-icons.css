@@ -105,12 +105,13 @@
 }
   
 .tcb-post-content .mc-list-tile-icons li:not( .icon-position-after ):before,
-.tcb-post-content .mc-list-tile-icons li .mc-icons-sports:not( span )::before {
+.tcb-post-content .mc-list-tile-icons li .mc-icons-sports:not( span ):not( .icon-position-after )::before {
 	position: absolute;
 	left: 0.75rem;
 }
 
-.tcb-post-content .mc-list-tile-icons li.icon-position-after::before {
+.tcb-post-content .mc-list-tile-icons li.icon-position-after::before,
+.tcb-post-content .mc-list-tile-icons li .mc-icons-sports.icon-position-after:not( span )::before {
 	position: absolute;
 	right: 0.75rem;
 }
