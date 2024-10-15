@@ -144,3 +144,8 @@
 	word-break: break-all;
 	overflow: hidden;
 }
+
+.tcb-post-content .mc-list-tile-icons .mc-icons-sports::before {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
