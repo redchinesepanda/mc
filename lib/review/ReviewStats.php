@@ -115,6 +115,8 @@ class ReviewStats
 			LegalDOM::appendHTML( $stats, self::render_stats( $node ) );
 
 			$node->parentNode->insertBefore( $stats, $node );
+
+			$node->parentNode->removeChild( $node );
 		}
 
 		return $dom->saveHTML( $dom );
