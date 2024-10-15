@@ -513,10 +513,14 @@ class ReviewAbout
                 'info' => [
                     'author' => ReviewAuthor::get_author(),
 
-                    'checked-by' => ReviewAuthor::get_checked_by(),
-    
+                    'checked-by' => [
+                        'label' => ToolLoco::translate( ReviewMain::TEXT[ 'checked-by' ] ),
+
+                        'value' =>  ReviewAuthor::get_checked_by(),
+                    ],
+                    
                     'date' => [
-                        'label' => ToolLoco::translate( 'Last update' ),
+                        'label' => ToolLoco::translate( ReviewMain::TEXT[ 'last-update' ] ),
     
                         'value' => get_the_modified_date( 'd.m.Y' ),
                     ],
