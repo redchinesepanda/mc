@@ -515,7 +515,7 @@ class ReviewAbout
                 'date' => [
                     'label' => ToolLoco::translate( 'Last update' ),
 
-                    'value' => get_the_modified_date( 'F.j.Y' ),
+                    'value' => get_the_modified_date( 'd.m.Y' ),
                 ],
             ];
         }
