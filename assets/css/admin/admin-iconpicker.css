@@ -6,10 +6,6 @@
 	font-style: normal;
 }
 
-.mce-container .mc-icons-sports i {
-	color: #000;
-}
-
 /* mc-icons-country */
 
 .mce-container .mc-icons-country:before
@@ -61,10 +57,19 @@
 .mce-container .mc-icon-picker .picker-category-items .category-item
 {
 	/* flex-basis: calc( 25% - 10px ); */
-	flex-basis: calc( 20% - 10px );
+	flex-basis: calc( 20% - 20px );
 	border-radius: 0.5rem;
 	border: 1px solid var( --Base-base-04 );
 	padding: 4px;
+	text-decoration: none;
+}
+
+.mce-container .mc-icon-picker .picker-category-items .category-item:hover {
+	background-color: lightgoldenrodyellow;
+}
+
+.mce-container .mc-icon-picker .picker-category-items .category-item i {
+	color: #000;
 }
 
 .mce-container .mc-icon-picker-wrapper
