@@ -78,18 +78,6 @@
 
 /* Position */
 
-/* .tcb-post-content :not( .mc-list-tile-icons ) li:not( .mc-list-tile-icons li )::before {
-	position: absolute;
-	left: 0px;
-}
-
-.tcb-post-content>.legal-list-image:not(.compilation-link):not( .mc-list-tile-icons ) li {
-	padding-top: 18px;
-	padding-right: 18px;
-	padding-bottom: 18px;
-	padding-left: calc( 24px + 14px );
-} */
-
 .tcb-post-content .mc-list-tile-icons li {
 	/* padding-top: 16px; */
 	padding-right: 0.75rem;
@@ -98,6 +86,11 @@
 }
   
 .tcb-post-content .mc-list-tile-icons li::before {
+	position: absolute;
+	left: 0.75rem;
+}
+
+.tcb-post-content .mc-list-tile-icons li .mc-icons-sports::before {
 	position: absolute;
 	left: 0.75rem;
 }
