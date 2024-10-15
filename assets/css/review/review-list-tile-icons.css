@@ -10,6 +10,10 @@
 
 	  /* Width and Height */
 
+	.tcb-post-content .mc-list-tile-icons li {
+		flex-basis: 100%;
+	}
+
 	/* .tcb-post-content .legal-list-3.mc-list-tile-icons li,
 	.tcb-post-content .legal-list-4.mc-list-tile-icons li {
 		width: calc( 50% - (18px + 24px + 14px + 18px + 2px) - 4px );
