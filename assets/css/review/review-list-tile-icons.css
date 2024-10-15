@@ -114,6 +114,7 @@
 
 .tcb-post-content .mc-list-tile-icons li:has( a ):hover {
 	border: 1px solid var( --Base-link-hover );
+	transition: 0.4s;
 }
 
 /* Typography */
