@@ -21,7 +21,7 @@ class AdminMedia
 		// ] );
 	}
 
-	public static function media_type_filter( $post_type, $which )
+	public static function media_type_filter()
 	{
 		$screen = get_current_screen();
 
