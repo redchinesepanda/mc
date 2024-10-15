@@ -2,6 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 8px;
+	padding-left: 0px;
 }
 
 #tinymce .mc-list-tile-icons li {
@@ -9,6 +10,7 @@
 	box-sizing: border-box;
 	border-radius: 0.5rem;
 	border: 1px solid var( --Base-base-04 );
+	list-style: none;
 }
 
 #tinymce .mc-icons-sports::before,
