@@ -53,7 +53,7 @@
 /* Typography */
 
 .tcb-post-content .legal-cut-control:not( .legal-active ) {
-	color: var( --Base-link );
+	color: var( --Base-purple_button );
 }
 
 .tcb-post-content .legal-cut-control.legal-active {
@@ -61,7 +61,7 @@
 }
 
 .tcb-post-content .legal-cut-control:hover {
-	color: var( --Base-link-hover );
+	color: var( --Base-purple_button_hover );
 	transition: 0.4s;
 }
 
