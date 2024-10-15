@@ -12,8 +12,8 @@
 {
 	content: "";
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     background-size: contain;
 }
 
@@ -32,11 +32,11 @@
 
 .mce-container .mc-icon-picker h2,
 .mce-container .mc-icon-picker h3 {
-	margin-bottom: 8px;
+	margin-bottom: 10px;
 }
 
 .mce-container .mc-icon-picker h3 {
-	margin-top: 8px;
+	margin-top: 10px;
 }
 
 .mce-container .mc-icon-picker .icon-picker-categories {
