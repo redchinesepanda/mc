@@ -62,7 +62,7 @@
                             <span  class="info-author-name"><?php echo $args[ 'info' ][ 'author' ][ 'name' ]; ?></span>
                         </a>
                     </div>
-                    <div class="about-info-checked-by"><?php echo $args[ 'info' ][ 'checked-by' ][ 'name' ]; ?></div>
+                    <div class="about-info-checked-by"><?php echo $args[ 'info' ][ 'checked-by' ][ 'label' ]; ?>: <?php echo $args[ 'info' ][ 'checked-by' ][ 'value' ][ 'name' ]; ?></div>
                     <div class="about-info-date"><?php echo $args[ 'info' ][ 'date' ][ 'label' ]; ?>: <?php echo $args[ 'info' ][ 'date' ][ 'value' ]; ?></div>
                 </div>
             </div>
