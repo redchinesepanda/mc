@@ -1,3 +1,16 @@
+#tinymce .mc-list-tile-icons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+#tinymce .mc-list-tile-icons li {
+	width: calc( 100% / 4 - ( ( 0.5rem * 3 ) / 4 ) );
+	box-sizing: border-box;
+	border-radius: 0.5rem;
+	border: 1px solid var( --Base-base-04 );
+}
+
 #tinymce .mc-icons-sports::before,
 #tinymce .mc-icons-sports::after
 {
@@ -21,16 +34,6 @@
 	display: inline-flex;
 	flex-direction: row-reverse;
 	/* justify-content: flex-end; */
-}
-
-#tinymce .mc-list-tile-icons {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-#tinymce .mc-list-tile-icons li {
-	width: calc( 100% / 4 - ( ( 0.5rem * 3 ) / 4 ) );
-	box-sizing: border-box;
 }
 
 /* mc-icons-country */
