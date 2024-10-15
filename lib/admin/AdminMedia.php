@@ -25,11 +25,11 @@ class AdminMedia
 	{
 		$screen = get_current_screen();
 
-		LegalDebug::debug( [
-			'AdminMedia' => 'media_type_filter-1',
+		// LegalDebug::debug( [
+		// 	'AdminMedia' => 'media_type_filter-1',
 
-			'screen' => $screen,
-		] );
+		// 	'screen' => $screen,
+		// ] );
 
 		if ( 'upload' == $screen->id )
 		{
@@ -57,9 +57,9 @@ class AdminMedia
 
 			wp_dropdown_categories( $dropdown_options );
 
-			LegalDebug::debug( [
-				'AdminMedia' => 'media_type_filter-2',
-			] );
+			// LegalDebug::debug( [
+			// 	'AdminMedia' => 'media_type_filter-2',
+			// ] );
 		}
 	}
 
