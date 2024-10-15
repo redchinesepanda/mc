@@ -32,7 +32,9 @@
 
 .tcb-post-content .legal-cut-control
 {
-	padding-bottom: 24px;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	margin-bottom: var( --Spacing-06 );
 }
 
 /* .tcb-post-content .legal-cut-control::before
@@ -42,11 +44,9 @@
 
 /* Width and Height */
 
-/* .tcb-post-content .legal-cut-control::after
-{
-	width: 20px;
-	height: 20px;
-} */
+.tcb-post-content .legal-cut-control {
+	width: fit-content;
+}
 
 /* Background */
 
@@ -58,6 +58,7 @@
 
 .tcb-post-content .legal-cut-control:hover {
 	color: var( --Base-link-hover );
+	transition: 0.4s;
 }
 
 .tcb-post-content .legal-cut-control::before
