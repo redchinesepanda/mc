@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'template' => 'review-about-new.php',
+// LegalDebug::debug( [
+//     'template' => 'review-about-new.php',
 
-    'args' => $args,
-] );
+//     'args' => $args,
+// ] );
 
 ?>
 <?php if ( !empty( $args[ 'title' ] ) ) : ?>
