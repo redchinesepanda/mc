@@ -314,12 +314,14 @@ class ReviewGroup
 
     public static function render()
     {
-        if ( TemplateMain::check_new() )
-        {
-            return self::render_main( self::TEMPLATE[ 'new' ], self::get() );
-        }
+        // if ( TemplateMain::check_new() )
+        // {
+        //     return self::render_main( self::TEMPLATE[ 'new' ], self::get() );
+        // }
 
-        return self::render_main( self::TEMPLATE[ 'main' ], self::get() );
+        // return self::render_main( self::TEMPLATE[ 'main' ], self::get() );
+
+        return '';
     }
 
     public static function render_main( $template, $args )
