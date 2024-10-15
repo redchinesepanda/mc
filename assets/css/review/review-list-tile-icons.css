@@ -90,7 +90,7 @@
 	left: 0.75rem;
 }
 
-.tcb-post-content .mc-list-tile-icons li .mc-icons-sports::before {
+.tcb-post-content .mc-list-tile-icons li .mc-icons-sports:not( span )::before {
 	position: absolute;
 	left: 0.75rem;
 }
