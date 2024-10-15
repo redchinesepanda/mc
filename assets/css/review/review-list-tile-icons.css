@@ -97,8 +97,9 @@
 /* Width and Height */
 
 .tcb-post-content .mc-list-tile-icons li {
-	flex-basis: calc( 100% / 3 - ( ( 0.5rem * 2 ) / 3 ) );
+	/* flex-basis: calc( 100% / 3 - ( ( 0.5rem * 2 ) / 3 ) ); */
 	/* min-height: calc( 56px - (16px * 2) - 2px ); */
+	flex-basis: calc( 100% / 4 - ( ( 0.5rem * 3 ) / 4 ) );
 	min-height: 3.25rem;
 	box-sizing: border-box;
 }
