@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-	'tempalte' => 'review-stats.php',
+// LegalDebug::debug( [
+// 	'tempalte' => 'review-stats.php',
 
-	'args' => $args,
-] );
+// 	'args' => $args,
+// ] );
 
 ?>
 <?php if( !empty( $args ) ) : ?>
