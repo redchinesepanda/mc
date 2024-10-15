@@ -509,6 +509,8 @@ class ReviewAbout
                 'logo-items' => $logo_items,
 
                 'tnc-class' => BilletBonus::get_tnc_class(),
+
+                'author' => ReviewAuthor::get_author(),
             ];
         }
 
