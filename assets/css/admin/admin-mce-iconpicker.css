@@ -23,6 +23,11 @@
 	/* justify-content: flex-end; */
 }
 
+#tinymce .mc-list-tile-icons ul {
+	flex-basis: calc( 100% / 4 - ( ( 0.5rem * 3 ) / 4 ) );
+	box-sizing: border-box;
+}
+
 #tinymce .mc-list-tile-icons li {
 	flex-basis: calc( 100% / 4 - ( ( 0.5rem * 3 ) / 4 ) );
 	box-sizing: border-box;
