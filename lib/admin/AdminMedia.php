@@ -15,6 +15,10 @@ class AdminMedia
 		// add_action( 'pre_get_posts', [ $handler, 'media_type_handler' ] );
 		
 		add_action( 'restrict_manage_posts', [ $handler, 'media_type_filter' ] );
+
+		LegalDebug::debug( [
+			'AdminMedia' => 'register-1',
+		] );
 	}
 
 	public static function media_type_filter()

@@ -114,7 +114,7 @@ class MultisiteMain
 
 			// MultisitePost::register_functions_mainsite();
 
-			MultisiteAttachment::register_functions_mainsite();
+			// MultisiteAttachment::register_functions_mainsite();
 
 			MultisiteSiteOptions::register_functions_mainsite();
 		}
