@@ -168,6 +168,8 @@ class ReviewStats
 				if ( $value != -1 ) {
 					$args[] = [
 						'title' => ToolEncode::encode( $cells[ 0 ]->textContent ),
+
+						'description' => ToolEncode::encode( $cells[ 2 ]->textContent ),
 	
 						'width' => ( round( ( float ) $value ) / 10 ) * 100,
 
