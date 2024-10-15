@@ -25,6 +25,12 @@ class AdminMedia
 	{
 		$screen = get_current_screen();
 
+		LegalDebug::debug( [
+			'AdminMedia' => 'media_type_filter-1',
+
+			'screen' => $screen,
+		] );
+
 		if ( 'upload' == $screen->id )
 		{
 			$selected = isset( $_GET[ self::TAXONOMY[ 'media-type' ] ] ) ? $_GET[ self::TAXONOMY[ 'media-type' ] ] : '';
@@ -52,7 +58,7 @@ class AdminMedia
 			wp_dropdown_categories( $dropdown_options );
 
 			LegalDebug::debug( [
-				'AdminMedia' => 'media_type_filter-1',
+				'AdminMedia' => 'media_type_filter-2',
 			] );
 		}
 	}
