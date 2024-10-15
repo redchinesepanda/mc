@@ -506,7 +506,7 @@ class BilletMega
 
 				'nofollow' => $url[ 'play-nofollow' ],
 				
-				// 'text' => $title_text,
+				'text' => $title_text,
 
 				'tag' => $atts[ 'title-tag' ],
 			],
