@@ -24,8 +24,8 @@
 }
 
 #tinymce .mc-list-tile-icons ul {
-	flex-basis: calc( 100% / 4 - ( ( 0.5rem * 3 ) / 4 ) );
-	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #tinymce .mc-list-tile-icons li {
