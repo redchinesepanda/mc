@@ -79,10 +79,15 @@
 /* Position */
 
 .tcb-post-content .mc-list-tile-icons li {
-	/* padding-top: 16px; */
 	padding-right: 0.75rem;
-	/* padding-bottom: 16px; */
+}
+
+.tcb-post-content .mc-list-tile-icons li:not( .mc-icons-payment ) {
 	padding-left: calc( 0.75rem + 1.5rem + 0.75rem );
+}
+
+.tcb-post-content .mc-list-tile-icons li.mc-icons-payment {
+	padding-left: calc( 0.75rem + 2.125rem + 0.75rem );
 }
   
 .tcb-post-content .mc-list-tile-icons li::before {
