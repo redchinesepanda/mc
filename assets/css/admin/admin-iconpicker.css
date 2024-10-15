@@ -62,6 +62,7 @@
 	border: 1px solid var( --Base-base-04 );
 	padding: 4px;
 	text-decoration: none;
+	color: #939393;
 }
 
 .mce-container .mc-icon-picker .picker-category-items .category-item:hover {
