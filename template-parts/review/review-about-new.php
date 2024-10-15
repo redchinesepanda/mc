@@ -57,5 +57,14 @@ LegalDebug::debug( [
                 <?php endif; ?>
             </div>
         </div>
+        <hr>
+        <div class="review-about-info">
+            <div class="about-info-author">
+                <a class="info-author-href">
+                    <img class="info-author-file src="<?php echo $args[ 'author' ][ 'file' ]; ?>" with="24" height="24" loading="lazy">
+                    <span  class="info-author-name"><?php echo $args[ 'author' ][ 'name' ]; ?></span>
+                </a>
+            </div>
+        </div>
     </div>
 <?php endif; ?>
