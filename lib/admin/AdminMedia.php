@@ -16,9 +16,9 @@ class AdminMedia
 		
 		add_action( 'restrict_manage_posts', [ $handler, 'media_type_filter' ] );
 
-		LegalDebug::debug( [
-			'AdminMedia' => 'register-1',
-		] );
+		// LegalDebug::debug( [
+		// 	'AdminMedia' => 'register-1',
+		// ] );
 	}
 
 	public static function media_type_filter()
@@ -50,6 +50,10 @@ class AdminMedia
 			];
 
 			wp_dropdown_categories( $dropdown_options );
+
+			LegalDebug::debug( [
+				'AdminMedia' => 'media_type_filter-1',
+			] );
 		}
 	}
 
