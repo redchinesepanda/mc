@@ -24,7 +24,7 @@
 {
 	/* display: inline-block; */
 	display: flex;
-	column-gap: 14px;
+	column-gap: 0.5rem;
 	cursor: pointer;
 }
 
@@ -42,45 +42,37 @@
 
 /* Width and Height */
 
-.tcb-post-content .legal-cut-control::after
+/* .tcb-post-content .legal-cut-control::after
 {
 	width: 20px;
 	height: 20px;
-}
+} */
 
 /* Background */
 
-/* .tcb-post-content .legal-cut-control::after
-{
-	background-image: url( '../../img/review/review-cut-control.svg' );
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: auto;
-} */
-
-/* .tcb-post-content .legal-cut-control.legal-active::after
-{
-	transform: rotate( 180deg );
-} */
-
 /* Typography */
+
+.tcb-post-content .legal-cut-control {
+	color: #6F56FF;
+}
+
+.tcb-post-content .legal-cut-control:hover {
+	color: var( --Base-link-hover );
+}
 
 .tcb-post-content .legal-cut-control::before
 {
-	/* font-family: "Source Sans Pro"; */
 	font-family: var( --legal-font-primary );
-	font-size: 16px;
+	font-size: 1rem;
 	font-style: normal;
-	/* font-weight: 600; */
-	line-height: 22px;
-	/* vertical-align: middle; */
+	line-height: 1.375rem;
 }
 
 .tcb-post-content .legal-cut-control::after {
 	font-family: var( --legal-font-icons );
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-style: normal;
-	line-height: 24px;
+	line-height: 1.5rem;
 }
 
 .tcb-post-content .legal-cut-control:not( .legal-active )::after
@@ -92,9 +84,3 @@
 {
 	content: '\F10C';
 }
-
-/* .tcb-post-content .legal-cut-control::after
-{
-	vertical-align: middle;
-} */
-
