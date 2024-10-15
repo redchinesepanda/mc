@@ -364,11 +364,11 @@ class BaseFooter
 	{
 		$posts = get_posts( self::query( $terms ) );
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'get_logo_items-1',
+		// LegalDebug::debug( [
+		// 	'BaseFooter' => 'get_logo_items-1',
 
-			'posts-count' => count( $posts ),
-		] );
+		// 	'posts-count' => count( $posts ),
+		// ] );
 
 		$items = [];
 
@@ -397,6 +397,12 @@ class BaseFooter
 				];
 			}
 		}
+
+		LegalDebug::debug( [
+			'BaseFooter' => 'get_logo_items-1',
+
+			'items-count' => count( $items ),
+		] );
 
 		return $items;
 	}
