@@ -112,6 +112,10 @@
 	background-color: var( --Base-base-01 ); 
 }
 
+.tcb-post-content .mc-list-tile-icons li:has( a ):hover {
+	border: 1px solid var( --Base-link-hover );
+}
+
 /* Typography */
 
 .tcb-post-content .mc-list-tile-icons li {
