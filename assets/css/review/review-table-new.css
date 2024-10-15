@@ -165,6 +165,12 @@
     margin-left: auto;
 }
 
+.tcb-post-content table td.mc-icons-sports,
+.tcb-post-content table td.mc-icons-country,
+.tcb-post-content table td.mc-icons-payment {
+    display: flex;
+}
+
 .tcb-post-content table ol,
 .tcb-post-content table ul {
     padding-left: 0px;
