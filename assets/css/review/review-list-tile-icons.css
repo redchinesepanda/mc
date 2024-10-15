@@ -89,8 +89,8 @@
 	margin-bottom: var( --Spacing-06 );
 }
 
-.tcb-post-content .mc-list-tile-icons li,
-.tcb-post-content .mc-list-tile-icons li a {
+.tcb-post-content .mc-list-tile-icons li:not( .icon-position-after ),
+.tcb-post-content .mc-list-tile-icons li a:not( .icon-position-after ) {
 	padding-right: 0.75rem;
 }
 
@@ -101,6 +101,7 @@
 
 .tcb-post-content .mc-list-tile-icons li.icon-position-after:not( .mc-icons-payment ),
 .tcb-post-content .mc-list-tile-icons li:not( .mc-icons-payment ) a.icon-position-after {
+	padding-right: calc( 0.75rem + 1.5rem + 0.75rem );
 	padding-left: 0.75rem;
 }
 
