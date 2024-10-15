@@ -88,6 +88,34 @@ class ReviewAuthor
         'es', 'mx', 'pe', 'cl', 'py', 'co', 'ar',
     ];
 
+    public static function get_checked_by_default()
+    {
+        // $href = self::get_href( 4739, '/about-us/', '#our-team' );
+        
+        // $href = self::get_about_us_url( 4739, '/about-us/', '#our-team' );
+
+        // $page = get_page_by_path( '/about-us/' );
+
+        // $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        // $href = get_page_link( $translated_id ) . '#our-team';
+
+        return [
+			'name' => ToolLoco::translate( 'Ryan Gosling' ),
+
+			// 'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
+
+            // 'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/author_axani.png',
+
+			// 'href' => $href,
+		];
+    }
+
+    public static function get_checked_by()
+    {
+        return self::get_checked_by_default();
+    }
+
     public static function get_author()
     {
         $language = WPMLMain::current_language();
