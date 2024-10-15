@@ -398,11 +398,11 @@ class BaseFooter
 			}
 		}
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'get_logo_items-1',
+		// LegalDebug::debug( [
+		// 	'BaseFooter' => 'get_logo_items-1',
 
-			'items-count' => count( $items ),
-		] );
+		// 	'items-count' => count( $items ),
+		// ] );
 
 		return $items;
 	}
