@@ -9,10 +9,19 @@
 
 @media screen and ( min-width: 960px )
 {
+    /* Display */
+
+    .review-stats .stats-item
+    {
+        display: flex;
+    }
+
     /* Stats Width */
 
-    .review-stats .stats-item {
-        width: calc( 50% - 20px );
+    .review-stats .stats-item
+    {
+        /* width: calc( 50% - 20px ); */
+        flex-basis: 100%;
     }
 }
 
@@ -63,7 +72,13 @@
 }
 
 .review-stats .item-value-wrapper {
-	width: 100%;
+	/* width: 100%; */
+    flex-basis: 50%;
+}
+
+.review-stats .item-data
+{
+    flex-basis: 50%;
 }
 
 /* Stats Background */
