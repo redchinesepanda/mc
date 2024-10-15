@@ -69,6 +69,8 @@ class ReviewMain
 
 		'borja-imbergamo' => 'Borja Imbergamo',
 
+        'checked-by' => 'Checked by',
+
 		'claim-bonus' => 'Claim Bonus',
 
 		'close' => 'Close',
@@ -84,6 +86,8 @@ class ReviewMain
 		'hide-tnc' => 'Hide T&C',
 
 		'how-to-play' => 'How to play',
+
+        'last-update' => 'Last update',
 
         'license' => 'License',
 
