@@ -73,6 +73,22 @@
 
 /* Position */
 
+.tcb-post-content .mc-list-tile-icons {
+	margin-top: var( --Spacing-06 );
+	margin-bottom: var( --Spacing-06 );
+}
+
+.tcb-post-content .mc-list-tile-icons:has( + .legal-cut-control ),
+.tcb-post-content .mc-list-tile-icons:has( + .mc-list-tile-icons ) {
+	margin-top: var( --Spacing-06 );
+	margin-bottom: 0.5rem;
+}
+
+.tcb-post-content .mc-list-tile-icons + .mc-list-tile-icons {
+	margin-top: 0.5rem;
+	margin-bottom: var( --Spacing-06 );
+}
+
 .tcb-post-content .mc-list-tile-icons li,
 .tcb-post-content .mc-list-tile-icons li a {
 	padding-right: 0.75rem;

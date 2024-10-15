@@ -52,8 +52,12 @@
 
 /* Typography */
 
-.tcb-post-content .legal-cut-control {
-	color: #6F56FF;
+.tcb-post-content .legal-cut-control:not( .legal-active ) {
+	color: var( --Base-link );
+}
+
+.tcb-post-content .legal-cut-control.legal-active {
+	color: var( --Base-base-09 );
 }
 
 .tcb-post-content .legal-cut-control:hover {
