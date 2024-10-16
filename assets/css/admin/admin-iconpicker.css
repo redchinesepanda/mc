@@ -1,3 +1,11 @@
+/* mc-icons */
+
+.mce-container .mc-icons
+{
+	font-family: var(--legal-font-icons);
+	font-style: normal;
+}
+
 /* mc-icons-sports */
 
 .mce-container .mc-icons-sports
