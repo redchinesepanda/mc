@@ -171,7 +171,7 @@
     margin-left: auto;
 }
 
-.tcb-post-content table .mc-icons-sports,
+/* .tcb-post-content table .mc-icons-sports,
 .tcb-post-content table .mc-icons-country,
 .tcb-post-content table .mc-icons-payment {
    position: relative;
@@ -188,12 +188,6 @@
 .tcb-post-content table .mc-icons-country::before,
 .tcb-post-content table .mc-icons-payment::before {
    position: absolute;
-}
-
-.tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,
-.tcb-post-content table .mc-icons-country:not( .mc-list-tile-icons )::before,
-.tcb-post-content table .mc-icons-payment:not( .mc-list-tile-icons )::before {
-   vertical-align: middle;
 }
 
 .tcb-post-content table .mc-icons-sports:not( .icon-position-after ),
@@ -218,9 +212,16 @@
 .tcb-post-content table .mc-icons-country.icon-position-after::before,
 .tcb-post-content table .mc-icons-payment.icon-position-after::before {
     right: 0.75rem;
+} */
+
+
+.tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons-country:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons-payment:not( .mc-list-tile-icons )::before {
+   vertical-align: middle;
 }
 
-/* .tcb-post-content table .mc-icons-sports:not( .icon-position-after )::before,
+.tcb-post-content table .mc-icons-sports:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-country:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-payment:not( .icon-position-after )::before {
     margin-right: 0.75rem;
@@ -230,7 +231,7 @@
 .tcb-post-content table .mc-icons-country.icon-position-after::before,
 .tcb-post-content table .mc-icons-payment.icon-position-after::before {
     margin-left: 0.75rem;
-} */
+}
 
 .tcb-post-content table ol,
 .tcb-post-content table ul {
@@ -262,11 +263,11 @@
     height: 0.5rem;
 }
 
-/* .tcb-post-content table td.mc-icons-sports.icon-position-after,
+.tcb-post-content table td.mc-icons-sports.icon-position-after,
 .tcb-post-content table td.mc-icons-country.icon-position-after,
 .tcb-post-content table td.mc-icons-payment.icon-position-after {
     width: 100%;
-} */
+}
 
 /* Background */
 
