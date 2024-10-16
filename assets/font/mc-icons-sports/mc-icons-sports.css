@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: "mc-icons-sports";
     src: url("./mc-icons-sports.woff2?8a44e56ee160f406636d113c09e6274b") format("woff2");
-}
+} */
 
-i[class^="icon-"]:before, i[class*=" icon-"]:before {
+/* i[class^="icon-"]:before, i[class*=" icon-"]:before {
     font-family: mc-icons-sports !important;
     font-style: normal;
     font-weight: normal !important;
@@ -12,7 +12,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 .icon-sports-american-football:before {
     content: "\f101";
