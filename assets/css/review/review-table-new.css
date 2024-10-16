@@ -135,7 +135,7 @@
     display: flex;
 } */
 
-.tcb-post-content table td.mc-icons.icon-position-after[style*="text-align: right;"] {
+.tcb-post-content table td.icon-position-after[style*="text-align: right;"] {
     justify-content: flex-start;
 }
 
@@ -273,10 +273,7 @@
     height: 0.5rem;
 }
 
-.tcb-post-content table td.mc-icons.icon-position-after,
-.tcb-post-content table td.mc-icons-sports.icon-position-after,
-.tcb-post-content table td.mc-icons-country.icon-position-after,
-.tcb-post-content table td.mc-icons-payment.icon-position-after {
+.tcb-post-content table td.icon-position-after {
     width: 100%;
 }
 
