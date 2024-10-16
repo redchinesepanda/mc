@@ -78,9 +78,17 @@ class AdminTinyMCEIconPicker
 
         'admin-mce-style-mc-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
-		// admin mce isons style
+		// admin mce icons style
 
         'admin-mce-iconpicker' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-mce-iconpicker.css',
+
+		// admin mce mc-icons style
+
+		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons.css',
+
+		// admin mce mc-icons font
+
+		'admin-mce-font-mc-icons' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons.css',
 
 		// admin mce mc-icons-sports style
 
@@ -88,7 +96,7 @@ class AdminTinyMCEIconPicker
 
 		// admin mce mc-icons-sports font
 
-		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
+		'admin-mce-icons-sports' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons-sports.css',
 
 		// admin mce mc-icons-country style
 
