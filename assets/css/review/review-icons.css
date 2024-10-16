@@ -21,6 +21,7 @@
 	display: inline-flex;
 	flex-direction: row-reverse;
 	justify-content: flex-end;
+    align-items: center;
 }
 
 /* .legal-section-content .mc-icons-country:not( li ):not( li a ):before,

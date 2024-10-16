@@ -331,3 +331,9 @@
     color: var( --Base-base-05 );
     line-height: 1.0625rem;
 }
+
+.tcb-post-content table .mc-icons-sports:not( .icon-position-after )::before,
+.tcb-post-content table .mc-icons:not( .icon-position-after )::before {
+    font-size: 1rem;
+    line-height: 1rem;
+}
