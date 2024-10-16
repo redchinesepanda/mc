@@ -129,12 +129,11 @@
     display: flex;
 }
 
-/* .tcb-post-content table td.mc-icons-sports,
+.tcb-post-content table td.mc-icons-sports,
 .tcb-post-content table td.mc-icons-country,
 .tcb-post-content table td.mc-icons-payment {
     display: flex;
-    column-gap: 0.75rem;
-} */
+}
 
 /* Position */
 
