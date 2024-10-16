@@ -221,7 +221,7 @@
    vertical-align: middle;
 }
 
-.tcb-post-content table .mc-icons:not( .icon-position-after )::before
+.tcb-post-content table .mc-icons:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-sports:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-country:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-payment:not( .icon-position-after )::before {
