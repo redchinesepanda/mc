@@ -289,14 +289,13 @@
 .tcb-post-content .mc-icons-sports:not( .mc-list-tile-icons .mc-icons-sports ):not( .icon-position-after )::before,
 .tcb-post-content .mc-icons-country:not( .mc-list-tile-icons .mc-icons-country ):not( .icon-position-after )::before,
 .tcb-post-content .mc-icons-payment:not( .mc-list-tile-icons .mc-icons-payment ):not( .icon-position-after )::before {
-    padding-right: 0.75rem;
+    margin-right: 0.75rem;
 }
 
 .tcb-post-content .mc-icons-sports.icon-position-after:not( .mc-list-tile-icons .mc-icons-sports )::before,
 .tcb-post-content .mc-icons-country.icon-position-after:not( .mc-list-tile-icons .mc-icons-country )::before,
 .tcb-post-content .mc-icons-payment.icon-position-after:not( .mc-list-tile-icons .mc-icons-payment )::before {
-    padding-left: 0.75rem;
-    background-repeat: no-repeat;
+    margin-left: 0.75rem;
 }
 
 /* Review Background */
@@ -332,12 +331,6 @@
 
 .tcb-post-content iframe {
     border-radius: 12px;
-}
-
-.tcb-post-content .mc-icons-sports:not( .mc-list-tile-icons .mc-icons-sports )::before,
-.tcb-post-content .mc-icons-country:not( .mc-list-tile-icons .mc-icons-country )::before,
-.tcb-post-content .mc-icons-payment:not( .mc-list-tile-icons .mc-icons-payment )::before {
-    background-repeat: no-repeat;
 }
 
 /* Review Typography */

@@ -180,13 +180,13 @@
 .tcb-post-content table .mc-icons-sports:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-country:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-payment:not( .icon-position-after )::before {
-    padding-right: 0.75rem;
+    margin-right: 0.75rem;
 }
 
 .tcb-post-content table .mc-icons-sports.icon-position-after::before,
 .tcb-post-content table .mc-icons-country.icon-position-after::before,
 .tcb-post-content table .mc-icons-payment.icon-position-after::before {
-    padding-left: 0.75rem;
+    margin-left: 0.75rem;
 }
 
 .tcb-post-content table ol,
