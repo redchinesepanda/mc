@@ -286,6 +286,18 @@
     margin-right: 14px;
 }
 
+.tcb-post-content .mc-icons-sports:not( .icon-position-after )::before,
+.tcb-post-content .mc-icons-country:not( .icon-position-after )::before,
+.tcb-post-content .mc-icons-payment:not( .icon-position-after )::before {
+    padding-right: 0.75rem;
+}
+
+.tcb-post-content .mc-icons-sports.icon-position-after::before,
+.tcb-post-content .mc-icons-country.icon-position-after::before,
+.tcb-post-content .mc-icons-payment.icon-position-after::before {
+    padding-left: 0.75rem;
+}
+
 /* Review Background */
 
 #content {
