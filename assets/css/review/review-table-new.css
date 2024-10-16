@@ -169,14 +169,15 @@
 .tcb-post-content table td.mc-icons-country,
 .tcb-post-content table td.mc-icons-payment {
     display: flex;
+    column-gap: 0.5rem;
 }
 
-.tcb-post-content table .mc-icons-sports,
+/* .tcb-post-content table .mc-icons-sports,
 .tcb-post-content table .mc-icons-country,
 .tcb-post-content table .mc-icons-payment {
     display: flex;
     column-gap: 0.5rem;
-}
+} */
 
 .tcb-post-content table ol,
 .tcb-post-content table ul {
