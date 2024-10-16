@@ -16,7 +16,7 @@
 	font-style: normal;
 }
 
-.legal-section-content .icon-position-after
+.legal-section-content .icon-position-after:not( table .icon-position-after )
 {
 	display: inline-flex;
 	flex-direction: row-reverse;
