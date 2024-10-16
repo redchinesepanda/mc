@@ -171,9 +171,9 @@
     margin-left: auto;
 }
 
-.tcb-post-content table td.mc-icons-sports,
-.tcb-post-content table td.mc-icons-country,
-.tcb-post-content table td.mc-icons-payment {
+.tcb-post-content table .mc-icons-sports,
+.tcb-post-content table .mc-icons-country,
+.tcb-post-content table .mc-icons-payment {
     position: relative;
 }
 
