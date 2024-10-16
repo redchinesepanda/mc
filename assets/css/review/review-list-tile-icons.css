@@ -59,7 +59,7 @@
 
 .tcb-post-content .mc-list-tile-icons + .mc-list-tile-icons {
 	margin-top: 0.5rem;
-	margin-bottom: var( --Spacing-06 );
+	margin-bottom: 0.5rem;
 }
 
 .tcb-post-content .mc-list-tile-icons li:not( .icon-position-after ),
