@@ -171,6 +171,13 @@
     display: flex;
 }
 
+.tcb-post-content table .mc-icons-sports,
+.tcb-post-content table .mc-icons-country,
+.tcb-post-content table .mc-icons-payment {
+    display: flex;
+    column-gap: 0.5rem;
+}
+
 .tcb-post-content table ol,
 .tcb-post-content table ul {
     padding-left: 0px;

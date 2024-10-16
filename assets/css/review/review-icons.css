@@ -12,11 +12,11 @@
 	justify-content: flex-end;
 }
 
-.legal-section-content .mc-icons-country:not( li ):not( li a ):before,
+/* .legal-section-content .mc-icons-country:not( li ):not( li a ):before,
 .legal-section-content .mc-icons-payment:not( li ):not( li a )::before,
 .legal-section-content .mc-icons-sports:not( li ):not( li a )::before {
     margin-right: 0.5rem;
-}
+} */
 
 .legal-section-content .mc-icons-country::before
 {
