@@ -175,13 +175,14 @@
 .tcb-post-content table .mc-icons-country,
 .tcb-post-content table .mc-icons-payment {
     position: relative;
-}
+} */
 
 .tcb-post-content table .mc-icons-sports:before,
 .tcb-post-content table .mc-icons-country::before,
 .tcb-post-content table .mc-icons-payment::before {
-   position: absolute;
-} */
+   /* position: absolute; */
+   vertical-align: top;
+}
 
 /* .tcb-post-content table .mc-icons-sports:not( .icon-position-after ),
 .tcb-post-content table .mc-icons-country:not( .icon-position-after ),
