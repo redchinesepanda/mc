@@ -212,7 +212,7 @@ class AdminTinyMCEIconPicker
 		'mc-icons' => [
 			'name' => 'MC Icons',
 
-			'prefix' => 'icon-default',
+			'prefix' => 'icon',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons/mc-icons.json',
 		],
@@ -220,7 +220,7 @@ class AdminTinyMCEIconPicker
 		'mc-icons-sports' => [
 			'name' => 'MC Icons Sports',
 
-			'prefix' => 'icon',
+			'prefix' => 'icon-sports',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons-sports/mc-icons-sports.json',
 		],
