@@ -1,3 +1,5 @@
+/* mc-list-tile-icons */
+
 #tinymce .mc-list-tile-icons {
 	display: flex;
 	flex-wrap: wrap;
@@ -13,6 +15,28 @@
 	list-style: none;
 	padding: 4px;
 }
+
+/* mc-icons */
+
+#tinymce .mc-icons::before,
+#tinymce .mc-icons::after
+{
+	font-family: var(--legal-font-icons);
+	font-style: normal;
+}
+
+#tinymce .mc-icons
+{
+	background-color: lightgoldenrodyellow;
+}
+
+#tinymce .mc-icons::before,
+#tinymce .mc-icons::after
+{
+	background-color: bisque;
+}
+
+/* mc-icons-sports */
 
 #tinymce .mc-icons-sports::before,
 #tinymce .mc-icons-sports::after
