@@ -19,6 +19,22 @@ class AdminTinyMCEIconPicker
 			'ver' => '1.0.0',
 		],
 
+		// mc-icons style
+
+        'admin-style-mc-icons' =>  [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons/mc-icons.css',
+
+			'ver' => '1.0.0',
+		],
+
+		// mc-icons font
+
+		'admin-font-mc-icons' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons.css',
+
+			'ver' => '1.0.0',
+		],
+
 		// mc-icons-sports style
 
         'admin-style-mc-icons-sports' =>  [
@@ -193,6 +209,14 @@ class AdminTinyMCEIconPicker
 	}
 
 	const JSON_ICONS = [
+		'mc-icons' => [
+			'name' => 'MC Icons',
+
+			'prefix' => 'icon',
+
+			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons/mc-icons.json',
+		],
+
 		'mc-icons-sports' => [
 			'name' => 'MC Icons Sports',
 

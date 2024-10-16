@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "mc-icons";
+    src: url("./mc-icons.woff2?cade7aa8592bd65fa02c427ba60eaf6b") format("woff2");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: mc-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-fill-down:before {
+    content: "\f100";
+}
+.icon-arrow-fill-rigth:before {
+    content: "\f101";
+}
+.icon-right:before {
+    content: "\f102";
+}
+.icon-header-arrow-fill-down:before {
+    content: "\f103";
+}
+.icon-header-arrow-left:before {
+    content: "\f104";
+}
+.icon-header-arrow-right:before {
+    content: "\f105";
+}
+.icon-down:before {
+    content: "\f106";
+}
+.icon-home:before {
+    content: "\f109";
+}
+.icon-burger:before {
+    content: "\f10a";
+}
+.icon-close-stroke:before {
+    content: "\f10b";
+}
+.icon-up:before {
+    content: "\f10c";
+}
+.icon-check:before {
+    content: "\f10d";
+}
+.icon-cross:before {
+    content: "\f10e";
+}
+.icon-bullet:before {
+    content: "\f107";
+}
+.icon-present:before {
+    content: "\f108";
+}
