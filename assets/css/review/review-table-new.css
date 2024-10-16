@@ -175,6 +175,8 @@
 .tcb-post-content table .mc-icons-country,
 .tcb-post-content table .mc-icons-payment {
    position: relative;
+   display: flex;
+   align-items: center;
 }
 
 .tcb-post-content table .mc-icons-sports::before,
