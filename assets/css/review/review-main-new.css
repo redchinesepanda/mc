@@ -286,9 +286,9 @@
     margin-right: 14px;
 }
 
-.tcb-post-content .mc-icons-sports:not( .mc-list-tile-icons )::before,
-.tcb-post-content .mc-icons-country:not( .mc-list-tile-icons )::before,
-.tcb-post-content .mc-icons-payment:not( .mc-list-tile-icons )::before {
+.tcb-post-content p .mc-icons-sports:not( .mc-list-tile-icons )::before,
+.tcb-post-content p .mc-icons-country:not( .mc-list-tile-icons )::before,
+.tcb-post-content p .mc-icons-payment:not( .mc-list-tile-icons )::before {
    vertical-align: top;
 }
 

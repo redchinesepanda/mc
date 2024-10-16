@@ -205,6 +205,12 @@
     margin-bottom: 0px;
 }
 
+.tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons-country:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons-payment:not( .mc-list-tile-icons )::before {
+   vertical-align: middle;
+}
+
 /* Width and Height */
 
 .tcb-post-content .legal-scroll-x {
