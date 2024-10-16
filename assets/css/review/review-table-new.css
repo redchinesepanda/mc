@@ -129,12 +129,12 @@
     display: flex;
 }
 
-.tcb-post-content table td.mc-icons-sports,
+/* .tcb-post-content table td.mc-icons-sports,
 .tcb-post-content table td.mc-icons-country,
 .tcb-post-content table td.mc-icons-payment {
     display: flex;
     column-gap: 0.75rem;
-}
+} */
 
 /* Position */
 
@@ -172,15 +172,15 @@
     margin-left: auto;
 }
 
-.tcb-post-content table span.mc-icons-sports:not( .icon-position-after ):before,
-.tcb-post-content table span.mc-icons-country:not( .icon-position-after )::before,
-.tcb-post-content table span.mc-icons-payment:not( .icon-position-after )::before {
+.tcb-post-content table .mc-icons-sports:not( .icon-position-after ):before,
+.tcb-post-content table .mc-icons-country:not( .icon-position-after )::before,
+.tcb-post-content table .mc-icons-payment:not( .icon-position-after )::before {
     padding-right: 0.75rem;
 }
 
-.tcb-post-content table span.mc-icons-sports.icon-position-after:before,
-.tcb-post-content table span.mc-icons-country.icon-position-after::before,
-.tcb-post-content table span.mc-icons-payment.icon-position-after::before {
+.tcb-post-content table .mc-icons-sports.icon-position-after:before,
+.tcb-post-content table .mc-icons-country.icon-position-after::before,
+.tcb-post-content table .mc-icons-payment.icon-position-after::before {
     padding-left: 0.75rem;
 }
 
