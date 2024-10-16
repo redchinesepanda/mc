@@ -1,9 +1,9 @@
-/* @font-face {
+@font-face {
     font-family: "mc-icons";
-    src: url("./mc-icons.woff2?cade7aa8592bd65fa02c427ba60eaf6b") format("woff2");
-} */
+    src: url("./mc-icons.woff2?ecf92f5387a4c79e03a956b765cc78cb") format("woff2");
+}
 
-/* i[class^="icon-"]:before, i[class*=" icon-"]:before {
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
     font-family: mc-icons !important;
     font-style: normal;
     font-weight: normal !important;
@@ -12,7 +12,7 @@
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-} */
+}
 
 .icon-arrow-fill-down:before {
     content: "\f100";
@@ -58,4 +58,37 @@
 }
 .icon-present:before {
     content: "\f108";
+}
+.icon-star:before {
+    content: "\f10f";
+}
+.icon-star-small:before {
+    content: "\f110";
+}
+.icon-android:before {
+    content: "\f111";
+}
+.icon-ios:before {
+    content: "\f112";
+}
+.icon-mobile:before {
+    content: "\f113";
+}
+.icon-question:before {
+    content: "\f114";
+}
+.icon-esport:before {
+    content: "\f115";
+}
+.icon-persent:before {
+    content: "\f116";
+}
+.icon-facebook:before {
+    content: "\f117";
+}
+.icon-linkedIn:before {
+    content: "\f118";
+}
+.icon-twitter:before {
+    content: "\f119";
 }

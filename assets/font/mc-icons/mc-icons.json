@@ -13,5 +13,16 @@
     "check": 61709,
     "cross": 61710,
     "bullet": 61703,
-    "present": 61704
+    "present": 61704,
+    "star": 61711,
+    "star-small": 61712,
+    "android": 61713,
+    "ios": 61714,
+    "mobile": 61715,
+    "question": 61716,
+    "esport": 61717,
+    "persent": 61718,
+    "facebook": 61719,
+    "linkedIn": 61720,
+    "twitter": 61721
 }
