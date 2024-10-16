@@ -14,192 +14,192 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-american-football:before {
+.icon-sports-american-football:before {
     content: "\f101";
 }
-.icon-asian:before {
+.icon-sports-asian:before {
     content: "\f102";
 }
-.icon-athletics:before {
+.icon-sports-athletics:before {
     content: "\f103";
 }
-.icon-australian-football:before {
+.icon-sports-australian-football:before {
     content: "\f104";
 }
-.icon-autosport:before {
+.icon-sports-autosport:before {
     content: "\f105";
 }
-.icon-badminton:before {
+.icon-sports-badminton:before {
     content: "\f106";
 }
-.icon-baseball:before {
+.icon-sports-baseball:before {
     content: "\f107";
 }
-.icon-basketball:before {
+.icon-sports-basketball:before {
     content: "\f108";
 }
-.icon-beach-football:before {
+.icon-sports-beach-football:before {
     content: "\f109";
 }
-.icon-beach-volleyball:before {
+.icon-sports-beach-volleyball:before {
     content: "\f10a";
 }
-.icon-biathlon:before {
+.icon-sports-biathlon:before {
     content: "\f10b";
 }
-.icon-billiard:before {
+.icon-sports-billiard:before {
     content: "\f10c";
 }
-.icon-boat-racing:before {
+.icon-sports-boat-racing:before {
     content: "\f10d";
 }
-.icon-bowling:before {
+.icon-sports-bowling:before {
     content: "\f10e";
 }
-.icon-bowls:before {
+.icon-sports-bowls:before {
     content: "\f10f";
 }
-.icon-boxing:before {
+.icon-sports-boxing:before {
     content: "\f110";
 }
-.icon-bycicle:before {
+.icon-sports-bycicle:before {
     content: "\f111";
 }
-.icon-chess:before {
+.icon-sports-chess:before {
     content: "\f112";
 }
-.icon-cricket:before {
+.icon-sports-cricket:before {
     content: "\f113";
 }
-.icon-darts:before {
+.icon-sports-darts:before {
     content: "\f114";
 }
-.icon-esports:before {
+.icon-sports-esports:before {
     content: "\f115";
 }
-.icon-f1:before {
+.icon-sports-f1:before {
     content: "\f116";
 }
-.icon-fighting:before {
+.icon-sports-fighting:before {
     content: "\f117";
 }
-.icon-floorball:before {
+.icon-sports-floorball:before {
     content: "\f118";
 }
-.icon-football:before {
+.icon-sports-football:before {
     content: "\f119";
 }
-.icon-futzal:before {
+.icon-sports-futzal:before {
     content: "\f11a";
 }
-.icon-golf:before {
+.icon-sports-golf:before {
     content: "\f11b";
 }
-.icon-greyhound-racing:before {
+.icon-sports-greyhound-racing:before {
     content: "\f11c";
 }
-.icon-handball:before {
+.icon-sports-handball:before {
     content: "\f11d";
 }
-.icon-hockey-game:before {
+.icon-sports-hockey-game:before {
     content: "\f11e";
 }
-.icon-hockey-on-grass:before {
+.icon-sports-hockey-on-grass:before {
     content: "\f11f";
 }
-.icon-hockey-with-ball:before {
+.icon-sports-hockey-with-ball:before {
     content: "\f120";
 }
-.icon-hockey:before {
+.icon-sports-hockey:before {
     content: "\f121";
 }
-.icon-horeseracing:before {
+.icon-sports-horeseracing:before {
     content: "\f122";
 }
-.icon-hurting:before {
+.icon-sports-hurting:before {
     content: "\f123";
 }
-.icon-kabaddi:before {
+.icon-sports-kabaddi:before {
     content: "\f124";
 }
-.icon-kerling:before {
+.icon-sports-kerling:before {
     content: "\f125";
 }
-.icon-lacrosse:before {
+.icon-sports-lacrosse:before {
     content: "\f126";
 }
-.icon-match:before {
+.icon-sports-match:before {
     content: "\f127";
 }
-.icon-mma:before {
+.icon-sports-mma:before {
     content: "\f128";
 }
-.icon-muay-thai:before {
+.icon-sports-muay-thai:before {
     content: "\f129";
 }
-.icon-netball:before {
+.icon-sports-netball:before {
     content: "\f12a";
 }
-.icon-olympic:before {
+.icon-sports-olympic:before {
     content: "\f12b";
 }
-.icon-pickleball:before {
+.icon-sports-pickleball:before {
     content: "\f12c";
 }
-.icon-poker:before {
+.icon-sports-poker:before {
     content: "\f12d";
 }
-.icon-professional-wrestling:before {
+.icon-sports-professional-wrestling:before {
     content: "\f12e";
 }
-.icon-rugby:before {
+.icon-sports-rugby:before {
     content: "\f12f";
 }
-.icon-sailing:before {
+.icon-sports-sailing:before {
     content: "\f130";
 }
-.icon-scwash:before {
+.icon-sports-scwash:before {
     content: "\f131";
 }
-.icon-sepak-takraw:before {
+.icon-sports-sepak-takraw:before {
     content: "\f132";
 }
-.icon-skating:before {
+.icon-sports-skating:before {
     content: "\f133";
 }
-.icon-ski-race:before {
+.icon-sports-ski-race:before {
     content: "\f134";
 }
-.icon-skiing:before {
+.icon-sports-skiing:before {
     content: "\f135";
 }
-.icon-skyjumping:before {
+.icon-sports-skyjumping:before {
     content: "\f136";
 }
-.icon-surfing:before {
+.icon-sports-surfing:before {
     content: "\f137";
 }
-.icon-tank:before {
+.icon-sports-tank:before {
     content: "\f138";
 }
-.icon-tennis:before {
+.icon-sports-tennis:before {
     content: "\f139";
 }
-.icon-tennis2:before {
+.icon-sports-tennis2:before {
     content: "\f13a";
 }
-.icon-trophy:before {
+.icon-sports-trophy:before {
     content: "\f13b";
 }
-.icon-volleyball:before {
+.icon-sports-volleyball:before {
     content: "\f13c";
 }
-.icon-water-polo:before {
+.icon-sports-water-polo:before {
     content: "\f13d";
 }
-.icon-winter-sports:before {
+.icon-sports-winter-sports:before {
     content: "\f13e";
 }
-.icon-bingo:before {
+.icon-sports-bingo:before {
     content: "\f13f";
 }
