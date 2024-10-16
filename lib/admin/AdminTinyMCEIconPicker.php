@@ -212,7 +212,7 @@ class AdminTinyMCEIconPicker
 		'mc-icons' => [
 			'name' => 'MC Icons',
 
-			'prefix' => 'icon',
+			'prefix' => 'icon-default',
 
 			'path' => LegalMain::LEGAL_PATH . '/assets/font/mc-icons/mc-icons.json',
 		],

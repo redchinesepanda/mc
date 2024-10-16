@@ -1,3 +1,6 @@
 .icon-payment-paypal:before {
     background-image: url( '../../img/review/icons/payment/paypal.svg' );
 }
+.icon-payment-visa:before {
+    background-image: url( '../../img/review/icons/payment/visa.svg' );
+}
