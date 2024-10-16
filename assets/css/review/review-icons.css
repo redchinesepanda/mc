@@ -1,3 +1,14 @@
+/* mc-icons */
+
+.legal-section-content .mc-icons::before,
+.legal-section-content .mc-icons::after
+{
+	font-family: var(--legal-font-icons);
+	font-style: normal;
+}
+
+/* mc-icons-sports */
+
 .legal-section-content .mc-icons-sports::before,
 .legal-section-content .mc-icons-sports::after
 {
@@ -18,6 +29,8 @@
     margin-right: 0.5rem;
 } */
 
+/* mc-icons-country */
+
 .legal-section-content .mc-icons-country::before
 {
     content: "";
@@ -26,6 +39,8 @@
     height: 1.5rem;
     background-size: contain;
 }
+
+/* mc-icons-payment */
 
 .legal-section-content .mc-icons-payment::before
 {
