@@ -135,6 +135,10 @@
     display: flex;
 } */
 
+.tcb-post-content table td[class^="mc-icons"][style*="text-align: right;"].icon-position-after {
+    justify-content: flex-start;
+}
+
 /* Position */
 
 .tcb-post-content table tr > *:not( td.mc-icons-payment )
