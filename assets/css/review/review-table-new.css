@@ -137,7 +137,7 @@
 
 /* Position */
 
-.tcb-post-content table tr > *
+.tcb-post-content table tr > *:not( td.mc-icons-payment )
 {
     padding: 1.5rem 1rem;
 }
@@ -231,6 +231,10 @@
 .tcb-post-content table .mc-icons-country.icon-position-after::before,
 .tcb-post-content table .mc-icons-payment.icon-position-after::before {
     margin-left: 0.75rem;
+}
+
+.tcb-post-content table td.mc-icons-payment {
+    padding: 1.375rem 1rem;
 }
 
 .tcb-post-content table ol,
