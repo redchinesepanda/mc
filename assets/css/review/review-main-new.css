@@ -337,7 +337,6 @@
 .tcb-post-content .mc-icons-sports:not( .mc-list-tile-icons .mc-icons-sports )::before,
 .tcb-post-content .mc-icons-country:not( .mc-list-tile-icons .mc-icons-country )::before,
 .tcb-post-content .mc-icons-payment:not( .mc-list-tile-icons .mc-icons-payment )::before {
-    padding-left: 0.75rem;
     background-repeat: no-repeat;
 }
 
