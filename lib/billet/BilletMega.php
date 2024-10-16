@@ -440,7 +440,9 @@ class BilletMega
 	
 				$name = $group[ BilletTitle::ABOUT[ 'title' ] ];
 
-				$title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+				// $title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+				
+				$title_text = '';
 
 				if ( !empty( $atts[ 'title-label' ] ) )
 				{
@@ -506,7 +508,7 @@ class BilletMega
 
 				'nofollow' => $url[ 'play-nofollow' ],
 				
-				// 'text' => $title_text,
+				'text' => $title_text,
 
 				'tag' => $atts[ 'title-tag' ],
 			],
