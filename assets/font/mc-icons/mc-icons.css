@@ -14,12 +14,6 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-fill-down:before {
-    content: "\f100";
-}
-.icon-arrow-fill-rigth:before {
-    content: "\f101";
-}
 .icon-right:before {
     content: "\f102";
 }
