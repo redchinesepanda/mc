@@ -286,6 +286,12 @@
     margin-right: 14px;
 }
 
+.tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons-country:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons-payment:not( .mc-list-tile-icons )::before {
+   vertical-align: top;
+}
+
 .tcb-post-content .mc-icons-sports:not( .mc-list-tile-icons .mc-icons-sports ):not( .icon-position-after )::before,
 .tcb-post-content .mc-icons-country:not( .mc-list-tile-icons .mc-icons-country ):not( .icon-position-after )::before,
 .tcb-post-content .mc-icons-payment:not( .mc-list-tile-icons .mc-icons-payment ):not( .icon-position-after )::before {

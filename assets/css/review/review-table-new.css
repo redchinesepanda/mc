@@ -171,11 +171,11 @@
     margin-left: auto;
 }
 
-.tcb-post-content table .mc-icons-sports:before,
+/* .tcb-post-content table .mc-icons-sports:before,
 .tcb-post-content table .mc-icons-country::before,
 .tcb-post-content table .mc-icons-payment::before {
    vertical-align: top;
-}
+} */
 
 .tcb-post-content table .mc-icons-sports:not( .icon-position-after )::before,
 .tcb-post-content table .mc-icons-country:not( .icon-position-after )::before,
