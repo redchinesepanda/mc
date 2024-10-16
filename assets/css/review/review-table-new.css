@@ -139,6 +139,10 @@
     justify-content: flex-start;
 }
 
+.tcb-post-content table td.icon-position-after[style*="text-align: center;"] {
+    justify-content: center;
+}
+
 /* Position */
 
 .tcb-post-content table tr > *:not( td.mc-icons-payment )
