@@ -84,7 +84,7 @@ class AdminTinyMCEIconPicker
 
 		// admin mce mc-icons style
 
-		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-sports/mc-icons.css',
+		'admin-mce-icons' => LegalMain::LEGAL_URL . '/assets/font/mc-icons/mc-icons.css',
 
 		// admin mce mc-icons font
 
