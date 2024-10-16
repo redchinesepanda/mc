@@ -135,7 +135,7 @@
     display: flex;
 } */
 
-.tcb-post-content table td[class^="mc-icons"][style*="text-align: right;"].icon-position-after {
+.tcb-post-content table td.mc-icons.icon-position-after[style*="text-align: right;"] {
     justify-content: flex-start;
 }
 
