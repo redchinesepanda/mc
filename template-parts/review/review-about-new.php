@@ -43,7 +43,7 @@
                                     <?php foreach( $args[ 'logo-items' ] as $logo ) : ?>
                                         <a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" target="_blank" rel="nofollow noreferrer">
                                             <!-- <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"> -->
-                                            <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="auto" height="16" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"></a>
+                                            <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="auto" height="18" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"></a>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
