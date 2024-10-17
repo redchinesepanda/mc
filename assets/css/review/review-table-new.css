@@ -135,13 +135,6 @@
     display: flex;
 } */
 
-.tcb-post-content table p[class^="mc-icons"],
-.tcb-post-content table p[class*=" mc-icons"] {
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    /* width: fit-content; */
-}
-
 /* .tcb-post-content table td.icon-position-after[style*="text-align: right;"] {
     justify-content: flex-start;
 }
@@ -248,6 +241,17 @@
 .tcb-post-content table .mc-icons-payment.icon-position-after::before {
     right: 0.75rem;
 } */
+
+.tcb-post-content table p[class^="mc-icons"],
+.tcb-post-content table p[class*=" mc-icons"] {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.tcb-post-content table p[class^="mc-icons"] + .legal-subtitle,
+.tcb-post-content table p[class*=" mc-icons"] + .legal-subtitle {
+    margin-left: calc( 1.125rem + 0.75rem )
+}
 
 .tcb-post-content table .mc-icons:not( .mc-list-tile-icons )::before,
 .tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,

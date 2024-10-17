@@ -20,8 +20,12 @@
 {
 	display: inline-flex;
 	flex-direction: row-reverse;
-	justify-content: flex-end;
+	/* justify-content: flex-end; */
     align-items: center;
+}
+
+.legal-section-content .icon-position-after:not( table .icon-position-after[style*="text-align: right;"] ):not( table .icon-position-after[style*="text-align: center;"] ) {
+	justify-content: flex-end;
 }
 /* .legal-section-content .icon-position-after:not( table .icon-position-after )
 {
