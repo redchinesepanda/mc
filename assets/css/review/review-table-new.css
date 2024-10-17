@@ -287,6 +287,10 @@
     width: 100%;
 }
 
+.tcb-post-content table td.icon-position-after::before {
+    flex-shrink: 0;
+}
+
 .tcb-post-content table .mc-icons-country::before {
     width: 1.125rem;
     height: 1.125rem;
