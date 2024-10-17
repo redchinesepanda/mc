@@ -232,7 +232,7 @@
 .tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,
 .tcb-post-content table .mc-icons-country:not( .mc-list-tile-icons )::before,
 .tcb-post-content table .mc-icons-payment:not( .mc-list-tile-icons )::before {
-   vertical-align: middle;
+   vertical-align: top;
 }
 
 .tcb-post-content table .mc-icons:not( .icon-position-after )::before,
