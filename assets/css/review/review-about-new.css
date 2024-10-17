@@ -840,9 +840,9 @@
 }
 
 .review-about .legal-afillate-description {
-    font-size: 13px;
+    font-size: 0.75rem;
     font-weight: 400;
-    line-height: 17px;
+    line-height: 1.125rem;
     color: var( --Base-base-05 );
 }
 
