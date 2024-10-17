@@ -421,6 +421,101 @@ class ReviewAnchors
         ];
     }
 
+    // anchors auto start
+
+    public static function get_titles_data( $nodes )
+    {
+        // $labels = self::get_labels();
+
+        // $custom = self::get_custom();
+
+        // if ( !empty( $custom ) ) {
+        //     $labels = array_merge( $labels, $custom );
+        // }
+
+        $items = [];
+
+        foreach ( $nodes as $node )
+        {
+            // $label = '';
+
+            // if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) )
+            // {
+            //     $label = $labels[ $node->getAttribute( 'id' ) ];
+            // }
+            // else
+            // {
+            //     // $label = $node->parentNode->textContent;
+                
+            //     // $label = mb_substr( $node->parentNode->textContent, 0, 30 ); 
+                
+            //     // $label = mb_substr( $node->nextSibling->textContent, 0, 30 );
+
+            //     if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
+            //     {
+            //         $label = $node->nextSibling->textContent;
+            //     }
+            // }
+
+            $label = $node->textContent;
+
+            $href = ToolTransiterate::replace( $label );
+
+            $href = strtolower( $href );
+
+            $href = str_replace( ' ', '-', $href );
+
+            $items[] = [
+                'label' => $label,
+
+                'href' => '#' . $href,
+            ];
+        }
+
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'get_titles_data-1',
+
+            'items' => $items,
+        ] );
+
+        return $items;
+    }
+
+	public static function get_nodes_titles_auto( $dom )
+	{
+		return LegalDOM::get_nodes( $dom, "//h2" );
+	}
+    
+    public static function get_titles_auto()
+    {
+        $post = get_post();
+
+		if ( empty( $post ) ) {
+			return [];
+		}
+
+		$dom = LegalDOM::get_dom( $post->post_content );
+
+        $nodes = self::get_nodes_titles_auto( $dom );
+
+        return $nodes;
+    }
+
+    public static function get_args_auto()
+    {
+        $titles_nodes = self::get_titles_auto();
+
+        $titles_data = self::get_titles_data( $titles_nodes );
+
+        return [
+            'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
+
+            'items' => $titles_data,
+        ];
+    }
+
+    // anchors auto end
+
     const TEMPLATE = [
         'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php',
 
@@ -443,6 +538,8 @@ class ReviewAnchors
         // {
         //     return '';
         // }
+
+        self::get_args_auto();
 
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
     }
