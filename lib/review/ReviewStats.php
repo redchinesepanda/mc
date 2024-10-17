@@ -119,11 +119,15 @@ class ReviewStats
 
 		foreach ( $nodes as $node )
 		{
+			$stats_data = self::get_stats( $node );
+
 			$stats = $dom->createElement( 'div' );
 
 			$stats->setAttribute( 'class', 'review-stats' );
 
-			LegalDOM::appendHTML( $stats, self::render_stats( $node ) );
+			// LegalDOM::appendHTML( $stats, self::render_stats( $node ) );
+			
+			LegalDOM::appendHTML( $stats, self::render_stats( $stats_data ) );
 
 			$node->parentNode->insertBefore( $stats, $node );
 
@@ -209,7 +213,9 @@ class ReviewStats
 		'review-stats' => LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php',
 	];
 
-    public static function render_stats( $node )
+    // public static function render_stats( $node )
+    
+	public static function render_stats( $args )
     {
 		// if ( !ReviewMain::check() ) {
         //     return '';
@@ -223,7 +229,9 @@ class ReviewStats
 
         // return $output;
 
-		return self::render_main( self::TEMPLATE[ 'review-stats' ], self::get_stats( $node ) );
+		// return self::render_main( self::TEMPLATE[ 'review-stats' ], self::get_stats( $node ) );
+		
+		return self::render_main( self::TEMPLATE[ 'review-stats' ], $args );
     }
 
     public static function render_main( $tempalte, $args )
