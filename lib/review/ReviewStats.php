@@ -102,7 +102,7 @@ class ReviewStats
 
 		$rating_average = $ratings_sum / $amount;
 
-		$rating_average_round = get_stat_value( $rating_average );
+		$rating_average_round = self::get_stat_value( $rating_average );
 
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
