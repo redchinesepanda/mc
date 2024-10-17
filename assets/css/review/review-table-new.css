@@ -157,15 +157,15 @@
 
 /* Position */
 
-/* .tcb-post-content table tr > *:not( td.mc-icons-payment )
-{
-    padding: 1.5rem 1rem;
-} */
-
-.tcb-post-content table tr > *
+.tcb-post-content table tr > *:not( .mc-icons-payment )
 {
     padding: 1.5rem 1rem;
 }
+
+/* .tcb-post-content table tr > *
+{
+    padding: 1.5rem 1rem;
+} */
 
 .billet-mega-content > table,
 .tcb-post-content > table,
@@ -252,6 +252,14 @@
     margin-bottom: 0rem;
 }
 
+.tcb-post-content table td.mc-icons-payment,
+.tcb-post-content table th.mc-icons-payment {
+    padding-top: 1.5rem;
+    padding-right: 1;
+    padding-bottom: 1.5rem;
+    padding-left: calc( 1rem + 2.125rem + 0.75rem );
+}
+
 /* .tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ),
 .tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ) {
     margin-left: calc( 1.125rem + 0.75rem )
@@ -326,7 +334,7 @@
     width: 100%;
 } */
 
-.tcb-post-content table td.icon-position-after::before {
+.tcb-post-content table .mc-icons-payment::before {
     flex-shrink: 0;
 }
 
