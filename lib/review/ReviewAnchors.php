@@ -423,6 +423,24 @@ class ReviewAnchors
 
     // anchors auto start
 
+    public static function get_title_id( $node )
+    {
+        $label = ReviewTitle::replace_placeholder( $node->textContent );
+
+        $node_id = ToolTransiterate::replace( $label );
+
+        $node_id = mb_strtolower( $node_id );
+
+        $node_id = str_replace( ' ', '-', $node_id );
+
+        if ( function_exists( 'cyr_to_lat' ) )
+        {
+            $node_id = cyr_to_lat()->transliterate( $node_id );
+        }
+
+        return $node_id;
+    }
+
     public static function get_titles_data( $nodes )
     {
         // $labels = self::get_labels();
@@ -457,20 +475,22 @@ class ReviewAnchors
             //     }
             // }
 
-            $label = ReviewTitle::replace_placeholder( $node->textContent );
+            // $label = ReviewTitle::replace_placeholder( $node->textContent );
 
-            $node_id = ToolTransiterate::replace( $label );
+            // $node_id = ToolTransiterate::replace( $label );
 
-            $node_id = mb_strtolower( $node_id );
+            // $node_id = mb_strtolower( $node_id );
 
-            $node_id = str_replace( ' ', '-', $node_id );
+            // $node_id = str_replace( ' ', '-', $node_id );
 
-            if ( function_exists( 'cyr_to_lat' ) )
-            {
-                $node_id = cyr_to_lat()->transliterate( $node_id );
-            }
+            // if ( function_exists( 'cyr_to_lat' ) )
+            // {
+            //     $node_id = cyr_to_lat()->transliterate( $node_id );
+            // }
 
-            $node->setAttribute( 'id', $node_id );
+            // $node->setAttribute( 'id', $node_id );
+
+            $node_id = self::get_title_id( $node );
 
             $items[] = [
                 'label' => $label,
