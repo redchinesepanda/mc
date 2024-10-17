@@ -12,11 +12,18 @@ class ToolTransiterate
 		't' => [ 'ț' ],
 	];
 
-	public static function replace ( $string )
+	const REMOVE = [
+		':',
+	];
+
+	public static function replace( $string )
     {
-		foreach( self::TEMPLATE as $replacement => $values ) {
-			$string = str_replace( $values, $replacement, $string);
+		foreach ( self::TEMPLATE as $replacement => $values )
+		{
+			$string = str_replace( $values, $replacement, $string );
 		}
+
+		$string = str_replace( self::REMOVE, '', $string );
         
 		return $string;
     }
