@@ -24,9 +24,9 @@
     align-items: center;
 }
 
-.legal-section-content .icon-position-after:not( table .icon-position-after[style*="text-align: right;"] ):not( table .icon-position-after[style*="text-align: center;"] ) {
+/* .legal-section-content .icon-position-after:not( table .icon-position-after[style*="text-align: right;"] ):not( table .icon-position-after[style*="text-align: center;"] ) {
 	justify-content: flex-end;
-}
+} */
 /* .legal-section-content .icon-position-after:not( table .icon-position-after )
 {
 	display: inline-flex;
