@@ -457,7 +457,7 @@ class ReviewAnchors
             //     }
             // }
 
-            $label = $node->textContent;
+            $label = ReviewTitle::replace_placeholder( $node->textContent );
 
             $href = ToolTransiterate::replace( $label );
 
