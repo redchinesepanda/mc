@@ -98,9 +98,9 @@ class ReviewStats
 
 		$ratings = array_column( $stats_data, 'rating' );
 
-		$ratings_sum = array_sum( $ratings );
+		$rating_sum = array_sum( $ratings );
 
-		$rating_total = $ratings_sum / $amount;
+		$rating_total = $rating_sum / $amount;
 
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
