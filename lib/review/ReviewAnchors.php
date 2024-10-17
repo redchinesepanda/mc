@@ -416,7 +416,7 @@ class ReviewAnchors
 
         // $items = self::get_data( $nodes );
 
-        $nodes = self::get_nodes_titles_auto( $dom );
+        $nodes = self::get_titles_auto();
 
         $items = self::get_titles_data( $nodes );
 
