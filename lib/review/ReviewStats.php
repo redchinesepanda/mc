@@ -220,7 +220,9 @@ class ReviewStats
 
 						'value' => $text,
 
-						'value-max' => $value_max,
+						'rating' => $value,
+
+						'rating-max' => $value_max,
 					];
 				}
 			}
