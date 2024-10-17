@@ -76,8 +76,10 @@
     }
 
     .review-about:not( .legal-mode-mini ) .about-logo {
-        width: 68px;
-        height: 68px;
+        /* width: 68px;
+        height: 68px; */
+        width: 4rem;
+        height: 4rem;
     }
 
     .review-about .achievement-tooltip-background.legal-active {
@@ -223,7 +225,8 @@
     }
 
     .review-about .footer-logo {
-        margin-left: auto;
+        /* margin-left: auto; */
+        margin-left: 0.5rem;
     }
 
     .legal-review-page-sidebar .about-right {
@@ -234,8 +237,10 @@
     /* Width and Height */
 
     .review-about:not( .legal-mode-mini ) .about-logo {
-        width: 100px;
-        height: 100px;
+        /* width: 100px;
+        height: 100px; */
+        width: 7.5rem;
+        height: 7.5rem;
     }
 
     .review-about {
