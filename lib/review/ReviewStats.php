@@ -105,6 +105,8 @@ class ReviewStats
 
 	public static function get_rating_average( $stats_data )
 	{
+		$amount = count( $stats_data );
+
 		$ratings = array_column( $stats_data, 'rating' );
 
 		$ratings_sum = array_sum( $ratings );
@@ -116,7 +118,7 @@ class ReviewStats
 
 	public static function get_title_rating( $stats_data )
 	{
-		$amount = count( $stats_data );
+		// $amount = count( $stats_data );
 
 		// $ratings = array_column( $stats_data, 'rating' );
 
