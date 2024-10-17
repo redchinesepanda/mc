@@ -101,12 +101,16 @@ class ReviewStats
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
 
+			'amount' => $amount,
+
 			'ratings' => $ratings,
 		] );
 	}
 
-	public static function modify_title( $dom, $node_title )
+	public static function modify_title( $dom, $node_title, $stats_data )
 	{
+		self::get_title_rating( $stats_data );
+
 		$rating_value = '8.5/10';
 
 		$rating = $dom->createElement( 'span', $rating_value );
@@ -152,7 +156,7 @@ class ReviewStats
 
 			$node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
 
-			self::modify_title( $dom, $node_title );
+			self::modify_title( $dom, $node_title, $stats_data );
 
 			// LegalDebug::debug( [
 			// 	'ReviewStats' => 'get_content-2',
