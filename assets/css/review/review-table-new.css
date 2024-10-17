@@ -149,6 +149,7 @@
 .tcb-post-content table td.icon-position-after[style*="text-align: center;"] {
     justify-content: center;
 } */
+
 .tcb-post-content table .icon-position-after[style*="text-align: right;"]:not( span ) {
     justify-content: flex-start;
 }
