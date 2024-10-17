@@ -104,6 +104,12 @@ class ReviewStats
 
 		$rating_average_round = self::get_stat_value( $rating_average );
 
+		$ratings_max = array_column( $stats_data, 'rating-max' );
+
+		$ratings_max_unique = array_unique( $ratings_max );
+
+		$rating_max = array_shift( $ratings_max_unique );
+
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
 
@@ -116,6 +122,12 @@ class ReviewStats
 			'rating_average' => $rating_average,
 
 			'rating_average_round' => $rating_average_round,
+
+			'ratings_max' => $ratings_max,
+
+			'ratings_max_unique' => $ratings_max_unique,
+
+			'rating_max' => $rating_max,
 		] );
 	}
 
