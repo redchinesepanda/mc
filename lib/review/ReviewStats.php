@@ -121,6 +121,12 @@ class ReviewStats
 		{
 			$stats_data = self::get_stats( $node );
 
+			LegalDebug::debug( [
+				'ReviewStats' => 'get_content-1',
+
+				'stats_data' => $stats_data,
+			] );
+
 			$stats = $dom->createElement( 'div' );
 
 			$stats->setAttribute( 'class', 'review-stats' );
@@ -136,7 +142,7 @@ class ReviewStats
 			self::modify_title( $dom, $node_title );
 
 			// LegalDebug::debug( [
-			// 	'ReviewStats' => 'get_content-1',
+			// 	'ReviewStats' => 'get_content-2',
 
 			// 	'node_title' => $node_title,
 			// ] );
@@ -178,17 +184,29 @@ class ReviewStats
 			if ( $cells->length ) {
 				$value = -1;
 
+				$value_max = -1;
+
 				$text = ToolEncode::encode( $cells[ 1 ]->textContent );
 
 				if ( is_numeric( $text ) ) {
 					$value = $text;
 				}
 
-				if ( strpos( $text, '/' ) ) {
-					$part = explode( '/', $text )[ 0 ];
+				if ( strpos( $text, '/' ) )
+				{
+					$parts = explode( '/', $text );
+
+					$part = $parts[ 0 ];
 
 					if ( is_numeric( $part ) ) {
 						$value = $part;
+					}
+
+					$part_max = $parts[ 1 ];
+
+					if ( is_numeric( $part_max ) )
+					{
+						$value_max = $part_max;
 					}
 				}
 
@@ -201,6 +219,8 @@ class ReviewStats
 						'width' => ( round( ( float ) $value ) / 10 ) * 100,
 
 						'value' => $text,
+
+						'value-max' => $value_max,
 					];
 				}
 			}
