@@ -470,7 +470,7 @@ class ReviewAnchors
                 $node_id = cyr_to_lat()->transliterate( $node_id );
             }
 
-            $node->setAttribute( 'id', $node_id )
+            $node->setAttribute( 'id', $node_id );
 
             $items[] = [
                 'label' => $label,
