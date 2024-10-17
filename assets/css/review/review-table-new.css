@@ -260,13 +260,13 @@
     margin-bottom: 0rem;
 }
 
-.tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ),
-.tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) {
+.tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after )::before,
+.tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after )::before {
    left: -1.125rem;
 }
 
-.tcb-post-content table p[class^="mc-icons"].icon-position-after,
-.tcb-post-content table p[class*=" mc-icons"].icon-position-after {
+.tcb-post-content table p[class^="mc-icons"].icon-position-after::before,
+.tcb-post-content table p[class*=" mc-icons"].icon-position-after::before {
    right: -1.125rem;
 }
 
