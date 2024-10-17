@@ -98,7 +98,7 @@ class ReviewStats
 
 		$rating = $dom->createElement( 'span', $rating_value );
 
-		$stats->setAttribute( 'class', 'review-stats-title-rating' );
+		$rating->setAttribute( 'class', 'review-stats-title-rating' );
 
 		$node_title->appendChild( $rating );
 	}
