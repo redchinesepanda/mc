@@ -151,7 +151,12 @@
 
 /* Position */
 
-.tcb-post-content table tr > *:not( td.mc-icons-payment )
+/* .tcb-post-content table tr > *:not( td.mc-icons-payment )
+{
+    padding: 1.5rem 1rem;
+} */
+
+.tcb-post-content table tr > *
 {
     padding: 1.5rem 1rem;
 }
