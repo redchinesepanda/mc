@@ -139,7 +139,7 @@
 .tcb-post-content table p[class*=" mc-icons"] {
     margin-top: 0rem;
     margin-bottom: 0rem;
-    width: fit-content;
+    /* width: fit-content; */
 }
 
 .tcb-post-content table td.icon-position-after[style*="text-align: right;"] {
@@ -191,20 +191,20 @@
     margin-left: auto;
 }
 
-.tcb-post-content table .mc-icons,
+/* .tcb-post-content table .mc-icons,
 .tcb-post-content table .mc-icons-sports,
 .tcb-post-content table .mc-icons-country,
 .tcb-post-content table .mc-icons-payment {
    position: relative;
 }
 
-/* .tcb-post-content table .mc-icons:not( span ),
+.tcb-post-content table .mc-icons:not( span ),
 .tcb-post-content table .mc-icons-sports:not( span ),
 .tcb-post-content table .mc-icons-country:not( span ),
 .tcb-post-content table .mc-icons-payment:not( span ) {
    display: flex;
    align-items: center;
-} */
+}
 
 .tcb-post-content table .mc-icons::before,
 .tcb-post-content table .mc-icons-sports::before,
@@ -239,9 +239,9 @@
 .tcb-post-content table .mc-icons-country.icon-position-after::before,
 .tcb-post-content table .mc-icons-payment.icon-position-after::before {
     right: 0.75rem;
-}
+} */
 
-/* .tcb-post-content table .mc-icons:not( .mc-list-tile-icons )::before,
+.tcb-post-content table .mc-icons:not( .mc-list-tile-icons )::before,
 .tcb-post-content table .mc-icons-sports:not( .mc-list-tile-icons )::before,
 .tcb-post-content table .mc-icons-country:not( .mc-list-tile-icons )::before,
 .tcb-post-content table .mc-icons-payment:not( .mc-list-tile-icons )::before {
@@ -264,7 +264,7 @@
 
 .tcb-post-content table td.mc-icons-payment {
     padding: 1.375rem 1rem;
-} */
+}
 
 .tcb-post-content table ol,
 .tcb-post-content table ul {
