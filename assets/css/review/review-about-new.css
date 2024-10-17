@@ -80,6 +80,7 @@
         height: 68px; */
         width: 4rem;
         height: 4rem;
+        box-sizing: border-box;
     }
 
     .review-about .achievement-tooltip-background.legal-active {
@@ -92,7 +93,7 @@
     }
 
     .review-about .about-data {
-        width: calc( 100% - ( 70px + 26px ) );
+        width: calc( 100% - ( 4rem + 26px ) );
     }
 
     .review-about.legal-mode-mini .about-button {
@@ -241,6 +242,7 @@
         height: 100px; */
         width: 7.5rem;
         height: 7.5rem;
+        box-sizing: border-box;
     }
 
     .review-about {
@@ -260,7 +262,7 @@
     }
 
     .review-about .about-data {
-        width: calc( 100% - ( 102px + 26px ) );
+        width: calc( 100% - ( 7.5rem + 26px ) );
     }
 
     .review-about .about-right
