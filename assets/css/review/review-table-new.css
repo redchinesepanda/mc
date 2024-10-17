@@ -129,6 +129,12 @@
     display: flex;
 }
 
+.tcb-post-content table p[class^="mc-icons"],
+.tcb-post-content table p[class*=" mc-icons"] {
+    display: flex;
+    align-items: center;
+}
+
 /* .tcb-post-content table td.mc-icons-sports,
 .tcb-post-content table td.mc-icons-country,
 .tcb-post-content table td.mc-icons-payment {
