@@ -153,6 +153,8 @@ class ReviewAnchors
 
 		self::set_header_id( $dom );
 
+		self::set_titles_id_auto( $dom );
+
 		return $dom->saveHTML( $dom );
 	}
 
@@ -423,7 +425,50 @@ class ReviewAnchors
 
     // anchors auto start
 
-    public static function get_title_id( $node )
+    public static function set_titles_id_auto( $dom )
+	{
+		$nodes = self::get_nodes_titles_auto( $dom );
+
+		if ( $nodes->length == 0 )
+		{
+			return false;
+		}
+
+		foreach ( $nodes as $node )
+		{
+			if ( $node->parentNode )
+            {
+                $node_id = self::get_title_id_auto( $node );
+
+                $node->setAttribute( 'id', $node_id );
+
+                // $id = $node->getAttribute( 'id' );
+
+                // $node->removeAttribute( 'id' );
+
+                // $node->parentNode->setAttribute( 'id', $id );
+
+                // try
+                // {
+                //     $node->parentNode->removeChild( $node );
+                // }
+                // catch ( DOMException $e )
+                // {
+                //     LegalDebug::debug( [
+                //         'ReviewAnchors' => 'set_header_id',
+
+                //         'node' => substr( $node->textContent, 0, 30 ),
+
+                //         'message' => $e->getMessage(),
+                //     ] );
+                // }
+            }
+		}
+
+		return true;
+	}
+
+    public static function get_title_id_auto( $node )
     {
         $label = ReviewTitle::replace_placeholder( $node->textContent );
 
@@ -443,54 +488,13 @@ class ReviewAnchors
 
     public static function get_titles_data( $nodes )
     {
-        // $labels = self::get_labels();
-
-        // $custom = self::get_custom();
-
-        // if ( !empty( $custom ) ) {
-        //     $labels = array_merge( $labels, $custom );
-        // }
-
         $items = [];
 
         foreach ( $nodes as $node )
         {
-            // $label = '';
+            // $node_id = self::get_title_id_auto( $node );
 
-            // if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) )
-            // {
-            //     $label = $labels[ $node->getAttribute( 'id' ) ];
-            // }
-            // else
-            // {
-            //     // $label = $node->parentNode->textContent;
-                
-            //     // $label = mb_substr( $node->parentNode->textContent, 0, 30 ); 
-                
-            //     // $label = mb_substr( $node->nextSibling->textContent, 0, 30 );
-
-            //     if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
-            //     {
-            //         $label = $node->nextSibling->textContent;
-            //     }
-            // }
-
-            // $label = ReviewTitle::replace_placeholder( $node->textContent );
-
-            // $node_id = ToolTransiterate::replace( $label );
-
-            // $node_id = mb_strtolower( $node_id );
-
-            // $node_id = str_replace( ' ', '-', $node_id );
-
-            // if ( function_exists( 'cyr_to_lat' ) )
-            // {
-            //     $node_id = cyr_to_lat()->transliterate( $node_id );
-            // }
-
-            // $node->setAttribute( 'id', $node_id );
-
-            $node_id = self::get_title_id( $node );
+            $node_id = $node->getAttribute( 'id' );
 
             $items[] = [
                 'label' => $label,
