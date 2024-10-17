@@ -131,8 +131,7 @@
 
 .tcb-post-content table p[class^="mc-icons"],
 .tcb-post-content table p[class*=" mc-icons"] {
-    display: flex;
-    align-items: center;
+    display: inline-block;
 }
 
 /* .tcb-post-content table td.mc-icons-sports,
@@ -300,6 +299,11 @@
     padding-left: 1rem;
 }
 
+.tcb-post-content table p[class^="mc-icons"],
+.tcb-post-content table p[class*=" mc-icons"] {
+    vertical-align: middle;
+}
+
 .tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ),
 .tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ) {
     /* margin-left: calc( 1.125rem + 0.75rem ); */
@@ -383,6 +387,12 @@
 .tcb-post-content table .mc-icons-country::before {
     width: 1.125rem;
     height: 1.125rem;
+}
+
+.tcb-post-content table p[class^="mc-icons"],
+.tcb-post-content table p[class*=" mc-icons"] {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Background */
