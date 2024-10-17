@@ -151,7 +151,7 @@ class ReviewAnchors
 	{
 		$dom = LegalDOM::get_dom( $content ); 
 
-		self::set_header_id( $dom );
+		// self::set_header_id( $dom );
 
 		self::set_titles_id_auto( $dom );
 
@@ -412,9 +412,13 @@ class ReviewAnchors
 
     public static function get()
     {
-        $nodes = self::get_anchors();
+        // $nodes = self::get_anchors();
 
-        $items = self::get_data( $nodes );
+        // $items = self::get_data( $nodes );
+
+        $nodes = self::get_nodes_titles_auto( $dom );
+
+        $items = self::get_titles_data( $nodes );
 
         return [
             'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
