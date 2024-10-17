@@ -203,6 +203,26 @@ class LegalDOM
 		return null;
 	}
 
+	const XPATH_QUERY = [
+		'previous-element' = 'preceding-sibling::%s[1]',
+	];
+
+	public static function get_previous_element( $dom, $node, $tag = '*' )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$query = sprintf( self::XPATH_QUERY[ 'previous-element' ], $tag );
+
+		$nodes = $xpath->query( $query, $node );
+
+		if ( $nodes->length )
+		{
+			return $nodes->item( 0 );
+		}
+
+		return null;
+	}
+
 	public static function remove_child( $dom, $node )
 	{
 		try
