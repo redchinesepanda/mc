@@ -459,21 +459,23 @@ class ReviewAnchors
 
             $label = ReviewTitle::replace_placeholder( $node->textContent );
 
-            $href = ToolTransiterate::replace( $label );
+            $node_id = ToolTransiterate::replace( $label );
 
-            $href = mb_strtolower( $href );
+            $node_id = mb_strtolower( $node_id );
 
-            $href = str_replace( ' ', '-', $href );
+            $node_id = str_replace( ' ', '-', $node_id );
 
             if ( function_exists( 'cyr_to_lat' ) )
             {
-                $href = cyr_to_lat()->transliterate( $href );
+                $node_id = cyr_to_lat()->transliterate( $node_id );
             }
+
+            $node->setAttribute( 'id', $node_id )
 
             $items[] = [
                 'label' => $label,
 
-                'href' => '#' . $href,
+                'href' => '#' . $node_id,
             ];
         }
 
