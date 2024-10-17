@@ -157,9 +157,19 @@
 
 /* Position */
 
-.tcb-post-content table tr > *:not( .mc-icons-payment )
+/* .tcb-post-content table tr > *:not( .mc-icons-payment )
 {
     padding: 1.5rem 1rem;
+} */
+
+.tcb-post-content table tr > * {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.tcb-post-content table tr > *:not( [class^="mc-icons"] ):not( [class*=" mc-icons"] ) {
+    padding-right: 1;
+    padding-left: 1rem;
 }
 
 /* .tcb-post-content table tr > *
@@ -220,15 +230,13 @@
 
 .tcb-post-content table .mc-icons:not( .icon-position-after ),
 .tcb-post-content table .mc-icons-sports:not( .icon-position-after ),
-.tcb-post-content table .mc-icons-country:not( .icon-position-after ),
-.tcb-post-content table .mc-icons-payment:not( .icon-position-after ) {
+.tcb-post-content table .mc-icons-country:not( .icon-position-after ) {
     padding-left: calc( 1rem + 1rem + 0.75rem );
 }
 
 .tcb-post-content table .mc-icons.icon-position-after,
 .tcb-post-content table .mc-icons-sports.icon-position-after,
-.tcb-post-content table .mc-icons-country.icon-position-after,
-.tcb-post-content table .mc-icons-payment.icon-position-after {
+.tcb-post-content table .mc-icons-country.icon-position-after {
     padding-right: calc( 1rem + 1rem + 0.75rem );
 }
 
