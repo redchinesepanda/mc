@@ -92,6 +92,19 @@ class ReviewStats
 		return $nodes;
 	}
 
+	public static function get_title_rating( $stats_data )
+	{
+		$amount = count( $stats_data );
+
+		$ratings = array_column( $stats_data, 'rating' );
+
+		LegalDebug::debug( [
+			'ReviewStats' => 'get_title_rating-1',
+
+			'ratings' => $ratings,
+		] );
+	}
+
 	public static function modify_title( $dom, $node_title )
 	{
 		$rating_value = '8.5/10';
@@ -121,11 +134,11 @@ class ReviewStats
 		{
 			$stats_data = self::get_stats( $node );
 
-			LegalDebug::debug( [
-				'ReviewStats' => 'get_content-1',
+			// LegalDebug::debug( [
+			// 	'ReviewStats' => 'get_content-1',
 
-				'stats_data' => $stats_data,
-			] );
+			// 	'stats_data' => $stats_data,
+			// ] );
 
 			$stats = $dom->createElement( 'div' );
 
