@@ -473,9 +473,9 @@ class ReviewAnchors
         {
             $label = ReviewTitle::replace_placeholder( $node->textContent );
 
-            // $node_id = self::get_title_id_auto( $node );
+            $node_id = self::get_title_id_auto( $node );
 
-            $node_id = $node->getAttribute( 'id' );
+            // $node_id = $node->getAttribute( 'id' );
 
             LegalDebug::debug( [
                 'ReviewAnchors' => 'get_titles_data-1',
