@@ -116,7 +116,7 @@ class ReviewStats
 
 			$node->parentNode->insertBefore( $stats, $node );
 
-			$previous_title = LegalDom::get_previous_element( $dom, $node, '*' );
+			$previous_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
 
 			LegalDebug::debug( [
 				'ReviewStats' => 'get_content-1',
