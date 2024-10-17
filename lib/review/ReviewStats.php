@@ -92,7 +92,7 @@ class ReviewStats
 		return $nodes;
 	}
 
-	public static function modify_title( $node_title )
+	public static function modify_title( $dom, $node_title )
 	{
 		$rating_value = '8.5/10';
 
@@ -129,7 +129,7 @@ class ReviewStats
 
 			$node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
 
-			self::modify_title( $node_title );
+			self::modify_title( $dom, $node_title );
 
 			// LegalDebug::debug( [
 			// 	'ReviewStats' => 'get_content-1',
