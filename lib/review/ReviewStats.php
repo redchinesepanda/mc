@@ -92,10 +92,6 @@ class ReviewStats
 		return $nodes;
 	}
 
-	const PATTERNS = [
-		'title-rating' => '%s/%s',
-	];
-
 	public static function get_rating_max( $stats_data )
 	{
 		$ratings_max = array_column( $stats_data, 'rating-max' );
@@ -116,47 +112,15 @@ class ReviewStats
 		return self::get_stat_value( $rating_average );
 	}
 
+	const PATTERNS = [
+		'title-rating' => '%s/%s',
+	];
+
 	public static function get_title_rating( $stats_data )
 	{
-		// $amount = count( $stats_data );
-
-		// $ratings = array_column( $stats_data, 'rating' );
-
-		// $ratings_sum = array_sum( $ratings );
-
-		// $rating_average = $ratings_sum / $amount;
-
-		// $rating_average_round = self::get_stat_value( $rating_average );
-
 		$rating_average = self::get_rating_average( $stats_data );
 
-		// $ratings_max = array_column( $stats_data, 'rating-max' );
-
-		// // $ratings_max_unique = array_unique( $ratings_max );
-
-		// $rating_max = array_shift( $ratings_max );
-		
 		$rating_max = self::get_rating_max( $stats_data );
-
-		// LegalDebug::debug( [
-		// 	'ReviewStats' => 'get_title_rating-1',
-
-		// 	'amount' => $amount,
-
-		// 	'ratings' => $ratings,
-
-		// 	'ratings_sum' => $ratings_sum,
-
-		// 	'rating_average' => $rating_average,
-
-		// 	'rating_average_round' => $rating_average_round,
-
-		// 	'ratings_max' => $ratings_max,
-
-		// 	// 'ratings_max_unique' => $ratings_max_unique,
-
-		// 	'rating_max' => $rating_max,
-		// ] );
 
 		if ( $rating_max < 0 )
 		{
@@ -170,7 +134,7 @@ class ReviewStats
 	{
 		$rating_value = self::get_title_rating( $stats_data );
 
-		// $rating_value = '8.5/10';
+		$node_title->setAttribute( 'class', 'review-stats-title' );
 
 		$rating = $dom->createElement( 'span', $rating_value );
 
