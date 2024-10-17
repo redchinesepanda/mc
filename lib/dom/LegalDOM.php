@@ -203,16 +203,16 @@ class LegalDOM
 		return null;
 	}
 
-	public static function addClass( $node, $class )
-	{
-		$attribute_classes = $node->getAttribute( 'class' );
+	// public static function addClass( $node, $class )
+	// {
+	// 	$attribute_classes = $node->getAttribute( 'class' );
 
-		$classess = explode( ' ', $attribute_classes );
+	// 	$classess = explode( ' ', $attribute_classes );
 
-		$classess[] = $class;
+	// 	$classess[] = $class;
 
-		$node->setAttribute( 'class', implode( ' ', $classess ) );
-	}
+	// 	$node->setAttribute( 'class', implode( ' ', $classess ) );
+	// }
 
 	const XPATH_QUERY = [
 		'previous-element' => 'preceding-sibling::%s[1]',
