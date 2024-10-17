@@ -260,12 +260,16 @@
     margin-bottom: 0rem;
 }
 
-.tcb-post-content table td.mc-icons-payment,
-.tcb-post-content table th.mc-icons-payment {
-    padding-top: 1.5rem;
-    padding-right: 1;
-    padding-bottom: 1.5rem;
+.tcb-post-content table td.mc-icons-payment:not( .icon-position-after ),
+.tcb-post-content table th.mc-icons-payment:not( .icon-position-after ) {
+    padding-right: 1rem;
     padding-left: calc( 1rem + 2.125rem + 0.75rem );
+}
+
+.tcb-post-content table td.mc-icons-payment.icon-position-after,
+.tcb-post-content table th.mc-icons-payment.icon-position-after {
+    padding-right: calc( 1rem + 2.125rem + 0.75rem );
+    padding-left: 1rem;
 }
 
 /* .tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ),
