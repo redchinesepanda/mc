@@ -135,6 +135,11 @@
     display: flex;
 } */
 
+.tcb-post-content table td p[class*="mc-icons-"] {
+    margin-top: 0rem;
+    margin-bottom: 0rem;;
+}
+
 .tcb-post-content table td.icon-position-after[style*="text-align: right;"] {
     justify-content: flex-start;
 }
