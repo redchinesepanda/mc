@@ -139,6 +139,7 @@
 .tcb-post-content table p[class*=" mc-icons"] {
     margin-top: 0rem;
     margin-bottom: 0rem;
+    width: fit-content;
 }
 
 .tcb-post-content table td.icon-position-after[style*="text-align: right;"] {
