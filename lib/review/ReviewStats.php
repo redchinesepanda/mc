@@ -98,12 +98,20 @@ class ReviewStats
 
 		$ratings = array_column( $stats_data, 'rating' );
 
+		$ratings_sum = array_sum( $ratings );
+
+		$rating_average = $ratings_sum / $amount;
+
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
 
 			'amount' => $amount,
 
 			'ratings' => $ratings,
+
+			'ratings_sum' => $ratings_sum,
+
+			'rating_average' => $rating_average,
 		] );
 	}
 
