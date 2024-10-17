@@ -41,13 +41,13 @@ class BilletMega
     }
 
 	const JS = [
-        'billet-mega-tnc' => [
-            // 'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-mega-tnc.js',
+        // 'billet-mega-tnc' => [
+        //     // 'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-mega-tnc.js',
 
-			'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
     ];
 
 	public static function register_script()
