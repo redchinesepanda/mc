@@ -258,7 +258,11 @@
 }
 
 .tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle[style*="text-align: right;"],
-.tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle[style*="text-align: right;"] {
+.tcb-post-content table td[style*="text-align: right;"] p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle,
+.tcb-post-content table th[style*="text-align: right;"] p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle,
+.tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle[style*="text-align: right;"],
+.tcb-post-content table td[style*="text-align: right;"] p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle,
+.tcb-post-content table th[style*="text-align: right;"] p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle {
     margin-right: calc( 1.125rem + 0.75rem )
 }
 
