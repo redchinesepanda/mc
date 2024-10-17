@@ -197,13 +197,13 @@
    position: relative;
 }
 
-.tcb-post-content table .mc-icons:not( span ),
+/* .tcb-post-content table .mc-icons:not( span ),
 .tcb-post-content table .mc-icons-sports:not( span ),
 .tcb-post-content table .mc-icons-country:not( span ),
 .tcb-post-content table .mc-icons-payment:not( span ) {
    display: flex;
    align-items: center;
-}
+} */
 
 .tcb-post-content table .mc-icons::before,
 .tcb-post-content table .mc-icons-sports::before,
