@@ -296,9 +296,9 @@
     height: 0.5rem;
 }
 
-/* .tcb-post-content table td.icon-position-after {
+.tcb-post-content table td.icon-position-after {
     width: 100%;
-} */
+}
 
 .tcb-post-content table td.icon-position-after::before {
     flex-shrink: 0;
