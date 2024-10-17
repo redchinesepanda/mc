@@ -461,7 +461,7 @@ class ReviewAnchors
 
             $href = ToolTransiterate::replace( $label );
 
-            $href = strtolower( $href );
+            $href = mb_strtolower( $href );
 
             $href = str_replace( ' ', '-', $href );
 
