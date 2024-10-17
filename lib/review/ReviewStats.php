@@ -93,7 +93,7 @@ class ReviewStats
 	}
 
 	const PATTERNS = [
-		'title-rating' = '%s/%s',
+		'title-rating' => '%s/%s',
 	];
 
 	public static function get_title_rating( $stats_data )
