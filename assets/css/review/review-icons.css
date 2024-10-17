@@ -36,9 +36,13 @@
 {
     content: "";
     display: inline-block;
+    background-size: contain;
+}
+
+.legal-section-content .mc-icons-country:not( table .mc-icons-country )::before
+{
     width: 1.5rem;
     height: 1.5rem;
-    background-size: contain;
 }
 
 /* mc-icons-payment */
