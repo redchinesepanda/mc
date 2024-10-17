@@ -228,15 +228,15 @@
    position: absolute;
 }
 
-.tcb-post-content table .mc-icons:not( .icon-position-after ),
-.tcb-post-content table .mc-icons-sports:not( .icon-position-after ),
-.tcb-post-content table .mc-icons-country:not( .icon-position-after ) {
+.tcb-post-content table .mc-icons:not( .icon-position-after ):not( p ),
+.tcb-post-content table .mc-icons-sports:not( .icon-position-after ):not( p ),
+.tcb-post-content table .mc-icons-country:not( .icon-position-after ):not( p ) {
     padding-left: calc( 1rem + 1rem + 0.75rem );
 }
 
-.tcb-post-content table .mc-icons.icon-position-after,
-.tcb-post-content table .mc-icons-sports.icon-position-after,
-.tcb-post-content table .mc-icons-country.icon-position-after {
+.tcb-post-content table .mc-icons.icon-position-after:not( p ),
+.tcb-post-content table .mc-icons-sports.icon-position-after:not( p ),
+.tcb-post-content table .mc-icons-country.icon-position-after:not( p ) {
     padding-right: calc( 1rem + 1rem + 0.75rem );
 }
 
@@ -258,6 +258,16 @@
 .tcb-post-content table p[class*=" mc-icons"] {
     margin-top: 0rem;
     margin-bottom: 0rem;
+}
+
+.tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ),
+.tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) {
+   left: -1.125rem;
+}
+
+.tcb-post-content table p[class^="mc-icons"].icon-position-after,
+.tcb-post-content table p[class*=" mc-icons"].icon-position-after {
+   right: -1.125rem;
 }
 
 .tcb-post-content table td.mc-icons-payment:not( .icon-position-after ),
