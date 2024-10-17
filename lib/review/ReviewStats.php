@@ -208,7 +208,7 @@ class ReviewStats
 
 	public static function get_stat_width( $value )
 	{
-		return ( round( ( float ) $value ) / 10 ) * 100 );
+		return ( round( ( float ) $value ) / 10 ) * 100;
 	}
 
 	public static function get_stats ( $node )
