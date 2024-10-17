@@ -40,17 +40,15 @@ class BilletMega
 		}
     }
 
-	const JS = [];
-	
-		// const JS = [
-    //     'billet-mega-tnc' => [
-    //         // 'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-mega-tnc.js',
+	const JS = [
+        'billet-mega-tnc' => [
+            // 'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-mega-tnc.js',
 
-	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
+			'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
 
-    //         'ver' => '1.0.0',
-    //     ],
-    // ];
+            'ver' => '1.0.0',
+        ],
+    ];
 
 	public static function register_script()
     {
@@ -80,7 +78,7 @@ class BilletMega
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
 			add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
 		}
