@@ -477,13 +477,13 @@ class ReviewAnchors
 
             // $node_id = $node->getAttribute( 'id' );
 
-            LegalDebug::debug( [
-                'ReviewAnchors' => 'get_titles_data-1',
+            // LegalDebug::debug( [
+            //     'ReviewAnchors' => 'get_titles_data-1',
                 
-                'label' => $label,
+            //     'label' => $label,
 
-                'node_id' => $node_id,
-            ] );
+            //     'node_id' => $node_id,
+            // ] );
 
             $items[] = [
                 'label' => $label,
@@ -492,11 +492,11 @@ class ReviewAnchors
             ];
         }
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get_titles_data-2',
+        // LegalDebug::debug( [
+        //     'ReviewAnchors' => 'get_titles_data-2',
 
-            'items' => $items,
-        ] );
+        //     'items' => $items,
+        // ] );
 
         return $items;
     }
