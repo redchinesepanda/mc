@@ -248,8 +248,8 @@
     margin-bottom: 0rem;
 }
 
-.tcb-post-content table p[class^="mc-icons"] + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ),
-.tcb-post-content table p[class*=" mc-icons"] + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ) {
+.tcb-post-content table p[class^="mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ),
+.tcb-post-content table p[class*=" mc-icons"]:not( .icon-position-after ) + .legal-subtitle:not( [style*="text-align: center;"] ):not( [style*="text-align: right;"] ) {
     margin-left: calc( 1.125rem + 0.75rem )
 }
 
