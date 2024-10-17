@@ -102,6 +102,8 @@ class ReviewStats
 
 		$rating_average = $ratings_sum / $amount;
 
+		$rating_average_round = get_stat_value( $rating_average );
+
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
 
@@ -112,6 +114,8 @@ class ReviewStats
 			'ratings_sum' => $ratings_sum,
 
 			'rating_average' => $rating_average,
+
+			'rating_average_round' => $rating_average_round,
 		] );
 	}
 
@@ -197,6 +201,16 @@ class ReviewStats
 		return $nodes->item( 0 );
 	}
 
+	public static function get_stat_value( $value )
+	{
+		return round( ( float ) $value );
+	}
+
+	public static function get_stat_width( $value )
+	{
+		return ( round( ( float ) $value ) / 10 ) * 100 );
+	}
+
 	public static function get_stats ( $node )
 	{
 		$args = [];
@@ -241,7 +255,9 @@ class ReviewStats
 
 						'description' => ToolEncode::encode( $cells[ 2 ]->textContent ),
 	
-						'width' => ( round( ( float ) $value ) / 10 ) * 100,
+						// 'width' => ( round( ( float ) $value ) / 10 ) * 100,
+						
+						'width' => self::get_stat_width( $value ),
 
 						'value' => $text,
 
