@@ -92,6 +92,10 @@ class ReviewStats
 		return $nodes;
 	}
 
+	const PATTERNS = [
+		'title-rating' = '%s/%s',
+	];
+
 	public static function get_title_rating( $stats_data )
 	{
 		$amount = count( $stats_data );
@@ -129,13 +133,20 @@ class ReviewStats
 
 			'rating_max' => $rating_max,
 		] );
+
+		if ( $rating_max < 0 )
+		{
+			return $rating_average;
+		}
+
+		return sprintf( self::PATTERNS[ 'title-rating' ], $rating_average, $rating_max );
 	}
 
 	public static function modify_title( $dom, $node_title, $stats_data )
 	{
-		self::get_title_rating( $stats_data );
+		$rating_value = self::get_title_rating( $stats_data );
 
-		$rating_value = '8.5/10';
+		// $rating_value = '8.5/10';
 
 		$rating = $dom->createElement( 'span', $rating_value );
 
