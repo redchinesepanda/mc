@@ -144,7 +144,7 @@ class ReviewAnchors
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_filter( 'the_content', [ $handler, 'modify_content' ], 8 );
+        add_filter( 'the_content', [ $handler, 'modify_content' ], 9999 );
     }
 
     public static function modify_content( $content )
