@@ -492,6 +492,8 @@ class ReviewAnchors
 
         foreach ( $nodes as $node )
         {
+            $label = ReviewTitle::replace_placeholder( $node->textContent );
+            
             // $node_id = self::get_title_id_auto( $node );
 
             $node_id = $node->getAttribute( 'id' );
