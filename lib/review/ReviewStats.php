@@ -101,6 +101,8 @@ class ReviewStats
 		LegalDebug::debug( [
 			'ReviewStats' => 'get_title_rating-1',
 
+			'amount' => $amount,
+
 			'ratings' => $ratings,
 		] );
 	}
