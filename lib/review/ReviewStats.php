@@ -96,43 +96,65 @@ class ReviewStats
 		'title-rating' => '%s/%s',
 	];
 
-	public static function get_title_rating( $stats_data )
+	public static function get_rating_max( $stats_data )
 	{
-		$amount = count( $stats_data );
+		$ratings_max = array_column( $stats_data, 'rating-max' );
 
+		return array_shift( $ratings_max );
+	}
+
+	public static function get_rating_average( $stats_data )
+	{
 		$ratings = array_column( $stats_data, 'rating' );
 
 		$ratings_sum = array_sum( $ratings );
 
 		$rating_average = $ratings_sum / $amount;
 
-		$rating_average_round = self::get_stat_value( $rating_average );
+		return self::get_stat_value( $rating_average );
+	}
 
-		$ratings_max = array_column( $stats_data, 'rating-max' );
+	public static function get_title_rating( $stats_data )
+	{
+		$amount = count( $stats_data );
 
-		// $ratings_max_unique = array_unique( $ratings_max );
+		// $ratings = array_column( $stats_data, 'rating' );
 
-		$rating_max = array_shift( $ratings_max );
+		// $ratings_sum = array_sum( $ratings );
 
-		LegalDebug::debug( [
-			'ReviewStats' => 'get_title_rating-1',
+		// $rating_average = $ratings_sum / $amount;
 
-			'amount' => $amount,
+		// $rating_average_round = self::get_stat_value( $rating_average );
 
-			'ratings' => $ratings,
+		$rating_average = self::get_rating_average( $stats_data );
 
-			'ratings_sum' => $ratings_sum,
+		// $ratings_max = array_column( $stats_data, 'rating-max' );
 
-			'rating_average' => $rating_average,
+		// // $ratings_max_unique = array_unique( $ratings_max );
 
-			'rating_average_round' => $rating_average_round,
+		// $rating_max = array_shift( $ratings_max );
+		
+		$rating_max = self::get_rating_max( $stats_data );
 
-			'ratings_max' => $ratings_max,
+		// LegalDebug::debug( [
+		// 	'ReviewStats' => 'get_title_rating-1',
 
-			// 'ratings_max_unique' => $ratings_max_unique,
+		// 	'amount' => $amount,
 
-			'rating_max' => $rating_max,
-		] );
+		// 	'ratings' => $ratings,
+
+		// 	'ratings_sum' => $ratings_sum,
+
+		// 	'rating_average' => $rating_average,
+
+		// 	'rating_average_round' => $rating_average_round,
+
+		// 	'ratings_max' => $ratings_max,
+
+		// 	// 'ratings_max_unique' => $ratings_max_unique,
+
+		// 	'rating_max' => $rating_max,
+		// ] );
 
 		if ( $rating_max < 0 )
 		{
