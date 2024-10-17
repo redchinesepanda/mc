@@ -205,13 +205,13 @@ class LegalDOM
 
 	public static function addClass( $node, $class )
 	{
-		$attribute_classes = $node_title->getAttribute( 'class' );
+		$attribute_classes = $node->getAttribute( 'class' );
 
 		$classess = explode( ' ', $attribute_classes );
 
 		$classess[] = $class;
 
-		$node_title->setAttribute( 'class', implode( ' ', $classess ) );
+		$node->setAttribute( 'class', implode( ' ', $classess ) );
 	}
 
 	const XPATH_QUERY = [
