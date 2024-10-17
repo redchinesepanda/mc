@@ -168,7 +168,7 @@
 }
 
 .tcb-post-content table tr > *:not( [class^="mc-icons"] ):not( [class*=" mc-icons"] ) {
-    padding-right: 1;
+    padding-right: 1rem;
     padding-left: 1rem;
 }
 
