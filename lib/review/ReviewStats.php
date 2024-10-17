@@ -92,6 +92,17 @@ class ReviewStats
 		return $nodes;
 	}
 
+	public static function modify_title( $dom, $node_title )
+	{
+		$rating_value = '8.5/10';
+
+		$rating = $dom->createElement( 'span', $rating_value );
+
+		$rating->setAttribute( 'class', 'review-stats-title-rating' );
+
+		$node_title->appendChild( $rating );
+	}
+
 	public static function get_content( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -116,13 +127,15 @@ class ReviewStats
 
 			$node->parentNode->insertBefore( $stats, $node );
 
-			$previous_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
+			$node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
 
-			LegalDebug::debug( [
-				'ReviewStats' => 'get_content-1',
+			self::modify_title( $dom, $node_title );
 
-				'previous_title' => $previous_title,
-			] );
+			// LegalDebug::debug( [
+			// 	'ReviewStats' => 'get_content-1',
+
+			// 	'node_title' => $node_title,
+			// ] );
 
 			$node->parentNode->removeChild( $node );
 		}
