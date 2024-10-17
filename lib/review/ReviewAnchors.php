@@ -465,7 +465,10 @@ class ReviewAnchors
 
             $href = str_replace( ' ', '-', $href );
 
-            $href = cyr_to_lat()->transliterate( $href );
+            if ( function_exists( 'cyr_to_lat' ) )
+            {
+                $href = cyr_to_lat()->transliterate( $href );
+            }
 
             $items[] = [
                 'label' => $label,
