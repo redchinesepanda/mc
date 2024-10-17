@@ -287,8 +287,7 @@
     width: 100%;
 }
 
-.tcb-post-content table .mc-icons-country::before
-{
+.tcb-post-content table .mc-icons-country::before {
     width: 1.125rem;
     height: 1.125rem;
 }
