@@ -16,24 +16,24 @@
 	font-style: normal;
 }
 
-.legal-section-content .icon-position-after
+/* .legal-section-content .icon-position-after
+{
+	display: inline-flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+    align-items: center;
+} */
+
+/* .legal-section-content .icon-position-after:not( table .icon-position-after[style*="text-align: right;"] ):not( table .icon-position-after[style*="text-align: center;"] ) {
+	justify-content: flex-end;
+} */
+.legal-section-content .icon-position-after:not( table .icon-position-after )
 {
 	display: inline-flex;
 	flex-direction: row-reverse;
 	justify-content: flex-end;
     align-items: center;
 }
-
-/* .legal-section-content .icon-position-after:not( table .icon-position-after[style*="text-align: right;"] ):not( table .icon-position-after[style*="text-align: center;"] ) {
-	justify-content: flex-end;
-} */
-/* .legal-section-content .icon-position-after:not( table .icon-position-after )
-{
-	display: inline-flex;
-	flex-direction: row-reverse;
-	justify-content: flex-end;
-    align-items: center;
-} */
 
 
 /* .legal-section-content .mc-icons-country:not( li ):not( li a ):before,
