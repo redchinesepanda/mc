@@ -134,7 +134,9 @@ class ReviewStats
 	{
 		$rating_value = self::get_title_rating( $stats_data );
 
-		$node_title->setAttribute( 'class', 'review-stats-title' );
+		// $node_title->setAttribute( 'class', 'review-stats-title' );
+
+		LegalDom::addClass( $node_title, 'review-stats-title' );
 
 		$rating = $dom->createElement( 'span', $rating_value );
 

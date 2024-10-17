@@ -203,6 +203,17 @@ class LegalDOM
 		return null;
 	}
 
+	public static function addClass( $node, $class )
+	{
+		$attribute_classes = $node_title->getAttribute( 'class' );
+
+		$classess = explode( ' ', $attribute_classes );
+
+		$classess[] = $class;
+
+		$node_title->setAttribute( 'class', implode( ' ', $classess ) );
+	}
+
 	const XPATH_QUERY = [
 		'previous-element' => 'preceding-sibling::%s[1]',
 	];
