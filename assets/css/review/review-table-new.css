@@ -135,7 +135,8 @@
     display: flex;
 } */
 
-.tcb-post-content table p[class^="mc-icons"] {
+.tcb-post-content table p[class^="mc-icons"],
+.tcb-post-content table p[class*=" mc-icons"] {
     margin-top: 0rem;
     margin-bottom: 0rem;
 }
