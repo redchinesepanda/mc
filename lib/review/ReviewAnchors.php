@@ -441,27 +441,6 @@ class ReviewAnchors
                 $node_id = self::get_title_id_auto( $node );
 
                 $node->setAttribute( 'id', $node_id );
-
-                // $id = $node->getAttribute( 'id' );
-
-                // $node->removeAttribute( 'id' );
-
-                // $node->parentNode->setAttribute( 'id', $id );
-
-                // try
-                // {
-                //     $node->parentNode->removeChild( $node );
-                // }
-                // catch ( DOMException $e )
-                // {
-                //     LegalDebug::debug( [
-                //         'ReviewAnchors' => 'set_header_id',
-
-                //         'node' => substr( $node->textContent, 0, 30 ),
-
-                //         'message' => $e->getMessage(),
-                //     ] );
-                // }
             }
 		}
 
@@ -493,10 +472,18 @@ class ReviewAnchors
         foreach ( $nodes as $node )
         {
             $label = ReviewTitle::replace_placeholder( $node->textContent );
-            
+
             // $node_id = self::get_title_id_auto( $node );
 
             $node_id = $node->getAttribute( 'id' );
+
+            LegalDebug::debug( [
+                'ReviewAnchors' => 'get_titles_data-1',
+                
+                'label' => $label,
+
+                'node_id' => $node_id,
+            ] );
 
             $items[] = [
                 'label' => $label,
@@ -506,7 +493,7 @@ class ReviewAnchors
         }
 
         LegalDebug::debug( [
-            'ReviewAnchors' => 'get_titles_data-1',
+            'ReviewAnchors' => 'get_titles_data-2',
 
             'items' => $items,
         ] );
