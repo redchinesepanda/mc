@@ -204,7 +204,7 @@ class LegalDOM
 	}
 
 	const XPATH_QUERY = [
-		'previous-element' = 'preceding-sibling::%s[1]',
+		'previous-element' => 'preceding-sibling::%s[1]',
 	];
 
 	public static function get_previous_element( $dom, $node, $tag = '*' )
