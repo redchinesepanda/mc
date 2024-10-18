@@ -153,11 +153,11 @@ class ReviewAnchors
 
         $set_title_id_auto = false;
 
-		$set_title_id_manual = self::set_header_id( $dom );
+		$set_title_id_manual = ( bool ) self::set_header_id( $dom );
 
-        if ( ! ( bool ) $set_title_id_manual )
+        if ( ! $set_title_id_manual )
         {
-		    $set_title_id_auto = self::set_titles_id_auto( $dom );
+		    $set_title_id_auto = ( bool ) self::set_titles_id_auto( $dom );
         }
 
         LegalDebug::debug( [
@@ -168,20 +168,20 @@ class ReviewAnchors
             'set_title_id_manual' => $set_title_id_manual,
         ] );
 
-        // if ( ( bool ) $set_title_id_manual || ( bool ) $set_title_id_manual )
-        // {
+        if ( ( bool ) $set_title_id_manual || ( bool ) $set_title_id_manual )
+        {
 		    return $dom->saveHTML( $dom );
-        // }
+        }
 
-        // LegalDebug::debug( [
-        //     'ReviewAnchors' => 'modify_content-2',
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'modify_content-2',
 
-        //     'set_title_id_auto' => $set_title_id_auto,
+            'set_title_id_auto' => $set_title_id_auto,
 
-        //     'set_title_id_manual' => $set_title_id_manual,
-        // ] );
+            'set_title_id_manual' => $set_title_id_manual,
+        ] );
 
-        // return $content;
+        return $content;
 	}
 
     public static function set_header_id( $dom )
