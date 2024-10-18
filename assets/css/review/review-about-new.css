@@ -191,11 +191,11 @@
     /* Position */
 
     .review-about {
-        margin: 0px auto;
-        /* margin-top: 2rem;
+        /* margin: 0px auto; */
+        margin-top: 2rem;
         margin-right: auto;
         margin-bottom: 2rem;
-        margin-left: auto; */
+        margin-left: auto;
         position: relative;
     }
 
@@ -206,12 +206,12 @@
         right: 0px;
     }
 
-    .review-about:not( .legal-mode-mini ) {
-        /* padding-top: 28px; */
-        /* padding-bottom: 32px; */
+ /*    .review-about:not( .legal-mode-mini ) {
+        padding-top: 28px;
+        padding-bottom: 32px;
         padding-top: 2rem;
         padding-bottom: 2rem;
-    }
+    } */
 
     .review-about .achievement-tooltip {
         position: absolute;
