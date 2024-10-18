@@ -79,6 +79,9 @@ class ReviewMain
 
 		'deposit' => 'Deposit',
 
+        'directorate' => 'Directorate General for the Regulation of Gambling
+        text link',
+
 		'download' => 'Download',
 
 		'get-bonus' => 'Get Bonus',
@@ -90,6 +93,8 @@ class ReviewMain
         'last-update' => 'Last update',
 
         'license' => 'License',
+
+        'license-in' => 'License in UK',
 
         'margin' => 'Margin',
 
