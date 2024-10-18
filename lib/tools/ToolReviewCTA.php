@@ -240,27 +240,29 @@ class ToolReviewCTA
 		// ] );
 	}
 
-	public static function get_license_value( $post_id )
+	public static function get_license_value( $license, $license_in )
 	{
-		if ( ! empty( get_field( self::CTA_ACF_FIELDS[ 'license-main' ], $post_id ) )
-				
-		|| ! empty( get_field( self::CTA_ACF_FIELDS[ 'license-in' ], $post_id ) ) )
+		if ( ! empty( $license ) || ! empty( $license_in ) )
 		{
-			return ToolLoco::translate( ReviewMain::TEXT[ 'Yes' ] )
+			return ToolLoco::translate( ReviewMain::TEXT[ 'Yes' ] );
 		}
 
-		return ToolLoco::translate( ReviewMain::TEXT[ 'No' ] )
+		return ToolLoco::translate( ReviewMain::TEXT[ 'No' ] );
 	}
 
 	public static function get_stats_fields( $post_id = false )
 	{
+		$license = get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id );
+
+		$license_in = get_field( self::CTA_ACF_FIELDS[ 'license-in' ], $post_id );
+
 		$result = [
 			'license-status' => [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
 
 				// 'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
 				
-				'value' => self::get_license_value( $post_id ),
+				'value' => self::get_license_value( $license, $license_in ),
 
 				'tooltip' => ToolLoco::translate( ReviewMain::TEXT[ 'directorate' ] ),
 			],
@@ -296,8 +298,6 @@ class ToolReviewCTA
 			],
 		];
 
-		$license = get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id );
-
 		if ( ! empty( $license ) )
 		{
 			$result[ 'license' ] => [
@@ -306,8 +306,6 @@ class ToolReviewCTA
 				'value' => $license,
 			];
 		}
-
-		$license_in = get_field( self::CTA_ACF_FIELDS[ 'license-in' ], $post_id );
 
 		if ( ! empty( $license_in ) )
 		{
