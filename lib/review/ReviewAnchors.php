@@ -151,7 +151,7 @@ class ReviewAnchors
 	{
 		$dom = LegalDOM::get_dom( $content ); 
 
-		// self::set_header_id( $dom );
+		self::set_header_id( $dom );
 
 		self::set_titles_id_auto( $dom );
 
