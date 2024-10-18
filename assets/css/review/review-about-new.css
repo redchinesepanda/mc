@@ -616,6 +616,11 @@
     padding-left: 64px;
 }
 
+.review-about-wrapper .review-about-info {
+    margin-top: var( --Spacing-09 );
+    margin-bottom: var( --Spacing-06 );
+}
+
 /* Background */
 
 /* .legal-review-page-sidebar .about-right
