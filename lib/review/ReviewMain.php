@@ -100,6 +100,8 @@ class ReviewMain
 
         'min-deposit'=> 'Min. Deposit',
 
+        'no' => 'No',
+
 		'open' => 'Open',
 
 		'overall-rating' => 'Overall Rating',
@@ -127,6 +129,8 @@ class ReviewMain
 		'website-administrator' => 'Website Administrator',
 
 		'withdrawal' => 'Withdrawal',
+
+        'yes' => 'Yes',
 	];
 
     const CSS = [
