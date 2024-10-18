@@ -412,13 +412,32 @@ class ReviewAnchors
 
     public static function get()
     {
-        // $nodes = self::get_anchors();
+        $nodes = self::get_anchors();
 
-        // $items = self::get_data( $nodes );
+        $items = self::get_data( $nodes );
 
-        $nodes = self::get_titles_auto();
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'get-1',
 
-        $items = self::get_titles_data( $nodes );
+            'nodes' => $nodes,
+
+            'items' => $items,
+        ] );
+
+        if ( empty( $items ) )
+        {
+            $nodes = self::get_titles_auto();
+
+            $items = self::get_titles_data( $nodes );
+        }
+
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'get-2',
+
+            'nodes' => $nodes,
+
+            'items' => $items,
+        ] );
 
         return [
             'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
