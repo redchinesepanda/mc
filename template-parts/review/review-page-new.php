@@ -5,10 +5,10 @@
 	<div class="legal-review-page">
 		<div class="legal-review-page-main">
 			<!-- <div class="legal-section-group">
-				<?php echo ReviewAbout::render_author_mini(); ?>
+				<?php echo ReviewGroup::render(); ?>
 			</div> -->
 			<div class="legal-section-author-mini">
-				<?php echo ReviewGroup::render(); ?>
+			<?php echo ReviewAbout::render_author_mini(); ?>
 			</div>
 			<div class="legal-section-anchors">
 				<?php echo ReviewAnchors::render_section(); ?>
