@@ -26,6 +26,9 @@
                 <?php foreach ( $args[ 'afillate' ][ 'stats' ] as $stats_item ) : ?>
                     <div class="bonus-stats-items">
                         <span class="stats-item-label"><?php echo $stats_item[ 'label' ]; ?></span>
+                        <?php if ( ! empty( $stats_item[ 'tooltip' ] ) ) : ?>
+                            <span class="stats-item-value" data-tooltip="<?php echo $stats_item[ 'value' ]; ?>"></span>
+                        <?php endif; ?>
                         <span class="stats-item-value"><?php echo $stats_item[ 'value' ]; ?></span>
                     </div>
                 <?php endforeach; ?>
