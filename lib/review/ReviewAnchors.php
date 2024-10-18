@@ -182,6 +182,8 @@ class ReviewAnchors
             'set_title_id_auto' => $set_title_id_auto,
 
             'set_title_id_manual' => $set_title_id_manual,
+
+            'set_title_id_manual-or-set_title_id_manual' => ( $set_title_id_manual || $set_title_id_manual ),
         ] );
 
         if ( $set_title_id_manual || $set_title_id_manual )
