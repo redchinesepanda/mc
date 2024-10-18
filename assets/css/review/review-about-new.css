@@ -255,6 +255,10 @@
         max-width: var( --base-width-desktop );
     }
 
+    .review-about:not(.legal-mode-mini) {
+        width: calc( 100% / 3 * 2 - 24px ); 
+    }
+
     .review-about:not( .legal-mode-mini ) .about-logo {
         /* width: 100px;
         height: 100px; */
