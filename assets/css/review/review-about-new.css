@@ -13,7 +13,7 @@
     /* Position */
 
     .review-about,
-    .review-about-wrapper .review-about-info {
+    .legal-section-author-mini .review-about-info {
         padding-right: 1rem;
         padding-left: 1rem;
     }
@@ -182,7 +182,7 @@
     /* Position */
 
 	.review-about,
-    .review-about-wrapper .review-about-info {
+    .legal-section-author-mini .review-about-info {
 		padding-left: 2rem;
     	padding-right: 2rem;
 	}
@@ -258,7 +258,7 @@
     }
 
     .review-about:not(.legal-mode-mini),
-    .review-about-wrapper .review-about-info {
+    .legal-section-author-mini .review-about-info {
         width: calc( 100% / 3 * 2 - 24px ); 
     }
 
@@ -445,13 +445,13 @@
 	pointer-events: none;
 }
 
-.review-about-wrapper .review-about-info {
+.legal-section-author-mini .review-about-info {
     display: flex;
     column-gap: 0.75rem;
 }
 
-.review-about-wrapper .info-author-name,
-.review-about-wrapper .info-author-href {
+.legal-section-author-mini .info-author-name,
+.legal-section-author-mini .info-author-href {
     display: block;
 }
 
@@ -521,7 +521,7 @@
     height: 48px;
 }
 
-.review-about-wrapper .info-author-file {
+.legal-section-author-mini .info-author-file {
     width: 1.5rem;
     height: 1.5rem;
     box-sizing: border-box;
@@ -629,7 +629,7 @@
     padding-left: 64px;
 }
 
-.review-about-wrapper .review-about-info {
+.legal-section-author-mini .review-about-info {
     margin-top: var( --Spacing-09 );
     margin-bottom: var( --Spacing-06 );
 }
@@ -757,7 +757,7 @@
     background-color: var( --Primitives-purple-20 );
 }
 
-.review-about-wrapper .info-author-file {
+.legal-section-author-mini .info-author-file {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -794,7 +794,7 @@
 .review-about .about-achievement .achievement-bonus-link,
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
-.review-about-wrapper .review-about-info {
+.legal-section-author-mini .review-about-info {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -938,22 +938,22 @@
     opacity: 0.65;
 }
 
-.review-about-wrapper .info-author-href {
+.legal-section-author-mini .info-author-href {
     text-decoration: none;
 }
 
-.review-about-wrapper .info-author-name {
+.legal-section-author-mini .info-author-name {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.25rem;
 }
 
-.review-about-wrapper .info-author-name:hover {
+.legal-section-author-mini .info-author-name:hover {
     text-shadow: 0 0 0.35px var( --Base-base-09 );
     transition: 0.4s;
 }
 
-.review-about-wrapper .about-info-date {
+.legal-section-author-mini .about-info-date {
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.0625rem;
