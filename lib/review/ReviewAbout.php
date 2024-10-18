@@ -175,27 +175,27 @@ class ReviewAbout
         'font' => 'about-font',
     ];
 
-    // const BONUS_EXCEPTION = [
-    //     'dk',
+    const BONUS_EXCEPTION = [
+        'dk',
 
-    //     'es',
+        'es',
 
-    //     'ie',
+        'ie',
 
-    //     'mx',
+        'mx',
 
-    //     'pt',
+        'pt',
 
-    //     'se',
+        'se',
 
-    //     'br',
-    // ];
+        'br',
+    ];
 
     public static function check_bonus_exception()
     {
-        // return in_array( WPMLMain::current_language(), self::BONUS_EXCEPTION );
+        return in_array( WPMLMain::current_language(), self::BONUS_EXCEPTION );
 
-        return true;
+        // return true;
     }
 
     public static function get_achievement( $id )
