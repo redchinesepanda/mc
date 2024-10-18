@@ -12,9 +12,10 @@
 
     /* Position */
 
-    .review-about {
-        padding-right: 15px;
-        padding-left: 15px;
+    .review-about,
+    .review-about-wrapper .review-about-info {
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 } 
 
@@ -140,8 +141,8 @@
     }
 
     .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
-        margin-top: 32px;
-        margin-bottom:32px;
+        margin-top: 2rem;
+        margin-bottom:2rem;
     }
 
     /* Background */
@@ -180,9 +181,10 @@
 
     /* Position */
 
-	.review-about {
-		padding-left: 32px;
-    	padding-right: 32px;
+	.review-about,
+    .review-about-wrapper .review-about-info {
+		padding-left: 2rem;
+    	padding-right: 2rem;
 	}
 }
 
