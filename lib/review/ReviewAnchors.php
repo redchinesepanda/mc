@@ -426,28 +426,12 @@ class ReviewAnchors
 
         $items = self::get_data( $nodes );
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get-1',
-
-            'nodes' => $nodes,
-
-            'items' => $items,
-        ] );
-
         if ( empty( $items ) )
         {
             $nodes = self::get_titles_auto();
 
             $items = self::get_titles_data( $nodes );
         }
-
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get-2',
-
-            'nodes' => $nodes,
-
-            'items' => $items,
-        ] );
 
         return [
             'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
