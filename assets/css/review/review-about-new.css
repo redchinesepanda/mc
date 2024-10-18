@@ -493,16 +493,15 @@
 }
 
 .review-about-wrapper.legal-mode-mini {
-    /* padding-bottom: 24px; */
-    margin-bottom: var( --Spacing-07 );
+    padding-bottom: var( --Spacing-07 );
 }
 
 .review-about.legal-mode-mini {
-    padding: 24px;
+    padding: var( --Spacing-07 );
 }
 
 .review-about .about-achievement {
-    padding-bottom: 24px;
+    margin-bottom: var( --Spacing-07 );
 }
 
 .review-about .achievement-item {
