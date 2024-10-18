@@ -735,7 +735,8 @@
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
 .about-right .legal-cut-control,
-.about-right .review-bonus-head {
+.about-right .review-bonus-head,
+.review-about-wrapper .info-author-name {
     color: var( --Base-base-09 );
 }
 
@@ -751,7 +752,8 @@
 .review-about .legal-afillate-description,
 .review-about .about-achievement .achievement-bonus-link,
 .about-right .legal-cut-control,
-.about-right .review-bonus-head {
+.about-right .review-bonus-head,
+.review-about-wrapper .review-about-info {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
