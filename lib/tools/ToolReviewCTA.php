@@ -33,9 +33,9 @@ class ToolReviewCTA
 
         'margin' => 'review-cta-margin',
 
-        'license-main' => 'review-cta-margin',
+        'license-main' => 'review-cta-license-main',
 
-        'license-in' => 'review-cta-margin',
+        'license-in' => 'review-cta-license-in',
 	];
 
 	const POST_TYPE = [
