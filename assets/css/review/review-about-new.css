@@ -161,10 +161,10 @@
 
     /* Typography */
 
-    .review-about .about-center h1 {
+  /*   .review-about .about-center h1 {
         font-size: 22px;
         line-height: 26px;
-    }
+    } */
 
     .review-about .about-rating {
         font-size: 16px;
@@ -283,10 +283,10 @@
 
     /* Typography */
 
-    .review-about .about-center h1 {
-        font-size: 40px;
-        line-height: 48px;
-    }
+   /*  .review-about .about-center h1 {
+        font-size: 2rem;
+        line-height: 2.375rem;
+    } */
 
     .review-about .about-rating {
         font-size: 20px;
@@ -763,7 +763,9 @@
 }
 
 .review-about .about-center h1 {
+    font-size: 2rem;
     font-weight: 700;
+    line-height: 2.375rem;
 }
 
 .about-right .review-bonus-head {
