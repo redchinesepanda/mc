@@ -387,7 +387,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: center;
-    row-gap: 8px;
+    row-gap: 0.5rem;
 }
 
 .review-about .about-rating {
