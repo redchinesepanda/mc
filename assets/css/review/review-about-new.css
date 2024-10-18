@@ -921,3 +921,20 @@
 .review-about-wrapper .info-author-href {
     text-decoration: none;
 }
+
+.review-about-wrapper .info-author-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.review-about-wrapper .info-author-name:hover {
+    font-weight: 600;
+}
+
+.review-about-wrapper .about-info-date {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.0625rem;
+    color: var( --Base-base-05 );
+}
