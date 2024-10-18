@@ -448,6 +448,11 @@
     column-gap: 0.75rem;
 }
 
+.review-about-wrapper .info-author-name,
+.review-about-wrapper .info-author-href {
+    display: block;
+}
+
 /* Width and Height */
 
 .review-about .about-logo {
