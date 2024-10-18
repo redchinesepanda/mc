@@ -444,7 +444,7 @@
 
 .review-about-wrapper .info-author-href {
     display: flex;
-    align-items: center;
+    column-gap: 0.75rem;
 }
 
 /* Width and Height */
@@ -910,4 +910,8 @@
 .review-about .footer-logo .logo-item {
     line-height: 0;
     opacity: 0.65;
+}
+
+.review-about-wrapper .info-author-href {
+    text-decoration: none;
 }
