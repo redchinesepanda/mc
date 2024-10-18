@@ -300,7 +300,7 @@ class ToolReviewCTA
 
 		if ( ! empty( $license ) )
 		{
-			$result[ 'license' ] => [
+			$result[ 'license' ] = [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
 
 				'value' => $license,
@@ -309,7 +309,7 @@ class ToolReviewCTA
 
 		if ( ! empty( $license_in ) )
 		{
-			$result[ 'license-in' ] => [
+			$result[ 'license-in' ] = [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license-in' ] ),
 
 				'value' => get_field( self::CTA_ACF_FIELDS[ 'license-in' ], $post_id ),
