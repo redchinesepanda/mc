@@ -244,10 +244,10 @@ class ToolReviewCTA
 	{
 		if ( ! empty( $license ) || ! empty( $license_in ) )
 		{
-			return ToolLoco::translate( ReviewMain::TEXT[ 'Yes' ] );
+			return ToolLoco::translate( ReviewMain::TEXT[ 'yes' ] );
 		}
 
-		return ToolLoco::translate( ReviewMain::TEXT[ 'No' ] );
+		return ToolLoco::translate( ReviewMain::TEXT[ 'no' ] );
 	}
 
 	public static function get_stats_fields( $post_id = false )
