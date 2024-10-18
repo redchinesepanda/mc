@@ -254,6 +254,13 @@ class ToolReviewCTA
 
 	public static function get_stats_fields( $post_id = false )
 	{
+		$regulator = get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id );
+
+		if ( empty( $regulator ) )
+		{
+			return [];
+		}
+
 		$license = get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id );
 
 		$license_in = get_field( self::CTA_ACF_FIELDS[ 'license-in' ], $post_id );
