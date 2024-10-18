@@ -155,7 +155,7 @@ class ReviewAnchors
 
 		$set_title_id_manual = self::set_header_id( $dom );
 
-        if ( ! $set_title_id_manual )
+        if ( ! ( bool ) $set_title_id_manual )
         {
 		    $set_title_id_auto = self::set_titles_id_auto( $dom );
         }
