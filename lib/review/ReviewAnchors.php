@@ -183,7 +183,7 @@ class ReviewAnchors
 
             'set_title_id_manual' => $set_title_id_manual,
 
-            'set_title_id_manual-or-set_title_id_manual' => ( $set_title_id_manual || $set_title_id_manual ),
+            'set_title_id_manual-or-set_title_id_manual' => ( bool ) ( $set_title_id_manual || $set_title_id_manual ),
         ] );
 
         if ( $set_title_id_manual || $set_title_id_manual )
