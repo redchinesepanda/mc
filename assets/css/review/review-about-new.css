@@ -623,7 +623,7 @@
 } */
 
 .review-about:not(.legal-mode-mini) {
-    background-color: var( --Base-base-02 );
+    /* background-color: var( --Base-base-02 ); */
     border-bottom: 1px solid var( --Base-base-03 ); 
 }
 
