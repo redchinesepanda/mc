@@ -265,7 +265,7 @@
 
     /* .review-about {
         max-width: var( --base-width-desktop );
-    } */ 
+    } */
 
     .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( 100% / 3 * 2 - 24px );
