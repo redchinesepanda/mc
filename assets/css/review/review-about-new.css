@@ -442,6 +442,11 @@
 	pointer-events: none;
 }
 
+.review-about-wrapper .info-author-href {
+    display: flex;
+    align-items: center;
+}
+
 /* Width and Height */
 
 .review-about .about-logo {
@@ -501,6 +506,12 @@
 
 .review-about .footer-logo .logo-item[ href='#' ] img {
     height: 48px;
+}
+
+.review-about-wrapper .info-author-file {
+    width: 1.5rem;
+    height: 1.5rem;
+    box-sizing: border-box;
 }
 
 /* Position */
@@ -722,6 +733,14 @@
     /* background: var( --Primitives-purple-50 ); */
     border-radius: 1.125rem;
     background-color: var( --Primitives-purple-20 );
+}
+
+.review-about-wrapper .info-author-file {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 50%;
+    border: 1px solid var( --Base-base-09 );
 }
 
 /* Typography */
