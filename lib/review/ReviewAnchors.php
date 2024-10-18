@@ -173,6 +173,14 @@ class ReviewAnchors
 		    return $dom->saveHTML( $dom );
         }
 
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'modify_content-2',
+
+            'set_title_id_auto' => $set_title_id_auto,
+
+            'set_title_id_manual' => $set_title_id_manual,
+        ] );
+
         return $content;
 	}
 
