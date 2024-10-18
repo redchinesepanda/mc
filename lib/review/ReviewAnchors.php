@@ -151,14 +151,21 @@ class ReviewAnchors
 	{
 		$dom = LegalDOM::get_dom( $content ); 
 
+        $set_title_id_auto = false;
+
 		$set_title_id_manual = self::set_header_id( $dom );
 
         if ( ! $set_title_id_manual )
         {
-		    self::set_titles_id_auto( $dom );
+		    $set_title_id_auto = self::set_titles_id_auto( $dom );
         }
 
-		return $dom->saveHTML( $dom );
+        if ( $set_title_id_manual || $set_title_id_manual )
+        {
+		    return $dom->saveHTML( $dom );
+        }
+
+        return $content;
 	}
 
     public static function set_header_id( $dom )
