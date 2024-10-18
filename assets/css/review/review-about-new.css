@@ -104,8 +104,8 @@
     /* Position */
 
     .review-about {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: var( --Spacing-06 );
+        padding-bottom: var( --Spacing-06 );
     }
 
     .review-about .legal-afillate-description {
