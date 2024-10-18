@@ -64,7 +64,7 @@
                     </div>
                     <div class="about-info-checked-by">
                         <span class="info-checked-by-label"><?php echo $args[ 'info' ][ 'checked-by' ][ 'label' ]; ?></span>
-                        <span class="info-checked-by-value"><?php echo $args[ 'info' ][ 'checked-by' ][ 'value' ][ 'name' ]; ?></span>
+                        <!-- <span class="info-checked-by-value"><?php echo $args[ 'info' ][ 'checked-by' ][ 'value' ][ 'name' ]; ?></span> -->
                     </div>
                     <div class="about-info-date"><?php echo $args[ 'info' ][ 'date' ][ 'label' ]; ?>: <?php echo $args[ 'info' ][ 'date' ][ 'value' ]; ?></div>
                 </div>
