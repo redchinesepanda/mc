@@ -442,10 +442,10 @@
 	pointer-events: none;
 }
 
-.review-about-wrapper .info-author-href {
+/* .review-about-wrapper .info-author-href {
     display: flex;
     column-gap: 0.75rem;
-}
+} */
 
 /* Width and Height */
 
