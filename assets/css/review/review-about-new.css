@@ -471,9 +471,13 @@
     width: fit-content;
 }
 
+.legal-review-page-sidebar .about-right,
+.legal-review-page-sidebar .about-right .review-bonus-data {
+    box-sizing: border-box;
+}
+
 .legal-review-page-sidebar .about-right .review-bonus-data {
     width: 100%;
-    box-sizing: border-box;
 }
 
 .about-right .review-bonus-head,
@@ -490,10 +494,9 @@
     min-height: calc(56px - 20px);
 }
 
-.legal-review-page-sidebar .about-right .legal-afillate {
-    /* width: 100%; */
-    width: auto;
-}
+/* .legal-review-page-sidebar .about-right .legal-afillate {
+    width: 100%;
+} */
 
 .review-about .about-achievement {
     width: 100%;
