@@ -247,6 +247,10 @@
     
     /* Width and Height */
 
+    .review-about-wrapper {
+        max-width: var( --base-width-desktop );
+    }
+
     .review-about:not( .legal-mode-mini ) .about-logo {
         /* width: 100px;
         height: 100px; */
@@ -255,9 +259,9 @@
         box-sizing: border-box;
     }
 
-    .review-about {
+    /* .review-about {
         max-width: var( --base-width-desktop );
-    }
+    } */
 
     .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( 100% / 3 * 2 - 24px );
