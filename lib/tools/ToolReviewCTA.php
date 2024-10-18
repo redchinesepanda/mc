@@ -239,10 +239,12 @@ class ToolReviewCTA
 	public static function get_stats_fields( $post_id = false )
 	{
 		return [
-			'license' => [
+			'license-general' => [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
 
 				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+
+				'tooltip' => ToolLoco::translate( ReviewMain::TEXT[ 'directorate' ] ),
 			],
 
 			'regulator' => [
@@ -273,6 +275,18 @@ class ToolReviewCTA
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'margin' ] ),
 
 				'value' => get_field( self::CTA_ACF_FIELDS[ 'margin' ], $post_id ),
+			],
+
+			'license-main' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+			],
+
+			'license-extra' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
+
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
 			],
 		];
 	}
