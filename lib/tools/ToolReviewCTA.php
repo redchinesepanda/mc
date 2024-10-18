@@ -283,10 +283,10 @@ class ToolReviewCTA
 				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
 			],
 
-			'license-extra' => [
-				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
+			'license-in' => [
+				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license-in' ] ),
 
-				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'license-in' ], $post_id ),
 			],
 		];
 	}
