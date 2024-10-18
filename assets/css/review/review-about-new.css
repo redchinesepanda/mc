@@ -521,6 +521,10 @@
     height: 48px;
 }
 
+.about-right .legal-cut-control {
+    width: fit-content;
+}
+
 .legal-section-author-mini .info-author-file {
     width: 1.5rem;
     height: 1.5rem;
