@@ -450,6 +450,13 @@ class ReviewAnchors
 
     public static function set_titles_id_auto( $dom )
 	{
+        $nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length > 0 )
+		{
+			return false;
+		}
+
 		$nodes = self::get_nodes_titles_auto( $dom );
 
 		if ( $nodes->length == 0 )
