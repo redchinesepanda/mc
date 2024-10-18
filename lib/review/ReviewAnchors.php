@@ -171,6 +171,8 @@ class ReviewAnchors
                 'ReviewAnchors' => 'modify_content-2',
     
                 'set_title_id_auto' => $set_title_id_auto,
+
+                'set_title_id_auto-gettype' => gettype( $set_title_id_auto ),
             ] );
         }
 
