@@ -540,6 +540,8 @@ class ReviewAbout
         'review-about-bonus' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about-bonus.php',
 
         'review-button' => LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
+
+        'review-author-mini' => LegalMain::LEGAL_PATH . '/template-parts/review/review-author-mini.php',
     ];
 
     const SHPRTCODE = [
@@ -589,6 +591,21 @@ class ReviewAbout
         if ( TemplateMain::check_new() )
         {
             return LegalComponents::render_main( self::TEMPLATE[ 'review-about-bonus' ], self::get( $atts ) );
+        }
+
+        return '';
+    }
+
+    public static function render_author_mini( $atts = [] )
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'review-author-mini' ], self::get( $atts ) );
         }
 
         return '';

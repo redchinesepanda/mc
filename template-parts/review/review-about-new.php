@@ -58,20 +58,20 @@
             
             </div>
         </div>
-        <div class="review-about-info">
+        <!-- <div class="review-about-info">
             <a href="<?php echo $args[ 'info' ][ 'author' ][ 'href' ]; ?>" class="info-author-href">
                 <img class="info-author-file" src="<?php echo $args[ 'info' ][ 'author' ][ 'file' ]; ?>" with="24" height="24" loading="lazy">
             </a>
-            <!-- <div class="about-info-checked-by">
+            <div class="about-info-checked-by">
                 <span class="info-checked-by-label"><?php echo $args[ 'info' ][ 'checked-by' ][ 'label' ]; ?></span>
                 <span class="info-checked-by-value"><?php echo $args[ 'info' ][ 'checked-by' ][ 'value' ][ 'name' ]; ?></span>
-            </div> -->
+            </div>
             <div class="about-info-data">
                 <a href="<?php echo $args[ 'info' ][ 'author' ][ 'href' ]; ?>" class="info-author-href">
                     <span  class="info-author-name"><?php echo $args[ 'info' ][ 'author' ][ 'name' ]; ?></span>
                 </a>
                 <div class="about-info-date"><?php echo $args[ 'info' ][ 'date' ][ 'label' ]; ?>: <?php echo $args[ 'info' ][ 'date' ][ 'value' ]; ?></div>
             </div>
-        </div>
+        </div> -->
     </div>
 <?php endif; ?>
