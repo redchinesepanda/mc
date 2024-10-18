@@ -159,6 +159,8 @@ class ReviewAnchors
             'ReviewAnchors' => 'modify_content-1',
 
             'set_title_id_manual' => $set_title_id_manual,
+
+            'set_title_id_manual-gettype' => gettype( $set_title_id_manual ),
         ] );
 
         if ( empty( $set_title_id_manual ) )
