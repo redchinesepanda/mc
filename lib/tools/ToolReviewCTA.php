@@ -32,6 +32,10 @@ class ToolReviewCTA
         'min-deposit' => 'review-cta-min-deposit',
 
         'margin' => 'review-cta-margin',
+
+        'license-main' => 'review-cta-margin',
+
+        'license-in' => 'review-cta-margin',
 	];
 
 	const POST_TYPE = [
@@ -239,7 +243,7 @@ class ToolReviewCTA
 	public static function get_stats_fields( $post_id = false )
 	{
 		return [
-			'license-general' => [
+			'license' => [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
 
 				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
@@ -280,7 +284,7 @@ class ToolReviewCTA
 			'license-main' => [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'license' ] ),
 
-				'value' => get_field( self::CTA_ACF_FIELDS[ 'license' ], $post_id ),
+				'value' => get_field( self::CTA_ACF_FIELDS[ 'license-main' ], $post_id ),
 			],
 
 			'license-in' => [
