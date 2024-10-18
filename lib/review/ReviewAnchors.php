@@ -386,9 +386,9 @@ class ReviewAnchors
             }
 
             $items[] = [
-                'href' => '#' . $node->getAttribute( 'id' ),
-
                 'label' => $label,
+
+                'href' => '#' . $node->getAttribute( 'id' ),
             ];
         }
 
