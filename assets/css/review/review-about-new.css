@@ -142,7 +142,7 @@
 
     .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
         margin-top: 2rem;
-        margin-bottom:2rem;
+        /* margin-bottom:2rem; */
     }
 
     /* Background */
