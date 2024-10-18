@@ -55,7 +55,7 @@
                         <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
                     </div>
                 <?php endif; ?>
-                
+            
             </div>
         </div>
     </div>
