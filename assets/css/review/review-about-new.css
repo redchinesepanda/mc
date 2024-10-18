@@ -412,7 +412,7 @@
 .review-about .about-rating {
     display: flex;
     align-items: center;
-    column-gap: 6px;
+    column-gap: 0.25rem;
 }
 
 .legal-afillate {
@@ -508,6 +508,11 @@
 .review-about.legal-mode-mini .about-logo {
     width: 46px;
     height: 46px;
+}
+
+.review-about .about-rating::before {
+    width: var( --Spacing-07 );
+    height: var( --Spacing-07 );
 }
 
 .review-about .footer-logo .logo-item[ href='#' ] img {
@@ -739,6 +744,10 @@
     background-size: auto;
 }
 
+.review-about .about-rating::before {
+    background-image: url( '../../img/review/about/star-profile.svg' );
+}
+
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
     /* border-radius: 32px; */
     /* background: var( --Primitives-purple-50 ); */
@@ -819,10 +828,14 @@
     font-weight: 600;
 }
 
-.review-about .about-rating::before {
+/* .review-about .about-rating::before {
     content: '\F10F';
     line-height: 24px;
     font-size: 24px;
+} */
+
+.review-about .about-rating::before {
+    content: '';
 }
 
 .review-about .about-center h1 {
