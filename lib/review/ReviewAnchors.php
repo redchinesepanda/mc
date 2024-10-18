@@ -168,20 +168,20 @@ class ReviewAnchors
             'set_title_id_manual' => $set_title_id_manual,
         ] );
 
-        if ( ( bool ) $set_title_id_manual || ( bool ) $set_title_id_manual )
-        {
+        // if ( ( bool ) $set_title_id_manual || ( bool ) $set_title_id_manual )
+        // {
 		    return $dom->saveHTML( $dom );
-        }
+        // }
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'modify_content-2',
+        // LegalDebug::debug( [
+        //     'ReviewAnchors' => 'modify_content-2',
 
-            'set_title_id_auto' => $set_title_id_auto,
+        //     'set_title_id_auto' => $set_title_id_auto,
 
-            'set_title_id_manual' => $set_title_id_manual,
-        ] );
+        //     'set_title_id_manual' => $set_title_id_manual,
+        // ] );
 
-        return $content;
+        // return $content;
 	}
 
     public static function set_header_id( $dom )
