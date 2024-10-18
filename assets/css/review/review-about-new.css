@@ -255,7 +255,8 @@
         max-width: var( --base-width-desktop );
     }
 
-    .review-about:not(.legal-mode-mini) {
+    .review-about:not(.legal-mode-mini),
+    .review-about-wrapper .review-about-info {
         width: calc( 100% / 3 * 2 - 24px ); 
     }
 
@@ -442,10 +443,10 @@
 	pointer-events: none;
 }
 
-/* .review-about-wrapper .info-author-href {
+.review-about-wrapper .review-about-info {
     display: flex;
     column-gap: 0.75rem;
-} */
+}
 
 /* Width and Height */
 
