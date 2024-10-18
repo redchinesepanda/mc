@@ -163,7 +163,7 @@ class ReviewAnchors
             'set_title_id_manual-gettype' => gettype( $set_title_id_manual ),
         ] );
 
-        if ( empty( $set_title_id_manual ) )
+        if ( ! $set_title_id_manual )
         {
 		    $set_title_id_auto = ( bool ) self::set_titles_id_auto( $dom );
             
