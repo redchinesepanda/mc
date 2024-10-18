@@ -18,6 +18,8 @@ class ToolReviewCTA
 		'min-deposit' => 6,
 		
 		'margin' => 7,
+
+		'license-in' => 8,
 	];
 
 	const CTA_ACF_FIELDS = [
@@ -32,8 +34,6 @@ class ToolReviewCTA
         'min-deposit' => 'review-cta-min-deposit',
 
         'margin' => 'review-cta-margin',
-
-        'license-main' => 'review-cta-license-main',
 
         'license-in' => 'review-cta-license-in',
 	];
@@ -214,6 +214,8 @@ class ToolReviewCTA
 		update_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $cta_item[ self::CTA_CSV_FIELDS[ 'min-deposit' ] ], $post_id );
 
 		update_field( self::CTA_ACF_FIELDS[ 'margin' ], $cta_item[ self::CTA_CSV_FIELDS[ 'margin' ] ], $post_id );
+
+		update_field( self::CTA_ACF_FIELDS[ 'license-in' ], $cta_item[ self::CTA_CSV_FIELDS[ 'license-in' ] ], $post_id );
 	}
 
 	public static function modify_fields( $post_id, $post )

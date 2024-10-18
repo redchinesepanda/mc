@@ -27,7 +27,7 @@
                     <div class="bonus-stats-items">
                         <span class="stats-item-label"><?php echo $stats_item[ 'label' ]; ?></span>
                         <?php if ( ! empty( $stats_item[ 'tooltip' ] ) ) : ?>
-                            <span class="stats-item-value" data-tooltip="<?php echo $stats_item[ 'value' ]; ?>"></span>
+                            <span class="stats-item-value" data-tooltip="<?php echo $stats_item[ 'directorate' ]; ?>"></span>
                         <?php endif; ?>
                         <span class="stats-item-value"><?php echo $stats_item[ 'value' ]; ?></span>
                     </div>
