@@ -160,6 +160,14 @@ class ReviewAnchors
 		    $set_title_id_auto = self::set_titles_id_auto( $dom );
         }
 
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'modify_content-1',
+
+            'set_title_id_auto' => $set_title_id_auto,
+
+            'set_title_id_manual' => $set_title_id_manual,
+        ] );
+
         if ( $set_title_id_manual || $set_title_id_manual )
         {
 		    return $dom->saveHTML( $dom );
