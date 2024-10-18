@@ -947,7 +947,8 @@
 }
 
 .review-about-wrapper .info-author-name:hover {
-    font-weight: 600;
+    text-shadow: 0 0 0.35px var( --Base-base-09 );
+    transition: 0.4s;
 }
 
 .review-about-wrapper .about-info-date {
