@@ -4,9 +4,9 @@
 <section class="legal-section-content">
 	<div class="legal-review-page">
 		<div class="legal-review-page-main">
-			<div class="legal-section-group">
+			<!-- <div class="legal-section-group">
 				<?php echo ReviewGroup::render(); ?>
-			</div>
+			</div> -->
 			<div class="legal-section-anchors">
 				<?php echo ReviewAnchors::render_section(); ?>
 			</div>
