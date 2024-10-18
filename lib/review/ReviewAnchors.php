@@ -154,14 +154,26 @@ class ReviewAnchors
         $set_title_id_auto = false;
 
 		$set_title_id_manual = ( bool ) self::set_header_id( $dom );
+        
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'modify_content-1',
+
+            'set_title_id_manual' => $set_title_id_manual,
+        ] );
 
         if ( ! $set_title_id_manual )
         {
 		    $set_title_id_auto = ( bool ) self::set_titles_id_auto( $dom );
+            
+            LegalDebug::debug( [
+                'ReviewAnchors' => 'modify_content-2',
+    
+                'set_title_id_auto' => $set_title_id_auto,
+            ] );
         }
 
         LegalDebug::debug( [
-            'ReviewAnchors' => 'modify_content-1',
+            'ReviewAnchors' => 'modify_content-3',
 
             'set_title_id_auto' => $set_title_id_auto,
 
@@ -174,7 +186,7 @@ class ReviewAnchors
         }
 
         LegalDebug::debug( [
-            'ReviewAnchors' => 'modify_content-2',
+            'ReviewAnchors' => 'modify_content-4',
 
             'set_title_id_auto' => $set_title_id_auto,
 
