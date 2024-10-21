@@ -365,11 +365,13 @@
     column-gap: 8px;
 }
 
-.review-about .achievement-tooltip-background.legal-active {
+.review-about .achievement-tooltip-background.legal-active,
+.review-about .about-rating .legal-tooltip.legal-active {
     display: flex;
 }
 
-.review-about .achievement-tooltip-background:not( .legal-active ) {
+.review-about .achievement-tooltip-background:not( .legal-active ),
+.review-about .about-rating .legal-tooltip:not( .legal-active ) {
     display: none;
 }
 
@@ -618,7 +620,7 @@
 
 .review-about .about-rating .legal-tooltip {
     position: absolute;
-    right: 0px;
+    left: 0px;
     z-index: 1;
     padding: 16px;
 }
