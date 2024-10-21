@@ -618,7 +618,7 @@
     margin-left: 0.5rem;
 }
 
-.review-about .about-rating .legal-tooltip {
+.review-about .about-rating .legal-tooltip:not( .legal-active ) {
     position: absolute;
     left: 0px;
     z-index: 1;
