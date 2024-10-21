@@ -983,11 +983,11 @@
     line-height: 1.25rem;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( n+7 ) {
     background-color: rebeccapurple;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( n+7 ) {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) {
     border-top: 1px solid var( --Base-base-03 );
 }
 
