@@ -549,8 +549,8 @@
     padding: 24px 28px;
 } */
 
-.review-about .about-right .review-bonus-data,
-.legal-review-page-sidebar .about-right .review-bonus-data {
+/* .review-about .about-right:not( .sticky-bonus ) .review-bonus-data, */
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-data {
     padding: 1.25rem var( --Spacing-07 );
 }
 
