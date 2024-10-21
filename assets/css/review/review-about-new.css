@@ -672,7 +672,7 @@
 
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     position: absolute;
-    left: calc( 0rem - 11.75rem );
+    left: calc( 0rem - 11.75rem - 0.25rem );
     padding: 1rem;
 }
 
