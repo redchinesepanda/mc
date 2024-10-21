@@ -604,12 +604,23 @@
     margin-bottom: 0px;
 }
 
+.review-about .about-rating {
+    position: relative;
+}
+
 .review-about .about-rating::before {
     margin-right: 0.25rem;
 }
 
 .review-about .about-rating::after {
     margin-left: 0.5rem;
+}
+
+.review-about .about-rating .legal-tooltip {
+    position: absolute;
+    right: 0px;
+    z-index: 1;
+    padding: 16px;
 }
 
 .about-right .legal-cut-control {
@@ -767,6 +778,12 @@
 
 .review-about .about-rating::before {
     background-image: url( '../../img/review/about/star-profile.svg' );
+}
+
+.review-about .about-rating .legal-tooltip {
+    border-radius: 12px;
+    border: 1px solid var( --Base-base-09 );
+    background: var( --Base-base-01 );
 }
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
