@@ -203,7 +203,6 @@ class LegalDOM
 		return null;
 	}
 
-<<<<<<< HEAD
 	// public static function addClass( $node, $class )
 	// {
 	// 	$attribute_classes = $node->getAttribute( 'class' );
@@ -235,8 +234,6 @@ class LegalDOM
 		return null;
 	}
 
-=======
->>>>>>> fc2c8964ccd76d19dde8ce6d0253786df8660ec4
 	public static function remove_child( $dom, $node )
 	{
 		try
