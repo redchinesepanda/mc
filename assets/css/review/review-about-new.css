@@ -859,7 +859,7 @@
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
 .legal-section-author-mini .info-author-name,
-.legal-review-page-sidebar .stats-item-value:not( :nth-child( n+7 ) ) {
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-value {
     color: var( --Base-base-09 );
 }
 
