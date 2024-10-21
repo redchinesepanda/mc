@@ -546,7 +546,7 @@
     height: 28px;
 }
 
-.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     width: 9.75rem;
 }
 
@@ -669,7 +669,7 @@
     position: relative;
 }
 
-.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     position: absolute;
     left: 0px;
     padding: 16px;
@@ -842,7 +842,7 @@
     background: var( --Base-base-01 );
 } */
 
-.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     border-radius: 12px;
     border: 1px solid var( --Base-base-09 );
     background: var( --Base-base-01 );
