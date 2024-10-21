@@ -402,6 +402,12 @@
     display: none;
 }
 
+.legal-review-page-sidebar .about-right:not(.sticky-bonus) .review-bonus-stats {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
 .legal-review-page-sidebar .bonus-stats-items {
     display: flex;
     justify-content: space-between;
@@ -518,13 +524,15 @@
     width: 100%;
 } */
 
-.review-about .about-achievement {
+.review-about .about-achievement,
+.review-about .about-rating,
+.legal-review-page-sidebar .bonus-stats-items {
     width: 100%;
 }
 
-.review-about .about-rating {
+/* .review-about .about-rating {
     width: 100%;
-}
+} */
 
 .review-about .achievement-bonus-link {
     height: 28px;
