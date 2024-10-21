@@ -653,10 +653,20 @@
     margin-left: 0.5rem;
 } */
 
-.review-about .about-rating .legal-tooltip.legal-active {
+/* .review-about .about-rating .legal-tooltip.legal-active {
     position: absolute;
     left: 0px;
     z-index: 1;
+    padding: 16px;
+} */
+
+.legal-review-page-sidebar .stats-item-tooltip {
+    position: relative;
+}
+
+.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
+    position: absolute;
+    left: 0px;
     padding: 16px;
 }
 
@@ -821,7 +831,13 @@
     background-image: url( '../../img/review/about/star-profile.svg' );
 }
 
-.review-about .about-rating .legal-tooltip {
+/* .review-about .about-rating .legal-tooltip {
+    border-radius: 12px;
+    border: 1px solid var( --Base-base-09 );
+    background: var( --Base-base-01 );
+} */
+
+.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
     border-radius: 12px;
     border: 1px solid var( --Base-base-09 );
     background: var( --Base-base-01 );
