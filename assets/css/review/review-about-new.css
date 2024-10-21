@@ -402,7 +402,7 @@
     display: none;
 }
 
-.review-about .about-right .bonus-stats-items {
+.legal-review-page-sidebar .bonus-stats-items {
     display: flex;
     justify-content: space-between;
 }
@@ -850,7 +850,7 @@
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
 .legal-section-author-mini .review-about-info,
-.about-right .about-right .review-bonus-stats {
+.legal-review-page-sidebar .review-bonus-stats {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
