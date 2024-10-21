@@ -32,6 +32,10 @@
                         <span class="stats-item-value"><?php echo $stats_item[ 'value' ]; ?></span>
                     </div>
                 <?php endforeach; ?>
+                <div class="bonus-stats-items">
+                    <span class="stats-item-label">License-special</span>
+                    <span class="stats-item-value">43173</span>
+                </div>
             </div>
         <?php endif; ?>
     </div>
