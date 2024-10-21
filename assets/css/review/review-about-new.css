@@ -545,6 +545,10 @@
     height: 28px;
 }
 
+.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
+    width: 11.75rem;
+}
+
 .review-about.legal-mode-mini .about-logo {
     width: 46px;
     height: 46px;
