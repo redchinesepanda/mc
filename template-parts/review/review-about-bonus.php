@@ -27,7 +27,7 @@
                     <div class="bonus-stats-items">
                         <span class="stats-item-label"><?php echo $stats_item[ 'label' ]; ?></span>
                         <?php if ( ! empty( $stats_item[ 'tooltip' ] ) ) : ?>
-                            <span class="stats-item-tooltip legal-active" data-tooltip="<?php echo $stats_item[ 'tooltip' ]; ?>">
+                            <span class="stats-item-tooltip" data-tooltip="<?php echo $stats_item[ 'tooltip' ]; ?>">
                                 <div class="legal-tooltip">
                                     <span class="legal-tooltip-close"></span>
                                     <p class="legal-tooltip-text" data-tooltip-text="<?php echo $stats_item[ 'tooltip' ]; ?>"></p>
