@@ -484,7 +484,8 @@
     box-sizing: border-box;
 }
 
-.legal-review-page-sidebar .about-right .review-bonus-data {
+.legal-review-page-sidebar .about-right .review-bonus-data,
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-stats {
     width: 100%;
 }
 
