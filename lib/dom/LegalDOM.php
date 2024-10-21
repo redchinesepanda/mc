@@ -165,50 +165,6 @@ class LegalDOM
 		return implode( '', $innerHTML );
 	}
 
-	// public static function insertBeforeHTML( $dom, $html, $node )
-	// {
-	// 	$template = new DOMDocument;
-		
-	// 	$template->loadHtml( $html );
-		
-	// 	$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
-	// }
-	
-	public static function insertBeforeHTML( $content, $child )
-	{
-		if ( ! empty( $content ) )
-		{
-			$dom = self::get_dom( $content );
-			
-			if ( $dom->hasChildNodes() )
-			{
-				foreach ( $dom->childNodes as $node )
-				{
-					$node = $child->ownerDocument->importNode( $node, true );
-
-					if ( ! empty( $node ) )
-					{
-						$child->ownerDocument->insertBefore( $node, $child );
-					}
-				}
-			}
-		}
-	}
-
-	public static function getInnerHTML( $node )
-	{
-		$innerHTML = [];
-
-		$child_nodes = $node->childNodes;
-
-		foreach ( $child_nodes as $child_node )
-		{ 
-			$innerHTML[] = $node->ownerDocument->saveHTML( $child_node );
-		}
-
-		return implode( '', $innerHTML );
-	}
-
 	public static function clean( &$node )
     {
         if ( $node->hasChildNodes() )
@@ -247,6 +203,7 @@ class LegalDOM
 		return null;
 	}
 
+<<<<<<< HEAD
 	// public static function addClass( $node, $class )
 	// {
 	// 	$attribute_classes = $node->getAttribute( 'class' );
@@ -278,6 +235,8 @@ class LegalDOM
 		return null;
 	}
 
+=======
+>>>>>>> fc2c8964ccd76d19dde8ce6d0253786df8660ec4
 	public static function remove_child( $dom, $node )
 	{
 		try
