@@ -1000,7 +1000,7 @@
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 1 ) .stats-item-label::before {
-    content: '\F108';
+    content: '\F11C';
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 2 ) .stats-item-label::before {
@@ -1008,15 +1008,15 @@
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 3 ) .stats-item-label::before {
-    content: '\F115';
+    content: '\F11A';
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 4 ) .stats-item-label::before {
-    content: '\F113';
+    content: '\F11B';
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 5 ) .stats-item-label::before {
-    content: '\F108';
+    content: '\F101';
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) .stats-item-label::before {
