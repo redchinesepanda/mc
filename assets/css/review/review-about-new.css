@@ -826,7 +826,9 @@
 }
 
 .review-about .achievement-tooltip-close::before,
-.review-about .about-rating::before {
+.review-about .about-rating::before,
+.about-right .legal-cut-control::after,
+.review-about .about-rating::after {
     font-family: var(--legal-font-icons);
 }
 
@@ -921,7 +923,6 @@
 
 .about-right .legal-cut-control::after {
     content: '\F103';
-    font-family: var(--legal-font-icons);
     font-size: 16px;
     line-height: 16px;
 }
@@ -968,5 +969,12 @@
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.0625rem;
+    color: var( --Base-base-05 );
+}
+
+.review-about .about-rating::after {
+    content: '\F114';
+    font-size: var( --Spacing-06 );
+    line-height: var( --Spacing-06 );
     color: var( --Base-base-05 );
 }
