@@ -35,6 +35,10 @@
                         <h1><?php echo $args[ 'title' ]; ?></h1>
                         <?php if( !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
                             <div class="about-rating"><!-- <?php echo $args[ 'rating' ][ 'label' ]; ?> -  --><?php echo $args[ 'rating' ][ 'value' ]; ?></div>
+                            <div class="compilation-attention legal-tooltip">
+                                <span class="legal-tooltip-close"></span>
+                                <p data-tooltip-text="Avaliamos as casas de apostas utilizando uma matriz abrangente de 9 critérios, que inclui a análise de Tecnologia & Produto, Ofertas & Pagamentos, bem como métricas de Experiência do Utilizador & Suporte. Para uma análise completa, consulta a página:"><a href="https://match.center/bp/wiki-tag/como-avaliamos-os-sites-de-apostas/">Avaliações e classificações.</a></p>
+                            </div>
                         <?php endif; ?>
                         <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>
                             <span class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></span>
