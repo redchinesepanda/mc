@@ -415,6 +415,12 @@
     align-items: center;
 }
 
+.legal-review-page-sidebar .bonus-stats-items:not(:nth-child(n+7)) .stats-item-label {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
 .legal-review-page-sidebar .stats-item-tooltip {
     display: flex;
 }
