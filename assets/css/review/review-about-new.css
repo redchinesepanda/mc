@@ -681,6 +681,11 @@
     margin-bottom: var( --Spacing-06 );
 }
 
+.legal-review-page-sidebar .stats-item-tooltip {
+    margin-left: auto;
+    margin-right: 0.25rem;
+}
+
 /* Background */
 
 /* .legal-review-page-sidebar .about-right
@@ -956,6 +961,15 @@
     font-size: 0.8125rem;
     line-height: 1.0625rem;
     color: var( --Base-base-05 );
+}
+
+.legal-review-page-sidebar .stats-item-tooltip::before {
+    content: '\F114';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1rem;
+    color: var( --Base-base-05 );
+    cursor: pointer;
 }
 
 .legal-review-page-sidebar .stats-item-value {
