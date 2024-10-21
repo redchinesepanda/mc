@@ -832,7 +832,8 @@
 .review-about.legal-black .about-center .review-bonus-title,
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
-.legal-section-author-mini .info-author-name {
+.legal-section-author-mini .info-author-name,
+.legal-review-page-sidebar .stats-item-value {
     color: var( --Base-base-09 );
 }
 
@@ -949,7 +950,18 @@
 .tcb-post-content > .legal-afillate {
     font-size: 14px;
     line-height: 20px;
-} 
+}
+
+.legal-review-page-sidebar .stats-item-label {
+    font-size: 0.8125rem;
+    line-height: 1.0625rem;
+    color: var( --Base-base-05 );
+}
+
+.legal-review-page-sidebar .stats-item-value {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
 
 .about-right .legal-cut-control {
     font-size: 0.875rem;
