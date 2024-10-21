@@ -983,8 +983,8 @@
     line-height: 1.25rem;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( n+6 ) {
-    color:rebeccapurple;
+.legal-review-page-sidebar .bonus-stats-items:nth-child( n+7 ) {
+    background-color: rebeccapurple;
 }
 
 .about-right .legal-cut-control {
