@@ -394,11 +394,17 @@
 {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 0.5rem;
 }
 
 .review-about .about-right:not( .sticky-bonus ) .review-bonus-description:not(.legal-active),
 .legal-review-page-sidebar .about-right .review-bonus-description:not(.legal-active) {
     display: none;
+}
+
+.review-about .about-right .bonus-stats-items {
+    display: flex;
+    justify-content: space-between;
 }
 
 .about-right .legal-cut-control {
@@ -843,7 +849,8 @@
 .review-about .about-achievement .achievement-bonus-link,
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
-.legal-section-author-mini .review-about-info {
+.legal-section-author-mini .review-about-info,
+.about-right .about-right .review-bonus-stats {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
