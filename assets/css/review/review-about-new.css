@@ -405,6 +405,11 @@
 .legal-review-page-sidebar .bonus-stats-items {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.legal-review-page-sidebar .stats-item-tooltip {
+    display: flex;
 }
 
 .about-right .legal-cut-control {
