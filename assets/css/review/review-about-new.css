@@ -983,6 +983,10 @@
     line-height: 1.25rem;
 }
 
+.legal-review-page-sidebar .bonus-stats-items:nth-child( n+6 ) {
+    color:rebeccapurple;
+}
+
 .about-right .legal-cut-control {
     font-size: 0.875rem;
     font-weight: 400;
