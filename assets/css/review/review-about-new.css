@@ -902,7 +902,8 @@
 .review-about .about-rating::before,
 .about-right .legal-cut-control::after,
 .review-about .about-rating::after,
-.legal-review-page-sidebar .stats-item-tooltip::before {
+.legal-review-page-sidebar .stats-item-tooltip::before,
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before {
     font-family: var(--legal-font-icons);
 }
 
