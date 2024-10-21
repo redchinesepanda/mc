@@ -399,7 +399,8 @@
 
 .review-about .about-right:not( .sticky-bonus ) .review-bonus-description:not(.legal-active),
 .legal-review-page-sidebar .about-right .review-bonus-description:not(.legal-active),
-.legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-stats {
+.legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-stats,
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     display: none;
 }
 
