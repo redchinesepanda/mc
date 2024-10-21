@@ -689,6 +689,10 @@
     padding-left: 64px;
 }
 
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 7 ) {
+    padding-top: 1rem;
+}
+
 .legal-section-author-mini .review-about-info {
     margin-top: var( --Spacing-09 );
     margin-bottom: var( --Spacing-06 );
@@ -828,6 +832,10 @@
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-stats {
     background-color: var( --Base-base-02 );
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 7 ) {
+    border-top: 1px solid var( --Base-base-03 );
 }
 
 .legal-section-author-mini .info-author-file {
@@ -991,13 +999,9 @@
     line-height: 1.25rem;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( n+7 ) {
+/* .legal-review-page-sidebar .bonus-stats-items:nth-child( n+7 ) {
     background-color: #e0d3ec;
-}
-
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 7 ) {
-    border-top: 1px solid var( --Base-base-03 );
-}
+} */
 
 .about-right .legal-cut-control {
     font-size: 0.875rem;
