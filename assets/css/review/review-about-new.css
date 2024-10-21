@@ -986,6 +986,35 @@
     color: var( --Base-base-05 );
 }
 
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before {
+    font-size: var( --Spacing-07 );
+    line-height: var( --Spacing-07 );
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 1 ) .stats-item-label::before {
+    content: '\F108';
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 2 ) .stats-item-label::before {
+    content: '';
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 3 ) .stats-item-label::before {
+    content: '\F115';
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 4 ) .stats-item-label::before {
+    content: '\F113';
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 5 ) .stats-item-label::before {
+    content: '\F108';
+}
+
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) .stats-item-label::before {
+    content: '\F108';
+}
+
 .legal-review-page-sidebar .stats-item-tooltip::before {
     content: '\F114';
     font-size: 1rem;
