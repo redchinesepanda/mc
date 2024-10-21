@@ -547,7 +547,8 @@
 }
 
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
-    width: 9.75rem;
+    width: 11.75rem;
+    box-sizing: border-box;
 }
 
 .review-about.legal-mode-mini .about-logo {
@@ -671,8 +672,8 @@
 
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     position: absolute;
-    left: 0px;
-    padding: 16px;
+    left: calc( 0rem - 11.75rem );
+    padding: 1rem;
 }
 
 .about-right .legal-cut-control {
