@@ -1004,7 +1004,7 @@
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 2 ) .stats-item-label::before {
-    content: '';
+    content: '\F10D';
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 3 ) .stats-item-label::before {
