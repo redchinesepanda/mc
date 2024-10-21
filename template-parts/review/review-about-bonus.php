@@ -30,7 +30,7 @@
                             <span class="stats-item-tooltip legal-active" data-tooltip="<?php echo $stats_item[ 'tooltip' ]; ?>">
                                 <div class="legal-tooltip">
                                     <span class="legal-tooltip-close"></span>
-                                    <p data-tooltip-text="<?php echo $stats_item[ 'tooltip' ]; ?>"></p>
+                                    <p class="legal-tooltip-text" data-tooltip-text="<?php echo $stats_item[ 'tooltip' ]; ?>"></p>
                                 </div>
                             </span>
                         <?php endif; ?>

@@ -883,7 +883,8 @@
 .about-right .review-bonus-head,
 .legal-section-author-mini .info-author-name,
 .legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-value,
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before {
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before,
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text {
     color: var( --Base-base-09 );
 }
 
@@ -901,7 +902,8 @@
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
 .legal-section-author-mini .review-about-info,
-.legal-review-page-sidebar .review-bonus-stats {
+.legal-review-page-sidebar .review-bonus-stats,
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -1046,6 +1048,10 @@
     line-height: 1rem;
     color: var( --Base-base-05 );
     cursor: pointer;
+}
+
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text::before {
+    content: attr( data-tooltip-text );
 }
 
 .legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-value {
