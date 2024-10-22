@@ -197,6 +197,8 @@ class ReviewTitle
 		'volleyball' => 'legal-header-volleyball',
 
 		'widthdraw' => 'legal-header-widthdraw',
+
+		'baseball' => 'legal-header-baseball',
 	];
 
 	const FORMAT = [
