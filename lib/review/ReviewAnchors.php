@@ -464,9 +464,9 @@ class ReviewAnchors
 		return true;
 	}
 
-    const PATTERN = [
-        'node-id' => 'anchor-%s-%s',
-    ];
+    // const PATTERN = [
+    //     'node-id' => 'anchor-%s-%s',
+    // ];
 
     public static function get_title_id_auto( $node, $index = null )
     {
@@ -483,12 +483,12 @@ class ReviewAnchors
             $node_id = cyr_to_lat()->transliterate( $node_id );
         }
 
-        if ( ! empty( $index ) )
-        {
-            // $node_id = 'anchor-' . $index . '-' . $node_id,
+        // if ( ! is_null( $index ) )
+        // {
+        //     // $node_id = 'anchor-' . $index . '-' . $node_id,
             
-            $node_id = sprintf( self::PATTERN[ 'node-id' ], $index, $node_id );
-        }
+        //     $node_id = sprintf( self::PATTERN[ 'node-id' ], $index, $node_id );
+        // }
 
         return $node_id;
     }
