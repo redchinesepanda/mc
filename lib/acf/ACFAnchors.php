@@ -30,7 +30,7 @@ class ACFAnchors
 
 	public static function add_anchor_fields_item( $bulk_actions )
     {
-    	$bulk_actions[ self::ACTION[ 'set-anchor-fields' ] ] = ToolLoco::translate( 'Set CTA Fields' );
+    	$bulk_actions[ self::ACTION[ 'set-anchor-fields' ] ] = ToolLoco::translate( 'Set Anchor Fields' );
 
     	return $bulk_actions;
     }
