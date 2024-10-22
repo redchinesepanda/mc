@@ -256,7 +256,7 @@
     .legal-review-page-sidebar .about-right {
         /* margin-top: -145px; */
         margin-top: calc( 0rem - ( var( --Spacing-07 ) + 7.5rem ) );
-    }
+    } 
     
     /* Width and Height */
 
