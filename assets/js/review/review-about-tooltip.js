@@ -45,8 +45,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( !element ) {
             return;
         };
-		// element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
-		element.querySelectorAll( args.tooltipOpen ).forEach( prepareTooltip, element );
+		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		// element.querySelectorAll( args.tooltipOpen ).forEach( prepareTooltip, element );
 		
 	}
 
@@ -58,33 +58,39 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			'tooltipContainer' : '.review-about .about-achievement',
 
-			'tooltipOpen' : '.review-about .achievement-name',
+			// 'tooltipOpen' : '.review-about .achievement-name',
 
-			'tooltipClose' : '.review-about .achievement-tooltip-close',
+			// 'tooltipClose' : '.review-about .achievement-tooltip-close',
 
-			'tooltip' : '.review-about .achievement-tooltip-background',
+			// 'tooltip' : '.review-about .achievement-tooltip-background',
 		},
 
 		{
 			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
 
-			'tooltipOpen' : '.legal-review-page-sidebar .stats-item-tooltip',
+			// 'tooltipOpen' : '.legal-review-page-sidebar .stats-item-tooltip',
 
-			'tooltipClose' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-close',
+			// 'tooltipClose' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-close',
 
-			'tooltip' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip',
+			// 'tooltip' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip',
 		},
 
 	];
 
 	const selectors = {
-		tooltipOpen: '.review-about .achievement-name',
+		tooltipOpen: '.legal-tooltip-open',
+
+		tooltipClose: '.legal-tooltip-close',
+
+		tooltip: '.legal-tooltip',
+
+		// tooltipOpen: '.review-about .achievement-name',
 		
-		tooltipClose: '.review-about .achievement-tooltip-close',
+		// tooltipClose: '.review-about .achievement-tooltip-close',
 
-		tooltip: '.review-about .achievement-tooltip-background',
+		// tooltip: '.review-about .achievement-tooltip-background',
 
-		aboutAchievement: '.review-about .about-achievement',
+		// aboutAchievement: '.review-about .about-achievement',
 
 		tooltipSet: function ( id ) {
 			return '[data-tooltip-set="' + id + '"]';
