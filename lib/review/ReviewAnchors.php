@@ -155,12 +155,14 @@ class ReviewAnchors
 
 		$set_title_id_manual = self::set_header_id( $dom );
 
-        if ( ! $set_title_id_manual )
-        {
-		    $set_title_id_auto = self::set_titles_id_auto( $dom );
-        }
+        // if ( ! $set_title_id_manual )
+        // {
+		//     $set_title_id_auto = self::set_titles_id_auto( $dom );
+        // }
 
-        if ( $set_title_id_manual || $set_title_id_auto )
+        // if ( $set_title_id_manual || $set_title_id_auto )
+        
+        if ( $set_title_id_manual )
         {
 		    return $dom->saveHTML( $dom );
         }
@@ -436,14 +438,14 @@ class ReviewAnchors
 
         $items = self::get_data( $nodes );
 
-        if ( empty( $items ) )
-        {
-            $nodes = self::get_titles_auto();
+        // if ( empty( $items ) )
+        // {
+        //     $nodes = self::get_titles_auto();
 
-            return self::get_titles_data( $nodes );
-        }
+        //     return self::get_titles_data( $nodes );
+        // }
 
-        return [];
+        return $items;
     }
 
     public static function get()
@@ -628,7 +630,7 @@ class ReviewAnchors
 
     public static function render()
     {
-        if ( !ReviewMain::check() )
+        if ( ! ReviewMain::check() )
         {
             return '';
         }
@@ -638,7 +640,7 @@ class ReviewAnchors
         //     return '';
         // }
 
-        self::get_args_auto();
+        // self::get_args_auto();
 
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
     }
