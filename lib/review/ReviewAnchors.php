@@ -479,13 +479,19 @@ class ReviewAnchors
 			return false;
 		}
 
-		foreach ( $nodes as $index =>  $node )
+		foreach ( $nodes as $index => $node )
 		{
 			if ( $node->parentNode )
             {
                 $node_id = self::get_title_id_auto( $node, $index );
 
-                $node->setAttribute( 'id', $node_id );
+                $anchor = $dom->createElement( 'a' );
+
+                // $node->setAttribute( 'id', $node_id );
+                
+                $anchor->setAttribute( 'id', $node_id );
+
+                $node->prepend( $anchor );
             }
 		}
 
