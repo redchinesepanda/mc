@@ -88,7 +88,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 
-		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
 		element.addEventListener( 'click', toggleModal, false );
 	}
@@ -112,9 +112,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		} );
 	}
 
-	// tooltipInit();
+	tooltipInit();
 
-	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
+	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 
 	// закрытие по клику на фон. Начало
 	let tooltipBackground = document.querySelector( selectors.tooltip );
