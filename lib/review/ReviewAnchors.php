@@ -491,7 +491,13 @@ class ReviewAnchors
                 
                 $anchor->setAttribute( 'id', $node_id );
 
-                $node->prepend( $anchor );
+                LegalDebug::debug( [
+                    'ReviewAnchors' => 'set_titles_id_auto-1',
+
+                    'node' => $node,
+                ] );
+
+                // $node->prepend( $anchor );
             }
 		}
 
