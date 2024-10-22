@@ -33,7 +33,7 @@
     flex-wrap: wrap;
     align-items: center;
     /* justify-content: space-evenly; */
-    gap: 40px;
+    /* gap: 40px; */
 }
 
 .review-stats .item-data {
@@ -58,6 +58,11 @@
 {
 	padding-bottom: 12px;
 } */
+
+.review-stats .stats-item {
+    padding-top: var( --Spacing-07 );
+    padding-bottom: var( --Spacing-07 );
+}
 
 .review-stats .item-value-wrapper
 {
@@ -91,6 +96,10 @@
 }
 
 /* Stats Background */
+
+.review-stats .stats-item {
+    border-bottom: 1px solid var( --Base-base-04 );
+}
 
 .review-stats .item-value-wrapper
 {
