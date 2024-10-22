@@ -40,9 +40,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.closest( selectors.tooltipContainer ).classList.toggle( classes.active );
 	}
 
+	function toggleClose( event )
+	{
+		event.currentTarget.closest( selectors.tooltipContainer ).classList.remove( classes.active );
+	}
+
 	function prepareClose( element )
 	{
-		element.addEventListener( 'click', toggleSet, false );
+		element.addEventListener( 'click', toggleClose, false );
 	}
 
 	function prepareTooltip( element )
