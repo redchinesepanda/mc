@@ -491,13 +491,13 @@ class ReviewAnchors
                 
                 $anchor->setAttribute( 'id', $node_id );
 
-                LegalDebug::debug( [
-                    'ReviewAnchors' => 'set_titles_id_auto-1',
+                // LegalDebug::debug( [
+                //     'ReviewAnchors' => 'set_titles_id_auto-1',
 
-                    'node' => $node,
-                ] );
+                //     'node' => $node,
+                // ] );
 
-                // $node->prepend( $anchor );
+                $node->insertBefore( $anchor, $node->firstChild );
             }
 		}
 
