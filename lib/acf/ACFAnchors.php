@@ -97,7 +97,7 @@ class ACFAnchors
 			];
 		}
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'ToolReviewAnchors' =>'modify_fields-0',
 
             'value' => $value,
