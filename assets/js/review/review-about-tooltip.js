@@ -106,9 +106,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function tooltipInit() {
 		args.forEach( function ( arg ) {
-			// let tooltipContainer = document.querySelectorAll( arg.tooltipContainer );
-
-			// tooltipContainer.forEach( prepareElements );
 			document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 		} );
 	}
