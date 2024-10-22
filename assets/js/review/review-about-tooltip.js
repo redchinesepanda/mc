@@ -33,6 +33,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
             return;
         };
 
+		if ( element.classList.contains( 'legal-tooltip-open' ) ) {
+			element.parentNode.classList.add( 'legal-tooltip-container' );
+			console.log('класс добавился!');
+		};
+
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
@@ -49,11 +54,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( !element ) {
             return;
         };
-
-		if ( element.classList.contains( 'legal-tooltip-open' ) ) {
-			element.parentNode.classList.add( 'legal-tooltip-container' );
-			console.log('класс добавился!');
-		};
 
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 		
