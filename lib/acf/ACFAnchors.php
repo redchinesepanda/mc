@@ -99,11 +99,11 @@ class ACFAnchors
 			];
 		}
 
-		LegalDebug::debug( [
-			'ToolReviewAnchors' =>'modify_fields-0',
+		// LegalDebug::debug( [
+		// 	'ToolReviewAnchors' =>'modify_fields-0',
 
-            'value' => $value,
-		] );
+        //     'value' => $value,
+		// ] );
 
 		update_field( ReviewAnchors::FIELD_KEY[ 'anchors' ], $value, $post_id );
 	}
@@ -118,26 +118,26 @@ class ACFAnchors
 
 		$anchor_items = ReviewAnchors::get_items_auto( $post_id );
 
-		LegalDebug::debug( [
-			'ToolReviewAnchors' =>'modify_fields-0',
+		// LegalDebug::debug( [
+		// 	'ToolReviewAnchors' =>'modify_fields-0',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			'repeater' => $repeater,
+		// 	'repeater' => $repeater,
 
-            'anchor_items' => $anchor_items,
-		] );
+        //     'anchor_items' => $anchor_items,
+		// ] );
 
 		if ( empty( $repeater ) && ! empty( $anchor_items ) )
 		{
 			self::update_anchor_fields( $anchor_items, $post_id );
 		}
 
-		LegalDebug::die( [
-			'ToolReviewAnchors' =>'modify_fields-1',
+		// LegalDebug::debug( [
+		// 	'ToolReviewAnchors' =>'modify_fields-1',
 
-			'repeater' => get_field( ReviewAnchors::FIELD[ 'anchors' ], $post_id ),
-		] );
+		// 	'repeater' => get_field( ReviewAnchors::FIELD[ 'anchors' ], $post_id ),
+		// ] );
 	}
 	
 	public static function modify_content( $post_id, $post )
