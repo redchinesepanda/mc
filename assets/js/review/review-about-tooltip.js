@@ -46,14 +46,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.tooltipSet = index;
 
-		/* if( document.querySelector( selectors.aboutAchievement ).contains( document.querySelector( selectors.tooltip ) ) ) {
-			element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
-		}; */
 		if ( !element ) {
             return;
         };
+
+		if ( element.classList.contains( 'legal-tooltip-open' ) ) {
+			element.parentNode.classList.add( 'legal-tooltip-container' );
+			console.log('класс добавился!');
+		};
+
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
-		// element.querySelectorAll( args.tooltipOpen ).forEach( prepareTooltip, element );
+		
 		
 	}
 
@@ -65,21 +68,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			'tooltipContainer' : '.review-about .about-achievement',
 
-			// 'tooltipOpen' : '.review-about .achievement-name',
-
-			// 'tooltipClose' : '.review-about .achievement-tooltip-close',
-
-			// 'tooltip' : '.review-about .achievement-tooltip-background',
 		},
 
 		{
 			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
 
-			// 'tooltipOpen' : '.legal-review-page-sidebar .stats-item-tooltip',
-
-			// 'tooltipClose' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-close',
-
-			// 'tooltip' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip',
 		},
 
 	];
@@ -118,18 +111,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	// добавление класса к контейнеру тултипа. Начало
-	let spoilerOpen = document.querySelectorAll( selectors.tooltipOpen );
+	// let spoilerOpen = document.querySelectorAll( selectors.tooltipOpen );
 
-	spoilerOpen.forEach( (elem) => {
-		if ( !elem ) {
-            return;
-        };
+	// spoilerOpen.forEach( (elem) => {
+	// 	if ( !elem ) {
+    //         return;
+    //     };
 
-		if ( elem.classList.contains( 'legal-tooltip-open' ) ) {
-			elem.parentNode.classList.add( 'legal-tooltip-container' );
-			console.log('класс добавился!');
-		};
-	} );
+	// 	if ( elem.classList.contains( 'legal-tooltip-open' ) ) {
+	// 		elem.parentNode.classList.add( 'legal-tooltip-container' );
+	// 		console.log('класс добавился!');
+	// 	};
+	// } );
 	// добавление класса к контейнеру тултипа. конец 
 
 	tooltipInit();
