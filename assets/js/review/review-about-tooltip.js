@@ -2,6 +2,47 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	const classes = {
+		active: 'legal-active',
+
+		tooltipContainer: 'legal-tooltip-container',
+	};
+
+	const args = [
+		{
+			'tooltipContainer' : '.review-about .about-achievement',
+		},
+
+		{
+			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
+		},
+
+	];
+
+	const selectors = {
+		tooltipOpen: '.legal-tooltip-open',
+
+		tooltipClose: '.legal-tooltip-close',
+
+		tooltip: '.legal-tooltip',
+
+		tooltipContainer: '.legal-tooltip-container',
+
+		// tooltipOpen: '.review-about .achievement-name',
+		
+		// tooltipClose: '.review-about .achievement-tooltip-close',
+
+		// tooltip: '.review-about .achievement-tooltip-background',
+
+		aboutAchievement: '.review-about .about-achievement',
+
+		// tooltipContainer: '.legal-review-page-sidebar .bonus-stats-items',
+
+		tooltipSet: function ( id ) {
+			return '[data-tooltip-set="' + id + '"]';
+		}
+	};
+	
 	function toggleSet( element )
 	{
 		element.classList.toggle( classes.active );
@@ -64,47 +105,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		
 	}
-
-	const classes = {
-		active: 'legal-active',
-
-		tooltipContainer: 'legal-tooltip-container',
-	};
-
-	const args = [
-		{
-			'tooltipContainer' : '.review-about .about-achievement',
-		},
-
-		{
-			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
-		},
-
-	];
-
-	const selectors = {
-		tooltipOpen: '.legal-tooltip-open',
-
-		tooltipClose: '.legal-tooltip-close',
-
-		tooltip: '.legal-tooltip',
-
-		tooltipContainer: '.legal-tooltip-container',
-
-		// tooltipOpen: '.review-about .achievement-name',
-		
-		// tooltipClose: '.review-about .achievement-tooltip-close',
-
-		// tooltip: '.review-about .achievement-tooltip-background',
-
-		aboutAchievement: '.review-about .about-achievement',
-
-		// tooltipContainer: '.legal-review-page-sidebar .bonus-stats-items',
-
-		tooltipSet: function ( id ) {
-			return '[data-tooltip-set="' + id + '"]';
-		}
-	};
 
 	function tooltipInit() {
 		args.forEach( function ( arg ) {
