@@ -372,12 +372,34 @@ class ReviewAbout
         return has_term( '', self::TAXONOMY[ 'page_type' ] );
     }
 
+    public static function get_about_bonus_class( $name, $description )
+    {
+        $classess = [];
+
+        if ( empty( $name ) && empty( $description ) )
+        {
+            $classess[] = 'review-bonus-empty';
+        }
+
+        return implode( ' ', $classess );
+    }
+
     public static function get_about_bonus( $group, $mode )
 	{
-        return [
-            'name' => self::get_name( $group, $mode, self::check_bonus_exception() ),
+        $name = self::get_name( $group, $mode, self::check_bonus_exception() );
 
-            'description' => $group[ 'about-description' ],
+        $description = $group[ 'about-description' ];
+
+        return [
+            // 'name' => self::get_name( $group, $mode, self::check_bonus_exception() ),
+            
+            'name' => $name,
+
+            // 'description' => $group[ 'about-description' ],
+            
+            'description' => $description,
+
+            'class' => get_about_bonus_class( $name, $description ),
         ];
     }
 
@@ -401,22 +423,22 @@ class ReviewAbout
             ( ! empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' )
         ];
 
-        if ( empty( $title ) && empty( $bonus ) )
-        {
-            $classess[] = 'review-bonus-empty';
-        }
+        // if ( empty( $title ) && empty( $bonus ) )
+        // {
+        //     $classess[] = 'review-bonus-empty';
+        // }
 
-        LegalDebug::debug( [
-            'ReviewAbout' => 'get',
+        // LegalDebug::debug( [
+        //     'ReviewAbout' => 'get',
             
-            'mode' => $mode,
+        //     'mode' => $mode,
             
-            'title' => $title,
+        //     'title' => $title,
 
-            'bonus' => $bonus,
+        //     'bonus' => $bonus,
 
-            'classess' => $classess,
-        ] );
+        //     'classess' => $classess,
+        // ] );
 
         return implode( ' ', $classess );
     }
