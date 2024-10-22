@@ -406,6 +406,18 @@ class ReviewAbout
             $classess[] = 'review-bonus-empty';
         }
 
+        LegalDebug::debug( [
+            'ReviewAbout' => 'get',
+            
+            'mode' => $mode,
+            
+            'title' => $title,
+
+            'bonus' => $bonus,
+
+            'classess' => $classess,
+        ] );
+
         return implode( ' ', $classess );
     }
 
@@ -474,22 +486,6 @@ class ReviewAbout
             // }
 
             $logo_items = self::get_about_logo_items();
-
-            $afillate_text = self::get_text();
-
-            $afillate_description = self::get_afillate_description( $mode );
-
-            $afillate_class = ( empty( $title ) && empty( $bonus ) ) ? 'review-bonus-empty' : '';
-
-            LegalDebug::debug( [
-                'ReviewAbout' => 'get',
-                
-                'afillate_text' => $afillate_text,
-                
-                'afillate_description' => $afillate_description,
-
-                'afillate_class' => $afillate_class,
-            ] );
 
             return [
                 'text' => [
