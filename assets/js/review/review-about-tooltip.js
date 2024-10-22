@@ -53,6 +53,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		active: 'legal-active',
 	};
 
+	const args = [
+		{
+			'tooltipContainer' : '.review-about .about-achievement',
+
+			'tooltipOpen' : '.review-about .achievement-name',
+
+			'tooltipClose' : '.review-about .achievement-tooltip-close',
+
+			'tooltip' : '.review-about .achievement-tooltip-background',
+		},
+
+	];
+
 	const selectors = {
 		tooltipOpen: '.review-about .achievement-name',
 		
@@ -67,7 +80,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
-	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
+	function tooltipInit() {
+		args.forEach( function ( arg ) {
+			document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
+		} );
+	}
+
+	tooltipInit();
+
+	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 
 	// закрытие по клику на фон. Начало
 	let tooltipBackground = document.querySelector( selectors.tooltip );
