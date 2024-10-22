@@ -35,6 +35,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleSet( event )
 	{
+
+		console.log( event.currentTarget.closest( selectors.tooltipContainer ) );
 		event.currentTarget.closest( selectors.tooltipContainer ).classList.toggle( classes.active );
 	}
 
