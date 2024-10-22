@@ -9,8 +9,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleModal( event )
 	{
-		/* event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet ); */
-		event.currentTarget.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		// event.currentTarget.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+
+		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
 
 	function prepareClose( element )
@@ -91,7 +93,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// tooltip: '.review-about .achievement-tooltip-background',
 
-		// aboutAchievement: '.review-about .about-achievement',
+		aboutAchievement: '.review-about .about-achievement',
+
+		tooltipContainer: '.legal-review-page-sidebar .bonus-stats-items',
 
 		tooltipSet: function ( id ) {
 			return '[data-tooltip-set="' + id + '"]';
