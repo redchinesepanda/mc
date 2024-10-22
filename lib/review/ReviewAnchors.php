@@ -487,7 +487,7 @@ class ReviewAnchors
         {
             // $node_id = 'anchor-' . $index . '-' . $node_id,
             
-            $node_id = sprintf( self::PATTERNS[ 'node-id' ], $index, $node_id ),
+            $node_id = sprintf( self::PATTERNS[ 'node-id' ], $index, $node_id );
         }
 
         return $node_id;
