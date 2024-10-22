@@ -483,7 +483,7 @@ class ReviewAnchors
             $node_id = cyr_to_lat()->transliterate( $node_id );
         }
 
-        if ( ! mepty( $index ) )
+        if ( ! epty( $index ) )
         {
             // $node_id = 'anchor-' . $index . '-' . $node_id,
             
