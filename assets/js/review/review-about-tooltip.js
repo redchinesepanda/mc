@@ -62,7 +62,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			element.parentNode.classList.add( classes.tooltipContainer );
 		};
 
-		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
 		element.addEventListener( 'click', toggleSet, false );
 	}
