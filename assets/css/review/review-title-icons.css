@@ -1,52 +1,57 @@
-.legal-header-basketball:before,
-.icon-basketball:before {
+.legal-header-basketball::before,
+.icon-basketball::before {
     content: "\f101";
 }
-.legal-header-esports:before,
-.icon-esports:before {
+.legal-header-esports::before,
+.icon-esports::before {
     content: "\f102";
 }
-.legal-header-football:before,
-.icon-football:before {
+.legal-header-football::before,
+.icon-football::before {
     content: "\f103";
 }
-.legal-header-horceracing:before,
-.icon-horeseracing:before {
+.legal-header-horceracing::before,
+.icon-horeseracing::before,
+.icon-horceracing::before {
     content: "\f104";
 }
-.legal-header-mma:before,
-.icon-mma:before {
+.legal-header-mma::before,
+.icon-mma::before {
     content: "\f105";
 }
-.legal-header-tennis:before,
-.icon-tennis:before {
+.legal-header-tennis::before,
+.icon-tennis::before {
     content: "\f106";
 }
-.legal-header-deposite:before,
-.icon-deposite:before {
+.legal-header-deposite::before,
+.icon-deposite::before {
     content: "\f107";
 }
-.legal-header-history:before,
-.icon-history:before {
+.legal-header-history::before,
+.icon-history::before {
     content: "\f108";
 }
-.legal-header-features:before,
-.icon-stars:before {
+.legal-header-features::before,
+.icon-stars::before {
     content: "\f109";
 }
-.legal-header-handball:before,
-.icon-handball:before {
+.legal-header-handball::before,
+.icon-handball::before {
     content: "\f10a";
 }
-.legal-header-hockey:before,
-.icon-hockey:before {
+.legal-header-hockey::before,
+.icon-hockey::before {
     content: "\f10b";
 }
-.legal-header-rugby:before,
-.icon-rugby:before {
+.legal-header-rugby::before,
+.icon-rugby::before {
     content: "\f10c";
 }
-.legal-header-volleyball:before,
-.icon-volleyball:before {
+.legal-header-volleyball::before,
+.icon-volleyball::before {
     content: "\f10d";
+}
+.legal-header-cricket::before,
+.icon-cricket::before {
+    content: "\F113";
 }
