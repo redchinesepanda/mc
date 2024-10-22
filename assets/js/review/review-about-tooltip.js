@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// tooltip: '.review-about .achievement-tooltip-background',
 
-		// aboutAchievement: '.review-about .about-achievement',
+		aboutAchievement: '.review-about .about-achievement',
 
 		// tooltipContainer: '.legal-review-page-sidebar .bonus-stats-items',
 
