@@ -12,13 +12,13 @@
 
     /* Position */
 
-    .review-about,
+    /* .review-about,
     .legal-section-author-mini .review-about-info {
-        /* padding-right: 1rem;
-        padding-left: 1rem; */
+        padding-right: 1rem;
+        padding-left: 1rem;
         margin-right: 1rem;
         margin-left: 1rem;
-    }
+    } */
 } 
 
 @media screen and ( max-width: 959px )
