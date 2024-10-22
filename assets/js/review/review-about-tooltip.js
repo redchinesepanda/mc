@@ -91,7 +91,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltip: '.legal-tooltip',
 
-		aboutAchievement: '.legal-tooltip-container',
+		tooltipContainer: '.legal-tooltip-container',
 
 		// tooltipOpen: '.review-about .achievement-name',
 		
