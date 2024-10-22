@@ -12,7 +12,7 @@
         <div class="review-about <?php echo $args[ 'font' ]; ?> <?php echo $args[ 'class' ]; ?>">
             <div class="about-center">
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
-                    <div class="about-achievement">
+                    <div class="about-achievement legal-tooltip-container">
                         <div class="achievement-item">
                             <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
                                 <div class="achievement-tooltip-background legal-tooltip">
