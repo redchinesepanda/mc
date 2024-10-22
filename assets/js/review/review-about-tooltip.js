@@ -63,6 +63,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
+		console.log('клик по открытияю', element);
 		element.addEventListener( 'click', toggleSet, false );
 	}
 
