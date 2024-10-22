@@ -8,7 +8,7 @@
 
 ?>
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
-    <div class="about-right">
+    <div class="about-right <?php echo $args[ 'afillate' ][ 'class' ]; ?>">
         <div class="review-bonus-data">
             <?php if( !empty( $args[ 'bonus' ][ 'name' ] ) ) : ?>
                 <div class="review-bonus-title"><?php echo $args[ 'bonus' ][ 'name' ]; ?></div>

@@ -461,6 +461,12 @@ class ReviewAbout
 
             $logo_items = self::get_about_logo_items();
 
+            $afillate_text = self::get_text();
+
+            $afillate_description = self::get_afillate_description( $mode );
+
+            $afillate_class = ( empty( $afillate_text ) && empty( $afillate_description ) ) ? 'review-bonus-empty' : '';
+
             return [
                 'text' => [
                     // 'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
@@ -491,13 +497,19 @@ class ReviewAbout
                 'afillate' => [
                     'href' => self::check_href_afillate( $id ),
 
-                    'text' => self::get_text(),
+                    // 'text' => self::get_text(),
+                    
+                    'text' => $afillate_text,
 
                     // 'description' => self::get_afillate_description( $mode, $bonus_exception ), 
                     
-                    'description' => self::get_afillate_description( $mode ),
+                    // 'description' => self::get_afillate_description( $mode ),
+                    
+                    'description' => $afillate_description,
 
                     'stats' => ToolReviewCTA::get_stats_fields(),
+
+                    'class' => $afillate_class,
                 ],
 
                 'mode' => $mode,
