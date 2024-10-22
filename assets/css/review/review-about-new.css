@@ -250,9 +250,16 @@
     }
 
     .legal-review-page-sidebar .about-right {
+        margin-bottom: 80px;
+    }
+
+    .legal-review-page-sidebar .about-right:not( .review-bonus-empty ) {
         /* margin-top: -145px; */
         margin-top: calc( 0rem - ( 2rem + 7.5rem ) );
-        margin-bottom: 80px;
+    }
+
+    .legal-review-page-sidebar .about-right.review-bonus-empty {
+        margin-top: calc( 0rem - ( 2rem + 7.5rem + 1.25rem ) );
     }
     
     /* Width and Height */
@@ -587,8 +594,8 @@
 } */
 
 /* .review-about .about-right:not( .sticky-bonus ) .review-bonus-data, */
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-data,
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-stats {
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-data,
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-stats {
     padding: 1.25rem var( --Spacing-07 );
 }
 
@@ -862,12 +869,12 @@
     background: var( --Base-base-01 );
 }
 
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-data,
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-stats {
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-data,
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-stats {
     border-radius: var( --Spacing-06 );
 }
 
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-data {
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-data {
     border: 1px solid var( --Base-base-09 );
     background-color: var( --Primitives-purple-20 );
 }
