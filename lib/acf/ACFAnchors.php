@@ -84,21 +84,26 @@ class ACFAnchors
     	}
     }
 	
-	public static function update_anchor_fields( $cta_item, $post_id )
+	public static function update_anchor_fields( $anchor_items, $post_id )
 	{
-		update_field( self::CTA_ACF_FIELDS[ 'license' ], $cta_item[ self::CTA_CSV_FIELDS[ 'license' ] ], $post_id );
-		
-		update_field( self::CTA_ACF_FIELDS[ 'regulator' ], $cta_item[ self::CTA_CSV_FIELDS[ 'regulator' ] ], $post_id );
+		$value = [];
 
-		update_field( self::CTA_ACF_FIELDS[ 'date-founded' ], $cta_item[ self::CTA_CSV_FIELDS[ 'date-founded' ] ], $post_id );
+		foreach ( $anchor_items as $anchor_item )
+		{
+			$value[] = [
+				ReviewAnchors::ANCHORS_KEY[ 'id' ] = $anchor_item[ 'href' ],
 
-		update_field( self::CTA_ACF_FIELDS[ 'apps' ], $cta_item[ self::CTA_CSV_FIELDS[ 'apps' ] ], $post_id );
+				ReviewAnchors::ANCHORS_KEY[ 'label' ] = $anchor_item[ 'label' ],
+			];
+		}
 
-		update_field( self::CTA_ACF_FIELDS[ 'min-deposit' ], $cta_item[ self::CTA_CSV_FIELDS[ 'min-deposit' ] ], $post_id );
+		LegalDebug::die( [
+			'ToolReviewAnchors' =>'modify_fields-0',
 
-		update_field( self::CTA_ACF_FIELDS[ 'margin' ], $cta_item[ self::CTA_CSV_FIELDS[ 'margin' ] ], $post_id );
+            'value' => $value,
+		] );
 
-		update_field( self::CTA_ACF_FIELDS[ 'license-in' ], $cta_item[ self::CTA_CSV_FIELDS[ 'license-in' ] ], $post_id );
+		update_field( ReviewAnchors::FIELD_KEY[ 'anchors' ], $value, $post_id );
 	}
 	
 	public static function modify_fields( $post_id, $post )
@@ -111,7 +116,7 @@ class ACFAnchors
 
 		$anchor_items = ReviewAnchors::get_args_auto( $post_id );
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'ToolReviewAnchors' =>'modify_fields-0',
 
 			'post_id' => $post_id,
@@ -123,7 +128,7 @@ class ACFAnchors
 
 		if ( empty( $repeater ) && ! empty( $anchor_items ) )
 		{
-			self::update_anchor_fields( $cta_item, $post_id );
+			self::update_anchor_fields( $anchor_items, $post_id );
 		}
 		
 		// LegalDebug::die( [
