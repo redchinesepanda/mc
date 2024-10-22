@@ -544,7 +544,7 @@ class ReviewAnchors
 		return LegalDOM::get_nodes( $dom, "//h2" );
 	}
     
-    public static function get_titles_auto()
+    public static function get_titles_auto( $post_id = null )
     {
         $post = get_post();
 
@@ -559,9 +559,9 @@ class ReviewAnchors
         return $nodes;
     }
 
-    public static function get_args_auto()
+    public static function get_args_auto( $post_id = null )
     {
-        $titles_nodes = self::get_titles_auto();
+        $titles_nodes = self::get_titles_auto( $post_id );
 
         $titles_data = self::get_titles_data( $titles_nodes );
 
