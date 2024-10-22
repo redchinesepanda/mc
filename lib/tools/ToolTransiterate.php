@@ -3,7 +3,7 @@
 class ToolTransiterate
 {
 	const TEMPLATE = [
-		'a' => [ 'ă', 'â' ],
+		'a' => [ 'ă', 'â', 'å' ],
 
 		'i' => [ 'î' ],
 
