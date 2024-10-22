@@ -1,5 +1,19 @@
 @media screen and ( max-width: 959px )
 {
+    /* Display */
+
+    .review-stats .stats-item
+    {
+        row-gap: 1rem;
+    }
+
+     /* Stats Position */
+
+    .review-stats .stats-item {
+        padding-top: var( --Spacing-06 );
+        padding-bottom: var( --Spacing-06 );
+    }
+
     /* Stats Width */
 
     .review-stats .stats-item {
@@ -13,8 +27,14 @@
 
     .review-stats .stats-item
     {
-        display: flex;
         column-gap: 4rem;
+    }
+
+    /* Stats Position */
+
+    .review-stats .stats-item {
+        padding-top: var( --Spacing-07 );
+        padding-bottom: var( --Spacing-07 );
     }
 
     /* Stats Width */
@@ -36,6 +56,12 @@
     /* gap: 40px; */
 }
 
+.review-stats .stats-item
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .review-stats .item-data {
     display: flex;
     flex-wrap: wrap;
@@ -52,11 +78,6 @@
 .review-stats
 {
     padding-bottom: 24px;
-}
-
-.review-stats .stats-item {
-    padding-top: var( --Spacing-07 );
-    padding-bottom: var( --Spacing-07 );
 }
 
 .review-stats .item-value-wrapper
