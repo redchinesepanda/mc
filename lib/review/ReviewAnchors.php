@@ -451,11 +451,11 @@ class ReviewAnchors
 			return false;
 		}
 
-		foreach ( $nodes as $node )
+		foreach ( $nodes as $index =>  $node )
 		{
 			if ( $node->parentNode )
             {
-                $node_id = self::get_title_id_auto( $node );
+                $node_id = self::get_title_id_auto( $node, $index );
 
                 $node->setAttribute( 'id', $node_id );
             }
@@ -464,7 +464,11 @@ class ReviewAnchors
 		return true;
 	}
 
-    public static function get_title_id_auto( $node )
+    const PATTERN = [
+        'node-id' => 'anchor-%s-%s',
+    ];
+
+    public static function get_title_id_auto( $node, $index = null )
     {
         $label = ReviewTitle::replace_placeholder( $node->textContent );
 
@@ -479,6 +483,13 @@ class ReviewAnchors
             $node_id = cyr_to_lat()->transliterate( $node_id );
         }
 
+        if ( ! mepty( $index ) )
+        {
+            // $node_id = 'anchor-' . $index . '-' . $node_id,
+            
+            $node_id = sprintf( self::PATTERNS[ 'node-id' ], $index, $node_id ),
+        }
+
         return $node_id;
     }
 
@@ -486,11 +497,11 @@ class ReviewAnchors
     {
         $items = [];
 
-        foreach ( $nodes as $node )
+        foreach ( $nodes as $index =>  $node )
         {
             $label = ReviewTitle::replace_placeholder( $node->textContent );
 
-            $node_id = self::get_title_id_auto( $node );
+            $node_id = self::get_title_id_auto( $node, $index );
 
             // $node_id = $node->getAttribute( 'id' );
 
