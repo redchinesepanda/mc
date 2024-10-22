@@ -14,6 +14,7 @@
     .review-stats .stats-item
     {
         display: flex;
+        column-gap: 4rem;
     }
 
     /* Stats Width */
@@ -35,6 +36,12 @@
     gap: 40px;
 }
 
+.review-stats .item-data {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+}
+
 .review-stats .item-value-wrapper:after
 {
     content: attr( data-value );
@@ -47,10 +54,10 @@
     padding-bottom: 24px;
 }
 
-.review-stats .item-title
+/* .review-stats .item-title
 {
 	padding-bottom: 12px;
-}
+} */
 
 .review-stats .item-value-wrapper
 {
@@ -71,14 +78,16 @@
 	height: 40px;
 }
 
-.review-stats .item-value-wrapper {
-	/* width: 100%; */
-    flex-basis: 50%;
-}
-
 .review-stats .item-data
 {
-    flex-basis: 50%;
+    /* flex-basis: 50%; */
+    flex-basis: 60%;
+}
+
+.review-stats .item-value-wrapper {
+	/* width: 100%; */
+    /* flex-basis: 50%; */
+    flex-basis: calc( 40% - 4rem );
 }
 
 /* Stats Background */
