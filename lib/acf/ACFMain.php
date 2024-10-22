@@ -16,6 +16,8 @@ require_once( 'ACFBrand.php' );
 
 require_once( 'ACFLocationRules.php' );
 
+require_once( 'ACFAnchors.php' );
+
 class ACFMain
 {
     public static function check_plugin()
@@ -53,12 +55,19 @@ class ACFMain
         wp_enqueue_script( 'acf-main' );
     }
 
+    // public static function register_functions_admin()
+    // {
+    //     ACFAnchors::register_functions_admin();
+    // }
+
     public static function register_functions()
     {
         ACFReview::register_functions();
     }
 
-    public static function register()
+    // public static function register()
+    
+    public static function register_functions_admin()
     {
         $handler = new self();
 
@@ -79,6 +88,8 @@ class ACFMain
         ACFBrand::register();
 
         ACFLocationRules::register();
+
+        ACFAnchors::register_functions_admin();
     }
 }
 
