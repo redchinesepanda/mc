@@ -253,14 +253,14 @@
         margin-bottom: 80px;
     }
 
-    .legal-review-page-sidebar .about-right:not( .review-bonus-empty ) {
+    .legal-review-page-sidebar .about-right {
         /* margin-top: -145px; */
-        margin-top: calc( 0rem - ( 2rem + 7.5rem ) );
+        margin-top: calc( 0rem - ( var( --Spacing-07 ) + 7.5rem ) );
     }
 
-    .legal-review-page-sidebar .about-right.review-bonus-empty {
+    /* .legal-review-page-sidebar .about-right.review-bonus-empty {
         margin-top: calc( 0rem - ( 2rem + 7.5rem + 1.25rem ) );
-    }
+    } */
     
     /* Width and Height */
 
