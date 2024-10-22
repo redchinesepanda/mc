@@ -114,7 +114,7 @@ class ACFAnchors
 
 		// $bookmaker_name = ReviewAbout::get_about_title( $group );
 
-		$anchor_items = ReviewAnchors::get_args_auto( $post_id );
+		$anchor_items = ReviewAnchors::get_items_auto( $post_id );
 
 		LegalDebug::debug( [
 			'ToolReviewAnchors' =>'modify_fields-0',
