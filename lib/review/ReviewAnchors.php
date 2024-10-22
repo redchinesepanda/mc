@@ -546,7 +546,7 @@ class ReviewAnchors
     
     public static function get_titles_auto( $post_id = null )
     {
-        $post = get_post();
+        $post = get_post( $post_id );
 
 		if ( empty( $post ) ) {
 			return [];
