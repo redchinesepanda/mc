@@ -130,14 +130,12 @@ class ACFAnchors
 		{
 			self::update_anchor_fields( $anchor_items, $post_id );
 		}
-		
-		// LegalDebug::die( [
-		// 	'ToolReviewCTA' => 'modify_fields-1',
 
-		// 	'post_id' => $post_id,
+		LegalDebug::die( [
+			'ToolReviewAnchors' =>'modify_fields-1',
 
-		// 	'bookmaker_name' => $bookmaker_name,
-		// ] );
+			'repeater' => $repeater,
+		] );
 	}
 
 	const TEMPLATE = [
