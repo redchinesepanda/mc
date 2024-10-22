@@ -35,15 +35,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleSet( event )
 	{
+		console.log('клик по открытияю', event);
 
-		console.log( event.currentTarget.closest( selectors.tooltipContainer ) );
-		event.currentTarget.closest( selectors.tooltipContainer ).classList.toggle( classes.active );
+		console.log( event.target.closest( selectors.tooltipContainer ) );
+		event.target.closest( selectors.tooltipContainer ).classList.toggle( classes.active );
 	}
 
 	function toggleClose( event )
 	{
 		console.log('должно удалиться')
-		event.currentTarget.closest( selectors.tooltipContainer ).classList.remove( classes.active );
+		event.target.closest( selectors.tooltipContainer ).classList.remove( classes.active );
 	}
 
 	function prepareClose( element )
@@ -63,7 +64,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
-		console.log('клик по открытияю', element);
 		element.addEventListener( 'click', toggleSet, false );
 	}
 
