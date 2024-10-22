@@ -10,9 +10,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function toggleModal( event )
 	{
 		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-		toggleSet( event.currentTarget );
+		// toggleSet( event.currentTarget );
 
-		// event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
 
 	function prepareClose( element )
@@ -31,6 +31,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( !element ) {
             return;
+        };
+
+		if ( element.contains( selectors.tooltipOpen ) ) {
+           element.parentNode.classList.add( '.legal-tooltip-container' );
+		   console.log('класс добавился');
         };
 
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
