@@ -88,7 +88,7 @@ class ACFAnchors
 	{
 		$value = [];
 
-		foreach ( $anchor_items as $anchor_item )
+		foreach ( $anchor_items xxas $anchor_item )
 		{
 			$value[] = [
 				ReviewAnchors::ANCHORS_KEY[ 'id' ] => $anchor_item[ 'href' ],
@@ -114,7 +114,7 @@ class ACFAnchors
 
 		// $bookmaker_name = ReviewAbout::get_about_title( $group );
 
-		$anchor_items = ReviewAnchors::get_args_auto( $post_id );
+		$anchor_items = ReviewAnchors::get_items_auto( $post_id );
 
 		LegalDebug::debug( [
 			'ToolReviewAnchors' =>'modify_fields-0',
