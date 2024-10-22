@@ -130,7 +130,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log('класс добавился!');
 		};
 	} );
-	// добавление класса к контейнеру тултипа. конец
+	// добавление класса к контейнеру тултипа. конец 
 
 	tooltipInit();
 
