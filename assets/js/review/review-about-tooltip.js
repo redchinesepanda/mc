@@ -9,7 +9,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleModal( event )
 	{
-		event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		// event.currentTarget.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+
+		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
 
 	function prepareClose( element )
@@ -26,6 +29,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	function prepareTooltip( element )
 	{
+		if ( !element ) {
+            return;
+        };
+
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
@@ -46,6 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
             return;
         };
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		// element.querySelectorAll( args.tooltipOpen ).forEach( prepareTooltip, element );
 		
 	}
 
@@ -53,21 +61,62 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		active: 'legal-active',
 	};
 
+	const args = [
+		{
+			'tooltipContainer' : '.review-about .about-achievement',
+
+			// 'tooltipOpen' : '.review-about .achievement-name',
+
+			// 'tooltipClose' : '.review-about .achievement-tooltip-close',
+
+			// 'tooltip' : '.review-about .achievement-tooltip-background',
+		},
+
+		{
+			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
+
+			// 'tooltipOpen' : '.legal-review-page-sidebar .stats-item-tooltip',
+
+			// 'tooltipClose' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-close',
+
+			// 'tooltip' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip',
+		},
+
+	];
+
 	const selectors = {
-		tooltipOpen: '.review-about .achievement-name',
+		tooltipOpen: '.legal-tooltip-open',
+
+		tooltipClose: '.legal-tooltip-close',
+
+		tooltip: '.legal-tooltip',
+
+		tooltipContainer: '.legal-tooltip-container',
+
+		// tooltipOpen: '.review-about .achievement-name',
 		
-		tooltipClose: '.review-about .achievement-tooltip-close',
+		// tooltipClose: '.review-about .achievement-tooltip-close',
 
-		tooltip: '.review-about .achievement-tooltip-background',
+		// tooltip: '.review-about .achievement-tooltip-background',
 
-		aboutAchievement: '.review-about .about-achievement',
+		// aboutAchievement: '.review-about .about-achievement',
+
+		// tooltipContainer: '.legal-review-page-sidebar .bonus-stats-items',
 
 		tooltipSet: function ( id ) {
 			return '[data-tooltip-set="' + id + '"]';
 		}
 	};
 
-	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
+	function tooltipInit() {
+		args.forEach( function ( arg ) {
+			document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
+		} );
+	}
+
+	tooltipInit();
+
+	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 
 	// закрытие по клику на фон. Начало
 	let tooltipBackground = document.querySelector( selectors.tooltip );
@@ -86,6 +135,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	// закрытие по клику на фон. Конец
+
+	// добавление класса к контейнеру тултипа. Начало
+
+	// добавление класса к контейнеру тултипа. конец
 } );
 
 // about-achievement-tooltip-js end 

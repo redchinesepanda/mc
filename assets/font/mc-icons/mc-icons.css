@@ -1,6 +1,6 @@
 /* @font-face {
     font-family: "mc-icons";
-    src: url("./mc-icons.woff2?ecf92f5387a4c79e03a956b765cc78cb") format("woff2");
+    src: url("./mc-icons.woff2?97381a56e81544e763524d71ecfc67d2") format("woff2");
 } */
 
 /* i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -85,4 +85,16 @@
 }
 .icon-twitter:before {
     content: "\f119";
+}
+.icon-deposite:before {
+    content: "\f101";
+}
+.icon-flag:before {
+    content: "\f11a";
+}
+.icon-mobile-white:before {
+    content: "\f11b";
+}
+.icon-reliability:before {
+    content: "\f11c";
 }
