@@ -67,12 +67,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const args = [
 		{
 			'tooltipContainer' : '.review-about .about-achievement',
-
 		},
 
 		{
 			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
-
 		},
 
 	];
@@ -110,21 +108,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		} );
 	}
 
-	// добавление класса к контейнеру тултипа. Начало
-	// let spoilerOpen = document.querySelectorAll( selectors.tooltipOpen );
-
-	// spoilerOpen.forEach( (elem) => {
-	// 	if ( !elem ) {
-    //         return;
-    //     };
-
-	// 	if ( elem.classList.contains( 'legal-tooltip-open' ) ) {
-	// 		elem.parentNode.classList.add( 'legal-tooltip-container' );
-	// 		console.log('класс добавился!');
-	// 	};
-	// } );
-	// добавление класса к контейнеру тултипа. конец 
-
 	tooltipInit();
 
 	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
@@ -138,9 +121,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	/* if ( document.querySelector( selectors.aboutAchievement ).contains( tooltipBackground ) ) {
-		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	}; */
 	if ( document.querySelector( selectors.aboutAchievement ) ) {
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
 	};
