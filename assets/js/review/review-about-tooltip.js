@@ -10,7 +10,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function toggleModal( event )
 	{
 		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-		event.currentTarget.toggleSet();
+		toggleSet( event.currentTarget );
 
 		// event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
