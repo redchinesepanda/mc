@@ -126,7 +126,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         };
 
 		if ( elem.classList.contains( 'legal-tooltip-open' ) ) {
-			elem.parentNode.classList.add( '.legal-tooltip-container' );
+			elem.parentNode.classList.add( 'legal-tooltip-container' );
 			console.log('класс добавился!');
 		};
 	} );
