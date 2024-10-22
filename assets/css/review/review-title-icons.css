@@ -53,5 +53,10 @@
 }
 .legal-header-cricket::before,
 .icon-cricket::before {
-    content: "\F113";
+    content: "\F10F";
+}
+
+.legal-header-baseball::before,
+.icon-baseball::before {
+    content: "\F10F";
 }
