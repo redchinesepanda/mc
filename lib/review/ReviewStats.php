@@ -179,9 +179,13 @@ class ReviewStats
 
 			$node->parentNode->insertBefore( $stats, $node );
 
-			$node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
+			// start Модицикация ближайшего заголовка к таблице Review Stats
 
-			self::modify_title( $dom, $node_title, $stats_data );
+			// $node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
+
+			// self::modify_title( $dom, $node_title, $stats_data );
+
+			// end Модицикация ближайшего заголовка к таблице Review Stats
 
 			// LegalDebug::debug( [
 			// 	'ReviewStats' => 'get_content-2',
