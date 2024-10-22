@@ -155,11 +155,11 @@ class ACFAnchors
 
         // if ( $set_title_id_manual || $set_title_id_auto )
 
-		LegalDebug::die( [
-			'ToolReviewAnchors' =>'modify_content-1',
+		// LegalDebug::die( [
+		// 	'ToolReviewAnchors' =>'modify_content-1',
 
-			'post_content' => $dom->saveHTML( $dom ),
-		] );
+		// 	'post_content' => $dom->saveHTML( $dom ),
+		// ] );
         
 		if ( $set_title_id_auto )
         {
@@ -172,9 +172,11 @@ class ACFAnchors
 			];
 
 			wp_update_post( $post_modified );
+
+			return true;
         }
 
-        return $content;
+        return false;
 	}
 
 	const TEMPLATE = [
