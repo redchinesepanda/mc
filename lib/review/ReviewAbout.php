@@ -467,6 +467,16 @@ class ReviewAbout
 
             $afillate_class = ( empty( $afillate_text ) && empty( $afillate_description ) ) ? 'review-bonus-empty' : '';
 
+            LegalDebug::debug( [
+                'ReviewAbout' => 'get',
+                
+                'afillate_text' => $afillate_text,
+                
+                'afillate_description' => $afillate_description,
+
+                'afillate_class' => $afillate_class,
+            ] );
+
             return [
                 'text' => [
                     // 'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
