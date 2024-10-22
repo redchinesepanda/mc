@@ -10,6 +10,8 @@ class ToolTransiterate
 		's' => [ 'ș' ],
 
 		't' => [ 'ț' ],
+
+		'o' => [ 'ó' ],
 	];
 
 	const REMOVE = [
