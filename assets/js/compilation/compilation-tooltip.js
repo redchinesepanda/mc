@@ -9,6 +9,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleModal( event )
 	{
+		console.log( 'toggleModal:',event );
 		event.currentTarget.closest( selectors.compilation ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
 
