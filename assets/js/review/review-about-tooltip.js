@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 		// toggleSet( event.currentTarget );
 
-		// console.log( event.currentTarget );
+		console.log( 'toggleModal:',event );
 
 		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
@@ -64,14 +64,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'click', toggleModal, false );
 
-		console.log('prepareClose:', element);
+		// console.log('prepareClose:', element);
 	}
 
 	function prepareModal( element )
 	{
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		console.log('prepareModal:', element);
+		// console.log('prepareModal:', element);
 	}
 	
 	function prepareTooltip( element )
