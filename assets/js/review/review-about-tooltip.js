@@ -33,11 +33,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
             return;
         };
 
-		if ( element.classList.contains( 'legal-tooltip-open' ) ) {
-           element.parentNode.classList.add( '.legal-tooltip-container' );
-		   console.log('класс добавился!');
-        };
-
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
@@ -115,9 +110,27 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function tooltipInit() {
 		args.forEach( function ( arg ) {
+			// let tooltipContainer = document.querySelectorAll( arg.tooltipContainer );
+
+			// tooltipContainer.forEach( prepareElements );
 			document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 		} );
 	}
+
+	// добавление класса к контейнеру тултипа. Начало
+	let spoilerOpen = document.querySelectorAll( selectors.tooltipOpen );
+
+	spoilerOpen.forEach( (elem) => {
+		if ( !elem ) {
+            return;
+        };
+
+		if ( elem.classList.contains( 'legal-tooltip-open' ) ) {
+			elem.parentNode.classList.add( '.legal-tooltip-container' );
+			console.log('класс добавился!');
+		};
+	} );
+	// добавление класса к контейнеру тултипа. конец
 
 	tooltipInit();
 
@@ -141,9 +154,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// закрытие по клику на фон. Конец
 
-	// добавление класса к контейнеру тултипа. Начало
-
-	// добавление класса к контейнеру тултипа. конец
 } );
 
 // about-achievement-tooltip-js end 
