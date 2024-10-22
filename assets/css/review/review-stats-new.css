@@ -54,11 +54,6 @@
     padding-bottom: 24px;
 }
 
-/* .review-stats .item-title
-{
-	padding-bottom: 12px;
-} */
-
 .review-stats .stats-item {
     padding-top: var( --Spacing-07 );
     padding-bottom: var( --Spacing-07 );
