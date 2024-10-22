@@ -42,6 +42,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleClose( event )
 	{
+		console.log('должно удалиться')
 		event.currentTarget.closest( selectors.tooltipContainer ).classList.remove( classes.active );
 	}
 
