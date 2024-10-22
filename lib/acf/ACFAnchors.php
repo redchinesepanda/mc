@@ -134,7 +134,7 @@ class ACFAnchors
 		LegalDebug::die( [
 			'ToolReviewAnchors' =>'modify_fields-1',
 
-			'repeater' => $repeater,
+			'repeater' => get_field( ReviewAnchors::FIELD[ 'anchors' ], $post_id ),
 		] );
 	}
 
