@@ -91,9 +91,9 @@ class ACFAnchors
 		foreach ( $anchor_items as $anchor_item )
 		{
 			$value[] = [
-				ReviewAnchors::ANCHORS_KEY[ 'id' ] = $anchor_item[ 'href' ],
+				ReviewAnchors::ANCHORS_KEY[ 'id' ] => $anchor_item[ 'href' ],
 
-				ReviewAnchors::ANCHORS_KEY[ 'label' ] = $anchor_item[ 'label' ],
+				ReviewAnchors::ANCHORS_KEY[ 'label' ] => $anchor_item[ 'label' ],
 			];
 		}
 
