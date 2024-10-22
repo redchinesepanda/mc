@@ -423,8 +423,8 @@
     column-gap: 0.5rem;
 }
 
+/* .legal-review-page-sidebar .legal-tooltip-container:not( .legal-active ) .legal-tooltip */
 .legal-review-page-sidebar .stats-item-tooltip,
-.legal-review-page-sidebar .legal-tooltip-container:not( .legal-active ) .legal-tooltip
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip.legal-active {
     display: flex;
 }
