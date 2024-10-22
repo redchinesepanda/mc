@@ -2,68 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function toggleSet( element )
-	{
-		element.classList.toggle( classes.active );
-	}
-
-	function toggleModal( event )
-	{
-		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-		// toggleSet( event.currentTarget );
-
-		// console.log( event.currentTarget );
-
-		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-	}
-
-	function prepareClose( element )
-	{
-		element.dataset.tooltipSet = this.dataset.tooltipSet;
-
-		element.addEventListener( 'click', toggleModal, false );
-
-		console.log('prepareClose:', element);
-	}
-
-	function prepareModal( element )
-	{
-		element.dataset.tooltipSet = this.dataset.tooltipSet;
-
-		console.log('prepareModal:', element);
-	}
-	
-	function prepareTooltip( element )
-	{
-		if ( !element ) {
-            return;
-        };
-
-		if ( element.classList.contains( 'stats-item-tooltip' ) ) {
-			element.parentNode.classList.add( classes.tooltipContainer );
-		};
-
-		element.dataset.tooltipSet = this.dataset.tooltipSet;
-
-		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
-
-		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
-
-		element.addEventListener( 'click', toggleModal, false );
-	}
-
-	function prepareElements( element, index )
-	{
-		element.dataset.tooltipSet = index;
-
-		if ( !element ) {
-            return;
-        };
-
-		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
-		
-		
-	}
 
 	const classes = {
 		active: 'legal-active',
@@ -91,20 +29,44 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltipContainer: '.legal-tooltip-container',
 
-		// tooltipOpen: '.review-about .achievement-name',
-		
-		// tooltipClose: '.review-about .achievement-tooltip-close',
-
-		// tooltip: '.review-about .achievement-tooltip-background',
-
 		aboutAchievement: '.review-about .about-achievement',
 
-		// tooltipContainer: '.legal-review-page-sidebar .bonus-stats-items',
-
-		tooltipSet: function ( id ) {
-			return '[data-tooltip-set="' + id + '"]';
-		}
 	};
+
+	function toggleSet( event )
+	{
+		event.currentTarget.closest( selectors.tooltipContainer ).classList.toggle( classes.active );
+	}
+
+	function prepareClose( element )
+	{
+		element.addEventListener( 'click', toggleSet, false );
+	}
+
+	function prepareTooltip( element )
+	{
+		if ( !element ) {
+            return;
+        };
+
+		if ( element.classList.contains( 'stats-item-tooltip' ) ) {
+			element.parentNode.classList.add( classes.tooltipContainer );
+		};
+
+		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+
+		element.addEventListener( 'click', toggleSet, false );
+	}
+
+	function prepareElements( element )
+	{
+		if ( !element ) {
+            return;
+        };
+
+		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		
+	}
 
 	function tooltipInit() {
 		args.forEach( function ( arg ) {
