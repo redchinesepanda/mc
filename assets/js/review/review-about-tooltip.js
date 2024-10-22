@@ -20,6 +20,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		element.addEventListener( 'click', toggleModal, false );
+
+		console.log(element);
 	}
 
 	function prepareModal( element )
@@ -34,9 +36,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         };
 
 		if ( element.classList.contains( 'stats-item-tooltip' ) ) {
-			// element.parentNode.classList.add( 'legal-tooltip-container' );
 			element.parentNode.classList.add( classes.tooltipContainer );
-			// console.log('класс добавился!');
 		};
 
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
