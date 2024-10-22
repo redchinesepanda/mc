@@ -399,7 +399,7 @@ class ReviewAbout
             
             'description' => $description,
 
-            'class' => get_about_bonus_class( $name, $description ),
+            'class' => self::get_about_bonus_class( $name, $description ),
         ];
     }
 
