@@ -273,14 +273,16 @@ class ToolReviewCTA
 				
 				'value' => self::get_license_value( $license, $license_in ),
 
-				'tooltip' => ToolLoco::translate( ReviewMain::TEXT[ 'directorate' ] ),
+				// 'tooltip' => ToolLoco::translate( ReviewMain::TEXT[ 'directorate' ] ),
+				
+				'tooltip' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
 			],
 
-			'regulator' => [
-				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'regulator' ] ),
+			// 'regulator' => [
+			// 	'label' => ToolLoco::translate( ReviewMain::TEXT[ 'regulator' ] ),
 
-				'value' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
-			],
+			// 	'value' => get_field( self::CTA_ACF_FIELDS[ 'regulator' ], $post_id ),
+			// ],
 
 			'date-founded' => [
 				'label' => ToolLoco::translate( ReviewMain::TEXT[ 'date-founded' ] ),

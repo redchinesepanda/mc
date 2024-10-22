@@ -79,7 +79,7 @@ class ReviewMain
 
 		'deposit' => 'Deposit',
 
-        'directorate' => 'Directorate General for the Regulation of Gambling
+        // 'directorate' => 'Directorate General for the Regulation of Gambling
         text link',
 
 		'download' => 'Download',
@@ -116,7 +116,7 @@ class ReviewMain
 
 		'registration' => 'Registration',
 
-        'regulator' => 'Regulator',
+        // 'regulator' => 'Regulator',
 
 		'review' => 'Review',
 

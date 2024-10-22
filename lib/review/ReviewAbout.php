@@ -417,28 +417,11 @@ class ReviewAbout
         // return '';
     }
 
-    public static function get_class( $mode, $title, $bonus )
+    public static function get_class( $mode )
     {
         $classess = [
             ( ! empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' )
         ];
-
-        // if ( empty( $title ) && empty( $bonus ) )
-        // {
-        //     $classess[] = 'review-bonus-empty';
-        // }
-
-        // LegalDebug::debug( [
-        //     'ReviewAbout' => 'get',
-            
-        //     'mode' => $mode,
-            
-        //     'title' => $title,
-
-        //     'bonus' => $bonus,
-
-        //     'classess' => $classess,
-        // ] );
 
         return implode( ' ', $classess );
     }
@@ -552,7 +535,7 @@ class ReviewAbout
 
                 // 'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
                 
-                'class' => self::get_class( $mode, $title, $bonus ),
+                'class' => self::get_class( $mode ),
 
                 'achievement' => $achievement,
 
