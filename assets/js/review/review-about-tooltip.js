@@ -34,8 +34,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
         };
 
 		if ( element.classList.contains( 'stats-item-tooltip' ) ) {
-			element.parentNode.classList.add( 'legal-tooltip-container' );
-			console.log('класс добавился!');
+			// element.parentNode.classList.add( 'legal-tooltip-container' );
+			element.parentNode.classList.add( classes.tooltipContainer );
+			// console.log('класс добавился!');
 		};
 
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
@@ -62,6 +63,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const classes = {
 		active: 'legal-active',
+
+		tooltipContainer: 'legal-tooltip-container',
 	};
 
 	const args = [
