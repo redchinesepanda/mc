@@ -422,8 +422,14 @@
     column-gap: 0.5rem;
 }
 
-.legal-review-page-sidebar .stats-item-tooltip {
+.legal-review-page-sidebar .stats-item-tooltip,
+.legal-review-page-sidebar .stats-item-tooltip.legal-active .legal-tooltip {
     display: flex;
+}
+
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
 }
 
 .about-right .legal-cut-control {
@@ -674,6 +680,11 @@
     position: absolute;
     left: calc( 0rem - 11.75rem - 0.25rem );
     padding: 1rem;
+}
+
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 .about-right .legal-cut-control {
