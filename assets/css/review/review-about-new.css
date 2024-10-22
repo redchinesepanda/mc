@@ -1077,6 +1077,11 @@
     cursor: pointer;
 }
 
+.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text::before {
     content: attr( data-tooltip-text );
 }
