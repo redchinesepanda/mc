@@ -164,13 +164,13 @@ class ReviewMain
         'review-main-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main-new.css',
 
-			'ver' => '1.0.1',
+			'ver' => '1.0.2',
 		],
 
         'review-overview-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview-new.css',
 
-            'ver' => '1.0.1',
+            'ver' => '1.0.2',
         ],
     ];
 

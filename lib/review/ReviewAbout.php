@@ -14,7 +14,7 @@ class ReviewAbout
         'review-about-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about-new.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
     ];
 
@@ -51,13 +51,13 @@ class ReviewAbout
         'review-about' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about.js',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
 
         'review-about-tooltip' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about-tooltip.js',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		], 
     ];
 

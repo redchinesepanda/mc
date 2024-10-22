@@ -6,7 +6,7 @@ class ReviewList
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
 
-            'ver' => '1.2.7',
+            'ver' => '1.2.8',
         ],
     ];
 
@@ -14,7 +14,7 @@ class ReviewList
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-new.css',
 
-            'ver' => '1.0.2',
+            'ver' => '1.0.4',
         ],
     ];
 
@@ -22,13 +22,13 @@ class ReviewList
         'review-list-icons' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-icons.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.2',
         ],
 
         'legal-template-font-mc-icons-sports' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.2',
 		],
     ];
 
