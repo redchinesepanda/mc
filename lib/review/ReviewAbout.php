@@ -395,6 +395,20 @@ class ReviewAbout
         // return '';
     }
 
+    public static function get_class( $mode, $title, $bonus )
+    {
+        $classess = [
+            ( ! empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' )
+        ];
+
+        if ( empty( $title ) && empty( $bonus ) )
+        {
+            $classess[] = 'review-bonus-empty';
+        }
+
+        return implode( ' ', $classess );
+    }
+
     public static function get( $args )
     {
         $id = BonusMain::get_id();
@@ -465,7 +479,7 @@ class ReviewAbout
 
             $afillate_description = self::get_afillate_description( $mode );
 
-            $afillate_class = ( empty( $afillate_text ) && empty( $afillate_description ) ) ? 'review-bonus-empty' : '';
+            $afillate_class = ( empty( $title ) && empty( $bonus ) ) ? 'review-bonus-empty' : '';
 
             LegalDebug::debug( [
                 'ReviewAbout' => 'get',
@@ -507,24 +521,20 @@ class ReviewAbout
                 'afillate' => [
                     'href' => self::check_href_afillate( $id ),
 
-                    // 'text' => self::get_text(),
-                    
-                    'text' => $afillate_text,
+                    'text' => self::get_text(),
 
                     // 'description' => self::get_afillate_description( $mode, $bonus_exception ), 
                     
-                    // 'description' => self::get_afillate_description( $mode ),
-                    
-                    'description' => $afillate_description,
+                    'description' => self::get_afillate_description( $mode ),
 
                     'stats' => ToolReviewCTA::get_stats_fields(),
-
-                    'class' => $afillate_class,
                 ],
 
                 'mode' => $mode,
 
-                'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
+                // 'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
+                
+                'class' => self::get_class( $mode, $title, $bonus ),
 
                 'achievement' => $achievement,
 
