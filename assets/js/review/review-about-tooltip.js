@@ -9,7 +9,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleModal( event )
 	{
-		event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 		// event.currentTarget.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 
 		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
@@ -29,6 +29,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	function prepareTooltip( element )
 	{
+		if ( !element ) {
+            return;
+        };
+
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
@@ -131,6 +135,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	// закрытие по клику на фон. Конец
+
+	// добавление класса к контейнеру тултипа. Начало
+
+	// добавление класса к контейнеру тултипа. конец
 } );
 
 // about-achievement-tooltip-js end 
