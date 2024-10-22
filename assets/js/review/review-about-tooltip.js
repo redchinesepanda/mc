@@ -23,14 +23,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'click', toggleModal, false );
 
-		console.log('prepareClose ' + element);
+		console.log('prepareClose:', element);
 	}
 
 	function prepareModal( element )
 	{
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		console.log('prepareModal ' + element);
+		console.log('prepareModal:', element);
 	}
 	
 	function prepareTooltip( element )
