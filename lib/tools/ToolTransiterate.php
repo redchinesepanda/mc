@@ -13,7 +13,7 @@ class ToolTransiterate
 
 		'o' => [ 'ó', ],
 
-		'-' => [ '—', ],
+		'-' => [ '–', '—'],
 	];
 
 	const REMOVE = [
