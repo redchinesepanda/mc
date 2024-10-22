@@ -84,6 +84,11 @@
     flex-basis: 60%;
 }
 
+.review-stats .item-title,
+.review-stats .item-description {
+    width: 100%;
+}
+
 .review-stats .item-value-wrapper {
 	/* width: 100%; */
     /* flex-basis: 50%; */
@@ -126,8 +131,7 @@
 }
 
 .review-stats .item-title,
-.review-stats .item-value-wrapper::after,
-.review-stats .item-title {
+.review-stats .item-value-wrapper::after {
     color: var( --Base-base-09 );
 }
 
