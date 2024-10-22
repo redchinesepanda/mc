@@ -401,7 +401,7 @@
 .review-about .about-right:not( .sticky-bonus ) .review-bonus-description:not(.legal-active),
 .legal-review-page-sidebar .about-right .review-bonus-description:not(.legal-active),
 .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-stats,
-.legal-review-page-sidebar .legal-tooltip-container:not( .legal-active ) .legal-tooltip {
+.legal-review-page-sidebar .bonus-stats-items:not( .legal-active ) .legal-tooltip {
     display: none;
 }
 
