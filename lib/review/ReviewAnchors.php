@@ -430,7 +430,7 @@ class ReviewAnchors
         return $nodes;
     }
 
-    public static function get()
+    public static function get_items()
     {
         $nodes = self::get_anchors();
 
@@ -440,8 +440,26 @@ class ReviewAnchors
         {
             $nodes = self::get_titles_auto();
 
-            $items = self::get_titles_data( $nodes );
+            return self::get_titles_data( $nodes );
         }
+
+        return [];
+    }
+
+    public static function get()
+    {
+        // $nodes = self::get_anchors();
+
+        // $items = self::get_data( $nodes );
+
+        // if ( empty( $items ) )
+        // {
+        //     $nodes = self::get_titles_auto();
+
+        //     $items = self::get_titles_data( $nodes );
+        // }
+
+        $items = self::get_items();
 
         return [
             'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
@@ -559,16 +577,27 @@ class ReviewAnchors
         return $nodes;
     }
 
-    public static function get_args_auto( $post_id = null )
+    public static function get_items_auto( $post_id = null )
     {
         $titles_nodes = self::get_titles_auto( $post_id );
 
-        $titles_data = self::get_titles_data( $titles_nodes );
+        return self::get_titles_data( $titles_nodes );
+    }
+
+    public static function get_args_auto( $post_id = null )
+    {
+        // $titles_nodes = self::get_titles_auto( $post_id );
+
+        // $titles_data = self::get_titles_data( $titles_nodes );
+
+        $items = self::get_items_auto( $post_id );
 
         return [
             'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
 
-            'items' => $titles_data,
+            // 'items' => $titles_data,
+           
+            'items' => $items,
         ];
     }
 
