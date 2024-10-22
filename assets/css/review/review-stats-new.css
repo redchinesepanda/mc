@@ -19,6 +19,10 @@
     .review-stats .stats-item {
         width: 100%;
     }
+
+    .review-stats .item-value-wrapper {
+        flex-basis: 100%;
+    }
 }
 
 @media screen and ( min-width: 960px )
