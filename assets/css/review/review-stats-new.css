@@ -44,6 +44,15 @@
         /* width: calc( 50% - 20px ); */
         flex-basis: 100%;
     }
+
+    .review-stats .item-data
+    {
+        flex-basis: 60%;
+    }
+
+    .review-stats .item-value-wrapper {
+        flex-basis: calc( 40% - 4rem );
+    }
 }
 
 /* Stats Display */ 
@@ -99,22 +108,22 @@
 	height: 40px;
 }
 
-.review-stats .item-data
+/* .review-stats .item-data
 {
-    /* flex-basis: 50%; */
+    flex-basis: 50%;
     flex-basis: 60%;
-}
+} */
 
 .review-stats .item-title,
 .review-stats .item-description {
     width: 100%;
 }
 
-.review-stats .item-value-wrapper {
-	/* width: 100%; */
-    /* flex-basis: 50%; */
+/* .review-stats .item-value-wrapper {
+	width: 100%;
+    flex-basis: 50%;
     flex-basis: calc( 40% - 4rem );
-}
+} */
 
 /* Stats Background */
 
