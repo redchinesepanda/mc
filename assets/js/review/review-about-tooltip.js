@@ -33,7 +33,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
             return;
         };
 
-		if ( element.contains( selectors.tooltipOpen ) ) {
+		if ( element.classList.contains( 'legal-tooltip-open' ) ) {
            element.parentNode.classList.add( '.legal-tooltip-container' );
 		   console.log('класс добавился!');
         };
