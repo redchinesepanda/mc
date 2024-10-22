@@ -23,12 +23,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'click', toggleModal, false );
 
-		console.log(element);
+		console.log('prepareClose ' + element);
 	}
 
 	function prepareModal( element )
 	{
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
+
+		console.log('prepareModal ' + element);
 	}
 	
 	function prepareTooltip( element )
@@ -43,7 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		// this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
+		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 
 		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
