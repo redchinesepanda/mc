@@ -414,7 +414,7 @@
     align-items: center;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:not(:nth-child(n+7)) .stats-item-label {
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label {
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
@@ -721,7 +721,7 @@
     padding-left: 64px;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 7 ) {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) {
     padding-top: 1rem;
 }
 
@@ -876,7 +876,7 @@
     background-color: var( --Base-base-02 );
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 7 ) {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) {
     border-top: 1px solid var( --Base-base-03 );
 }
 
@@ -901,8 +901,8 @@
 .about-right .legal-cut-control,
 .about-right .review-bonus-head,
 .legal-section-author-mini .info-author-name,
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-value,
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before,
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-value,
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label::before,
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-text {
     color: var( --Base-base-09 );
 }
@@ -947,7 +947,7 @@
 .about-right .legal-cut-control::after,
 .review-about .about-rating::after,
 .legal-review-page-sidebar .stats-item-tooltip::before,
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before,
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label::before,
 .legal-review-page-sidebar .stats-item-tooltip .legal-tooltip {
     font-family: var(--legal-font-icons);
 }
@@ -1026,13 +1026,13 @@
     line-height: 20px;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label {
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label {
     font-size: 0.8125rem;
     line-height: 1.0625rem;
     color: var( --Base-base-05 );
 }
 
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-label::before {
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label::before {
     font-size: var( --Spacing-07 );
     line-height: var( --Spacing-07 );
 }
@@ -1042,22 +1042,18 @@
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 2 ) .stats-item-label::before {
-    content: '\F10D';
-}
-
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 3 ) .stats-item-label::before {
     content: '\F11A';
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 4 ) .stats-item-label::before {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 3 ) .stats-item-label::before {
     content: '\F11B';
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 5 ) .stats-item-label::before {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 4 ) .stats-item-label::before {
     content: '\F101';
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) .stats-item-label::before {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( 5 ) .stats-item-label::before {
     content: '\F116';
 }
 
@@ -1081,12 +1077,12 @@
     content: attr( data-tooltip-text );
 }
 
-.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+7 ) ) .stats-item-value {
+.legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-value {
     font-size: 0.875rem;
     line-height: 1.25rem;
 }
 
-.legal-review-page-sidebar .bonus-stats-items:nth-child( n+7 ) {
+.legal-review-page-sidebar .bonus-stats-items:nth-child( n+6 ) {
     font-size: 0.75rem;
     line-height: 1.125rem;
     color: var( --Base-base-05 );
