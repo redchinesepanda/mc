@@ -14,18 +14,19 @@
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement legal-tooltip-container">
                         <div class="achievement-item">
-                            <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
-                                <div class="achievement-tooltip-background legal-tooltip">
-                                    <div class="achievement-tooltip"><span class="achievement-tooltip-close legal-tooltip-close"></span><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
+                            
                             <span class="achievement-name legal-tooltip-open">
                                 <?php if ( !empty( $args[ 'achievement' ][ 'image' ] ) ) : ?>
                                 <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
                                 <?php endif; ?>
                                 <?php echo $args[ 'achievement' ][ 'name' ]; ?>
                             </span>
+                            <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
+                                <div class="achievement-tooltip-background legal-tooltip">
+                                    <div class="achievement-tooltip"><span class="achievement-tooltip-close legal-tooltip-close"></span><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endif; ?>

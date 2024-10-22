@@ -10,11 +10,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function toggleModal( event )
 	{
 		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-		toggleSet( event.currentTarget );
+		// toggleSet( event.currentTarget );
 
-		console.log( event.currentTarget );
+		// console.log( event.currentTarget );
 
-		// event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 	}
 
 	function prepareClose( element )
