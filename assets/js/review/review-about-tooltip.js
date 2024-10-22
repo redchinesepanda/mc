@@ -45,7 +45,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( !element ) {
             return;
         };
-		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		// element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		element.querySelectorAll( args.tooltipOpen ).forEach( prepareTooltip, element );
 		
 	}
 
@@ -62,6 +63,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'tooltipClose' : '.review-about .achievement-tooltip-close',
 
 			'tooltip' : '.review-about .achievement-tooltip-background',
+		},
+
+		{
+			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
+
+			'tooltipOpen' : '.legal-review-page-sidebar .stats-item-tooltip',
+
+			'tooltipClose' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip-close',
+
+			'tooltip' : '.legal-review-page-sidebar .stats-item-tooltip .legal-tooltip',
 		},
 
 	];
