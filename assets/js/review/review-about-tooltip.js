@@ -35,7 +35,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( element.contains( selectors.tooltipOpen ) ) {
            element.parentNode.classList.add( '.legal-tooltip-container' );
-		   console.log('класс добавился');
+		   console.log('класс добавился!');
         };
 
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
