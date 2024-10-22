@@ -59,6 +59,8 @@ class ACFAnchors
 					// ] );
 
                     self::modify_fields( $post_id, $post );
+
+                    self::modify_content( $post_id, $post );
                 }
     		}
 
@@ -136,6 +138,43 @@ class ACFAnchors
 
 			'repeater' => get_field( ReviewAnchors::FIELD[ 'anchors' ], $post_id ),
 		] );
+	}
+	
+	public static function modify_content( $post_id, $post )
+	{
+		$dom = LegalDOM::get_dom( $post->post_content ); 
+
+        // $set_title_id_auto = false;
+
+		// $set_title_id_manual = self::set_header_id( $dom );
+
+        // if ( ! $set_title_id_manual )
+        // {
+		    $set_title_id_auto = ReviewAnchors::set_titles_id_auto( $dom );
+        // }
+
+        // if ( $set_title_id_manual || $set_title_id_auto )
+
+		LegalDebug::die( [
+			'ToolReviewAnchors' =>'modify_content-1',
+
+			'post_content' => $dom->saveHTML( $dom ),
+		] );
+        
+		if ( $set_title_id_auto )
+        {
+		    // return $dom->saveHTML( $dom );
+
+			$post_modified = [
+				'ID' => $post_id,
+
+                'post_content' => $dom->saveHTML( $dom ),
+			];
+
+			wp_update_post( $post_modified );
+        }
+
+        return $content;
 	}
 
 	const TEMPLATE = [
