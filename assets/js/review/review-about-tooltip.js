@@ -58,10 +58,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.remove( classes.active );
 	}
 
-	// function toggleSet( element )
-	// {
-	// 	element.classList.toggle( classes.active );
-	// }
+	function toggleSet( element )
+	{
+		element.classList.toggle( classes.active );
+	}
 
 	// function toggleModal( event )
 	// {
@@ -101,9 +101,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function openModal( event )
 	{
-		if ( ! event.currentTarget.classList.contains( classes.active ) )
-		{
-			event.currentTarget.classList.add( classes.active );
+		// if ( ! event.currentTarget.classList.contains( classes.active ) )
+		// {
+			// event.currentTarget.classList.add( classes.active );
+
+			toggleSet( event.currentTarget );
 
 			// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 			// toggleSet( event.currentTarget );
@@ -122,23 +124,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			event.currentTarget
 				.querySelectorAll( selectors.tooltip )
 				.forEach( addSet );
-		}
+		// }
 	}
 
-	function prepareClose( element )
-	{
-		console.log( 'prepareClose' );
+	// function prepareClose( element )
+	// {
+	// 	console.log( 'prepareClose' );
 
-		console.log( element );
+	// 	console.log( element );
 
-		// element.dataset.tooltipSet = this.dataset.tooltipSet;
+	// 	// element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		// element.addEventListener( 'click', toggleModal, false );
+	// 	// element.addEventListener( 'click', toggleModal, false );
 		
-		element.addEventListener( 'click', closeModal, false );
+	// 	element.addEventListener( 'click', closeModal, false );
 
-		// console.log('prepareClose:', element);
-	}
+	// 	// console.log('prepareClose:', element);
+	// }
 
 	// function prepareModal( element )
 	// {
@@ -183,7 +185,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	// .addEventListener( 'click', toggleModal, false );
 	// }
 
-	function prepareElements( element, elementID )
+	function prepareElements( element )
 	{
 		console.log( 'prepareElements' );
 
@@ -209,12 +211,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'click', openModal, false );
 
-		element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+		// element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 	}
 
 	function controlInit ( arg )
 	{	
-		console.log( arg.tooltipContainer );
+		// console.log( arg.tooltipContainer );
 
 		document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 	}
@@ -223,7 +225,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( tooltipInit );
 
-		console.log( args );
+		// console.log( args );
 
 		args.forEach( controlInit );
 	}
