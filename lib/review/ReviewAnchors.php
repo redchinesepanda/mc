@@ -531,19 +531,19 @@ class ReviewAnchors
             $node_id = cyr_to_lat()->transliterate( $node_id );
         }
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get_title_id_auto-1',
+        // LegalDebug::debug( [
+        //     'ReviewAnchors' => 'get_title_id_auto-1',
 
-            'node_id' => $node_id,
-        ] );
+        //     'node_id' => $node_id,
+        // ] );
 
         $node_id = preg_replace( '/--+/', '-', $node_id );
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get_title_id_auto-2',
+        // LegalDebug::debug( [
+        //     'ReviewAnchors' => 'get_title_id_auto-2',
 
-            'node_id' => $node_id,
-        ] );
+        //     'node_id' => $node_id,
+        // ] );
 
         // if ( ! is_null( $index ) )
         // {
