@@ -13,14 +13,6 @@
             <div class="about-center">
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement legal-tooltip-container">
-                        <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
-                            <div class="achievement-tooltip-background legal-tooltip legal-tooltip-wrapper">
-                                <div class="achievement-tooltip">
-                                    <span class="achievement-tooltip-close legal-tooltip-close"></span>
-                                    <span class="achievement-tooltip-text" ><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?></span>
-                                </div>
-                            </div>
-                        <?php endif; ?>
                         <div class="achievement-item">
                             <span class="achievement-name legal-tooltip-control">
                                 <?php if ( !empty( $args[ 'achievement' ][ 'image' ] ) ) : ?>
@@ -29,7 +21,14 @@
                                 <?php echo $args[ 'achievement' ][ 'name' ]; ?>
                             </span>
                         </div>
-                        
+                        <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
+                            <div class="achievement-tooltip-background legal-tooltip legal-tooltip-wrapper">
+                                <div class="achievement-tooltip">
+                                    <span class="achievement-tooltip-close legal-tooltip-close"></span>
+                                    <span class="achievement-tooltip-text" ><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?></span>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <div class="about-logo"></div>
