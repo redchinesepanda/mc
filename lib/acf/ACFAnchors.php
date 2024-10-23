@@ -144,9 +144,21 @@ class ACFAnchors
 	
 	public static function modify_content( $post_id, $post )
 	{
-		$dom = LegalDOM::get_dom( $post->post_content ); 
+		$dom = LegalDOM::get_dom( $post->post_content );
 
-		// ReviewAnchors::remove_nodes_anchors( $dom );
+		LegalDebug::die( [
+			'ToolReviewAnchors' =>'modify_content-1',
+
+			'post_content' => $dom->saveHTML( $dom ),
+		] );
+
+		ReviewAnchors::remove_nodes_anchors( $dom );
+
+		LegalDebug::die( [
+			'ToolReviewAnchors' =>'modify_content-2',
+
+			'post_content' => $dom->saveHTML( $dom ),
+		] );
 
         // $set_title_id_auto = false;
 
