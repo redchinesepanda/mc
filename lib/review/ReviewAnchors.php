@@ -261,7 +261,7 @@ class ReviewAnchors
 
                 'id' => $node->getAttribute( 'id' ),
 
-                'textContent' => substr( $node->nodeValue, 0, 30 ),
+                'html' => $dom->saveHTML( $node ),
             ] );
 
             // $dom->removeChild( $node );
