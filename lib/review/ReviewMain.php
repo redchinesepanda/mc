@@ -115,7 +115,7 @@ class ReviewMain
 
 		'registration' => 'Registration',
 
-        // 'regulator' => 'Regulator',
+        'regulator' => 'Regulator',
 
 		'review' => 'Review',
 

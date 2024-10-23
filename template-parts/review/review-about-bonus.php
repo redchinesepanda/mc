@@ -29,6 +29,7 @@
                         <?php if ( ! empty( $stats_item[ 'tooltip' ] ) ) : ?>
                             <span class="stats-item-tooltip legal-tooltip-control"></span>
                             <div class="legal-tooltip">
+                                <span class="legal-tooltip-title"><?php echo $args[ 'text' ][ 'tooltip-title' ]; ?></span>
                                 <span class="legal-tooltip-close"></span>
                                 <p class="legal-tooltip-text" data-tooltip-text="<?php echo $stats_item[ 'tooltip' ]; ?>"></p>
                             </div>
