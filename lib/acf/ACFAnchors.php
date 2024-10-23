@@ -146,7 +146,7 @@ class ACFAnchors
 	{
 		$dom = LegalDOM::get_dom( $post->post_content ); 
 
-		ReviewAnchors::remove_nodes_anchors( $dom );
+		// ReviewAnchors::remove_nodes_anchors( $dom );
 
         // $set_title_id_auto = false;
 
