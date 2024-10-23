@@ -693,8 +693,6 @@
 .legal-review-page-sidebar .stats-item-tooltip {
     position: absolute;
     right: calc( 1.5rem + 0.25rem );
-    /* margin-left: auto;
-    margin-right: 0.25rem; */
 }
 
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text {
