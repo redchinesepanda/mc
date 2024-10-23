@@ -107,6 +107,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	tooltipInit();
 
+	window.addEventListener( 'resize', tooltipInit, false );
+
 	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 
 	// закрытие по клику на фон. Начало
