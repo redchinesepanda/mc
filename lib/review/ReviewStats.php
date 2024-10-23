@@ -181,9 +181,9 @@ class ReviewStats
 
 			// start Модицикация ближайшего заголовка к таблице Review Stats
 
-			// $node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
+			$node_title = LegalDom::get_previous_element( $dom, $node, 'h2' );
 
-			// self::modify_title( $dom, $node_title, $stats_data );
+			self::modify_title( $dom, $node_title, $stats_data );
 
 			// end Модицикация ближайшего заголовка к таблице Review Stats
 
