@@ -251,6 +251,12 @@ class ReviewAnchors
         {
             // $node->remove();
 
+            LegalDebug::debug( [
+                'ReviewAnchors' => 'remove_nodes_anchors-1',
+
+                'node' => substr( $node->textContent, 0, 30 ),
+            ] );
+
             $dom->removeChild( $node );
         }
 	}
