@@ -137,6 +137,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( element );
 
+		console.log( element.dataset.tooltipSet );
+
 		// if ( !element ) {
         //     return;
         // };
