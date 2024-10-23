@@ -97,23 +97,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function openModal( event )
 	{
-		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-		// toggleSet( event.currentTarget );
-
-		console.log( 'openModal' );
-
-		console.log( event.target ); 
-
-		console.log( event.currentTarget );
-
-		// event.currentTarget.closest( selectors.tooltipContainer )
-		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
-		// 	.forEach( addSet );
-		
-		// event.currentTarget
-		event.target
-			.querySelectorAll( selectors.tooltip )
-			.forEach( addSet );
+		if ( ! element.classList.has( classes.active ) )
+		{
+			// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+			// toggleSet( event.currentTarget );
+	
+			console.log( 'openModal' );
+	
+			console.log( event.target ); 
+	
+			console.log( event.currentTarget );
+	
+			// event.currentTarget.closest( selectors.tooltipContainer )
+			// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+			// 	.forEach( addSet );
+			
+			// event.currentTarget
+			event.currentTarget
+				.querySelectorAll( selectors.tooltip )
+				.forEach( addSet );
+		}
 	}
 
 	function prepareClose( element )
