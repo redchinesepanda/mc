@@ -72,7 +72,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
 
-		element.parentElement.querySelector( selectors.tooltipWrapper ).addEventListener( 'click', closeModal, false );
+		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
+
+		if ( tooltipWrapper )
+		{
+			tooltipWrapper.addEventListener( 'click', closeModal, false );
+		}
 	}
 
 	function controlInit( arg )
