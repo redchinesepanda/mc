@@ -14,14 +14,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// 'tooltipContainer' : '.review-about .about-achievement',
 			
-			'tooltipContainer' : '.review-about .about-achievement .achievement-item',
+			'tooltipContainer' : '.review-about .about-achievement .achievement-item'
 		},
 
 		{
 			// 'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
 			
-			'tooltipContainer' : '.review-bonus-stats .stats-item-tooltip',
-		},
+			'tooltipContainer' : '.review-bonus-stats .stats-item-tooltip'
+		}
 	];
 
 	const selectors = {
