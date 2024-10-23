@@ -58,6 +58,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'event.currentTarget.closest( selectors.tooltip', event.currentTarget.closest( selectors.tooltip ));
 
+		//начало скрытия по клику вне зоны
+		let tooltip = document.querySelector( selectors.tooltip );
+
+		if ( !tooltip.contains( event.target )  ) {
+			tooltip.classList.remove( classes.active );
+		}
+		//конец скрытия по клику вне зоны
+
 		removeSet( event.currentTarget.closest( selectors.tooltip ) );
 	}
 
@@ -85,7 +93,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let body = document.querySelector( selectors.body );
 
-		// body.addEventListener( 'click', closeModal, false );
+		body.addEventListener( 'click', closeModal, false );
 
 		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
