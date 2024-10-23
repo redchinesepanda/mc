@@ -29,7 +29,19 @@ class ToolTransiterate
 
 		$string = str_replace( self::REMOVE, '', $string );
 
+		LegalDebug::debug( [
+			'ToolTransiterate' => 'replace-1',
+
+			'string' => $string,
+		] );
+
 		$string = preg_replace( '/--+/', '-', $string );
+
+		LegalDebug::debug( [
+			'ToolTransiterate' => 'replace-2',
+
+			'string' => $string,
+		] );
         
 		return $string;
     }
