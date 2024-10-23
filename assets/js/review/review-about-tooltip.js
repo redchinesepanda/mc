@@ -173,6 +173,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.dataset.tooltipSet = index;
 
+		console.log( element.dataset.tooltipSet );
+
 		// if ( ! element ) {
         //     return;
         // };
