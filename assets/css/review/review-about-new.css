@@ -369,18 +369,20 @@
     column-gap: 8px;
 }
 
-.review-about .achievement-tooltip-background.legal-active,
+/* .review-about .achievement-tooltip-background.legal-active, */
+.review-about .achievement-tooltip.legal-active,
 .review-about .about-rating .legal-tooltip.legal-active {
     display: flex;
 }
 
 .review-about .achievement-tooltip-background:not( .legal-active ),
+.review-about .achievement-tooltip.legal-active,
 .review-about .about-rating .legal-tooltip:not( .legal-active ) {
     display: none;
 }
 
 .review-about .achievement-tooltip {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     row-gap: 8px;
 }
