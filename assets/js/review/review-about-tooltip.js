@@ -216,7 +216,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( tooltipInit );
 
-		console.log( arg );
+		console.log( args );
 
 		args.forEach( function ( arg ) {
 			// console.log( arg.tooltipContainer );
