@@ -56,17 +56,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		//начало скрытия по клику вне зоны
 		// let tooltip = document.querySelectorAll( selectors.tooltip );
 
-		/* tooltip.forEach( () => {
+		tooltip.forEach( (elem) => {
+			console.log('поиск по боди');
 
-			if ( !tooltip.contains( event.target ) && tooltip.classList.contains( classes.active ) ) {
-				tooltip.classList.remove( classes.active );
+			if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
+				elem.classList.remove( classes.active );
 			}
 
-		}); */
-		tooltip.forEach( (elem) => {
+		});
+		/* tooltip.forEach( (elem) => {
 			console.log(elem);
 			elem.classList.remove( classes.active );
-		});
+		}); */
 		
 		//конец скрытия по клику вне зоны
 	};
