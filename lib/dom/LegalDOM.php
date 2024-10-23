@@ -34,7 +34,7 @@ class LegalDOM
 
 		// $dom = new DOMDocument( '1.0', 'utf-8' );
 
-		if ( !empty( $content ) )
+		if ( ! empty( $content ) )
 		{
 			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			

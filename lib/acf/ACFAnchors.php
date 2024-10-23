@@ -146,7 +146,7 @@ class ACFAnchors
 	{
 		$dom = LegalDOM::get_dom( $post->post_content );
 
-		// $dom->preserveWhiteSpace = false;
+		$dom->preserveWhiteSpace = false;
 
 		// LegalDebug::die( [
 		// 	'ToolReviewAnchors' =>'modify_content-1',
