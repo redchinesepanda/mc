@@ -54,6 +54,8 @@ class LegalDOM
 				// LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED | LIBXML_NOBLANKS
 			);
 
+			$dom->preserveWhiteSpace = false;
+
 			// Работает 1 конец
 
 			// Работает 2 начало
