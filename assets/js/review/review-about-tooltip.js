@@ -100,7 +100,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'openModal' );
 
-		console.log( event.target );
+		console.log( event.target ); 
 
 		console.log( event.currentTarget );
 
