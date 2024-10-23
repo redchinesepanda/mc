@@ -101,6 +101,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element, index )
 	{
+		console.log( element );
+
 		element.dataset.tooltipSet = index;
 
 		// if ( ! element ) {
@@ -114,7 +116,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function tooltipInit() {
 		args.forEach( function ( arg ) {
-			console.log( arg.tooltipContainer );
+			// console.log( arg.tooltipContainer );
 
 			document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 		} );
