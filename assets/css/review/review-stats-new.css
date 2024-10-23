@@ -59,7 +59,12 @@
     }
 }
 
-/* Stats Display */ 
+/* Stats Display */
+
+.review-stats-title  {
+    display: flex;
+    justify-content: space-between;
+}
 
 .review-stats {
     display: flex;
@@ -85,10 +90,6 @@
 }
 
 /* Stats Position */
-
-.review-stats-title .review-stats-title-rating {
-    margin-left: auto;
-}
 
 .review-stats
 {
