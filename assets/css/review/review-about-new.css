@@ -385,7 +385,7 @@
 }
 
 .review-about .achievement-tooltip-close {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: flex-end;
 }
@@ -725,6 +725,10 @@
 
 .review-about .achievement-app .achievement-bonus-link {
     padding-left: 64px;
+}
+
+.review-about .achievement-tooltip-close {
+   margin-left: auto;
 }
 
 .legal-review-page-sidebar .bonus-stats-items:nth-child( 6 ) {
