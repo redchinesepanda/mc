@@ -7,7 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltipContainer: 'legal-tooltip-container',
 
-		tooltipItem: 'stats-item-tooltip',
+		tooltipItem: 'stats-item-tooltip'
 	};
 
 	const args = [
@@ -114,6 +114,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function tooltipInit() {
 		args.forEach( function ( arg ) {
+			console.log( arg.tooltipContainer );
+
 			document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 		} );
 	}
