@@ -96,7 +96,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// event.target.closest( selectors.tooltip ).parentElement().classList.remove( classes.active );
 
-		removeSet( event.currentTarget.parentElement.querySelector( selectors.tooltip ) );
+		removeSet( event.currentTarget.parentElement );
 	}
 
 	function openModal( event )
