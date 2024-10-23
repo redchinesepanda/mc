@@ -97,7 +97,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function openModal( event )
 	{
-		if ( ! element.classList.has( classes.active ) )
+		if ( ! event.currentTarget.classList.has( classes.active ) )
 		{
 			// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 			// toggleSet( event.currentTarget );
