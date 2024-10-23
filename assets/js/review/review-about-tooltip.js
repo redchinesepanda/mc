@@ -84,6 +84,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'closeModal' );
 
+		console.log( event.target );
+
 		console.log( event.currentTarget );
 
 		// event.currentTarget.closest( selectors.tooltipContainer )
