@@ -262,7 +262,7 @@ class ReviewAnchors
             {
                 // $node->removeChild( $anchor );
 
-                $node->parentNode->removeChild( $node );
+                $anchor->parentNode->removeChild( $anchor );
             }
 
             LegalDebug::debug( [
