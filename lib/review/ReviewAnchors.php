@@ -245,7 +245,7 @@ class ReviewAnchors
 
 	public static function remove_nodes_anchors( $dom )
 	{
-		self::get_nodes( $dom );
+		$nodes = self::get_nodes( $dom );
 
         foreach ( $nodes as $node )
         {
