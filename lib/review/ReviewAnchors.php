@@ -149,10 +149,8 @@ class ReviewAnchors
         LegalDebug::debug( [
             'ReviewAnchors' => 'register-1',
 
-            'get_titles_auto' => self::get_titles_auto(),
+            'get_args_auto' => self::get_args_auto(),
         ] );
-
-        
     }
 
     public static function modify_content( $content )
