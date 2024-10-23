@@ -243,17 +243,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// закрытие по клику на фон. Начало
 
-	let tooltipBackground = document.querySelector( selectors.tooltip );
+	// let tooltipBackground = document.querySelector( selectors.tooltip );
 
-	function closeBackgroundTooltip() {
-		if( tooltipBackground.classList.contains( classes.active ) ) {
-			tooltipBackground.classList.remove( classes.active );
-		}
-	}
+	// function closeBackgroundTooltip() {
+	// 	if( tooltipBackground.classList.contains( classes.active ) ) {
+	// 		tooltipBackground.classList.remove( classes.active );
+	// 	}
+	// }
 
-	if ( document.querySelector( selectors.aboutAchievement ) ) {
-		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	};
+	// if ( document.querySelector( selectors.aboutAchievement ) ) {
+	// 	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
+	// };
 
 	// закрытие по клику на фон. Конец
 
