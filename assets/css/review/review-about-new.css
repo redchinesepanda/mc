@@ -375,7 +375,8 @@
     display: flex;
 }
 
-.review-about .achievement-tooltip-background:not( .legal-active ),
+/* .review-about .achievement-tooltip-background:not( .legal-active ), */
+.review-about .achievement-tooltip-background,
 .review-about .achievement-tooltip.legal-active,
 .review-about .about-rating .legal-tooltip:not( .legal-active ) {
     display: none;
