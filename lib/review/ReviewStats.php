@@ -112,9 +112,9 @@ class ReviewStats
 		return self::get_stat_value( $rating_average );
 	}
 
-	const PATTERNS = [
-		'title-rating' => '%s/%s',
-	];
+	// const PATTERNS = [
+	// 	'title-rating' => '%s/%s',
+	// ];
 
 	public static function get_title_rating( $stats_data )
 	{
@@ -127,7 +127,13 @@ class ReviewStats
 			return $rating_average;
 		}
 
-		return sprintf( self::PATTERNS[ 'title-rating' ], $rating_average, $rating_max );
+		// return sprintf( self::PATTERNS[ 'title-rating' ], $rating_average, $rating_max );
+
+		return [
+			'rating_average' => $rating_average,
+
+			'rating_max' => $rating_max,	
+		];
 	}
 
 	public static function modify_title( $dom, $node_title, $stats_data )
@@ -138,11 +144,21 @@ class ReviewStats
 
 		// LegalDom::addClass( $node_title, 'review-stats-title' );
 
-		$rating = $dom->createElement( 'span', $rating_value );
+		$rating_average = $dom->createElement( 'span', $rating_value[ 'rating_average' ] );
 
-		$rating->setAttribute( 'class', 'review-stats-title-rating' );
+		$rating_average->setAttribute( 'class', 'review-stats-title-rating-average' );
 
-		$node_title->appendChild( $rating );
+		$node_title->appendChild( $rating_average );
+
+		$separator = $rating = $dom->createTextNode( '/' );
+
+		$node_title->appendChild( $separator );
+
+		$rating_max = $dom->createElement( 'span', $rating_value[ 'rating_max' ] );
+
+		$rating_max->setAttribute( 'class', 'review-stats-title-rating-max' );
+
+		$node_title->appendChild( $rating_max );
 	}
 
 	public static function get_content( $content )
