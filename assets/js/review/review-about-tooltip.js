@@ -64,6 +64,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		toggleSet( event.currentTarget.parentElement.querySelector( selectors.tooltip ) );
 	}
 
+	const mediaQuery = {
+		desktop : '( min-width: 960px )'
+	}
+
 	function prepareElements( element )
 	{
 		// console.log( 'prepareElements' );
@@ -72,11 +76,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
 
-		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
-
-		if ( tooltipWrapper )
+		if ( window.matchMedia( this.mediaQuery.desktop ).matches )
 		{
-			tooltipWrapper.addEventListener( 'click', closeModal, false );
+			let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
+	
+			if ( tooltipWrapper )
+			{
+				tooltipWrapper.addEventListener( 'click', closeModal, false );
+			}
 		}
 	}
 
