@@ -83,7 +83,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let body = document.querySelector( selectors.body );
 
-		body.addEventListener( 'click', closeModal, false );
+		// body.addEventListener( 'click', closeModal, false );
 
 		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
