@@ -45,7 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function toggle( event ) 
     {
-        console.log('работает прослушиватель')
+        // console.log('работает прослушиватель')
         const switchers = document.getElementsByClassName( classes.switcher );
 
         for ( let switcher of switchers ) {

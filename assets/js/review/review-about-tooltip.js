@@ -52,16 +52,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function closeModalFromBody( event ) {
 
 		tooltip.forEach( (elem) => {
-			console.log('поиск по боди');
 			let tooltipControl = elem.previousElementSibling;
 
 			if ( !elem.contains( event.target ) && !tooltipControl.contains( event.target ) ) {
-				// elem.classList.toggle( 'body-add' );
 				elem.classList.remove( classes.active );
 			}
-			/* if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
-				elem.classList.remove( classes.active );
-			} */
 
 		});
 	};
@@ -84,8 +79,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function closeModal( event )
 	{
 		// console.log( 'closeModal' );
-		// console.log( 'event.currentTarget', event.currentTarget );
-		// console.log( 'event.currentTarget.closest( selectors.tooltip', event.currentTarget.closest( selectors.tooltip ));
 
 		removeSet( event.currentTarget.closest( selectors.tooltip ) );
 	}
