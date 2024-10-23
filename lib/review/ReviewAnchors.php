@@ -335,7 +335,19 @@ class ReviewAnchors
     
                 $id_ready = ToolTransiterate::replace( $id_translated );
 
+                LegalDebug::debug( [
+                    'ReviewAnchors' => 'get_labels-1',
+
+                    'id_ready' => $id_ready,
+                ] );
+
                 $id_ready = preg_replace( '/--+/', '-', $id_ready );
+
+                LegalDebug::debug( [
+                    'ReviewAnchors' => 'get_labels-2',
+
+                    'id_ready' => $id_ready,
+                ] );
     
                 $anchors[ $id_ready ] = $label_translated;
             }
