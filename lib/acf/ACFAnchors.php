@@ -146,11 +146,11 @@ class ACFAnchors
 	{
 		$dom = LegalDOM::get_dom( $post->post_content );
 
-		LegalDebug::die( [
-			'ToolReviewAnchors' =>'modify_content-1',
+		// LegalDebug::die( [
+		// 	'ToolReviewAnchors' =>'modify_content-1',
 
-			'post_content' => $dom->saveHTML( $dom ),
-		] );
+		// 	'post_content' => $dom->saveHTML( $dom ),
+		// ] );
 
 		ReviewAnchors::remove_nodes_anchors( $dom );
 
