@@ -551,6 +551,8 @@ class ReviewAnchors
 
         $node_id = preg_replace( '/--+/', '-', $node_id );
 
+        $node_id = trim( $node_id, '-' );
+
         // LegalDebug::debug( [
         //     'ReviewAnchors' => 'get_title_id_auto-2',
 
