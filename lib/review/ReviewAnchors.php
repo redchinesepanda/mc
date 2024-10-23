@@ -265,18 +265,18 @@ class ReviewAnchors
                 // $anchor->parentNode->removeChild( $anchor );
             }
 
-            LegalDebug::debug( [
-                'ReviewAnchors' => 'remove_nodes_anchors-1',
+            // LegalDebug::debug( [
+            //     'ReviewAnchors' => 'remove_nodes_anchors-1',
 
-                'id' => $anchor->getAttribute( 'id' ),
+            //     'id' => $anchor->getAttribute( 'id' ),
 
-                'html' => $dom->saveHTML( $node ),
-            ] );
+            //     'html' => $dom->saveHTML( $node ),
+            // ] );
         }
 
-        LegalDebug::die( [
-            'ReviewAnchors' => 'remove_nodes_anchors-1',
-        ] );
+        // LegalDebug::die( [
+        //     'ReviewAnchors' => 'remove_nodes_anchors-1',
+        // ] );
 
         return true;
 	}
