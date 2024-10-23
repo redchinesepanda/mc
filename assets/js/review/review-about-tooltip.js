@@ -212,7 +212,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 	}
 
-	function tooltipInit() {
+	function tooltipInit()
+	{
+		console.log( tooltipInit );
+
+		console.log( arg );
+
 		args.forEach( function ( arg ) {
 			// console.log( arg.tooltipContainer );
 
