@@ -256,7 +256,12 @@ class ReviewAnchors
         {
             // $node->remove();
 
-            $node->getElementsByTagName( 'a' )->item( 0 )->remove();
+            $anchor = $node->getElementsByTagName( 'a' )->item( 0 );
+
+            if ( $anchor )
+            {
+                $node->removeChild( $anchor );
+            }
 
             LegalDebug::debug( [
                 'ReviewAnchors' => 'remove_nodes_anchors-1',
@@ -266,7 +271,7 @@ class ReviewAnchors
                 'html' => $dom->saveHTML( $node ),
             ] );
 
-            // $dom->removeChild( $node );
+            
         }
 
         LegalDebug::die( [
