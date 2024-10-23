@@ -56,6 +56,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'event.currentTarget', event.currentTarget );
 
+		console.log( 'event.currentTarget.closest( selectors.tooltip', event.currentTarget.closest( selectors.tooltip ));
+
 		removeSet( event.currentTarget.closest( selectors.tooltip ) );
 	}
 
