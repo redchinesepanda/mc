@@ -105,7 +105,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	.forEach( addSet );
 		
 		event.currentTarget
-			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+			.querySelectorAll( selectors.tooltip )
 			.forEach( addSet );
 	}
 
@@ -171,11 +171,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log(`${element}, ${elementID}, ${this}`);
 		
-		console.log( `${element}, ${elementID}` );
+		// console.log( `${element}, ${elementID}` );
 
 		// console.log( element );
 
-		element.dataset.tooltipSet = elementID;
+		// element.dataset.tooltipSet = elementID;
 
 		// console.log( elementID );
 
@@ -187,7 +187,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 		
-		prepareTooltip( element );
+		// prepareTooltip( element );
+
+		element.addEventListener( 'click', openModal, false );
+
+		element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 	}
 
 	function tooltipInit() {
