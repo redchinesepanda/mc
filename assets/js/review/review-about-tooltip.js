@@ -48,6 +48,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
+	function addSet( element )
+	{
+		element.classList.toggle( classes.active );
+	}
+
+	function removeSet( element )
+	{
+		element.classList.toggle( classes.active );
+	}
+
 	function toggleSet( element )
 	{
 		element.classList.toggle( classes.active );
@@ -65,6 +75,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.closest( selectors.tooltipContainer )
 			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 			.forEach( toggleSet );
+	}
+
+	function openModal( event )
+	{
+		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		// toggleSet( event.currentTarget );
+
+		console.log( 'openModal' );
+
+		console.log( event.currentTarget );
+
+		event.currentTarget.closest( selectors.tooltipContainer )
+			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+			.forEach( addSet );
 	}
 
 	function prepareClose( element )
@@ -97,10 +121,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
         //     return;
         // };
 
-		if ( element.classList.contains( classes.tooltipItem ) )
-		{
-			element.parentNode.classList.add( classes.tooltipContainer );
-		}
+		// if ( element.classList.contains( classes.tooltipItem ) )
+		// {
+		// 	element.parentNode.classList.add( classes.tooltipContainer );
+		// }
+
+		element.addEventListener( 'click', openModal, false );
 
 		// element.dataset.tooltipSet = this.dataset.tooltipSet;
 
@@ -109,8 +135,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 
 		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
-
-		element.addEventListener( 'click', toggleModal, false );
 
 		console.log( selectors.tooltipClose );
 
