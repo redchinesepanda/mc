@@ -334,20 +334,6 @@ class ReviewAnchors
                 $id_translated = ToolLoco::translate_locale( $id, $locale );
     
                 $id_ready = ToolTransiterate::replace( $id_translated );
-
-                LegalDebug::debug( [
-                    'ReviewAnchors' => 'get_labels-1',
-
-                    'id_ready' => $id_ready,
-                ] );
-
-                $id_ready = preg_replace( '/--+/', '-', $id_ready );
-
-                LegalDebug::debug( [
-                    'ReviewAnchors' => 'get_labels-2',
-
-                    'id_ready' => $id_ready,
-                ] );
     
                 $anchors[ $id_ready ] = $label_translated;
             }
@@ -544,6 +530,20 @@ class ReviewAnchors
         {
             $node_id = cyr_to_lat()->transliterate( $node_id );
         }
+
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'get_title_id_auto-1',
+
+            'node_id' => $node_id,
+        ] );
+
+        $node_id = preg_replace( '/--+/', '-', $node_id );
+
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'get_title_id_auto-2',
+
+            'node_id' => $node_id,
+        ] );
 
         // if ( ! is_null( $index ) )
         // {
