@@ -92,7 +92,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 		// 	.forEach( toggleSet );
 
-		console.log( `event.target.closest( selectors.tooltip: ${event.target.closest( selectors.tooltip )}` );
+		console.log( event.target.closest( selectors.tooltip ) );
 		
 		event.target.closest( selectors.tooltip ).parentElement().classList.remove( classes.active );
 
