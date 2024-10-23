@@ -50,21 +50,25 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.toggle( classes.active );
 	}
 
+	function closeModalFromBody( event ) {
+		//начало скрытия по клику вне зоны
+		let tooltip = document.querySelectorAll( selectors.tooltip ).forEach( () => {
+
+			if ( !tooltip.contains( event.target ) && tooltip.classList.contains( classes.active ) ) {
+				tooltip.classList.remove( classes.active );
+			}
+		});
+
+		//конец скрытия по клику вне зоны
+	};
+
 	function closeModal( event )
 	{
 		// console.log( 'closeModal' );
 
-		console.log( 'event.currentTarget', event.currentTarget );
+		// console.log( 'event.currentTarget', event.currentTarget );
 
-		console.log( 'event.currentTarget.closest( selectors.tooltip', event.currentTarget.closest( selectors.tooltip ));
-
-		//начало скрытия по клику вне зоны
-		let tooltip = document.querySelector( selectors.tooltip );
-
-		if ( !tooltip.contains( event.target )  ) {
-			tooltip.classList.remove( classes.active );
-		}
-		//конец скрытия по клику вне зоны
+		// console.log( 'event.currentTarget.closest( selectors.tooltip', event.currentTarget.closest( selectors.tooltip ));
 
 		removeSet( event.currentTarget.closest( selectors.tooltip ) );
 	}
@@ -93,7 +97,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let body = document.querySelector( selectors.body );
 
-		body.addEventListener( 'click', closeModal, false );
+		body.addEventListener( 'click', closeModalFromBody, false );
 
 		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
