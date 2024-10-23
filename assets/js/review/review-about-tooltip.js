@@ -50,13 +50,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.toggle( classes.active );
 	}
 
+	let tooltip = document.querySelectorAll( selectors.tooltip );
+
 	function closeModalFromBody( event ) {
 		//начало скрытия по клику вне зоны
-		let tooltip = document.querySelectorAll( selectors.tooltip ).forEach( () => {
+		// let tooltip = document.querySelectorAll( selectors.tooltip );
+
+		tooltip.forEach( () => {
 
 			if ( !tooltip.contains( event.target ) && tooltip.classList.contains( classes.active ) ) {
 				tooltip.classList.remove( classes.active );
 			}
+
 		});
 
 		//конец скрытия по клику вне зоны
