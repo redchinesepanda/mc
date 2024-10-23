@@ -54,7 +54,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		tooltip.forEach( (elem) => {
 			console.log('поиск по боди');
 
-			if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
+			if ( !elem.contains( event.target ) ) {
 				elem.classList.toggle( 'body-add' );
 			}
 			/* if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
