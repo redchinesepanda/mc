@@ -58,9 +58,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 		// toggleSet( event.currentTarget );
 
-		// console.log( 'toggleModal' );
+		console.log( 'toggleModal' );
 
-		// console.log( event );
+		console.log( event.currentTarget );
 
 		event.currentTarget.closest( selectors.tooltipContainer )
 			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
