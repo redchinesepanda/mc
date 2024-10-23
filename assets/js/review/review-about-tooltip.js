@@ -76,13 +76,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
 
-		if ( ! window.matchMedia( mediaQuery.desktop ).matches )
-		{
-			let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
+		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
-			if ( tooltipWrapper )
+		if ( tooltipWrapper )
+		{
+			if ( ! window.matchMedia( mediaQuery.desktop ).matches )
 			{
 				tooltipWrapper.addEventListener( 'click', closeModal, false );
+			}
+			else
+			{
+				tooltipWrapper.removeEventListener( 'click', closeModal, false );
 			}
 		}
 	}
