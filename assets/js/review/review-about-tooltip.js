@@ -63,8 +63,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 
 		}); */
-		tooltip.forEach( () => {
-			tooltip.classList.remove( classes.active );
+		tooltip.forEach( (elem) => {
+			console.log(elem);
+			elem.classList.remove( classes.active );
 		});
 		
 		//конец скрытия по клику вне зоны
