@@ -105,6 +105,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element, index )
 	{
+		console.log( 'prepareElements' );
+
 		// console.log( element );
 
 		element.dataset.tooltipSet = index;
