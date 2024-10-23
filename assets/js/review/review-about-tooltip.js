@@ -63,15 +63,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		});
 	};
+
+	function startBody() {
+		let body = document.querySelector( selectors.body );
+
+		body.addEventListener( 'click', closeModalFromBody, false );
+	};
+
 	//конец скрытия по клику вне зоны
 
 	function toggleSet( element )
 	{
 		element.classList.toggle( classes.active );
 
-		let body = document.querySelector( selectors.body );
-
-		body.addEventListener( 'click', closeModalFromBody, false );
+		startBody();
 	}
 
 	function closeModal( event )
