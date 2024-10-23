@@ -256,6 +256,8 @@ class ReviewAnchors
         {
             // $node->remove();
 
+            $node->getElementsByTagName( 'a' )->item( 0 )->remove();
+
             LegalDebug::debug( [
                 'ReviewAnchors' => 'remove_nodes_anchors-1',
 
