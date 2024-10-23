@@ -36,6 +36,8 @@ class LegalDOM
 
 		if ( ! empty( $content ) )
 		{
+			$dom->preserveWhiteSpace = false;
+			
 			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			
 			// $dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
@@ -53,8 +55,6 @@ class LegalDOM
 
 				// LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED | LIBXML_NOBLANKS
 			);
-
-			$dom->preserveWhiteSpace = false;
 
 			// Работает 1 конец
 
