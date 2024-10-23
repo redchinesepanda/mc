@@ -81,6 +81,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	function prepareTooltip( element )
 	{
+		console.log( element );
+		
 		// if ( !element ) {
         //     return;
         // };
@@ -101,7 +103,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element, index )
 	{
-		console.log( element );
+		// console.log( element );
 
 		element.dataset.tooltipSet = index;
 
