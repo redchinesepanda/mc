@@ -334,6 +334,8 @@ class ReviewAnchors
                 $id_translated = ToolLoco::translate_locale( $id, $locale );
     
                 $id_ready = ToolTransiterate::replace( $id_translated );
+
+                $id_ready = preg_replace( '/--+/', '-', $id_ready );
     
                 $anchors[ $id_ready ] = $label_translated;
             }
