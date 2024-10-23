@@ -560,7 +560,9 @@
     box-sizing: border-box;
 }
 
-.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text
+.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text {
+    width: 100;
+}
 
 .review-about.legal-mode-mini .about-logo {
     width: 46px;
