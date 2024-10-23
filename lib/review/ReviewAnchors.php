@@ -146,11 +146,11 @@ class ReviewAnchors
 
         add_filter( 'the_content', [ $handler, 'modify_content' ] );
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'register-1',
+        // LegalDebug::debug( [
+        //     'ReviewAnchors' => 'register-1',
 
-            'get_args_auto' => self::get_args_auto(),
-        ] );
+        //     'get_args_auto' => self::get_args_auto(),
+        // ] );
     }
 
     public static function modify_content( $content )
