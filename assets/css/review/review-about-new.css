@@ -246,7 +246,7 @@
 
     .review-about .footer-logo {
         /* margin-left: auto; */
-        margin-left: 0.5rem;
+        margin-left: var( --Spacing-03 );
     }
 
     .legal-review-page-sidebar .about-right {
@@ -395,7 +395,7 @@
 {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 0.5rem;
+    row-gap: var( --Spacing-03 );
 }
 
 .review-about .about-right:not( .sticky-bonus ) .review-bonus-description:not(.legal-active),
@@ -420,7 +420,7 @@
 .legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label {
     display: flex;
     align-items: center;
-    column-gap: 0.5rem;
+    column-gap: var( --Spacing-03 );
 }
 
 /* .legal-review-page-sidebar .legal-tooltip-container:not( .legal-active ) .legal-tooltip */
@@ -431,7 +431,7 @@
 
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     flex-wrap: wrap;
-    row-gap: 0.5rem;
+    row-gap: var( --Spacing-03 );
 }
 
 .about-right .legal-cut-control {
@@ -449,7 +449,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: center;
-    row-gap: 0.5rem;
+    row-gap: var( --Spacing-03 );
 }
 
 .review-about .about-rating {
@@ -669,7 +669,7 @@
 }
 
 /* .review-about .about-rating::after {
-    margin-left: 0.5rem;
+    margin-left: var( --Spacing-03 );
 } */
 
 /* .review-about .about-rating .legal-tooltip.legal-active {
