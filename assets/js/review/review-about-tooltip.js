@@ -52,10 +52,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltip.forEach( (elem) => {
 			console.log('поиск по боди');
-
+/* 
 			if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
 				elem.classList.remove( classes.active );
-			}
+			} */
 
 		});
 	};
