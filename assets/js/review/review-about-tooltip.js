@@ -58,13 +58,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 		// toggleSet( event.currentTarget );
 
-		console.log( 'toggleModal:',event );
+		// console.log( 'toggleModal' );
 
-		event.currentTarget.closest( selectors.tooltipContainer ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+		// console.log( event );
+
+		event.currentTarget.closest( selectors.tooltipContainer )
+			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+			.forEach( toggleSet );
 	}
 
 	function prepareClose( element )
 	{
+		console.log( 'prepareClose' );
+
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		element.addEventListener( 'click', toggleModal, false );
@@ -104,7 +110,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
-		element.querySelectorAll( selectors.tooltipClose ).addEventListener( 'click', toggleModal, false );
+		element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+		
+		// .addEventListener( 'click', toggleModal, false );
 	}
 
 	function prepareElements( element, index )
