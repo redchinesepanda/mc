@@ -46,14 +46,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	//начало скрытия по клику вне зоны
+
 	let tooltip = document.querySelectorAll( selectors.tooltip );
 
 	function closeModalFromBody( event ) {
 
 		tooltip.forEach( (elem) => {
 			console.log('поиск по боди');
-/* 
-			if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
+
+			if ( !elem.contains( event.target ) ) {
+				elem.classList.add( 'body-add' );
+			}
+			/* if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
 				elem.classList.remove( classes.active );
 			} */
 
