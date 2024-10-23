@@ -112,7 +112,7 @@ class ACFAnchors
 	{
 		// $bookmaker_name = ReviewAbout::get_title( $post_id );
 
-		$repeater = get_field( ReviewAnchors::FIELD[ 'anchors' ], $post_id );
+		// $repeater = get_field( ReviewAnchors::FIELD[ 'anchors' ], $post_id );
 
 		// $bookmaker_name = ReviewAbout::get_about_title( $group );
 
@@ -128,7 +128,9 @@ class ACFAnchors
         //     'anchor_items' => $anchor_items,
 		// ] );
 
-		if ( empty( $repeater ) && ! empty( $anchor_items ) )
+		// if ( empty( $repeater ) && ! empty( $anchor_items ) )
+		
+		if ( ! empty( $anchor_items ) )
 		{
 			self::update_anchor_fields( $anchor_items, $post_id );
 		}
