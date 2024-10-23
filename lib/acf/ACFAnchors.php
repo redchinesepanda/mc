@@ -154,11 +154,11 @@ class ACFAnchors
 
 		ReviewAnchors::remove_nodes_anchors( $dom );
 
-		LegalDebug::die( [
-			'ToolReviewAnchors' =>'modify_content-2',
+		// LegalDebug::die( [
+		// 	'ToolReviewAnchors' =>'modify_content-2',
 
-			'post_content' => $dom->saveHTML( $dom ),
-		] );
+		// 	'post_content' => $dom->saveHTML( $dom ),
+		// ] );
 
         // $set_title_id_auto = false;
 
@@ -171,11 +171,11 @@ class ACFAnchors
 
         // if ( $set_title_id_manual || $set_title_id_auto )
 
-		// LegalDebug::die( [
-		// 	'ToolReviewAnchors' =>'modify_content-1',
+		LegalDebug::die( [
+			'ToolReviewAnchors' =>'modify_content-3',
 
-		// 	'post_content' => $dom->saveHTML( $dom ),
-		// ] );
+			'post_content' => $dom->saveHTML( $dom ),
+		] );
         
 		if ( $set_title_id_auto )
         {
