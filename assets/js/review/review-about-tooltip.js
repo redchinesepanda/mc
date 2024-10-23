@@ -104,7 +104,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
-		element.addEventListener( 'click', toggleModal, false );
+		element.querySelectorAll( selectors.tooltipClose ).addEventListener( 'click', toggleModal, false );
 	}
 
 	function prepareElements( element, index )
