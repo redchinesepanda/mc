@@ -29,6 +29,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltipClose: '.legal-tooltip-close',
 
+		tooltipWrapper: '.legal-tooltip-wrapper',
+
 		aboutAchievement: '.review-about .about-achievement',
 
 		tooltipSet: function ( id ) {
@@ -69,6 +71,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', toggleModal, false );
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
+
+		element.parentElement.querySelector( selectors.tooltipWrapper ).addEventListener( 'click', closeModal, false );
 	}
 
 	function controlInit( arg )
