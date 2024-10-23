@@ -70,13 +70,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		body.addEventListener( 'click', closeModalFromBody, false );
 	};
 
+	tooltip.forEach( (elem) => {
+		if ( elem.classList.contains( classes.active ) ) {
+			startBody()
+		}
+	});
+
 	//конец скрытия по клику вне зоны
 
 	function toggleSet( element )
 	{
 		element.classList.toggle( classes.active );
 
-		startBody();
+		// startBody();
 	}
 
 	function closeModal( event )
