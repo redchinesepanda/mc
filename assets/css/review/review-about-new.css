@@ -939,7 +939,7 @@
 .about-right .review-bonus-head,
 .legal-section-author-mini .review-about-info,
 .legal-review-page-sidebar .review-bonus-stats,
-.legal-review-page-sidebar .bonus-stats-items .egal-tooltip-title,
+.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-title,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text {
     font-family: var( --legal-font-primary );
     font-style: normal;
@@ -1091,11 +1091,11 @@
     cursor: pointer;
 }
 
-.legal-review-page-sidebar .bonus-stats-items .egal-tooltip-title {
+.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-title {
     font-weight: 500;
 }
 
-.legal-review-page-sidebar .bonus-stats-items .egal-tooltip-title,
+.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-title,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text {
     font-size: 0.8125rem;
     line-height: 1.0625rem;
