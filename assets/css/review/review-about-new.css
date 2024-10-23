@@ -698,7 +698,7 @@
 
 .about-right .legal-cut-control:not( .legal-active ) {
     margin-top: 1rem;
-}
+} 
 
 .about-right .legal-cut-control.legal-active {
     margin-top: 0.75rem;
