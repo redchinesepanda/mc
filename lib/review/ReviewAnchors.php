@@ -254,7 +254,7 @@ class ReviewAnchors
             LegalDebug::debug( [
                 'ReviewAnchors' => 'remove_nodes_anchors-1',
 
-                'id' => $node-getAttribute( 'id' ),
+                'id' => $node->getAttribute( 'id' ),
 
                 'textContent' => substr( $node->textContent, 0, 30 ),
             ] );
