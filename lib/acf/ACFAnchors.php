@@ -166,9 +166,9 @@ class ACFAnchors
 
         // if ( ! $set_title_id_manual )
         // {
-		    // $set_title_id_auto = ReviewAnchors::set_titles_id_auto( $dom );
+		    $set_title_id_auto = ReviewAnchors::set_titles_id_auto( $dom );
 		    
-			$set_title_id_auto = true;
+			// $set_title_id_auto = true;
         // }
 
         // if ( $set_title_id_manual || $set_title_id_auto )
