@@ -223,8 +223,9 @@
 
     .review-about .achievement-tooltip {
         position: absolute;
-        left: 0px;
-        top: calc( 36px + 4px );
+        left: 0rem;
+        top: calc( 2.25rem + 0.25rem );
+        /* top: calc( 36px + 4px ); */
         padding-bottom: 16px;
         z-index: 1;
     }
@@ -611,11 +612,12 @@
 
 .review-about .about-achievement {
     margin-bottom: var( --Spacing-06 );
-}
-
-.review-about .achievement-item {
     position: relative;
 }
+
+/* .review-about .achievement-item {
+    position: relative;
+} */
 
 .review-about .achievement-name {
     padding: 4px 10px;
