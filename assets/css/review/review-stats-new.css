@@ -86,6 +86,10 @@
 
 /* Stats Position */
 
+.review-stats-title .review-stats-title-rating {
+    margin-left: auto;
+}
+
 .review-stats
 {
     padding-bottom: 24px;
