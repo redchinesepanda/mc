@@ -29,7 +29,7 @@ class ToolTransiterate
 
 		$string = str_replace( self::REMOVE, '', $string );
 
-		$string = preg_replace( '!(--)+!', '-', $string );
+		$string = preg_replace( '/--+/', '-', $string );
         
 		return $string;
     }
