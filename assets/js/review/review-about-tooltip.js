@@ -92,7 +92,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 		// 	.forEach( toggleSet );
 		
-		removeSet( event.currentTarget.closest( selectors.tooltip ) );
+		removeSet( event.target.closest( selectors.tooltip ) );
 	}
 
 	function openModal( event )
@@ -110,7 +110,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 		// 	.forEach( addSet );
 		
-		event.currentTarget
+		// event.currentTarget
+		event.target
 			.querySelectorAll( selectors.tooltip )
 			.forEach( addSet );
 	}
