@@ -109,7 +109,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			toggleSet( event.currentTarget );
 
-			toggleSet( event.currentTarget.querySelector( selectors.tooltip ) );
+			toggleSet( event.currentTarget.parentElement.querySelector( selectors.tooltip ) );
 
 			// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 			// toggleSet( event.currentTarget );
