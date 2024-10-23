@@ -109,9 +109,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
         //     return;
         // };
 
-		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		// element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 		
-		
+		prepareTooltip( element );
 	}
 
 	function tooltipInit() {
