@@ -50,32 +50,32 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function addSet( element )
 	{
-		element.classList.toggle( classes.active );
+		element.classList.add( classes.active );
 	}
 
 	function removeSet( element )
 	{
-		element.classList.toggle( classes.active );
+		element.classList.remove( classes.active );
 	}
 
-	function toggleSet( element )
-	{
-		element.classList.toggle( classes.active );
-	}
+	// function toggleSet( element )
+	// {
+	// 	element.classList.toggle( classes.active );
+	// }
 
-	function toggleModal( event )
-	{
-		// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
-		// toggleSet( event.currentTarget );
+	// function toggleModal( event )
+	// {
+	// 	// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
+	// 	// toggleSet( event.currentTarget );
 
-		console.log( 'toggleModal' );
+	// 	console.log( 'toggleModal' );
 
-		console.log( event.currentTarget );
+	// 	console.log( event.currentTarget );
 
-		event.currentTarget.closest( selectors.tooltipContainer )
-			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
-			.forEach( toggleSet );
-	}
+	// 	event.currentTarget.closest( selectors.tooltipContainer )
+	// 		.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+	// 		.forEach( toggleSet );
+	// }
 
 	function closeModal( event )
 	{
@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 		// 	.forEach( toggleSet );
 		
-		event.currentTarget.closest( selectors.tooltip ).forEach( toggleSet );
+		event.currentTarget.closest( selectors.tooltip ).forEach( removeSet );
 	}
 
 	function openModal( event )
@@ -99,6 +99,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// toggleSet( event.currentTarget );
 
 		console.log( 'openModal' );
+
+		console.log( event.target ); 
 
 		console.log( event.currentTarget );
 
