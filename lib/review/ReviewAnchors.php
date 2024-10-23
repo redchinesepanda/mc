@@ -251,7 +251,7 @@ class ReviewAnchors
         {
             // $node->remove();
 
-            $node->parentNode->removeChild( $node );
+            $dom->removeChild( $node );
         }
 	}
 
