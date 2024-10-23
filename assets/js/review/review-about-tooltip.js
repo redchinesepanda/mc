@@ -94,7 +94,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			element.parentNode.classList.add( classes.tooltipContainer );
 		}
 
-		element.dataset.tooltipSet = this.dataset.tooltipSet;
+		// element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 
