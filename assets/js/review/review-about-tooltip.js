@@ -86,7 +86,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( event.currentTarget );
 
-		event.currentTarget.closest( selectors.tooltipContainer )
+		// event.currentTarget.closest( selectors.tooltipContainer )
+		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+		// 	.forEach( addSet );
+		
+		event.currentTarget
 			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 			.forEach( addSet );
 	}
