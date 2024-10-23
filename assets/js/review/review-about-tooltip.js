@@ -53,8 +53,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltip.forEach( (elem) => {
 			console.log('поиск по боди');
+			let tooltipControl = document.querySelectorAll( selectors.tooltipControl );
 
-			if ( !elem.contains( event.target ) ) {
+			if ( !elem.contains( event.target ) && !tooltipControl.contains( event.target ) ) {
 				elem.classList.toggle( 'body-add' );
 			}
 			/* if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
@@ -70,19 +71,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		body.addEventListener( 'click', closeModalFromBody, false );
 	};
 
-	tooltip.forEach( (elem) => {
-		if ( elem.classList.contains( classes.active ) ) {
-			startBody()
-		}
-	});
-
 	//конец скрытия по клику вне зоны
 
 	function toggleSet( element )
 	{
 		element.classList.toggle( classes.active );
 
-		// startBody();
+		startBody();
 	}
 
 	function closeModal( event )
