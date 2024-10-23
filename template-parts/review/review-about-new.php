@@ -22,10 +22,10 @@
                             </span>
                         </div>
                         <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
-                            <div class="achievement-tooltip-background legal-tooltip-wrapper">
-                                <div class="legal-tooltip">
-                                    <div class="achievement-tooltip"><span class="achievement-tooltip-close legal-tooltip-close"></span><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?>
-                                    </div>
+                            <div class="achievement-tooltip-background legal-tooltip legal-tooltip-wrapper">
+                                <div class="achievement-tooltip">
+                                    <span class="achievement-tooltip-close legal-tooltip-close"></span>
+                                    <span class="achievement-tooltip-text" ><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?></span>
                                 </div>
                             </div>
                         <?php endif; ?>
