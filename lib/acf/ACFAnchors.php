@@ -152,7 +152,7 @@ class ACFAnchors
 		// 	'post_content' => $dom->saveHTML( $dom ),
 		// ] );
 
-		// ReviewAnchors::remove_nodes_anchors( $dom );
+		ReviewAnchors::remove_nodes_anchors( $dom );
 
 		// LegalDebug::die( [
 		// 	'ToolReviewAnchors' =>'modify_content-2',
