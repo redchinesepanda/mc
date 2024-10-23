@@ -76,7 +76,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
 
-		if ( window.matchMedia( this.mediaQuery.desktop ).matches )
+		if ( window.matchMedia( mediaQuery.desktop ).matches )
 		{
 			let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
