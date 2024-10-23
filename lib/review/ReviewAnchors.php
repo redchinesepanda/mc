@@ -492,12 +492,12 @@ class ReviewAnchors
 
     public static function set_titles_id_auto( $dom )
 	{
-        // $nodes = self::get_nodes_titles_auto( $dom );
+        $nodes = self::get_nodes_titles_auto( $dom );
 
-		// if ( $nodes->length == 0 )
-		// {
-		// 	return false;
-		// }
+		if ( $nodes->length == 0 )
+		{
+			return false;
+		}
 
 		foreach ( $nodes as $index => $node )
 		{
