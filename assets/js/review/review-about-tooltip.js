@@ -21,6 +21,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	];
 
 	const selectors = {
+		body: 'body',
+
 		tooltipContainer: '.legal-tooltip-container',
 
 		tooltipControl: '.legal-tooltip-control',
@@ -52,6 +54,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// console.log( 'closeModal' );
 
+		console.log( 'event.currentTarget', event.currentTarget );
+
 		removeSet( event.currentTarget.closest( selectors.tooltip ) );
 	}
 
@@ -62,6 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		toggleSet( event.currentTarget );
 
 		toggleSet( event.currentTarget.parentElement.querySelector( selectors.tooltip ) );
+
 	}
 
 	const mediaQuery = {
@@ -75,6 +80,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', toggleModal, false );
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
+
+		let body = document.querySelector( selectors.body );
+
+		body.addEventListener( 'click', closeModal, false );
 
 		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
