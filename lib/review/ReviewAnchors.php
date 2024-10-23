@@ -251,7 +251,7 @@ class ReviewAnchors
         {
             // $node->remove();
 
-            $node->parentNode->removeChild($href);
+            $node->parentNode->removeChild( $node );
         }
 	}
 
