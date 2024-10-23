@@ -81,6 +81,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	function prepareTooltip( element )
 	{
+		console.log( 'prepareTooltip' );
+
+		console.log( element );
+
 		// if ( !element ) {
         //     return;
         // };
@@ -101,7 +105,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element, index )
 	{
-		console.log( element );
+		console.log( 'prepareElements' );
+
+		// console.log( element );
 
 		element.dataset.tooltipSet = index;
 
@@ -109,9 +115,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
         //     return;
         // };
 
-		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		// element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 		
-		
+		prepareTooltip( element );
 	}
 
 	function tooltipInit() {
