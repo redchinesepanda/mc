@@ -27,12 +27,11 @@
                     <div class="bonus-stats-items">
                         <span class="stats-item-label"><?php echo $stats_item[ 'label' ]; ?></span>
                         <?php if ( ! empty( $stats_item[ 'tooltip' ] ) ) : ?>
-                            <span class="stats-item-tooltip legal-tooltip-open">
-                                <div class="legal-tooltip">
-                                    <span class="legal-tooltip-close"></span>
-                                    <p class="legal-tooltip-text" data-tooltip-text="<?php echo $stats_item[ 'tooltip' ]; ?>"></p>
-                                </div>
-                            </span>
+                            <span class="stats-item-tooltip legal-tooltip-open"></span>
+                            <div class="legal-tooltip">
+                                <span class="legal-tooltip-close"></span>
+                                <p class="legal-tooltip-text" data-tooltip-text="<?php echo $stats_item[ 'tooltip' ]; ?>"></p>
+                            </div>
                         <?php endif; ?>
                         <span class="stats-item-value"><?php echo $stats_item[ 'value' ]; ?></span>
                     </div>
