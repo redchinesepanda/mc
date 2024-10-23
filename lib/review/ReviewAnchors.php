@@ -245,7 +245,12 @@ class ReviewAnchors
 
 	public static function remove_nodes_anchors( $dom )
 	{
-		$nodes = self::get_nodes( $dom );
+		$nodes = self::get_nodes_titles_auto( $dom );
+
+        if ( $nodes->length == 0 )
+		{
+			return false;
+		}
 
         foreach ( $nodes as $node )
         {
@@ -256,11 +261,17 @@ class ReviewAnchors
 
                 'id' => $node->getAttribute( 'id' ),
 
-                'textContent' => substr( $node->textContent, 0, 30 ),
+                'textContent' => substr( $node->nodeValue, 0, 30 ),
             ] );
 
-            $dom->removeChild( $node );
+            // $dom->removeChild( $node );
         }
+
+        LegalDebug::die( [
+            'ReviewAnchors' => 'remove_nodes_anchors-1',
+        ] );
+
+        return true;
 	}
 
 	public static function get_nodes( $dom )
