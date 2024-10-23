@@ -249,7 +249,9 @@ class ReviewAnchors
 
         foreach ( $nodes as $node )
         {
-            $node->remove();
+            // $node->remove();
+
+            $node->parentNode->removeChild($href);
         }
 	}
 
