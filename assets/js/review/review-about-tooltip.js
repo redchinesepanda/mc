@@ -81,8 +81,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	function prepareTooltip( element )
 	{
+		console.log( 'prepareTooltip' );
+
 		console.log( element );
-		
+
 		// if ( !element ) {
         //     return;
         // };
