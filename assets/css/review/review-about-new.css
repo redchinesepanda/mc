@@ -555,7 +555,6 @@
 }
 
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
-    /* width: 11.75rem; */
     width: fit-content;
     max-width: 20rem;
     box-sizing: border-box;
