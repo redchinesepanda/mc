@@ -49,8 +49,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
         for ( let switcher of switchers ) {
             let button = switcher.getElementsByClassName( classes.current ).item( 0 );
+            console.log('button', button);
 
             let avaible = button.nextElementSibling;
+            console.log('avaible', avaible);
 
             if ( !avaible.contains( event.target ) && !button.contains( event.target )  ) {
                 button.classList.remove( classes.active );
