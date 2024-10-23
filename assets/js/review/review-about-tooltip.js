@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		active: 'legal-active',
 
 		tooltipContainer: 'legal-tooltip-container',
+
+		tooltipItem: 'stats-item-tooltip',
 	};
 
 	const args = [
@@ -14,9 +16,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
+			// 'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
+			
+			'tooltipContainer' : '.review-bonus-stats .legal-tooltip-container',
 		},
-
 	];
 
 	const selectors = {
@@ -76,13 +79,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	function prepareTooltip( element )
 	{
-		if ( !element ) {
-            return;
-        };
+		// if ( !element ) {
+        //     return;
+        // };
 
-		if ( element.classList.contains( 'stats-item-tooltip' ) ) {
+		if ( element.classList.contains( classes.tooltipItem ) )
+		{
 			element.parentNode.classList.add( classes.tooltipContainer );
-		};
+		}
 
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
@@ -97,9 +101,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.tooltipSet = index;
 
-		if ( !element ) {
-            return;
-        };
+		// if ( ! element ) {
+        //     return;
+        // };
 
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 		
@@ -117,6 +121,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 
 	// закрытие по клику на фон. Начало
+
 	let tooltipBackground = document.querySelector( selectors.tooltip );
 
 	function closeBackgroundTooltip() {
