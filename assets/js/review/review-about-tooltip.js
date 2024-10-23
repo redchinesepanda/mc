@@ -12,13 +12,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const args = [
 		{
-			'tooltipContainer' : '.review-about .about-achievement',
+			// 'tooltipContainer' : '.review-about .about-achievement',
+			
+			'tooltipContainer' : '.review-about .about-achievement .achievement-item',
 		},
 
 		{
 			// 'tooltipContainer' : '.legal-review-page-sidebar .bonus-stats-items',
 			
-			'tooltipContainer' : '.review-bonus-stats .legal-tooltip-container',
+			'tooltipContainer' : '.review-bonus-stats .stats-item-tooltip',
 		},
 	];
 
