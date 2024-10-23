@@ -20,13 +20,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	];
 
 	const selectors = {
-		tooltipOpen: '.legal-tooltip-open',
+		tooltipContainer: '.legal-tooltip-container',
 
-		tooltipClose: '.legal-tooltip-close',
+		tooltipOpen: '.legal-tooltip-open',
 
 		tooltip: '.legal-tooltip',
 
-		tooltipContainer: '.legal-tooltip-container',
+		tooltipClose: '.legal-tooltip-close',
 
 		// tooltipOpen: '.review-about .achievement-name',
 		
