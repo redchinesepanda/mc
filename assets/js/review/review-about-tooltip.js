@@ -74,6 +74,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareModal( element )
 	{
+		console.log( 'prepareModal' );
+
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		// console.log('prepareModal:', element);
@@ -96,7 +98,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
+		// this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
+		
+		element.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 
 		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
