@@ -55,7 +55,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log('поиск по боди');
 
 			if ( !elem.contains( event.target ) ) {
-				elem.classList.add( 'body-add' );
+				elem.classList.toggle( 'body-add' );
 			}
 			/* if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
 				elem.classList.remove( classes.active );
