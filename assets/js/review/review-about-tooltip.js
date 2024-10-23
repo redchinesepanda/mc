@@ -102,10 +102,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function tooltipInit()
 	{
-		// console.log( 'tooltipInit' );
-
-		// console.log( args );
-
 		args.forEach( controlInit );
 	}
 
@@ -113,23 +109,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	window.addEventListener( 'resize', tooltipInit, false );
 
-	// document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
-
-	// закрытие по клику на фон. Начало
-
-	// let tooltipBackground = document.querySelector( selectors.tooltip );
-
-	// function closeBackgroundTooltip() {
-	// 	if( tooltipBackground.classList.contains( classes.active ) ) {
-	// 		tooltipBackground.classList.remove( classes.active );
-	// 	}
-	// }
-
-	// if ( document.querySelector( selectors.aboutAchievement ) ) {
-	// 	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	// };
-
-	// закрытие по клику на фон. Конец
 
 } );
 
