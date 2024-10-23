@@ -146,7 +146,13 @@ class ReviewAnchors
 
         add_filter( 'the_content', [ $handler, 'modify_content' ] );
 
-        self::get_titles_auto();
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'register-1',
+
+            'get_titles_auto' => self::get_titles_auto(),
+        ] );
+
+        
     }
 
     public static function modify_content( $content )
