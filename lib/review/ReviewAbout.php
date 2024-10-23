@@ -505,6 +505,8 @@ class ReviewAbout
                     'show' => ToolLoco::translate( ReviewMain::TEXT[ 'show-tnc' ] ),
     
                     'hide' => ToolLoco::translate( ReviewMain::TEXT[ 'hide-tnc' ] ),
+
+                    'tooltip-title' => ToolLoco::translate( ReviewMain::TEXT[ 'regulator' ] ),
                 ],
 
                 'title' => $title,
