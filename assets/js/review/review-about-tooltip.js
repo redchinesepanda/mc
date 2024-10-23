@@ -56,7 +56,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			let tooltipControl = elem.previousElementSibling;
 
 			if ( !elem.contains( event.target ) && !tooltipControl.contains( event.target ) ) {
-				elem.classList.toggle( 'body-add' );
+				// elem.classList.toggle( 'body-add' );
+				elem.classList.remove( classes.active );
 			}
 			/* if ( !elem.contains( event.target ) && elem.classList.contains( classes.active ) ) {
 				elem.classList.remove( classes.active );
