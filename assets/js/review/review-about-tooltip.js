@@ -175,11 +175,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( element );
 
-		element.dataset.tooltipSet = index;
+		element.dataset.tooltipSet = elementID;
 
-		console.log( index );
+		// console.log( elementID );
 
-		console.log( element.dataset.tooltipSet );
+		// console.log( element.dataset.tooltipSet );
 
 		// if ( ! element ) {
         //     return;
