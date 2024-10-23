@@ -101,29 +101,34 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function openModal( event )
 	{
+		console.log( 'openModal' );
+
 		// if ( ! event.currentTarget.classList.contains( classes.active ) )
 		// {
 			// event.currentTarget.classList.add( classes.active );
 
 			toggleSet( event.currentTarget );
 
+			toggleSet( event.currentTarget.querySelector( selectors.tooltip ) );
+
 			// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 			// toggleSet( event.currentTarget );
 	
-			console.log( 'openModal' );
 	
-			console.log( event.target ); 
+			// console.log( event.target ); 
 	
-			console.log( event.currentTarget );
+			// console.log( event.currentTarget );
 	
 			// event.currentTarget.closest( selectors.tooltipContainer )
 			// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
 			// 	.forEach( addSet );
 			
 			// event.currentTarget
-			event.currentTarget
-				.querySelectorAll( selectors.tooltip )
-				.forEach( addSet );
+			// event.currentTarget
+			// 	.querySelectorAll( selectors.tooltip )
+			// 	.forEach( addSet );
+
+
 		// }
 	}
 
