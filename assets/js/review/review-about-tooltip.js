@@ -99,6 +99,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( ! event.currentTarget.classList.contains( classes.active ) )
 		{
+			event.currentTarget.classList.add( classes.active );
+
 			// event.currentTarget.closest( selectors.aboutAchievement ).querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) ).forEach( toggleSet );
 			// toggleSet( event.currentTarget );
 	
