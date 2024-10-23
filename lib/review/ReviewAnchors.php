@@ -243,6 +243,16 @@ class ReviewAnchors
 	// 	return $nodes;
 	// }
 
+	public static function remove_nodes_anchors( $dom )
+	{
+		self::get_nodes( $dom );
+
+        foreach ( $nodes as $node )
+        {
+            $node->remove();
+        }
+	}
+
 	public static function get_nodes( $dom )
 	{
 		return LegalDOM::get_nodes( $dom, "//a[@id and not(contains(@id, 'legal-'))]" );
