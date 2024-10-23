@@ -56,23 +56,24 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		//начало скрытия по клику вне зоны
 		// let tooltip = document.querySelectorAll( selectors.tooltip );
 
-		tooltip.forEach( () => {
+		/* tooltip.forEach( () => {
 
 			if ( !tooltip.contains( event.target ) && tooltip.classList.contains( classes.active ) ) {
 				tooltip.classList.remove( classes.active );
 			}
 
+		}); */
+		tooltip.forEach( () => {
+			tooltip.classList.remove( classes.active );
 		});
-
+		
 		//конец скрытия по клику вне зоны
 	};
 
 	function closeModal( event )
 	{
 		// console.log( 'closeModal' );
-
 		// console.log( 'event.currentTarget', event.currentTarget );
-
 		// console.log( 'event.currentTarget.closest( selectors.tooltip', event.currentTarget.closest( selectors.tooltip ));
 
 		removeSet( event.currentTarget.closest( selectors.tooltip ) );
