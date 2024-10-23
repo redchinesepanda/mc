@@ -86,9 +86,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( event.currentTarget );
 
-		event.currentTarget.closest( selectors.tooltipContainer )
-			.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
-			.forEach( toggleSet );
+		// event.currentTarget.closest( selectors.tooltipContainer )
+		// 	.querySelectorAll( selectors.tooltipSet( event.currentTarget.dataset.tooltipSet ) )
+		// 	.forEach( toggleSet );
+		
+		event.currentTarget.closest( selectors.tooltip ).forEach( toggleSet );
 	}
 
 	function openModal( event )
@@ -113,7 +115,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'prepareClose' );
 
-		element.dataset.tooltipSet = this.dataset.tooltipSet;
+		console.log( element );
+
+		// element.dataset.tooltipSet = this.dataset.tooltipSet;
 
 		// element.addEventListener( 'click', toggleModal, false );
 		
@@ -122,48 +126,48 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// console.log('prepareClose:', element);
 	}
 
-	function prepareModal( element )
-	{
-		console.log( 'prepareModal' );
+	// function prepareModal( element )
+	// {
+	// 	console.log( 'prepareModal' );
 
-		element.dataset.tooltipSet = this.dataset.tooltipSet;
+	// 	element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		// console.log('prepareModal:', element);
-	}
+	// 	// console.log('prepareModal:', element);
+	// }
 	
-	function prepareTooltip( element )
-	{
-		console.log( 'prepareTooltip' );
+	// function prepareTooltip( element )
+	// {
+	// 	console.log( 'prepareTooltip' );
 
-		console.log( element );
+	// 	console.log( element );
 
-		console.log( element.dataset.tooltipSet );
+	// 	console.log( element.dataset.tooltipSet );
 
-		// if ( !element ) {
-        //     return;
-        // };
+	// 	// if ( !element ) {
+    //     //     return;
+    //     // };
 
-		// if ( element.classList.contains( classes.tooltipItem ) )
-		// {
-		// 	element.parentNode.classList.add( classes.tooltipContainer );
-		// }
+	// 	// if ( element.classList.contains( classes.tooltipItem ) )
+	// 	// {
+	// 	// 	element.parentNode.classList.add( classes.tooltipContainer );
+	// 	// }
 
-		element.addEventListener( 'click', openModal, false );
+	// 	element.addEventListener( 'click', openModal, false );
 
-		// element.dataset.tooltipSet = this.dataset.tooltipSet;
+	// 	// element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		// this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
+	// 	// this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 		
-		// element.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
+	// 	// element.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
 
-		// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+	// 	// this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
-		// console.log( selectors.tooltipClose );
+	// 	// console.log( selectors.tooltipClose );
 
-		element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
+	// 	element.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 		
-		// .addEventListener( 'click', toggleModal, false );
-	}
+	// 	// .addEventListener( 'click', toggleModal, false );
+	// }
 
 	function prepareElements( element, elementID )
 	{
