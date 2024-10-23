@@ -165,9 +165,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// .addEventListener( 'click', toggleModal, false );
 	}
 
-	function prepareElements( element, index )
+	function prepareElements( element, elementID )
 	{
 		console.log( 'prepareElements' );
+
+		// console.log(`${element}, ${elementID}, ${this}`);
+		
+		console.log( `${element}, ${elementID}` );
 
 		// console.log( element );
 
