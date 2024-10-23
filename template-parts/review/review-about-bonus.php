@@ -24,7 +24,7 @@
         <?php if ( ! empty( $args[ 'afillate' ][ 'stats' ] ) ) : ?>
             <div class="review-bonus-stats">
                 <?php foreach ( $args[ 'afillate' ][ 'stats' ] as $stats_item ) : ?>
-                    <div class="bonus-stats-items">
+                    <div class="bonus-stats-item">
                         <span class="stats-item-label"><?php echo $stats_item[ 'label' ]; ?></span>
                         <?php if ( ! empty( $stats_item[ 'tooltip' ] ) ) : ?>
                             <span class="stats-item-tooltip legal-tooltip-open">
