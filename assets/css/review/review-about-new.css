@@ -954,11 +954,11 @@
     line-height: 20px;
 }
 
-.review-about .achievement-name:has( + .achievement-tooltip-background ) {
+.review-about .achievement-item:has( + .achievement-tooltip-background ) {
     cursor: pointer;
 }
 
-.review-about .achievement-name:not( .achievement-name:has( + .achievement-tooltip-background ) ) {
+.review-about .achievement-item:not( .achievement-item:has( + .achievement-tooltip-background ) ) {
     cursor: default;
 }
 
