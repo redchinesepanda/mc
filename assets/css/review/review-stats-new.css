@@ -159,7 +159,7 @@
 {
     background: var( --Base-base-01 ); 
     border-radius: 8px;
-    border: 2px solid var( --Base-base-09 );
+    border: 1px solid var( --Base-base-09 );
     box-sizing: border-box;
     overflow: hidden;
 }
