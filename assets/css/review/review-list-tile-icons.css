@@ -85,7 +85,8 @@
   
 .tcb-post-content .mc-list-tile-icons li:not( .icon-position-after ):before,
 .tcb-post-content .mc-list-tile-icons li .mc-icons-sports:not( span ):not( .icon-position-after )::before,
-.tcb-post-content .mc-list-tile-icons li .mc-icons:not( span ):not( .icon-position-after )::before  {
+.tcb-post-content .mc-list-tile-icons li .mc-icons:not( span ):not( .icon-position-after )::before,
+.tcb-post-content .mc-list-tile-icons li .mc-icons-payment:not( span ):not( .icon-position-after )::before  {
 	position: absolute;
 	left: 0.75rem;
 }
