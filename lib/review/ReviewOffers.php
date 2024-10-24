@@ -350,14 +350,14 @@ class ReviewOffers
 				return '';
 			}
 		}
-		
-		LegalDebug::debug( [
-			'ReviewOffers' => 'prepare-1',
-
-			'atts' => $atts,
-		] );
 
 		$args = self::get_offers( $atts );
+
+		LegalDebug::debug( [
+			'ReviewOffers' => 'prepare-2',
+
+			'args' => $args,
+		] );
 		
 		return self::render_offers_compilation( $args );
 	}
