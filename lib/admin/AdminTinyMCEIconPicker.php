@@ -64,7 +64,7 @@ class AdminTinyMCEIconPicker
 		'admin-style-mc-icons-payment' =>  [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/mc-icons-payment/mc-icons-payment.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
     ];
 
