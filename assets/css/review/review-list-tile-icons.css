@@ -68,8 +68,7 @@
 }
 
 .tcb-post-content .mc-list-tile-icons li:not( .mc-icons-payment ):not( .icon-position-after ),
-.tcb-post-content .mc-list-tile-icons li:not( .mc-icons-payment ) a:not( .icon-position-after ),
-.tcb-post-content .mc-list-tile-icons li a.mc-icons-payment:not( .icon-position-after ) {
+.tcb-post-content .mc-list-tile-icons li:not( .mc-icons-payment ) a:not( .icon-position-after ):not( .mc-icons-payment ) {
 	padding-left: calc( 0.75rem + 1.5rem + 0.75rem );
 }
 
