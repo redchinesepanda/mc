@@ -95,6 +95,10 @@
     margin-left: auto;
 }
 
+.review-stats-title .review-stats-title-rating-average::before {
+    margin-right: 0.25rem;
+}
+
 .review-stats
 {
     padding-bottom: 24px;
@@ -113,6 +117,11 @@
 }
 
 /* Stats Width */
+
+.review-stats-title .review-stats-title-rating-average::before {
+    width: var( --Spacing-07 );
+    height: var( --Spacing-07 );
+}
 
 .review-stats .item-value-wrapper,
 .review-stats .item-value {
@@ -137,6 +146,10 @@
 } */
 
 /* Stats Background */
+
+.review-stats-title .review-stats-title-rating-average::before {
+    background-image: url( '../../img/review/about/star-profile.svg' );
+}
 
 .review-stats .stats-item {
     border-bottom: 1px solid var( --Base-base-04 );
@@ -169,6 +182,10 @@
 .review-stats .item-data {
     font-family: var( --legal-font-primary );
     font-style: normal;
+}
+
+.review-stats-title .review-stats-title-rating-average::before {
+    content: '';
 }
 
 .review-stats .item-title,

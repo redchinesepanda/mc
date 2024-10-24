@@ -962,8 +962,8 @@
     cursor: default;
 }
 
+/* .review-about .about-rating::before, */
 .review-about .achievement-tooltip-close::before,
-.review-about .about-rating::before,
 .about-right .legal-cut-control::after,
 .review-about .about-rating::after,
 .legal-review-page-sidebar .stats-item-tooltip::before,
