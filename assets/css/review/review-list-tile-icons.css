@@ -79,7 +79,8 @@
 }
 
 .tcb-post-content .mc-list-tile-icons li.mc-icons-payment,
-.tcb-post-content .mc-list-tile-icons li.mc-icons-payment a {
+.tcb-post-content .mc-list-tile-icons li.mc-icons-payment a,
+.tcb-post-content .mc-list-tile-icons li a.mc-icons-payment {
 	padding-left: calc( 0.75rem + 2.125rem + 0.75rem );
 }
   
