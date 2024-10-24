@@ -325,7 +325,7 @@ class ReviewOffers
 	public static function prepare_offers_bottom()
 	{
 		return self::prepare( [
-			// 'check' => 1,
+			'check' => 1,
 		] );
 	}
 
@@ -336,6 +336,12 @@ class ReviewOffers
 		$atts[ 'other' ] = wp_validate_boolean( $atts[ 'other' ] );
 
 		$atts[ 'random' ] = wp_validate_boolean( $atts[ 'random' ] );
+
+		LegalDebug::debug( [
+			'ReviewOffers' => 'prepare-1',
+
+			'atts' => $atts,
+		] );
 
 		if ( $atts[ 'check' ] )
 		{
