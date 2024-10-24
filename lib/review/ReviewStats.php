@@ -150,10 +150,6 @@ class ReviewStats
 
 		$node_title->appendChild( $rating_average );
 
-		$separator = $rating = $dom->createTextNode( '/' );
-
-		$node_title->appendChild( $separator );
-
 		$rating_max_value = sprintf( self::PATTERNS[ 'title-rating-max' ], $rating_value[ 'rating_max' ] );
 
 		$rating_max = $dom->createElement( 'span', $rating_max_value );
