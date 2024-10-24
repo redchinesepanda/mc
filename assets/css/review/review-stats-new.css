@@ -122,7 +122,8 @@
 {
     position: absolute;
     right: 0.5rem;
-    top: calc( 50% - 11px ); 
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 /* Stats Width */
@@ -136,12 +137,6 @@
 .review-stats .item-value {
 	height: 40px;
 }
-
-/* .review-stats .item-data
-{
-    flex-basis: 50%;
-    flex-basis: 60%;
-} */
 
 .review-stats .item-title,
 .review-stats .item-description {
