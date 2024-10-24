@@ -148,14 +148,14 @@ class ACFAnchors
 
 		$dom = LegalDOM::get_dom( $content );
 
-		// $permission_remove_nodes_anchors = ReviewAnchors::remove_nodes_anchors( $dom );
+		$permission_remove_nodes_anchors = ReviewAnchors::remove_nodes_anchors( $dom );
 
-		// if ( $permission_remove_nodes_anchors )
-		// {
-		// 	$content = $dom->saveHTML( $dom );
+		if ( $permission_remove_nodes_anchors )
+		{
+			$content = $dom->saveHTML( $dom );
 
-		// 	$dom = LegalDOM::get_dom( $content );
-		// }
+			$dom = LegalDOM::get_dom( $content );
+		}
 
 		$set_title_id_auto = ReviewAnchors::set_titles_id_auto( $dom );
         
