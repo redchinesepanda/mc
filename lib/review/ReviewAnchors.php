@@ -547,7 +547,9 @@ class ReviewAnchors
                 //     'node' => $node,
                 // ] );
 
-                $node->insertBefore( $anchor, $node->firstChild );
+                $firstChildTextNode = LegalDom::getFirstChildTextNode( $node );
+
+                $node->insertBefore( $anchor, $firstChildTextNode );
             }
 		}
 
