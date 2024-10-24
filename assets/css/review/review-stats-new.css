@@ -68,6 +68,7 @@
 
 .review-stats-title .review-stats-title-rating-average {
     display: flex;
+    align-items: center;
 }
 
 .review-stats-title .review-stats-title-rating-average::before {
