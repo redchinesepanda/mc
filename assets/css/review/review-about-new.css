@@ -1086,7 +1086,7 @@
     cursor: pointer;
 }
 
-.legal-review-page-sidebar .stats-item-tooltip:hover .stats-item-tooltip::before {
+.legal-review-page-sidebar .stats-item-tooltip:hover.stats-item-tooltip::before {
     color: var( --Base-base-06 );
 }
 
