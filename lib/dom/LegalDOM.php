@@ -253,6 +253,23 @@ class LegalDOM
 			] );
 		}
 	}
+
+	public static function getFirstChildTextNode( $node )
+	{
+		$textNode = null;
+
+		foreach( $node->childNodes as $child )
+		{
+			if ( $child->nodeType == XML_TEXT_NODE )
+			{
+				$textNode = $child;
+				
+				break;
+			}
+		}
+
+		return $textNode;
+	}
 }
 
 ?>
