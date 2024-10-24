@@ -128,8 +128,8 @@
 /* Stats Width */
 
 .review-stats-title .review-stats-title-rating-average::before {
-    width: var( --Spacing-07 );
-    height: var( --Spacing-07 );
+    width: var( --Spacing-09 );
+    height: var( --Spacing-09 );
 }
 
 .review-stats .item-value-wrapper,
@@ -152,6 +152,9 @@
 
 .review-stats-title .review-stats-title-rating-average::before {
     background-image: url( '../../img/review/about/star-profile.svg' );
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .review-stats .stats-item {
