@@ -1087,7 +1087,7 @@
 }
 
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-close::before {
-    content: '\F10E';
+    content: '\F11D';
     font-size: 18px;
     line-height: 18px;
     cursor: pointer;
