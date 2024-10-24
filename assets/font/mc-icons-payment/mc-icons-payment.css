@@ -4,3 +4,21 @@
 .icon-payment-visa:before {
     background-image: url( '../../img/review/icons/payment/visa.svg' );
 }
+.icon-payment-trustly:before {
+    background-image: url( '../../img/review/icons/payment/trustly.svg' );
+}
+.icon-payment-applepay:before {
+    background-image: url( '../../img/review/icons/payment/applepay.svg' );
+}
+.icon-payment-bizum:before {
+    background-image: url( '../../img/review/icons/payment/bizum.svg' );
+}
+.icon-payment-mastercard:before {
+    background-image: url( '../../img/review/icons/payment/mastercard.svg' );
+}
+.icon-payment-paysafecart:before {
+    background-image: url( '../../img/review/icons/payment/paysafecart.svg' );
+}
+.icon-payment-revolut:before {
+    background-image: url( '../../img/review/icons/payment/revolut.svg' );
+}

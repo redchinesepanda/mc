@@ -1,4 +1,10 @@
 {
     "paypal": 1,
-    "visa": 2
+    "visa": 2,
+    "trustly": 3,
+    "applepay": 4,
+    "bizum": 5,
+    "mastercard": 6,
+    "paysafecart": 7,
+    "revolut": 8
 }
