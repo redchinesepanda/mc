@@ -47,9 +47,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	//начало скрытия по клику вне зоны
 
-	let tooltip = document.querySelectorAll( selectors.tooltip );
+	// let tooltip = document.querySelectorAll( selectors.tooltip );
 
 	function closeModalFromBody( event ) {
+		let tooltip = document.querySelectorAll( selectors.tooltip );
 
 		tooltip.forEach( (elem) => {
 			let tooltipControl = elem.previousElementSibling;
@@ -61,7 +62,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	};
 
-	function startBody() {
+	function findClickBody() {
 		let body = document.querySelector( selectors.body );
 
 		body.addEventListener( 'click', closeModalFromBody, false );
@@ -73,7 +74,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.classList.toggle( classes.active );
 
-		startBody();
+		findClickBody();
 	}
 
 	function closeModal( event )
