@@ -260,19 +260,7 @@ class ReviewAnchors
 
             if ( $anchor )
             {
-                // $node->removeChild( $anchor );
-
-                LegalDebug::die( [
-                    'ReviewAnchors' => 'remove_nodes_anchors-1',
-
-                    'textContent' => $node->textContent,
-
-                    'nodeValue' => $node->nodeValue,
-
-                    'textContent-trim' => trim( $node->textContent ),
-                ] );
-
-                $title = $dom->createElement( 'h2', $node->textContent );
+                $title = $dom->createElement( 'h2', trim( $node->textContent ) );
 
                 $title->setAttribute( 'class', $node->getAttribute( 'class' ) );
 
