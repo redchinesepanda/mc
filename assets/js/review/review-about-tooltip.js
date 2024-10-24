@@ -46,9 +46,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	//начало скрытия по клику вне зоны
-
-	// let tooltip = document.querySelectorAll( selectors.tooltip );
-
 	function closeModalFromBody( event ) {
 		let tooltip = document.querySelectorAll( selectors.tooltip );
 
@@ -58,7 +55,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			if ( !elem.contains( event.target ) && !tooltipControl.contains( event.target ) ) {
 				elem.classList.remove( classes.active );
 			}
-
 		});
 	};
 
@@ -67,7 +63,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		body.addEventListener( 'click', closeModalFromBody, false );
 	};
-
 	//конец скрытия по клику вне зоны
 
 	function toggleSet( element )
