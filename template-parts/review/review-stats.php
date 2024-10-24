@@ -16,8 +16,10 @@
 			</div>
 			<div class="item-value-wrapper" data-value="<?php echo $item[ 'value' ]; ?>">
 				<div class="item-value"></div>
-				<span class="value-rating"><?php echo $item[ 'rating' ]; ?></span>
-				<span class="value-rating-max">/<?php echo $item[ 'rating-max' ]; ?></span>
+				<div class="item-data">
+					<span class="value-rating"><?php echo $item[ 'rating' ]; ?></span>
+					<span class="value-rating-max">/<?php echo $item[ 'rating-max' ]; ?></span>
+				</div>
 			</div>
 		</div>
 	<?php endforeach; ?>
