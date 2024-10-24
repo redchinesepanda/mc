@@ -92,10 +92,10 @@
     row-gap: 0.5rem;
 }
 
-.review-stats .item-value-wrapper:after
+/* .review-stats .item-value-wrapper::after
 {
     content: attr( data-value );
-}
+} */
 
 /* Stats Position */
 
@@ -117,10 +117,11 @@
     position: relative;
 }
 
-.review-stats .item-value-wrapper:after
+/* .review-stats .item-value-wrapper::after */
+.review-stats .item-wrapper-data
 {
     position: absolute;
-    right: 8px;
+    right: 0.5rem;
     top: calc( 50% - 11px ); 
 }
 
@@ -184,7 +185,8 @@
 
 .review-stats .item-title,
 .review-stats .item-value-wrapper::after,
-.review-stats .item-data {
+.review-stats .item-data,
+.review-stats .item-wrapper-data {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
