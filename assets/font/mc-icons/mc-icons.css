@@ -1,6 +1,6 @@
 /* @font-face {
     font-family: "mc-icons";
-    src: url("./mc-icons.woff2?97381a56e81544e763524d71ecfc67d2") format("woff2");
+    src: url("./mc-icons.woff2?76466e01a2574b2a56bd7052f10690c9") format("woff2");
 } */
 
 /* i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -97,4 +97,7 @@
 }
 .icon-reliability:before {
     content: "\f11c";
+}
+.icon-info:before {
+    content: "\f11d";
 }
