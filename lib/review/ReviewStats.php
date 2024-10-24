@@ -112,10 +112,6 @@ class ReviewStats
 		return self::get_stat_value( $rating_average );
 	}
 
-	// const PATTERNS = [
-	// 	'title-rating' => '%s/%s',
-	// ];
-
 	public static function get_title_rating( $stats_data )
 	{
 		$rating_average = self::get_rating_average( $stats_data );
@@ -136,6 +132,10 @@ class ReviewStats
 		];
 	}
 
+	const PATTERNS = [
+		'title-rating-max' => '/%s',
+	];
+
 	public static function modify_title( $dom, $node_title, $stats_data )
 	{
 		$rating_value = self::get_title_rating( $stats_data );
@@ -150,11 +150,9 @@ class ReviewStats
 
 		$node_title->appendChild( $rating_average );
 
-		$separator = $rating = $dom->createTextNode( '/' );
+		$rating_max_value = sprintf( self::PATTERNS[ 'title-rating-max' ], $rating_value[ 'rating_max' ] );
 
-		$node_title->appendChild( $separator );
-
-		$rating_max = $dom->createElement( 'span', $rating_value[ 'rating_max' ] );
+		$rating_max = $dom->createElement( 'span', $rating_max_value );
 
 		$rating_max->setAttribute( 'class', 'review-stats-title-rating-max' );
 
