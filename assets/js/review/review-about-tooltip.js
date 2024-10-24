@@ -53,7 +53,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			let tooltipControl = elem.previousElementSibling;
 
 			if ( !elem.contains( event.target ) && !tooltipControl.contains( event.target ) ) {
-				// elem.classList.remove( classes.active );
 				removeSet( elem );
 			}
 		});

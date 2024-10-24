@@ -598,7 +598,7 @@
 
 /* .review-about .about-right:not( .sticky-bonus ) .review-bonus-data, */
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-data,
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-stats {
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-stats {
     padding: 1.25rem var( --Spacing-07 );
 }
 
@@ -882,7 +882,7 @@
 }
 
 .legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-data,
-.legal-review-page-sidebar .about-right:not( .sticky-bonus ):not( .review-bonus-empty ) .review-bonus-stats {
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ) .review-bonus-stats {
     border-radius: var( --Spacing-06 );
 }
 
