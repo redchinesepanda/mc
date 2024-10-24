@@ -267,7 +267,7 @@ class ReviewAnchors
 
                     'textContent' => $node->textContent,
 
-                    'textContent' => $node->nodeValue,
+                    'nodeValue' => $node->nodeValue,
 
                     'textContent-trim' => trim( $node->textContent ),
                 ] );
