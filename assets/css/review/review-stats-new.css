@@ -66,6 +66,15 @@
     justify-content: space-between;
 }
 
+.review-stats-title .review-stats-title-rating-average {
+    display: flex;
+    align-items: center;
+}
+
+.review-stats-title .review-stats-title-rating-average::before {
+    display: inline-block;
+}
+
 .review-stats {
     display: flex;
     flex-wrap: wrap;
