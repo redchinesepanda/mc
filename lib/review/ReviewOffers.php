@@ -325,7 +325,7 @@ class ReviewOffers
 	public static function prepare_offers_bottom()
 	{
 		return self::prepare( [
-			'check' => 1,
+			// 'check' => 1,
 		] );
 	}
 
