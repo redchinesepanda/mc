@@ -144,48 +144,24 @@ class ACFAnchors
 	
 	public static function modify_content( $post_id, $post )
 	{
-		$dom = LegalDOM::get_dom( $post->post_content );
+		$content = $post->post_content;
 
-		// $dom->preserveWhiteSpace = false;
+		$dom = LegalDOM::get_dom( $content );
 
-		// LegalDebug::die( [
-		// 	'ToolReviewAnchors' =>'modify_content-1',
+		$permission_remove_nodes_anchors = ReviewAnchors::remove_nodes_anchors( $dom );
 
-		// 	'post_content' => $dom->saveHTML( $dom ),
-		// ] );
+		if ( $permission_remove_nodes_anchors )
+		{
+			$content = $dom->saveHTML( $dom );
 
-		ReviewAnchors::remove_nodes_anchors( $dom );
+			$dom = LegalDOM::get_dom( $content );
+		}
 
-		// LegalDebug::die( [
-		// 	'ToolReviewAnchors' =>'modify_content-2',
-
-		// 	'post_content' => $dom->saveHTML( $dom ),
-		// ] );
-
-        // $set_title_id_auto = false;
-
-		// $set_title_id_manual = self::set_header_id( $dom );
-
-        // if ( ! $set_title_id_manual )
-        // {
-		    $set_title_id_auto = ReviewAnchors::set_titles_id_auto( $dom );
-		    
-			// $set_title_id_auto = true;
-        // }
-
-        // if ( $set_title_id_manual || $set_title_id_auto )
-
-		// LegalDebug::die( [
-		// 	'ToolReviewAnchors' =>'modify_content-3',
-
-		// 	'post_content' => $dom->saveHTML( $dom ),
-		// ] );
+		$set_title_id_auto = ReviewAnchors::set_titles_id_auto( $dom );
         
 		if ( $set_title_id_auto )
         {
-		    // return $dom->saveHTML( $dom );
-
-			$post_modified = [
+		    $post_modified = [
 				'ID' => $post_id,
 
                 'post_content' => $dom->saveHTML( $dom ),
