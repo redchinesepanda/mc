@@ -260,9 +260,13 @@ class ReviewAnchors
 
             if ( $anchor )
             {
-                $node->removeChild( $anchor );
+                // $node->removeChild( $anchor );
 
-                // $anchor->parentNode->removeChild( $anchor );
+                $title = $dom->createElement( 'h2', $node->textContent );
+
+                $title->setAttribute( 'class', $node->getAttribute( 'class' ) );
+
+                $node->parentNode->replaceChild( $title, $node );
             }
 
             // LegalDebug::debug( [
