@@ -265,7 +265,11 @@ class ReviewAnchors
                 LegalDebug::die( [
                     'ReviewAnchors' => 'remove_nodes_anchors-1',
 
-                    'textContent' => trim( $node->textContent ), 
+                    'textContent' => $node->textContent,
+
+                    'textContent' => $node->nodeValue,
+
+                    'textContent-trim' => trim( $node->textContent ),
                 ] );
 
                 $title = $dom->createElement( 'h2', $node->textContent );
