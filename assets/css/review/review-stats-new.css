@@ -148,12 +148,6 @@
     width: 100%;
 }
 
-/* .review-stats .item-value-wrapper {
-	width: 100%;
-    flex-basis: 50%;
-    flex-basis: calc( 40% - 4rem );
-} */
-
 /* Stats Background */
 
 .review-stats-title .review-stats-title-rating-average::before {
