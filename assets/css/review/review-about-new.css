@@ -1088,6 +1088,7 @@
 
 .legal-review-page-sidebar .stats-item-tooltip:hover.stats-item-tooltip::before {
     color: var( --Base-base-06 );
+    transition: 0.4s;
 }
 
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-close::before {
