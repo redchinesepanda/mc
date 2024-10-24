@@ -350,6 +350,12 @@ class ReviewOffers
 				return '';
 			}
 		}
+		
+		LegalDebug::debug( [
+			'ReviewOffers' => 'prepare-1',
+
+			'atts' => $atts,
+		] );
 
 		$args = self::get_offers( $atts );
 		
