@@ -176,6 +176,10 @@
     color: var( --Base-base-09 );
 }
 
+.review-stats-title .review-stats-title-rating-max {
+    color: var( --black-20 );
+}
+
 .review-stats .item-title {
 	font-size: 1rem;
 	font-weight: 600;
