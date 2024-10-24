@@ -22,3 +22,81 @@
 .icon-payment-revolut:before {
     background-image: url( '../../img/review/icons/payment/revolut.svg' );
 }
+.icon-payment-astropay:before {
+    background-image: url( '../../img/review/icons/payment/astropay.svg' );
+}
+.icon-payment-bankid:before {
+    background-image: url( '../../img/review/icons/payment/bankid.svg' );
+}
+.icon-payment-banktransfer:before {
+    background-image: url( '../../img/review/icons/payment/banktransfer.svg' );
+}
+.icon-payment-bitcoin:before {
+    background-image: url( '../../img/review/icons/payment/bitcoin.svg' );
+}
+.icon-payment-boku:before {
+    background-image: url( '../../img/review/icons/payment/boku.svg' );
+}
+.icon-payment-boleto:before {
+    background-image: url( '../../img/review/icons/payment/boleto.svg' );
+}
+.icon-payment-ecopayz:before {
+    background-image: url( '../../img/review/icons/payment/ecopayz.svg' );
+}
+.icon-payment-halcash:before {
+    background-image: url( '../../img/review/icons/payment/halcash.svg' );
+}
+.icon-payment-klarna:before {
+    background-image: url( '../../img/review/icons/payment/klarna.svg' );
+}
+.icon-payment-maestro:before {
+    background-image: url( '../../img/review/icons/payment/maestro.svg' );
+}
+.icon-payment-meowallet:before {
+    background-image: url( '../../img/review/icons/payment/meowallet.svg' );
+}
+.icon-payment-muchBetter:before {
+    background-image: url( '../../img/review/icons/payment/muchBetter.svg' );
+}
+.icon-payment-neosurf:before {
+    background-image: url( '../../img/review/icons/payment/neosurf.svg' );
+}
+.icon-payment-neteller:before {
+    background-image: url( '../../img/review/icons/payment/neteller.svg' );
+}
+.icon-payment-opay:before {
+    background-image: url( '../../img/review/icons/payment/opay.svg' );
+}
+.icon-payment-openbanking:before {
+    background-image: url( '../../img/review/icons/payment/openbanking.svg' );
+}
+.icon-payment-pay4fun:before {
+    background-image: url( '../../img/review/icons/payment/pay4fun.svg' );
+}
+.icon-payment-payz:before {
+    background-image: url( '../../img/review/icons/payment/payz.svg' );
+}
+.icon-payment-picpay:before {
+    background-image: url( '../../img/review/icons/payment/picpay.svg' );
+}
+.icon-payment-pix:before {
+    background-image: url( '../../img/review/icons/payment/pix.svg' );
+}
+.icon-payment-rapidtransfer:before {
+    background-image: url( '../../img/review/icons/payment/rapidtransfer.svg' );
+}
+.icon-payment-skrill:before {
+    background-image: url( '../../img/review/icons/payment/skrill.svg' );
+}
+.icon-payment-swish:before {
+    background-image: url( '../../img/review/icons/payment/swish.svg' );
+}
+.icon-payment-visa:before {
+    background-image: url( '../../img/review/icons/payment/visa.svg' );
+}
+.icon-payment-wiretransfer:before {
+    background-image: url( '../../img/review/icons/payment/wiretransfer.svg' );
+}
+.icon-payment-zimpler:before {
+    background-image: url( '../../img/review/icons/payment/zimpler.svg' );
+}
