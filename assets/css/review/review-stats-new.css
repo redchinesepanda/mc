@@ -128,8 +128,8 @@
 /* Stats Width */
 
 .review-stats-title .review-stats-title-rating-average::before {
-    width: var( --Spacing-09 );
-    height: var( --Spacing-09 );
+    width: var( --Spacing-07 );
+    height: var( --Spacing-07 );
 }
 
 .review-stats .item-value-wrapper,
