@@ -5,9 +5,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const classes = {
 		active: 'legal-active',
 
-		tooltipContainer: 'legal-tooltip-container',
+		// tooltipContainer: 'legal-tooltip-container',
 
-		tooltipItem: 'stats-item-tooltip'
+		// tooltipItem: 'stats-item-tooltip'
 	};
 
 	const args = [
@@ -18,16 +18,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			'tooltipContainer' : '.review-bonus-stats .stats-item-tooltip'
 		}
-
-		// {
-		// 	'tooltipContainer' : '.legal-compilation .compilation-attention-tooltip'
-		// }
 	];
 
 	const selectors = {
 		body: 'body',
 
-		tooltipContainer: '.legal-tooltip-container',
+		// tooltipContainer: '.legal-tooltip-container',
 
 		tooltipControl: '.legal-tooltip-control',
 
@@ -99,7 +95,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element )
 	{
-		console.log( 'prepareElements: element', element );
+		// console.log( 'prepareElements: element', element );
 
 		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
 			return;
