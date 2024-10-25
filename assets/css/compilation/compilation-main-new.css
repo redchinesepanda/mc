@@ -343,6 +343,10 @@
     line-height: 20px;
 }
 
+.legal-compilation .legal-tooltip p::before {
+    content: attr( data-tooltip-text );
+}
+
 .legal-compilation .legal-tooltip a {
     text-decoration: none;
 }
