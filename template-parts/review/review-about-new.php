@@ -39,7 +39,7 @@
                             <div class="about-rating"><!-- <?php echo $args[ 'rating' ][ 'label' ]; ?> -  -->
                                 <?php echo $args[ 'rating' ][ 'value' ]; ?>
                             </div>
-                            <div class="legal-tooltip legal-active">
+                            <div class="legal-tooltip">
                                 <span class="legal-tooltip-title">Regulator</span>
                                 <span class="legal-tooltip-close"></span>
                                 <span class="legal-tooltip-text">test tooltip</span>
