@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'tooltipContainer' : '..legal-compilation .compilation-attention-tooltip'
+			'tooltipContainer' : '.legal-compilation .compilation-attention-tooltip'
 		}
 	];
 
