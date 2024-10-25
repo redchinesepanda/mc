@@ -104,7 +104,9 @@ class CompilationMain
 
     const JS = [
         'compilation-tooltip' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/compilation/compilation-tooltip.js',
+            // 'path' => LegalMain::LEGAL_URL . '/assets/js/compilation/compilation-tooltip.js',
+
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about-tooltip.js',
 
             'ver' => '1.0.0',
         ],

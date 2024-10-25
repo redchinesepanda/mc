@@ -1,1 +1,1 @@
-<div class="compilation-attention-tooltip"><?php echo $args[ 'label' ]; ?></div>
+<div class="compilation-attention-tooltip legal-tooltip-control"><?php echo $args[ 'label' ]; ?></div>

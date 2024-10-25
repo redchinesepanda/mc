@@ -7,7 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// tooltipContainer: 'legal-tooltip-container',
 
-		tooltipItem: 'stats-item-tooltip'
+		// tooltipItem: 'stats-item-tooltip'
 	};
 
 	const args = [
