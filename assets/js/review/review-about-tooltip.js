@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'tooltipControl' : '.review-about .about-data .about-rating'
+			'tooltipControl' : '.review-about .about-data .about-rating::after'
 		}
 	];
 
