@@ -113,8 +113,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		};
 
-		/* element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false ); */
-
 		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
 		if ( tooltipWrapper )
