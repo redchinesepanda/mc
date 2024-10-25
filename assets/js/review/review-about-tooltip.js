@@ -101,7 +101,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// console.log( 'prepareElements: element', element );
 
-		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
+		if ( !element.parentElement.querySelector( selectors.tooltip || !element.parentElement.querySelector( selectors.tooltipClose ) ) ) {
 			return;
 		}
 
