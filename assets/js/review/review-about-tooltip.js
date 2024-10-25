@@ -27,7 +27,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		body: 'body',
 
-		// tooltipContainer: '.legal-tooltip-container',
+		tooltipContainer: '.legal-tooltip-container',
 
 		tooltipControl: '.legal-tooltip-control',
 
