@@ -99,7 +99,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element )
 	{
-		// console.log( 'prepareElements: element', element );
+		console.log( 'prepareElements: element', element );
 
 		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
 			return;
