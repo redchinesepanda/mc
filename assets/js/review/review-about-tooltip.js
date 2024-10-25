@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const classes = {
 		active: 'legal-active',
 
-		tooltipContainer: 'legal-tooltip-container',
+		// tooltipContainer: 'legal-tooltip-container',
 
 		tooltipItem: 'stats-item-tooltip'
 	};
@@ -23,7 +23,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		body: 'body',
 
-		tooltipContainer: '.legal-tooltip-container',
+		// tooltipContainer: '.legal-tooltip-container',
 
 		tooltipControl: '.legal-tooltip-control',
 
@@ -33,7 +33,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tooltipWrapper: '.legal-tooltip-wrapper',
 
-		aboutAchievement: '.review-about .about-achievement',
+		// aboutAchievement: '.review-about .about-achievement',
 
 		tooltipSet: function ( id ) {
 			return '[data-tooltip-set="' + id + '"]';
@@ -123,7 +123,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function controlInit( arg )
 	{	
 		// console.log( 'controlInit' );
-		
+
 		document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 	}
 
