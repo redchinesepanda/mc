@@ -95,13 +95,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element )
 	{
-		console.log( 'prepareElements: element -', element );
-		console.log( 'element.parentElement:', element.parentElement );
-		console.log( 'element.parentElement.querySelector( selectors.tooltipClose ):', element.parentElement.querySelector( selectors.tooltipClose ) );
-
+		// console.log( 'prepareElements: element', element );
 		element.addEventListener( 'click', toggleModal, false );
 
-		if ( !element.parentElement.querySelector( selectors.tooltipClose ) ) {
+		// if ( !element.parentElement.querySelector( selectors.tooltipClose ) ) {
+		// 	return;
+		// }
+
+		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
 			return;
 		}
 
@@ -126,7 +127,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{	
 		// console.log( 'controlInit' );
 
-		// console.log( arg.tooltipContainer );
+		// if ( !arg.tooltipContainer.parentElement.querySelector( selectors.tooltip ) ) {
+		// 	return;
+		// }
 
 		document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 	}
