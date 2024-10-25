@@ -96,15 +96,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function prepareElements( element )
 	{
 		// console.log( 'prepareElements: element', element );
+
 		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
 			return;
 		}
-		
-		element.addEventListener( 'click', toggleModal, false );
 
-		// if ( !element.parentElement.querySelector( selectors.tooltipClose ) ) {
-		// 	return;
-		// }
+		element.addEventListener( 'click', toggleModal, false );
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
 
@@ -126,11 +123,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function controlInit( arg )
 	{	
 		// console.log( 'controlInit' );
-
-		// if ( !arg.tooltipContainer.parentElement.querySelector( selectors.tooltip ) ) {
-		// 	return;
-		// }
-
+		
 		document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
 	}
 
