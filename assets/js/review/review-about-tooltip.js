@@ -101,13 +101,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// console.log( 'prepareElements: element', element );
 
-		if ( !element.parentElement.querySelector( selectors.tooltip ) || !element.parentElement.querySelector( selectors.tooltipClose ) ) {
+		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
 			return;
-		}
+		};
 
 		element.addEventListener( 'click', toggleModal, false );
 
-		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
+		if ( element.parentElement.querySelector( selectors.tooltipClose ) ) {
+
+			element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
+
+		};
+
+		/* element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false ); */
 
 		let tooltipWrapper = element.parentElement.querySelector( selectors.tooltipWrapper );
 	
