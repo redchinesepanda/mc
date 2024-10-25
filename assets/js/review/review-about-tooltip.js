@@ -25,7 +25,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// tooltipContainer: '.legal-tooltip-container',
 
-		tooltipControl: '.legal-tooltip-control',
+		// tooltipControl: '.legal-tooltip-control',
 
 		tooltip: '.legal-tooltip',
 
