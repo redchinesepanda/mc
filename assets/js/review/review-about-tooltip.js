@@ -95,7 +95,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareElements( element )
 	{
-		// console.log( 'prepareElements' );
+		console.log( 'prepareElements:', element );
+		console.log( 'element.parentElement.querySelector( selectors.tooltipClose ):', element.parentElement.querySelector( selectors.tooltipClose ) );
 
 		element.addEventListener( 'click', toggleModal, false );
 
