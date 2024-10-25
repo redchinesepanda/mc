@@ -174,10 +174,10 @@
         line-height: 26px;
     } */
 
-    .review-about .about-rating {
+   /*  .review-about .about-rating {
         font-size: 16px;
         line-height: 24px;
-    }
+    } */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -326,10 +326,10 @@
         line-height: 2.375rem;
     } */
 
-    .review-about .about-rating {
+    /* .review-about .about-rating {
         font-size: 20px;
         line-height: 26px;
-    }
+    } */
     
 }
 
@@ -550,9 +550,9 @@
     width: 100%;
 }
 
-/* .review-about .about-rating {
-    width: 100%;
-} */
+.review-about .about-rating {
+    width: fit-content;
+}
 
 .review-about .achievement-bonus-link {
     height: 28px;
@@ -679,10 +679,10 @@
     margin-left: var( --Spacing-03 );
 }
 
-.review-about .about-data .legal-tooltip {
+.review-about .about-rating-wrapper .legal-tooltip {
     position: absolute;
     left: 0rem;
-    top: 50%;
+    top: 1.625rem;
     padding: 1rem;
     z-index: 1;
 }
@@ -951,6 +951,7 @@
 .review-about .legal-afillate-description,
 .review-about .about-achievement .achievement-bonus-link,
 .about-right .legal-cut-control,
+.review-about .about-rating-wrapper .legal-tooltip,
 .about-right .review-bonus-head,
 .legal-section-author-mini .review-about-info,
 .legal-review-page-sidebar .review-bonus-stats,
@@ -993,7 +994,9 @@
 }
 
 .review-about .about-rating {
+    font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.625rem;
 }
 
 /* .review-about .about-rating::before {
