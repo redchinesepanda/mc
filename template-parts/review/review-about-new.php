@@ -36,13 +36,15 @@
                     <div class="about-data">
                         <h1><?php echo $args[ 'title' ]; ?></h1>
                         <?php if( !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
-                            <div class="about-rating"><!-- <?php echo $args[ 'rating' ][ 'label' ]; ?> -  -->
-                                <?php echo $args[ 'rating' ][ 'value' ]; ?>
-                            </div>
-                            <div class="legal-tooltip">
-                                <span class="legal-tooltip-title">Regulator</span>
-                                <span class="legal-tooltip-close"></span>
-                                <span class="legal-tooltip-text">test tooltip</span>
+                            <div class="about-rating-wrapper">
+                                <div class="about-rating"><!-- <?php echo $args[ 'rating' ][ 'label' ]; ?> -  -->
+                                    <?php echo $args[ 'rating' ][ 'value' ]; ?>
+                                </div>
+                                <div class="legal-tooltip">
+                                    <span class="legal-tooltip-title">Regulator</span>
+                                    <span class="legal-tooltip-close"></span>
+                                    <span class="legal-tooltip-text">test tooltip</span>
+                                </div>
                             </div>
                         <?php endif; ?>
                         <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>

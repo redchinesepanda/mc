@@ -666,7 +666,7 @@
     margin-bottom: 0px;
 }
 
-.review-about .about-data,
+.review-about .about-rating-wrapper,
 .review-about .about-rating {
     position: relative;
 }
@@ -677,6 +677,14 @@
 
 .review-about .about-rating::after {
     margin-left: var( --Spacing-03 );
+}
+
+.review-about .about-data .legal-tooltip {
+    position: absolute;
+    left: 0rem;
+    top: 50%;
+    padding: 1rem;
+    z-index: 1;
 }
 
 /* .review-about .about-rating .legal-tooltip.legal-active {
@@ -695,7 +703,6 @@
     right: calc( 1.5rem + 0.25rem );
 }
 
-.review-about .about-data .legal-tooltip,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     position: absolute;
     right: calc( 1.5rem + 1rem + ( 0.25rem * 2) );
