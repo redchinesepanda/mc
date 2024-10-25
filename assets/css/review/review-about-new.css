@@ -555,6 +555,7 @@
     height: 28px;
 }
 
+.review-about .about-data .legal-tooltip,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     width: fit-content;
     max-width: 20rem;
@@ -662,6 +663,7 @@
     margin-bottom: 0px;
 }
 
+.review-about .about-data,
 .review-about .about-rating {
     position: relative;
 }
@@ -690,10 +692,10 @@
     right: calc( 1.5rem + 0.25rem );
 }
 
+.review-about .about-data .legal-tooltip,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     position: absolute;
     right: calc( 1.5rem + 1rem + ( 0.25rem * 2) );
-    /* left: calc( 0rem - 11.75rem - 0.25rem ); */
     top: 50%;
     transform: translate(0, -50%);
     padding: 1rem;
@@ -875,6 +877,7 @@
     background: var( --Base-base-01 );
 } */
 
+.review-about .about-data .legal-tooltip,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     border-radius: 12px;
     border: 1px solid var( --Base-base-09 );
