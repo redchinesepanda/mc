@@ -12,11 +12,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const args = [
 		{
-			'tooltipContainer' : '.review-about .about-achievement .achievement-item'
+			'tooltipControl' : '.review-about .about-achievement .achievement-item'
 		},
 
 		{
-			'tooltipContainer' : '.review-bonus-stats .stats-item-tooltip'
+			'tooltipControl' : '.review-bonus-stats .stats-item-tooltip'
 		}
 	];
 
@@ -124,7 +124,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{	
 		// console.log( 'controlInit' );
 
-		document.querySelectorAll( arg.tooltipContainer ).forEach( prepareElements );
+		document.querySelectorAll( arg.tooltipControl ).forEach( prepareElements );
 	}
 
 	function tooltipInit()
