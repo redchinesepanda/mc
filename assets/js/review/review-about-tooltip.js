@@ -96,15 +96,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function prepareElements( element )
 	{
 		// console.log( 'prepareElements: element', element );
+		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
+			return;
+		}
+		
 		element.addEventListener( 'click', toggleModal, false );
 
 		// if ( !element.parentElement.querySelector( selectors.tooltipClose ) ) {
 		// 	return;
 		// }
-
-		if ( !element.parentElement.querySelector( selectors.tooltip ) ) {
-			return;
-		}
 
 		element.parentElement.querySelector( selectors.tooltipClose ).addEventListener( 'click', closeModal, false );
 
