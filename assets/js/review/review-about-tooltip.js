@@ -5,9 +5,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const classes = {
 		active: 'legal-active',
 
-		// tooltipContainer: 'legal-tooltip-container',
+		tooltipContainer: 'legal-tooltip-container',
 
-		// tooltipItem: 'stats-item-tooltip'
+		tooltipItem: 'stats-item-tooltip'
 	};
 
 	const args = [
