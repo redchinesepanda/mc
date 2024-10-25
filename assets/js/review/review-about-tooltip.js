@@ -17,11 +17,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		{
 			'tooltipContainer' : '.review-bonus-stats .stats-item-tooltip'
-		},
-
-		{
-			'tooltipContainer' : '.legal-compilation .compilation-attention-tooltip'
 		}
+
+		// {
+		// 	'tooltipContainer' : '.legal-compilation .compilation-attention-tooltip'
+		// }
 	];
 
 	const selectors = {
