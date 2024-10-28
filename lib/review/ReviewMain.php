@@ -89,6 +89,8 @@ class ReviewMain
 
 		'how-to-play' => 'How to play',
 
+		'how-we-evaluate' => 'How we evaluate',
+
         'last-update' => 'Last update',
 
         'license' => 'License',
