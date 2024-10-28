@@ -38,13 +38,15 @@
                         <?php if( !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
                             <div class="about-rating-wrapper">
                                 <div class="about-rating">
-                                    <?php echo $args[ 'rating' ][ 'label' ]; ?> - 
+                                    <!-- <?php echo $args[ 'rating' ][ 'label' ]; ?> -  -->
                                     <?php echo $args[ 'rating' ][ 'value' ]; ?>
                                 </div>
                                 <div class="legal-tooltip">
                                     <span class="legal-tooltip-title"><?php echo $args[ 'text' ][ 'tooltip-title' ]; ?></span>
                                     <span class="legal-tooltip-close"></span>
-                                    <span class="legal-tooltip-text">test tooltip</span>
+                                    <span class="legal-tooltip-text" data="<?php echo $args[ 'text' ][ 'tooltip-text' ]; ?>">
+                                        <a href="<?php echo $args[ 'text' ][ 'tooltip-href' ]; ?>"><?php echo $args[ 'text' ][ 'tooltip-href-label' ]; ?></a>
+                                    </span>
                                 </div>
                             </div>
                         <?php endif; ?>

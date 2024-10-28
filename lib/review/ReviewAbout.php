@@ -507,6 +507,12 @@ class ReviewAbout
                     'hide' => ToolLoco::translate( ReviewMain::TEXT[ 'hide-tnc' ] ),
 
                     'tooltip-title' => ToolLoco::translate( ReviewMain::TEXT[ 'regulator' ] ),
+
+                    'tooltip-text' => ToolLoco::translate( ReviewMain::TEXT[ 'we-evaluate' ] ),
+
+                    'tooltip-href' => 'https://match.center/eng/wiki-tag/how-we-evaluate/',
+                    
+                    'tooltip-href-label' => ToolLoco::translate( ReviewMain::TEXT[ 'scoring' ] ),
                 ],
 
                 'title' => $title,
