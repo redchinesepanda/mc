@@ -426,6 +426,52 @@ class ReviewAbout
         return implode( ' ', $classess );
     }
 
+    const PAGET_TYPE_EVALUATE = [
+        'legal-evaluate' => 'legal-how-do-we-evaluate',
+    ];
+
+    const TAXONOMY_EVALUATE = [
+        'page-type' => 'page_type',
+    ];
+
+    public static function tooltip_href_query( $terms = [] )
+	{
+		if ( empty( $terms ) )
+		{
+			$terms = self::PAGET_TYPE_EVALUATE;
+		}
+
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'page',
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY_EVALUATE[ 'page-type' ],
+					
+					'terms' => $terms,
+
+					'field' => 'slug',
+
+					'operator' => 'IN',
+				],
+			],
+		];
+	}
+
+    public static function get_tooltip_href()
+    {
+        $posts = get_posts( self::tooltip_href_query() );
+
+        if ( ! empty( $posts ) )
+        {
+            return get_post_permalink( array_shift( $posts )->ID );
+        }
+
+        return '';
+    }
+
     public static function get( $args )
     {
         $id = BonusMain::get_id();
@@ -512,7 +558,7 @@ class ReviewAbout
 
                     'tooltip-text' => ToolLoco::translate( ReviewMain::TEXT[ 'we-evaluate' ] ),
 
-                    'tooltip-href' => '#', 
+                    'tooltip-href' => self::get_tooltip_href(), 
                     
                     'tooltip-href-label' => ToolLoco::translate( ReviewMain::TEXT[ 'scoring' ] ),
                 ],
