@@ -510,7 +510,7 @@ class ReviewAbout
 
                     'tooltip-text' => ToolLoco::translate( ReviewMain::TEXT[ 'we-evaluate' ] ),
 
-                    'tooltip-href' => 'https://match.center/eng/wiki-tag/how-we-evaluate/',
+                    'tooltip-href' => '#', 
                     
                     'tooltip-href-label' => ToolLoco::translate( ReviewMain::TEXT[ 'scoring' ] ),
                 ],
