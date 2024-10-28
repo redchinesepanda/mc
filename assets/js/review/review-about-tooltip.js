@@ -19,13 +19,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'tooltipControl' : '.review-bonus-stats .stats-item-tooltip'
 		},
 
-		{
+		/* {
 			'tooltipControl' : '.review-about .about-data .about-rating'
-		},
+		}, */
 
-		{
+		/* {
 			'tooltipControl' : '.legal-compilation .compilation-attention-tooltip'
-		}
+		} */
 	];
 
 	const selectors = {
