@@ -566,6 +566,7 @@
     box-sizing: border-box;
 }
 
+.review-about .about-rating-wrapper .legal-tooltip-text,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text {
     width: 100%;
 }
