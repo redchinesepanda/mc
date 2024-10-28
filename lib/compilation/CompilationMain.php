@@ -269,7 +269,7 @@ class CompilationMain
 
         $nodes = self::get_nodes_anchors( $dom );
 
-        $text_anchors = self::remove_nodes_anchors( $nodes );
+        $text_anchors = self::remove_nodes_anchors( $dom, $nodes );
 
         return [
             'text' => $dom->saveHTML(),
