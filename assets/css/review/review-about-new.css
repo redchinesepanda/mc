@@ -986,7 +986,7 @@
 .review-about .about-rating-wrapper .legal-tooltip-close::before,
 .legal-review-page-sidebar .stats-item-tooltip::before,
 .legal-review-page-sidebar .bonus-stats-items:not( :nth-child( n+6 ) ) .stats-item-label::before,
-.legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
+.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-close::before {
     font-family: var(--legal-font-icons);
 }
 
@@ -1119,6 +1119,7 @@
     cursor: pointer;
 }
 
+.review-about .about-rating-wrapper .legal-tooltip-title,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-title {
     font-weight: 500;
 } 
