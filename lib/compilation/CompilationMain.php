@@ -244,6 +244,40 @@ class CompilationMain
         'type' => 'compilation-attention-type',
     ];
 
+    public static function remove_nodes_anchors( $dom, $nodes )
+	{
+        $anchors = [];
+
+		foreach ( $nodes as $node )
+        {
+            $anchors[] = $dom->saveHTML( $node );
+
+            $node->parentElement->removeChild( $node );
+        }
+
+        return implode( ' ', $anchors );
+	}
+
+    public static function get_nodes_anchors( $dom )
+	{
+		return LegalDOM::get_nodes( $dom, "//a" );
+	}
+
+    public static function get_anchors( $content )
+    {
+        $dom = LegalDOM::get_dom( $content );
+
+        $nodes = self::get_nodes_anchors( $dom );
+
+        $text_anchors = self::remove_nodes_anchors( $nodes );
+
+        return [
+            'text' => $dom->saveHTML(),
+
+            'text-anchors' => $text_anchors,
+        ] ;
+    }
+
     public static function get_settings( $id )
     {
         $title_text = get_field( self::COMPILATION[ 'title-text' ], $id );
@@ -269,13 +303,23 @@ class CompilationMain
                     'text' => $title_text,
             ],
 
-            'attention' => [
-                'text' => get_field( self::ATTENTION[ 'text' ], $id ),
+            // 'attention' => [
+            //     'text' => get_field( self::ATTENTION[ 'text' ], $id ),
 
-                'position' => get_field( self::ATTENTION[ 'position' ], $id ),
+            //     'position' => get_field( self::ATTENTION[ 'position' ], $id ),
 
-                'type' => get_field( self::ATTENTION[ 'type' ], $id ),
-            ],
+            //     'type' => get_field( self::ATTENTION[ 'type' ], $id ),
+            // ],
+            
+            'attention' => array_merge( 
+                self::get_anchors( get_field( self::ATTENTION[ 'text' ], $id ) ),
+
+                [
+                    'position' => get_field( self::ATTENTION[ 'position' ], $id ),
+    
+                    'type' => get_field( self::ATTENTION[ 'type' ], $id ),
+                ]
+            ),
         ];
     }
 
