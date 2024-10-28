@@ -119,6 +119,8 @@ class ReviewMain
 
 		'review' => 'Review',
 
+        'scoring' => 'Scoring and ratings',
+
 		'show-tnc' => 'Show T&C',
         
 		'valentin-axani' => 'Valentin Axani',
@@ -126,6 +128,8 @@ class ReviewMain
 		'website-manager' => 'Website Manager',
 
 		'website-administrator' => 'Website Administrator',
+
+        'we-evaluate' => 'We evaluate bookmakers using a comprehensive 9-criteria matrix that assesses Technology & Product, Offers & Payments, and UX & Support metrics. For a complete breakdown, read the page:',
 
 		'withdrawal' => 'Withdrawal',
 
