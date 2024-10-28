@@ -44,7 +44,7 @@
                                 <div class="legal-tooltip">
                                     <span class="legal-tooltip-title"><?php echo $args[ 'text' ][ 'tooltip-title' ]; ?></span>
                                     <span class="legal-tooltip-close"></span>
-                                    <span class="legal-tooltip-text" data="<?php echo $args[ 'text' ][ 'tooltip-text' ]; ?>">
+                                    <span class="legal-tooltip-text" data-tooltip-text="<?php echo $args[ 'text' ][ 'tooltip-text' ]; ?>">
                                         <a href="<?php echo $args[ 'text' ][ 'tooltip-href' ]; ?>"><?php echo $args[ 'text' ][ 'tooltip-href-label' ]; ?></a>
                                     </span>
                                 </div>
