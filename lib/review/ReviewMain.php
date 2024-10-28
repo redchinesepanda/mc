@@ -89,7 +89,7 @@ class ReviewMain
 
 		'how-to-play' => 'How to play',
 
-		'how-we-evaluate' => 'How we evaluate',
+		'how-we-evaluate' => 'How do we evaluate bookmakers?',
 
         'last-update' => 'Last update',
 
