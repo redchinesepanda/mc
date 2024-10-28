@@ -271,6 +271,12 @@ class CompilationMain
 
         $text_anchors = self::remove_nodes_anchors( $dom, $nodes );
 
+        $text_data = $dom->saveHTML();
+
+        $text_data = strip_tags( $text_data );
+
+        $text_data = trim( $text_data, ". " );
+
         return [
             'text-data' => trim( strip_tags( $dom->saveHTML() ), " ." ),
 
