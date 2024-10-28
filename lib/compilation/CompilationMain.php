@@ -252,7 +252,7 @@ class CompilationMain
         {
             $anchors[] = $dom->saveHTML( $node );
 
-            $node->parentElement->removeChild( $node );
+            $node->parentNode->removeChild( $node );
         }
 
         return implode( ' ', $anchors );
