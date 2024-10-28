@@ -433,6 +433,7 @@
     display: flex;
 }
 
+.review-about .about-rating-wrapper .legal-tooltip-close,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     flex-wrap: wrap;
     row-gap: var( --Spacing-03 );
@@ -766,6 +767,7 @@
     margin-bottom: var( --Spacing-06 );
 }
 
+.review-about .about-rating-wrapper .legal-tooltip-close,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-close {
     margin-left: auto;
 }
@@ -1107,6 +1109,7 @@
     transition: 0.4s;
 }
 
+.review-about .about-rating-wrapper .legal-tooltip-close::before,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-close::before {
     content: '\F10E';
     font-size: 18px;
