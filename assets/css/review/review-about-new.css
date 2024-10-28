@@ -433,7 +433,7 @@
     display: flex;
 }
 
-.review-about .about-rating-wrapper .legal-tooltip-close,
+.review-about .about-rating-wrapper .legal-tooltip,
 .legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     flex-wrap: wrap;
     row-gap: var( --Spacing-03 );
