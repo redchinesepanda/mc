@@ -1123,8 +1123,10 @@
     font-weight: 500;
 } 
 
-.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-title,
-.legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text {
+/* .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-title, */
+/* .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text  */
+.review-about .about-rating-wrapper .legal-tooltip,
+.legal-review-page-sidebar .bonus-stats-items .legal-tooltip {
     font-size: 0.8125rem;
     line-height: 1.0625rem;
 }
