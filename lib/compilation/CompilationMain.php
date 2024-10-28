@@ -278,7 +278,7 @@ class CompilationMain
         $text_data = trim( $text_data );
 
         return [
-            'text-data' => trim( strip_tags( $dom->saveHTML() ), "\n\ ." ),
+            'text-data' => trim( strip_tags( $dom->saveHTML() ), "\n." ),
 
             'text-anchors' => $text_anchors,
         ] ;
