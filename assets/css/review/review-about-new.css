@@ -1013,14 +1013,14 @@
     content: '';
 }
 
-/* .review-about .about-rating::after {
+.review-about .about-rating::after {
     content: '\F114';
     font-size: var( --Spacing-06 );
     font-weight: 400;
     line-height: var( --Spacing-06 );
     color: var( --Base-base-05 );
     cursor: pointer;
-} */
+}
 
 .review-about .about-center h1 {
     font-size: 2rem;
