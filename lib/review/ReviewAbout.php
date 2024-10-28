@@ -54,11 +54,11 @@ class ReviewAbout
 			'ver' => '1.0.3',
 		],
 
-        'review-about-tooltip' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about-tooltip.js',
+        // 'review-about-tooltip' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about-tooltip.js',
 
-			'ver' => '1.0.3',
-		], 
+		// 	'ver' => '1.0.3',
+		// ], 
     ];
 
     public static function register_script()
