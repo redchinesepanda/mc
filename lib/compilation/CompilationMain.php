@@ -272,7 +272,7 @@ class CompilationMain
         $text_anchors = self::remove_nodes_anchors( $dom, $nodes );
 
         return [
-            'text' => $dom->saveHTML(),
+            'text-data' => $dom->saveHTML(),
 
             'text-anchors' => $text_anchors,
         ] ;
@@ -315,6 +315,8 @@ class CompilationMain
                 self::get_anchors( get_field( self::ATTENTION[ 'text' ], $id ) ),
 
                 [
+                    'text' => get_field( self::ATTENTION[ 'text' ], $id ),
+
                     'position' => get_field( self::ATTENTION[ 'position' ], $id ),
     
                     'type' => get_field( self::ATTENTION[ 'type' ], $id ),
