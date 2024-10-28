@@ -37,7 +37,8 @@
                         <h1><?php echo $args[ 'title' ]; ?></h1>
                         <?php if( !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
                             <div class="about-rating-wrapper">
-                                <div class="about-rating"><!-- <?php echo $args[ 'rating' ][ 'label' ]; ?> -  -->
+                                <div class="about-rating">
+                                    <?php echo $args[ 'rating' ][ 'label' ]; ?> - 
                                     <?php echo $args[ 'rating' ][ 'value' ]; ?>
                                 </div>
                                 <div class="legal-tooltip">
