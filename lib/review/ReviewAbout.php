@@ -14,7 +14,7 @@ class ReviewAbout
         'review-about-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about-new.css',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.3',
 		],
     ];
 
@@ -51,13 +51,13 @@ class ReviewAbout
         'review-about' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about.js',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.3',
 		],
 
         'review-about-tooltip' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about-tooltip.js',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.3',
 		], 
     ];
 
@@ -506,7 +506,9 @@ class ReviewAbout
     
                     'hide' => ToolLoco::translate( ReviewMain::TEXT[ 'hide-tnc' ] ),
 
-                    'tooltip-title' => ToolLoco::translate( ReviewMain::TEXT[ 'how-we-evaluate' ] ),
+                    'tooltip-license-title' => ToolLoco::translate( ReviewMain::TEXT[ 'regulator' ] ),
+
+                    'tooltip-rating-title' => ToolLoco::translate( ReviewMain::TEXT[ 'how-we-evaluate' ] ),
 
                     'tooltip-text' => ToolLoco::translate( ReviewMain::TEXT[ 'we-evaluate' ] ),
 

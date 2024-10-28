@@ -21,7 +21,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		{
 			'tooltipControl' : '.review-about .about-data .about-rating'
-		}
+		},
+
+		/* {
+			'tooltipControl' : '.legal-compilation .compilation-attention-tooltip'
+		} */
 	];
 
 	const selectors = {
