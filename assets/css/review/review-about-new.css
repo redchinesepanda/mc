@@ -1132,6 +1132,10 @@
     line-height: 1.0625rem;
 }
 
+.review-about .about-rating-wrapper .legal-tooltip-text::before {
+    content: attr( data-tooltip-text )
+}
+
 /* .legal-review-page-sidebar .bonus-stats-items .legal-tooltip-text::before {
     content: attr( data-tooltip-text );
 } */
